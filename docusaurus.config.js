@@ -10,9 +10,8 @@ const config = {
   tagline: 'The most loved token!',
   favicon: 'img/favicon.ico',
 
-  // TODO
   // Set the production url of your site here
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://0LNetworkCommunity.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -21,6 +20,7 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: '0LNetworkCommunity', // Usually your GitHub org/user name.
   projectName: 'documentation', // Usually your repo name.
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
