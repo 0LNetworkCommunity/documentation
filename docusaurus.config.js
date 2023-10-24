@@ -44,7 +44,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/0LNetworkCommunity/documentation/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/0LNetworkCommunity/documentation/blob/main/docs/',
         },
         blog: false,
         theme: {
