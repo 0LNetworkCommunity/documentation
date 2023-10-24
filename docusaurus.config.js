@@ -44,7 +44,10 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/0LNetworkCommunity/documentation/blob/main/docs/',
+            // Main View
+            // 'https://github.com/0LNetworkCommunity/documentation/blob/main/docs/',
+            // Direct Edit (faster)
+            'https://github.com/0LNetworkCommunity/documentation/edit/main/docs/intro.md',
         },
         blog: false,
         theme: {
