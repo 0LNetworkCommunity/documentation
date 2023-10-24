@@ -14,7 +14,7 @@ const config = {
   url: 'https://0LNetworkCommunity.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/documentation/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -140,6 +140,13 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      algolia: {
+        appId: "7HK0QY1YGY",
+        apiKey: "b01c9033c42b8594891c02f40b04d09e",
+        indexName: "0lnetworkcommunity",
+        contextualSearch: true,
+        debug: false,
       },
     }),
 };
