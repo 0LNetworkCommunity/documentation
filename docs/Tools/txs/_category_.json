@@ -1,0 +1,8 @@
+{
+    "label": "Txs - Transaction Tool",
+    "position": 2,
+    "link": {
+      "type": "generated-index",
+      "description": "Send Transactions on the Libra network"
+    }
+  }

@@ -21,7 +21,7 @@ The wallet tool comprises two main components: `core` and `legacy`. In previous 
 - **Future-Proof**: The core wallet is an evolving component, indicating ongoing improvements and updates to maintain security and feature enhancements.
 
 ## How to Use the CLI Tool
-The wallet CLI tool (`wallet_cli.rs`) offers a user-friendly command-line interface for interacting with the Libra wallet. Key functionalities include:
+The wallet CLI tool offers a user-friendly command-line interface for interacting with the Libra wallet. Key functionalities include:
 
 Certainly! Adding examples will make the documentation more practical and user-friendly. Here's the updated section with examples:
 
