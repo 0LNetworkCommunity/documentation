@@ -143,7 +143,7 @@ const config = {
       },
       algolia: {
         appId: "7HK0QY1YGY",
-        apiKey: "b01c9033c42b8594891c02f40b04d09e",
+        apiKey: "377178811ec241a889999a8f6508e62c",
         indexName: "0lnetworkcommunity",
         contextualSearch: true,
         debug: false,
