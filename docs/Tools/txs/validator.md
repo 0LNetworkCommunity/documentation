@@ -25,14 +25,14 @@ For a deeper understanding of this distinctive approach, you can delve into the 
   - `expiry`: Set the expiry epoch that your bid expires on.
 - **Example**:
   ```
-  libra txs validaotr pof --bid_pct 123.4 -expiry 1000
+  libra txs validator pof --bid_pct 123.4 -expiry 1000
   ```
 
 ### Register Validator
 > Make sure you have your config at `~/.libra/libra.yaml` with `libra config init`
 
 - **Function**: Registers a new validator on the network.
-- **Syntax**: `txs validator register [--operator-file <path/to/file>]`
+- **Syntax**: `libra txs validator register [--operator-file <path/to/file>]`
 - **Parameters**:
   - `operator-file`: the file with a validators operator information. Usually found in ~/.libra/operator.yaml.
 - **Example**:
@@ -44,12 +44,13 @@ For a deeper understanding of this distinctive approach, you can delve into the 
 Within the Libra framework, the validator's operational settings are managed through a configuration file named operator.yaml, typically located in the ~/.libra/ directory. This file encapsulates key configuration details for the validator. To update the validator's operational parameters, one can modify this configuration file and then submit a corresponding transaction to the Libra blockchain. This transaction ensures that the changes in the configuration file are acknowledged and implemented by the network.
 
 For your reference, the structure and content of the operator.yaml file are outlined below. It's important to note that the actual configuration may vary based on specific network requirements and validator setups:
+
 ```
 ---
 operator_account_address: 00000000000000000000000000000000d1281de242839fc939745996882c5fc2
 operator_account_public_key: "0x264cb0b3463a61177bc2a33a1b81df55cf92177ab216a0460f6aba57b5b0d2f2"
 consensus_public_key: "0xb99f4b268d6aac24e4ca47f08faa2cb8aead75d2f495982c736dce340edd8a5bcba2d052e23f135e0ccc13136be16e97"
-consensus_proof_of_possession: "0xb382b44e9a115e044da4f9bcc1bd8f75d819a029644ff2221b019bc20dea08f7ebfc1ea47d3e1d4a0c44c4207865e972116ef75af121bb9baefed3fb8e71e98b540da60bbd0375e70dd8df24f9e85ed69bacac65a6b440dd476b27bd855475fe"
+consensus_proof_of_possession: "0xb382b44e9a115e044da4f9bcc1bd8f75d819a029644ff2221b019bc20dea08f7ebfc1ea47d3e1d4a0c44c4207865e972116ef75af121bb9baefed3fb8e71e98b540da60bbd0375e70dd8df24f9e85ed69bacac65a6b440dd476b27fdfdf5475fe"
 validator_network_public_key: "0x0a3cab5f2ecb29bdb4a9efe1dd4576feacefe4ec74ab7ef65d472bbb4461804d"
 validator_host:
   host: 35.86.200.84
@@ -58,8 +59,9 @@ full_node_network_public_key: ~
 full_node_host: ~
 
 ```
+
 - **Function**: Updates network addresses for a validator and associated full nodes.
-- **Syntax**: `txs validator update --operator-file <path/to/file>`
+- **Syntax**: `libra txs validator update --operator-file <path/to/file>`
 - **Parameters**:
   - `operator-file`: the file with a validators operator information. Usually found in ~/.libra/operator.yaml.
 - **Example**:
@@ -88,6 +90,7 @@ Additionally, the vouching system is governed by certain predefined rules. Each 
 
 ### Manage Jail Operations
 In the Libra framework, validators failing to meet consensus rules, especially in performance, are "jailed" and removed from the validator set. They can only rejoin once a validator who previously vouched for them submits an "unjail" transaction. This jailing process, part of the Vouch system, impacts the reputations and responsibilities of both the jailed validator and their voucher, with consequences extending recursively to others in the vouching chain. Additionally, the voucher risks losing financial deposits, adding a significant stake to the maintenance of network standards and performance.
+
 - **Function**: Manages Jail functions within the network.
 - **Syntax**: `libra txs validator jail --unjail-acct <UNJAIL_ACCT>`
 - **Parameters**: 

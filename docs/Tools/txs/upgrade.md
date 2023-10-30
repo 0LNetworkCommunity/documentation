@@ -15,14 +15,14 @@ A detailed explanation can be found [here](https://github.com/0LNetworkCommunity
 ## Upgrade Transactions
 
 ### Propose an Upgrade
-- **Syntax**: `txs validator upgrade propose --proposal_script_dir <PATH_TO_SCRIPT> --metadata_url <URL>`
+- **Syntax**: `libra txs validator upgrade propose --proposal_script_dir <PATH_TO_SCRIPT> --metadata_url <URL>`
 - **Function**: Initiates a proposal for a network upgrade.
 - **Parameters**:
   - `proposal_script_dir`: Directory containing the compiled proposal script.
   - `metadata_url`: URL describing the proposal.
 - **Example**:
   ```
-  txs validator upgrade propose --proposal_script_dir /path/to/script --metadata_url "http://example.com/proposal"
+  libra txs validator upgrade propose --proposal_script_dir /path/to/script --metadata_url "http://example.com/proposal"
   ```
 
 ### Vote on an Upgrade
@@ -38,5 +38,5 @@ With txs anyone with governance authority (the epoch's validators as of V7), can
     ```
 - **Vote NO on an Upgrade**
     ```
-    txs vote --proposal-id 12345 --should-fail
+    libra txs vote --proposal-id 12345 --should-fail
     ```
