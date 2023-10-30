@@ -1,11 +1,10 @@
 ---
-# id: doc-with-tags
 title: First steps
 tags:
   - Getting started
 ---
 
-# Common useful operations
+# First steps - Common useful operations
 
 ## Well done! you've got yourself a shiny new node running the 0L libra-framework. 
 
