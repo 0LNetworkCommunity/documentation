@@ -23,9 +23,6 @@ The wallet tool comprises two main components: `core` and `legacy`. In previous 
 ## How to Use the CLI Tool
 The wallet CLI tool offers a user-friendly command-line interface for interacting with the Libra wallet. Key functionalities include:
 
-Certainly! Adding examples will make the documentation more practical and user-friendly. Here's the updated section with examples:
-
----
 
 ### Key Generation
 - **Syntax**: `libra keygen [--mnemonic <MNEMONIC>] [--output_dir <DIRECTORY>]`
