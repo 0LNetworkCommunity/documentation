@@ -4,6 +4,8 @@ sidebar_position: 3
 
 # Txs - Validator
 
+Control your Validator
+
 ## Description
 The `libra txs validator`  subcommand includes a set of subcommands tailored for validator operations. These commands facilitate actions like managing validator-specific transactions such as bids for joining the validator set.
 

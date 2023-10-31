@@ -4,6 +4,8 @@ sidebar_position: 3
 
 # Txs - Generate Transaction
 
+Interact with Move Code
+
 ## Description
 Generates a transaction to execute an Entry function on the Libra blockchain. This command is used to create transactions that call Entry functions of smart contracts deployed on-chain, facilitating direct interaction with public smart contract code.
 
