@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Libra Genesis Tool
+# Genesis
 
 ## Description
 The Genesis tool within the Libra framework serves as a foundational utility for initializing and configuring the state of the Libra blockchain. It facilitates the creation of the genesis block — the very first block in the blockchain — and sets up various initial parameters and configurations for the network.
