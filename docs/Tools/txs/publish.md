@@ -43,12 +43,11 @@ When deploying a module, the address in the module must match the address of the
 
 ### Publish a Smart Contract
 - **Function**: Deploys smart contracts (Move modules and scripts) onto the Libra blockchain.
-- **Syntax**: `libra txs publish --dev|--package-dir <PACKAGE_DIR>|--output-dir <OUTPUT_DIR>|--named-addresses <NAMED_ADDRESSES>|--skip-fetch-latest-git-deps|--bytecode-version <BYTECODE_VERSION>`
+- **Syntax**: `libra txs publish --dev|--package-dir <PACKAGE_DIR>|--output-dir <OUTPUT_DIR> | --skip-fetch-latest-git-deps|--bytecode-version <BYTECODE_VERSION>`
 - **Parameters**:.
   - `--dev` (optional): Enables dev mode, which uses all dev-addresses and dev-dependencies. Dev mode allows for changing dependencies and addresses to the preset [dev-addresses] and [dev-dependencies] fields.  This works both inside and out of tests for using preset values. Currently, it also additionally pulls in all test compilation artifacts
   - `--package-dir <PACKAGE_DIR>`: Path to a move package (the folder with a Move.toml file)
   - `--output-dir <OUTPUT_DIR>` (optional): Path to save the compiled move package. Defaults to `<package_dir>/build`
-  - `--named-addresses` (optional): This can be used for setting address names dynamically at publishing time.
   - `--skip-fetch-latest-git-deps` (optional): Skip pulling the latest git dependencies.If you don't have a network connection, the compiler may fail due to no ability to pull git dependencies. This will allow overriding this for local development.
   - `--bytecode-version <BYTECODE_VERSION>` (optional): Specify the version of the bytecode the compiler is going to emit
 - **Examples**:
