@@ -25,7 +25,7 @@ For a deeper understanding of this distinctive approach, you can delve into the 
   - `expiry`: Set the expiry epoch that your bid expires on.
 - **Example**:
   ```
-  libra txs validator pof --bid_pct 123.4 -expiry 1000
+  libra txs validator pof --bid-pct 123.4 --expiry 1000
   ```
 
 ### Register Validator
