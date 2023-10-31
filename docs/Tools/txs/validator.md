@@ -97,7 +97,7 @@ In the Libra framework, validators failing to meet consensus rules, especially i
   - `unjail-acct`: The account of the validator a voucher would like to unjail
 - **Example**:
     ```
-    libra txs validator  --unjail-acct 0xC7394B8AF7BC3BDB9258C53DFFDA7F2B	 
+    libra txs validator  jail --unjail-acct 0xC7394B8AF7BC3BDB9258C53DFFDA7F2B	 
     ```
 
 ---
