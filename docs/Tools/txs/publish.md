@@ -58,6 +58,5 @@ When deploying a module, the address in the module must match the address of the
     ```
     This command publishes a module located at `/path/to/module`.
   
-  - Executing a Script:
 
 ---
