@@ -73,7 +73,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'How to start documenting?',
+            label: 'Contributions welcome',
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
