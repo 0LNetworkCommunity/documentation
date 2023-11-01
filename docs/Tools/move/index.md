@@ -224,7 +224,7 @@ $ libra txs publish --package-dir ~/libra-framework/tools/txs/tests/fixtures/tes
 
 ### View functions
 :::note
-The `libra move view` feature is currently not available but we have a couple of work arounds for viewing move functions and values. View a full description [here](/link) 
+The `libra move view` feature is currently not available but we have a couple of work arounds for viewing move functions and values. View a full description [here](/tools) 
 :::
 ```bash
 $ libra query move-value --account 0xd1281de242839fc939745996882c5fc2 --module-name message --struct-name MessageHolder --key-name message
