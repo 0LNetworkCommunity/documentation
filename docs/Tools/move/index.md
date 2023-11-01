@@ -24,7 +24,7 @@ Every Move CLI command, with the exception of `package create`, is expected to b
 
 ### Compliling
 The `libra` CLI can be used to compile a Move package locally.
-The below example uses the `HelloBlockchain` in [fixtures](~/libra-framework/tools/txs/tests/fixtures/test_publish).
+The below example uses the `HelloBlockchain` in [fixtures](https://github.com/0LNetworkCommunity/libra-framework/tree/main/tools/txs/tests/fixtures/test_publish).
 
 :::note
 You will first need to uncomment `[addresses]` in `Move.toml` and add your address you will be using
@@ -46,7 +46,7 @@ subdir = 'diem-move/framework/diem-framework'
 
 
 ```bash
-$ libra move compile --package-dir ~/libra-framework/tools/txs/tests/fixtures/test_publish 
+$ libra move compile --package-dir /libra-framework/tools/txs/tests/fixtures/test_publish 
 ```
 
 The above command will generate the below terminal output:
@@ -62,10 +62,10 @@ BUILDING test_publish
 ### Compiling and unit testing Move
 
 The `libra` CLI can also be used to compile and run unit tests locally.
-In this example, we'll use the `HelloBlockchain` in [fixtures](~/libra-framework/tools/txs/tests/fixtures/test_publish).
+In this example, we'll use the `HelloBlockchain` in [fixtures](https://github.com/0LNetworkCommunity/libra-framework/tree/main/tools/txs/tests/fixtures/test_publish).
 
 ```bash
-$ libra move test --package-dir ~/libra-framework/tools/txs/tests/fixtures/test_publish
+$ libra move test --package-dir /libra-framework/tools/txs/tests/fixtures/test_publish
 ```
 The above command will generate the following terminal output:
 ```bash
@@ -218,7 +218,7 @@ $ libra txs generate-transaction --function-id 0xd1281de242839fc939745996882c5fc
 The `libra move publish` feature is currently not available but we have a work around for interacting with move functions. View a full description [here](/Tools/txs/publish) 
 :::
 ```bash
-$ libra txs publish --package-dir ~/libra-framework/tools/txs/tests/fixtures/test_publish
+$ libra txs publish --package-dir /libra-framework/tools/txs/tests/fixtures/test_publish
 ```
 
 

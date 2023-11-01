@@ -184,6 +184,6 @@ sudo systemctl start libra-node
 `sudo systemctl status libra-node.service`
 
 
-### You will now need [sync your validator to the latest block](/validators/restore) and [register your validator]((/validators/register)).
+### You will now need [sync your validator to the latest block](/validators/restore) and [register your validator](/validators/register).
 
 ---
