@@ -1,6 +1,7 @@
 ---
 title: "Getting Started"
 sidebar_position: 1
+description: 'Libra Framework Tool Design'
 ---
 
 ## About Libra Tool Design

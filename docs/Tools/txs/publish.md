@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
+description: 'Publish Move Modules'
 ---
 
 # Txs - Publish
 
-Publish Move Modules
+
 
 ## Description
 The `txs` tool is instrumental in sending Package Publish transactions, enabling developers to deploy their smart contracts on the Libra blockchain. An example Move package, used in internal "smoke tests", can be found under `./tests/fixtures/test_publish`.

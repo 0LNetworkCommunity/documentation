@@ -77,6 +77,11 @@ const config = {
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
+            href: 'https://warpcast.com/0lnetwork',
+            label: 'Farcaster',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/0LNetworkCommunity/',
             label: 'GitHub',
             position: 'right',

@@ -2,6 +2,7 @@
 title: "Move"
 id: "index"
 hidden: true
+description: 'Develop with the Move Tool'
 ---
 :::danger WIP
 The Move tool is a Diem wrapper that needs some TLC.... Bounties are available through the Tool Scrubbers Guild if you would like to contribute!
