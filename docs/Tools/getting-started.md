@@ -1,7 +1,6 @@
 ---
-title: "Tools"
-id: "index"
-hidden: false
+title: "Getting Started"
+sidebar_position: 1
 ---
 
 ## About Libra Tool Design

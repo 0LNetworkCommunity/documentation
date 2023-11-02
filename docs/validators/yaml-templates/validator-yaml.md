@@ -5,7 +5,7 @@ id: "validator-yaml"
 
 # Validator YAML File Example
 
-`validator.yaml`
+### validator.yaml
 
 ```
 base:
