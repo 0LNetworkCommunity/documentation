@@ -6,15 +6,10 @@ description: 'Restore and sync the OL Network database to the current state'
 
 # Restore
 
-Restore the Database to be up to date with the current state of the Network. Repository is located [here](https://github.com/0LNetworkCommunity/epoch-archive-testnet)
+Restore the Database to be up to date with the current state of the Network. Repository is located [here](https://github.com/0LNetworkCommunity/epoch-archive-testnet) and contains other useful commands out this scope.
 :::note
 This guide is referencing the REX testnet as we develop the Libra software for v6.9.x (soon v7)
 :::
-
-## Epoch Archive Backup & Restore Guide
-
-
-Welcome to the Epoch Archive Backup & Restore guide. This README is designed to provide a comprehensive walkthrough to manage 0l Network node backups and restoration for your system using the provided Makefile.
 
 ### Prerequisites
 :::note
@@ -32,7 +27,7 @@ libra config init
 
 
 
-## Getting started
+### Setup
 
   Clone the repo and prepare the binary:
   
@@ -46,94 +41,30 @@ libra config init
 
 ### Restoring to the latest version of the 0L Network public backup
 
-#### This is most likely all you will need to restore and start/resume syncing:
+This is most likely all you will need to restore and start/resume syncing:
 
   ```
     cd ~/epoch-archive-testnet
-    make restore-all
+    make wipe-db && make restore-all
   ```
 
 
-### Here are some other tools you can make use of
-  
-1. **Wipe Existing Database**:
-    ```bash
-    make wipe-db
-    ```
+### Sync as a Full Node
+:::note
+You will need to open port `6182` and also verify your seed peers in the yaml
+:::
+Currently you need to sync as a full node. To do that you need to add the contents of [fullnode.yaml](/validators/yaml-templates/fullnode-yaml) in `~/.libra/fullnode.yaml`
 
-2. **Restore Genesis Data**:
-    ```bash
-    make restore-genesis
-    ```
+You will need to change the file to point at the correct locations for your database and genesis blob. By default these will be `~/$USER/.libra/db` and `~/$USER/.libra/genesis/genesis.blog` respectfully.
 
-3. **Restore to a Specific Version**:
-    ```
-    make VERSION_START=[db_starting_transaction] VERSION=[db_target_transaction] restore-latest
-    ```
+```
+data_dir: /change/to/your/db/dir
+
+genesis_file_location: /path/to/your/genesis/blob
 
 
-### Creating and Maintaining Backups
+```
 
-1. **Prepare Archive Path**:
-    ```
-    make prep-archive-path
-    ```
+### Start
 
-2. **Backup Genesis Data**:
-    ```
-    make backup-genesis
-    ```
-
-3. **Continuous Backup**:
-    ```
-    make backup-continuous
-    ```
-
-4. **Backup by Epoch**:
-    ```
-    make backup-epoch
-    ```
-
-5. **Backup State Snapshot**:
-    ```
-    make backup-snapshot
-    ```
-
-6. **Backup Transactions**:
-    ```
-    make backup-transaction
-    ```
-
-7. **Setup Git for Backup**:
-    ```
-    make git-setup
-    ```
-
-8. **Start Continuous Backup**:
-    ```
-    make start-continuous
-    ```
-
-9. **Stop Continuous Backup**:
-    ```
-    make stop-continuous
-    ```
-
-10. **Backup Logging Cleanup**:
-    ```
-    make log-cleanup
-    ```
-
-11. **Scheduled Tasks**:
-    This is what we use to continually provide public backups as they become available:
-    ```
-    make cron
-    ```
-
-### Other Commands
-
-- **`make check`**: Validates the environment and displays the configuration.
-- **`make wipe-backups`**: Deletes all backups.
-- **`make git`**: Commits and pushes the recent backups to the repository.
-- **`make git-sling-recent`**: Commits and pushes the 20 most recent backups to the repository.
-- **`make git-sling-all`**: Commits and pushes all backups to the repository in batches.
+`libra node --config-path ~/.libra/fullnode.yaml`
