@@ -1,5 +1,6 @@
 ---
-title: First steps
+title: First Steps
+sidebar_position: 4
 tags:
   - Getting started
 ---
