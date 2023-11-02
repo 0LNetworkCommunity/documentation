@@ -6,19 +6,31 @@ description: 'Restore and sync the OL Network database to the current state'
 
 # Restore
 
-Restore the Database to be up to date with the current state of the Network. Repostitory is located [here](https://github.com/0LNetworkCommunity/epoch-archive-testnet)
-
-# Epoch Archive Backup & Restore Guide
+Restore the Database to be up to date with the current state of the Network. Repository is located [here](https://github.com/0LNetworkCommunity/epoch-archive-testnet)
 :::note
 This guide is referencing the REX testnet as we develop the Libra software for v6.9.x (soon v7)
 :::
 
+## Epoch Archive Backup & Restore Guide
+
+
 Welcome to the Epoch Archive Backup & Restore guide. This README is designed to provide a comprehensive walkthrough to manage 0l Network node backups and restoration for your system using the provided Makefile.
 
-## Prerequisites
+### Prerequisites
+:::note
+You will need an account and libra configuration to use this tool
+```
+# Create account
+libra wallet keygen
 
-- Ensure you have the necessary tools installed, such as the latest
+#Initialize configuration
+libra config init
+```
+:::
+
 - The Makefile is designed for libra-framework v6.9.x (soon v7) Ensure you are using the correct version.
+
+
 
 ## Getting started
 
@@ -32,9 +44,9 @@ Welcome to the Epoch Archive Backup & Restore guide. This README is designed to 
   ```
 
 
-## Restoring to the latest version of the 0L Network public backup
+### Restoring to the latest version of the 0L Network public backup
 
-### This is most likely all you will need to restore and start/resume syncing:
+#### This is most likely all you will need to restore and start/resume syncing:
 
   ```
     cd ~/epoch-archive-testnet
@@ -42,7 +54,7 @@ Welcome to the Epoch Archive Backup & Restore guide. This README is designed to 
   ```
 
 
-## Here are some other tools you can make use of
+### Here are some other tools you can make use of
   
 1. **Wipe Existing Database**:
     ```bash
@@ -60,7 +72,7 @@ Welcome to the Epoch Archive Backup & Restore guide. This README is designed to 
     ```
 
 
-## Creating and Maintaining Backups
+### Creating and Maintaining Backups
 
 1. **Prepare Archive Path**:
     ```
@@ -118,7 +130,7 @@ Welcome to the Epoch Archive Backup & Restore guide. This README is designed to 
     make cron
     ```
 
-## Other Commands
+### Other Commands
 
 - **`make check`**: Validates the environment and displays the configuration.
 - **`make wipe-backups`**: Deletes all backups.

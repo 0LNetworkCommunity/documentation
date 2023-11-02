@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
+description: 'Transfer Coins'
 ---
 
 # Txs - Transfer
 
-Transfer Coins
+
 
 ## Description
 This is a simple tool to transfer coins from one account to another. It is also used to create an account on chain. If an account is created with the `libra wallet` tool, it does not exist on chain until it has a non zero balance
