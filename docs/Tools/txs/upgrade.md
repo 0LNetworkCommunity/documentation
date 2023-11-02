@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
+description: 'Upgrade VM Libraries'
 ---
 
 # Txs - Upgrade
 
-Upgrade Move Framework
+
 
 ## Description
 The `libra txs upgrade`  subcommand includes a set of subcommands tailored for validator operations. These commands facilitate actions like proposing and voting on network upgrades,.

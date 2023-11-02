@@ -65,6 +65,7 @@ These instructions target Ubuntu.
 1.4. Use `tmux` to persist the terminal session for build, as well as for running the nodes and tower app. Also this setup requires `git` and `make`, which might be installed already on your host. If not, perform the following steps now:
 
 ```bash
+sudo apt update
 sudo apt install -y git tmux jq build-essential cmake clang llvm libgmp-dev pkg-config libssl-dev lld libpq-dev
 ```
 
@@ -105,15 +106,16 @@ tmux new -s installation
 ```
 
 1.8. Clone this repo:
-
-`git clone https://github.com/0LNetworkCommunity/libra-framework.git`
-
+```
+git clone https://github.com/0LNetworkCommunity/libra-framework.git
+cd ~/libra-framework
+git fetch --all && git checkout release-6.9.0-rc.7
+```
 1.9. Build the source and install binaries:
 This takes a while, ensure your are still inside the `tmux` session to avoid your session gets disconnected.
 
 ```bash
-cd </path/to/libra-source/> #eg ~/libra-framework 
-make bins install
+cargo build --release -p libra -p libra-genesis-tools -p libra-txs -p diem-db-tool
 ```
 
 1.10 Making the `libra` binary globally executable and persistent
@@ -122,15 +124,16 @@ make bins install
 This assumes the `libra` binary is already built and located at `~/libra-framework/target/release/libra`.
 :::
 ```
-#Make the binary executable
-chmod +x ~/libra-framework/target/release/libra
-
-#Link the binary for global access
-sudo ln -s ~/libra-framework/target/release/libra /usr/local/bin/
+echo 'export PATH="$HOME/libra-framework/target/release:$PATH"' >> ~/.bashrc
+source ~/.bashrc
 
 #Verification
 libra --version 
 ```
+
+#### Start Node
+
+`libra node --config-path ~/.libra/validator.yaml`
 
 
 1.11. Setup as a service(optional)

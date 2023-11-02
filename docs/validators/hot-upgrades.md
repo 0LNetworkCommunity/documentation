@@ -29,11 +29,12 @@ You need to provide:
 - `--framework-local-dir`: the source code for the framework so that the transaction script can import it as a dependency.
 
 ```
+# At the moment this uses libra-framework that is built and stored in /libra-framework/target/release after compiling libra package
 # Note the paths
-libra txs upgrade --output-dir /your/update/dir/ --framework-local-dir /path/to/the/built/framework
+libra-framework  upgrade --output-dir /your/update/dir/ --framework-local-dir /path/to/the/built/framework
 
 # Example
-libra txs upgrade --output-dir framework_upgrade --framework-local-dir /home/ubuntu/libra-framework/framework/
+libra-framework  upgrade --output-dir framework_upgrade --framework-local-dir /home/ubuntu/libra-framework/framework/
 ```
 :::note
 This creates 3 seperate library upgrade script directories

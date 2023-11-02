@@ -2,6 +2,7 @@
 title: "Node"
 id: "index"
 hidden: false
+description: 'Operate a Node'
 ---
 
 # Libra Node

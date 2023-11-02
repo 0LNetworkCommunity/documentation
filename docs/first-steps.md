@@ -1,6 +1,7 @@
 ---
 title: First Steps
 sidebar_position: 4
+slug: /
 tags:
   - Getting started
 ---
