@@ -69,20 +69,10 @@ sudo apt update
 sudo apt install -y git tmux jq build-essential cmake clang llvm libgmp-dev pkg-config libssl-dev lld libpq-dev
 ```
 
-1.5. Create the linux user that will run the libra services.
 
-We will create a user called `node` which has no password (can only be accessed initially by sudo).
-
-```bash
-sudo useradd node -m -s /bin/bash
-```
-
-You can then access that account via `sudo su node`. Or setup ssh keys under `/home/node/.ssh/authorized_keys`.
-
-1.6. Install Rust on the `node` user
+1.5. Install Rust 
 
 ```bash
-sudo su node
 
 # you are now in the node user
 curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
@@ -98,27 +88,27 @@ cargo install toml-cli
 
 It is recommended to perform the steps from 1.7 onwards inside tmux. Short tmux intruction:
 
-1.7 Start a new [tmux](#tmux-basics) session
+1.6 Start a new [tmux](#tmux-basics) session
 
 ```bash
 # start a new tmux session
 tmux new -s installation
 ```
 
-1.8. Clone this repo:
+1.7 Clone this repo:
 ```
 git clone https://github.com/0LNetworkCommunity/libra-framework.git
 cd ~/libra-framework
 git fetch --all && git checkout release-6.9.0-rc.7
 ```
-1.9. Build the source and install binaries:
+1.8 Build the source and install binaries:
 This takes a while, ensure your are still inside the `tmux` session to avoid your session gets disconnected.
 
 ```bash
-cargo build --release -p libra -p libra-genesis-tools -p libra-txs -p diem-db-tool
+cargo build --release -p libra 
 ```
 
-1.10 Making the `libra` binary globally executable and persistent
+1.9 Making the `libra` binary globally executable and persistent
 
 :::note
 This assumes the `libra` binary is already built and located at `~/libra-framework/target/release/libra`.
@@ -131,16 +121,23 @@ source ~/.bashrc
 libra --version 
 ```
 
+### You will now need [sync your validator to the latest block](/validators/restore) and [register your validator](/validators/register).
+
 #### Start Node
 
 `libra node --config-path ~/.libra/validator.yaml`
 
+### Setup as a service(optional)
 
-1.11. Setup as a service(optional)
+**Install Service**
 :::note
 use can this service template instead of running in tmux
 :::
 `sudo nano /lib/systemd/system/libra-node.service`
+
+
+
+
 
 #### Systemd template
 
@@ -174,7 +171,7 @@ sudo systemctl enable libra-node
 sudo systemctl start libra-node
 ```
 
-1.12 Reload and start system service
+**Reload and start system service**
 
 `sudo systemctl daemon-reload`
 
@@ -182,11 +179,11 @@ sudo systemctl start libra-node
 
 `sudo systemctl start libra-node.service`
 
-1.12 Check the service is operating correctly
+**Check the service is operating correctly**
 
 `sudo systemctl status libra-node.service`
 
 
-### You will now need [sync your validator to the latest block](/validators/restore) and [register your validator](/validators/register).
+
 
 ---

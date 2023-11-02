@@ -82,7 +82,7 @@ chmod +x fix_vfn_values.sh
 :::
 
 :::note
-# point the libra.yaml to testnet
+Point the libra.yaml to testnet
 ```
 # sed the default_chain_id to testing
 sed -i 's/default_chain_id: mainnet/default_chain_id: testnet/g' ~/.libra/libra.yaml
@@ -129,3 +129,8 @@ Your friend will:
 ```
 libra txs validator pof --bid-pct <PERCENT YOU PAY> --expiry <WHEN EXPIRES>
 ```
+:::note
+Once your validator enters the set you will need to stop running as a fullnode and run as a validator. Change your node to point to the `validator.yaml`.
+
+`libra node --config-path ~/.libra/validator.yaml`
+:::
