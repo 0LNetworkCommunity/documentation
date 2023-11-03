@@ -22,3 +22,32 @@ If you have needs that aren't met with these tools, all of them are also exporte
 With a simple Rust project, that uses Clap as a CLI scaffold, you can import all of the CLI types, whole or in part. This means you can extend the existing methods (by creating a `trait` extension in your own tool).
 
 Additionally the most relevant vendor SDK types are re-exported by `libra-types`. So you should be able to take advantage of much of the Move resource parsing (e.g converting account addresses from API calls to structs);
+
+### Build
+:::note
+This targets an ubuntu 22.04 build. You may need to create an account. Do it [here](/tools/wallet)
+:::
+
+```
+curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
+
+# restart your bash instance to pickup the cargo paths
+. ~/.bashrc
+
+#clone the repo
+git clone https://github.com/0LNetworkCommunity/libra-framework.git
+cd ~/libra-framework
+git fetch --all && git checkout main
+
+#build
+cargo build --release -p libra 
+
+
+#take global and persistant. this assumes the `libra` binary is already built and located at `~/libra-framework/target/release/libra`.
+echo 'export PATH="$HOME/libra-framework/target/release:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
+#verification
+libra --version 
+
+```
