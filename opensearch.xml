@@ -4,8 +4,8 @@
   <ShortName>0L Network Documentation</ShortName>
   <Description>Search 0L Network Documentation</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://0lnetwork.dev/img/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://0lnetwork.dev/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://0lnetwork.dev/opensearch.xml" />
-  <moz:SearchForm>https://0lnetwork.dev/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://0lnetwork.dev/documentation/img/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://0lnetwork.dev/documentation/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://0lnetwork.dev/documentation/opensearch.xml" />
+  <moz:SearchForm>https://0lnetwork.dev/documentation/</moz:SearchForm>
 </OpenSearchDescription>
