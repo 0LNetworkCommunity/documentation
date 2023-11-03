@@ -63,7 +63,7 @@ The proposer can add the link to this Github repo in the proposal phase.
 libra txs upgrade propose --proposal-script-dir /path/to/your/built/scripts --metadata-url https://www.urltoshowproposalinformation.com
 
 # Example
-libra txs upgrade propose --proposal-script-dir /home/ubuntu/libra-framework/target/release/new-upgrade/3-libra-framework/ --metadata-url https://www.github.com/0LNetworkCommunity/UpdateProposalTemplate
+libra txs upgrade propose --proposal-script-dir /home/ubuntu/libra-framework/target/release/framework_upgrade/3-libra-framework/ --metadata-url https://www.github.com/0LNetworkCommunity/UpdateProposalTemplate
 
 ```
 If this transaction succeeds it will produce a proposal id, which is a number. Now the proposal is open to voting.
