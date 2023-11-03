@@ -8,10 +8,10 @@ description: 'Interact with Move Code'
 
 
 ## Description
-Generates a transaction to execute an Entry function on the Libra blockchain. This command is used to create transactions that call Entry functions of smart contracts deployed on-chain, facilitating direct interaction with public smart contract code.
+Generates a transaction to execute an Entry function on the 0L Network. This command is used to create transactions that call Entry functions of smart contracts deployed on-chain, facilitating direct interaction with public smart contract code.
 
 ### Generate-Transaction Command
-- **Function**: Creates a transaction for interacting with public smart contract functions on the Libra blockchain.
+- **Function**: Creates a transaction for interacting with public smart contract functions on the 0L Network.
 - **Syntax**: `libra txs generate-transaction --function-id <FUNCTION_ID> [OPTIONS]`
 - **Parameters**:
   - `--function-id <FUNCTION_ID>`: The fully qualified identifier of the smart contract function to be invoked. This identifier includes the module address, module name, and function name.
