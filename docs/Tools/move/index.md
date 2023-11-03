@@ -193,7 +193,7 @@ Operand Stack:
 Named Addresses is currently unavailable... Check back soon
 :::
 :::tip
-As an open source project, the source code as well as compiled code published to the Libra blockchain is inherently open by default. This means code you upload may be downloaded from on-chain data. Even without source access, it is possible to regenerate Move source from Move bytecode. To disable source access, publish with the `--included-artifacts none` argument, like so:
+As an open source project, the source code as well as compiled code published to the 0L Network is inherently open by default. This means code you upload may be downloaded from on-chain data. Even without source access, it is possible to regenerate Move source from Move bytecode. To disable source access, publish with the `--included-artifacts none` argument, like so:
 
 ```
 libra move publish --included-artifacts none

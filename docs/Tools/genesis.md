@@ -7,9 +7,9 @@ description: 'Start the 0L Network'
 
 
 ## Description
-The Genesis tool within the Libra framework serves as a foundational utility for initializing and configuring the state of the Libra blockchain. It facilitates the creation of the genesis block — the very first block in the blockchain — and sets up various initial parameters and configurations for the network.
+The Genesis tool within the Libra Framework serves as a foundational utility for initializing and configuring the state of the 0L blockchain. It facilitates the creation of the genesis block — the very first block in the blockchain — and sets up various initial parameters and configurations for the network.
 
-This tool is crucial for setting up a new Libra blockchain network or resetting an existing network to a new initial state. It's particularly useful for testnets, development environments, and initializing mainnet configurations.
+This tool is crucial for setting up a new 0L blockchain network or resetting an existing network to a new initial state. It's particularly useful for testnets, development environments, and initializing mainnet configurations.
 
 ### Important Note
 This package is built separately from the main Libra CLI tool. As per its `Cargo.toml`, it is compiled as `libra-genesis-tools`. To build the tool, run the following command:

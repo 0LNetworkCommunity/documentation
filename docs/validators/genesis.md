@@ -6,7 +6,7 @@ description: 'Launch the 0L Network'
 
 # 0L Genesis Ceremony Guide
 
-This guide outlines the essential steps for conducting a Genesis Ceremony in the OL Network. The Genesis Ceremony is a pivotal event marking the creation of the network's genesis blob — the foundational block that underpins the entire blockchain. It's a crucial process that not only initiates the network but also involves transitioning or migrating the network's state from an earlier version (in this case, from v5 to v6.9.0). This ensures continuity and preserves the integrity of the network through upgrades or hard forks. Follow this document to navigate the process effectively, ensuring a smooth and successful launch or upgrade of the Open Libra Network.
+This guide outlines the essential steps for conducting a Genesis Ceremony in the OL Network. The Genesis Ceremony is a pivotal event marking the creation of the network's genesis blob — the foundational block that underpins the entire blockchain. It's a crucial process that not only initiates the network but also involves transitioning or migrating the network's state from an earlier version (in this case, from v5 to v6.9.0). This ensures continuity and preserves the integrity of the network through upgrades or hard forks. Follow this document to navigate the process effectively, ensuring a smooth and successful launch or upgrade of the OL Network.
 
 ### High Level Ceremony Steps
 

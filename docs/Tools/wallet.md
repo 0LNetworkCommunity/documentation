@@ -6,7 +6,7 @@ description: 'Create an Account'
 # Wallet 
 
 ## Description
-The Libra wallet tool provides essential functionalities for managing digital wallets within the Libra blockchain ecosystem. It is designed to handle digital currencies and assets through secure key management, account maintenance, and transaction processes.
+The Libra wallet tool provides essential functionalities for managing digital wallets within the 0L Network ecosystem. It is designed to handle digital currencies and assets through secure key management, account maintenance, and transaction processes.
 
 ### Core vs. Legacy Wallets
 The wallet tool comprises two main components: `core` and `legacy`. In previous Libra versions(V5 and below) the software used the legacy format, while Legacy wallets were migrated with the hard fork from V5 -> V6.9.0 it is recommended users now create wallets using HKDF. Here is an outline that represents different approaches and functionalities of each of the wallet types:
@@ -22,7 +22,7 @@ The wallet tool comprises two main components: `core` and `legacy`. In previous 
 - **Future-Proof**: The core wallet is an evolving component, indicating ongoing improvements and updates to maintain security and feature enhancements.
 
 ## How to Use the CLI Tool
-The wallet CLI tool offers a user-friendly command-line interface for interacting with the Libra wallet. Key functionalities include:
+The wallet CLI tool offers a user-friendly command-line interface for interacting with the 0L Network. Key functionalities include:
 
 
 ### Key Generation

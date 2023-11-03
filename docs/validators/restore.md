@@ -8,7 +8,7 @@ description: 'Restore and sync the OL Network database to the current state'
 
 Restore the Database to be up to date with the current state of the Network. Repository is located [here](https://github.com/0LNetworkCommunity/epoch-archive-testnet) and contains other useful commands out this scope.
 :::note
-This guide is referencing the REX testnet as we develop the Libra software for v6.9.x (soon v7)
+This guide is referencing the REX testnet as we develop the `libra-framework` software for v6.9.x (soon v7)
 :::
 
 ### Prerequisites
