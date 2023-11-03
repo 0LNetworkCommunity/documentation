@@ -1,6 +1,6 @@
 ---
 sidebar_label: 'Deploy'
-sidebar_position: 1
+sidebar_position: 2
 description: 'Deploy Move smart contracts on 0L Network'
 ---
 
