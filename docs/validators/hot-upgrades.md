@@ -95,7 +95,7 @@ After everyone has voted (to reach the consensus threshold of 66% as of  `V7`), 
 libra txs upgrade resolve --proposal-script-dir ./framework/release/framework_upgrade --proposal-id <the proposal id>
 
 # Example 
-libra txs upgrade resolve --proposal-script-dir /home/ubuntu/libra-framework/target/release/new-upgrade/3-libra-framework/ --proposal-id 0
+libra txs upgrade resolve --proposal-script-dir /home/ubuntu/libra-framework/target/release/framework_upgrade/3-libra-framework/ --proposal-id 0
 ```
 
 If this transction is successful the new bytecode will be written to the VM, and a new epoch will be triggered.
