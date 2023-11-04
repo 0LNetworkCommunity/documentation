@@ -21,7 +21,8 @@ libra code targets Ubuntu 22.4
 
 ### Firewall
 :::note
-Optionally open port `8080` to allow outside access to the API that runs as part of the libra service
+During testnet and devnet operation, you will likely open port `8080` on your Validator to allow outside access to the RPC endpoint, which is an API that runs as part of the libra service. 
+VFNs and public fullnodes should by default serve port `8080` RPC for operability.
 :::
 
 #### Validator
@@ -120,6 +121,46 @@ source ~/.bashrc
 #Verification
 libra --version 
 ```
+
+### File Descriptor Limit:
+Increase file descriptors:
+
+`ulimit -n 1048576`
+
+Make limits permanent:
+
+`sudo nano /etc/security/limits.conf`
+
+Append to the end of the limits.conf. replace vfnusername with the output from whoami:
+```
+vfnusername soft    nproc          1048576
+vfnusername soft    nproc          1048576
+vfnusername hard    nproc          1048576
+vfnusername soft    nofile         1048576
+```
+
+Also modify the user.conf:
+
+`sudo nano /etc/systemd/user.conf`
+
+Uncomment and change the line with DefaultLimitNOFILE to:
+
+`DefaultLimitNOFILE=1048576`
+
+Also modify the system.conf:
+
+`sudo nano /etc/systemd/system.conf`
+
+Uncomment and change the line with DefaultLimitNOFILE to:
+
+`DefaultLimitNOFILE=1048576`
+
+Verify your file handlers have been increased:
+
+`ulimit -n`
+
+The file descriptor limit change should now persist.
+
 
 ### You will now need [sync your validator to the latest block](/validators/restore) and [register your validator](/validators/register).
 
