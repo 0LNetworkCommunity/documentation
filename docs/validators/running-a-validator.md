@@ -26,20 +26,20 @@ Optionally open port `8080` to allow outside access to the API that runs as part
 
 #### Validator
 
-The following ports must be open: 6179, 6180
+The following ports must be open: 6181, 6180
 
 - `6180` should be open on all interfacess `0.0.0.0/0`, it's for consensus and uses noise encryption.
-- `6179` is for the private validator fullnode network ("VFN"), the firewall should only allow the IP of the fullnode to access this port.
+- `6181` is for the private validator fullnode network ("VFN"), the firewall should only allow the IP of the fullnode to access this port.
 
 #### VFN
 :::note
 this node does not serve transactions, and does not participate in consensus, it relays data out of the validator node, and transactions into the validator.
 :::
 
-The following ports must be open: `6178`, `6179`
+The following ports must be open: `6182`, `6181`
 
-- `6178` is for the the PUBLIC fullnode network. This is how the public nodes that will be serving JSON-RPC on the network will receive data and submit transactions to the network.
-- `6179` is for the private validator fullnode network ("VFN"), it should only allow traffic from the Validator node IP address above.
+- `6182` is for the the PUBLIC fullnode network. This is how the public nodes that will be serving JSON-RPC on the network will receive data and submit transactions to the network.
+- `6181` is for the private validator fullnode network ("VFN"), it should only allow traffic from the Validator node IP address above.
 
 
 ### TMUX basics
