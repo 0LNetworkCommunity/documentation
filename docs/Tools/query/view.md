@@ -1,7 +1,7 @@
 ---
-sidebar_label: 'Resources'
-sidebar_position: 5
-description: 'Retrieve an account resources'
+sidebar_label: 'View'
+sidebar_position: 6
+description: 'Access pre-defined view methods'
 ---
 
 # Resources
@@ -22,7 +22,7 @@ For example, a resource could represent:
 
 Resources are powerful abstractions for state management, particularly for creating a system of digital assets that require strict rules around their creation, duplication, transfer, and destruction. The ability to enforce invariants through the type system makes them well-suited for a wide range of applications beyond just tokens.
 
-The query tool provides an easy interface to query resources
+The query tool provides an easy interface query resources
 
 ---
 
@@ -36,18 +36,5 @@ Example:
 ```
 libra query resource --account 0x2865f3332b998ac267fabcf3801ef089 --resource-path-string 0x1::ancestry::Ancestry
 ```
-
-:::tip What can be queried?
-
-`struct` resources with `has key` (stored in global storage) can be queried.
-
-:::
-
-:::tip How to figure out the --resource-path-string?
-
-The `--resource-path-string` is made of the `address` of the resource, the `name` of the module, and the `name` of the resource itself.
-In the above example, 0x1 is the address of the resource, `ancestry` is the name of the module, and `Ancestry` is the name of the resource.
-
-:::
 
 
