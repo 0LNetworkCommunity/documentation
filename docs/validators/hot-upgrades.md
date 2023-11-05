@@ -8,7 +8,9 @@ description: 'Upgrading Framework Libraries'
 # Network Hot Upgrades
 
 ## Overview
-The "framework" which contains all the consensus, account, econ policies, etc. for the network is written in Move. This code is stored in the network database, and effectively executed on demand. This means that framework upgrades can occur without redeploying the Move VM itself, or the supporting system code (network node software). It also means the state machine can upgrade without a coordinated halt. To do this we require two libra tools: `framework` for building the artifacts, and `txs` for proposing, voting, and ultimately deploying the artifacts.
+The "framework" which contains all the consensus, account, econ policies, etc. for the network is written in Move. This code is stored in the network database, and effectively executed on demand. This means that framework upgrades can occur without redeploying the Move VM itself, or the supporting system code (network node software). It also means the state machine can upgrade without a coordinated halt. 
+
+- To do this we require two libra tools: `framework` for building the artifacts, and `txs` for proposing, voting, and ultimately deploying the artifacts.
 
 ## Procedure
 
@@ -83,7 +85,7 @@ If voter would like the proposal to be rejected:
 txs vote --proposal-id <proposal_number> --should-fail
 ```
 :::note
-You can query to see the for and against votes using this command: ` libra query view --function-id 0x1::diem_governance::get_votes --args <the_proposal_number>`
+You can query to see the for and against votes using this command: ` libra query view --function-id 0x1::diem_governance::get_votes --args <proposal_number>`
 :::
 
 After everyone has voted (to reach the consensus threshold of 66% as of  `V7`), the proposal will be in a "Resolvable" state. Anyone can resolve it by submitting the upgrade transaction. This means the sender must have the source transaction script for the upgrade (step #1 above).
@@ -91,7 +93,7 @@ After everyone has voted (to reach the consensus threshold of 66% as of  `V7`), 
 ##### 6. Use `txs` to resolve a successfully approved proposal
 ```
 # Note the actual path
-libra txs upgrade resolve --proposal-script-dir ./path/to/framework_upgrade --proposal-id <the_proposal_id>
+libra txs upgrade resolve --proposal-script-dir ./path/to/framework_upgrade --proposal-id <proposal_id>
 
 # Example 
 libra txs upgrade resolve --proposal-script-dir ~/framework_upgrade/3-libra-framework/ --proposal-id 0

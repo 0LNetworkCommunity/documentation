@@ -36,7 +36,7 @@ sudo apt install -y git tmux jq build-essential cmake clang llvm libgmp-dev pkg-
 #install rust
 curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
 
-# restart your bash instance to pickup the cargo paths
+#restart your bash instance to pickup the cargo paths
 . ~/.bashrc
 
 #clone the repo
