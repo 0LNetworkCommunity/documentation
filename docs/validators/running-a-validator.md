@@ -194,7 +194,7 @@ LimitNOFILE=500000
 
 #Environment="RUST_LOG=error"
 WorkingDirectory=/home/nodeuser/.libra
-ExecStart=/usr/local/bin/libra --config-path ~/home/nodeuser/.libra/validator.yaml
+ExecStart=/home/nodeuser/libra-framework/target/release/libra --config-path /home/nodeuser/.libra/validator.yaml
 
 Restart=on-failure
 RestartSec=3s
