@@ -1,6 +1,6 @@
 ---
 sidebar_label: 'Resources'
-sidebar_position: 5
+sidebar_position: 6
 description: 'Retrieve an account resources'
 ---
 
@@ -37,7 +37,7 @@ Example:
 libra query resource --account 0x2865f3332b998ac267fabcf3801ef089 --resource-path-string 0x1::ancestry::Ancestry
 ```
 
-:::tip What can be queried?
+:::note What can be queried?
 
 `struct` resources with `has key` (stored in global storage) can be queried.
 
@@ -46,7 +46,7 @@ libra query resource --account 0x2865f3332b998ac267fabcf3801ef089 --resource-pat
 :::tip How to figure out the --resource-path-string?
 
 The `--resource-path-string` is made of the `address` of the resource, the `name` of the module, and the `name` of the resource itself.
-In the above example, 0x1 is the address of the resource, `ancestry` is the name of the module, and `Ancestry` is the name of the resource.
+In the above example, `0x1` is the address of the resource, `ancestry` is the name of the module, and `Ancestry` is the name of the resource.
 
 :::
 

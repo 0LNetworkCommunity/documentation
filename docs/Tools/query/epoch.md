@@ -1,6 +1,6 @@
 ---
 sidebar_label: 'Epoch'
-sidebar_position: 4
+sidebar_position: 5
 description: 'Retrieve current network epoch number'
 ---
 # Epoch

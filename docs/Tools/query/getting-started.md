@@ -22,14 +22,12 @@ Usage: libra query <COMMAND>
 Commands:
   balance         Account balance
   tower           User's Tower state
+  val-config      A validator's on-chain configuration
   epoch           Epoch and waypoint
-  block-height    Network block height
-  resources       All account resources
+  resource       All account resources
   view            Execute a View function on-chain
   lookup-address  Looks up the address of an account given an auth key. The authkey diverges from the address after a key rotation
-  move-value      get a move value from account blob
   sync-delay      How far behind the local is from the upstream nodes
-  txs             Get transaction history
   help            Print this message or the help of the given subcommand(s)
 
 Options:
@@ -39,5 +37,5 @@ Options:
 
 :::danger WIP
 Not implemented yet:  
-`block-height`
+`sync-delay`
 :::
