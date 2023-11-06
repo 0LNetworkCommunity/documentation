@@ -147,9 +147,9 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       algolia: {
-        appId: "7HK0QY1YGY",
-        apiKey: "377178811ec241a889999a8f6508e62c",
-        indexName: "0lnetworkcommunity",
+        appId: "V46LQRE2SP",
+        apiKey: "7d25038e11f40e219b68121a3c20b184",
+        indexName: "0lnetwork",
         contextualSearch: true,
         debug: false,
       },
