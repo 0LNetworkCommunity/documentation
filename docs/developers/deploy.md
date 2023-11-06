@@ -18,7 +18,7 @@ description: 'Deploy Move smart contracts on 0L Network'
 6. Interact
 
 
-### 1. Write the Contract
+### 1. Write the Contract and Tests
 
 Create the Hello OL smart contract
 
@@ -156,7 +156,7 @@ subdir = 'diem-move/framework/diem-framework'
 libra move compile --package-dir path/to/your/hello_0L_contract
 
 #Example
-libra move compile --package-dir /home/ubuntu/hello_0L --named-addresses "hello_0L=0xd1281de242839fc939745996882c5fc2" 
+libra move compile --package-dir ~/hello_0L --named-addresses "hello_0L=0xd1281de242839fc939745996882c5fc2" 
 ```
 
 ##### Output
@@ -178,7 +178,7 @@ transaction success  ·····························�
 libra move test --package-dir path/to/your/hello_0L_contract
 
 # Example
-libra move test --package-dir /home/ubuntu/hello_0L --named-addresses "hello_0L=0xd1281de242839fc939745996882c5fc2"
+libra move test --package-dir ~/hello_0L --named-addresses "hello_0L=0xd1281de242839fc939745996882c5fc2"
 ```
 
 ##### Output
@@ -201,7 +201,7 @@ You should test and compile the code before running, but it is not necessary for
 libra txs publish --package-dir path/to/your/hello_0L_contract  
 
 #Example
-libra txs publish --package-dir /home/ubuntu/hello_0L --named-addresses "hello_0L=0xc208c09ecb52d626ef037c2011ba2d7b18f999eee5be54ac8161627613500c93" 
+libra txs publish --package-dir ~/hello_0L --named-addresses "hello_0L=0xc208c09ecb52d626ef037c2011ba2d7b18f999eee5be54ac8161627613500c93" 
 ``` 
 
 ##### Output
@@ -216,7 +216,7 @@ package size 1136 bytes
 transaction success  ··········································· ✓
 ```
 
-### 7. Interact
+### 6. Interact
 
 #### Interacting with functions
 You can interact with your new smart contract with the `generate_transaction` subcommand of the `txs` tool
