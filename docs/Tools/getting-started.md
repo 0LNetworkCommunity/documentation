@@ -4,6 +4,9 @@ sidebar_position: 1
 description: 'Libra Framework Tool Design'
 ---
 
+# Getting Started
+---
+
 ## About Libra Tool Design
 The tools are intended to be minimalist, yet modular. Upstream vendors have sophisticated and complex tooling. This is usually unwieldy for the profile of typical 0L users.
 
