@@ -48,7 +48,7 @@ git fetch --all && git checkout main
 cargo build --release -p libra 
 
 
-#take global and persistant. this assumes the `libra` binary is already built and located at `~/libra-framework/target/release/libra`.
+#make global and persistant. this assumes the `libra` binary is already built and located at `~/libra-framework/target/release/libra`.
 echo 'export PATH="$HOME/libra-framework/target/release:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 

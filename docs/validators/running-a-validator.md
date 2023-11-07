@@ -84,7 +84,7 @@ cargo install toml-cli
 
 ### Create Binaries
 
-It is recommended to perform the steps from 1.7 onwards inside tmux. Short tmux intruction:
+It is recommended to perform the steps from 1.7 onwards inside tmux. Short tmux instruction:
 
 1.6 Start a new [tmux](#tmux-basics) session
 
