@@ -22,20 +22,20 @@ For a deeper understanding of this distinctive approach, you can delve into the 
 
 
 - **Function**: Manages bids for joining the validator set.
-- **Syntax**: `libra txs validator pof --bid_pct <BID_PERCENTAGE>   --expiry <EXPIRY>`
+- **Syntax**: `libra txs validator pof --bid-pct <BID_PERCENTAGE>   --expiry <EXPIRY>`
 - **Parameters**:
-  - `bid_pct`: Percentage of the nominal reward bid for validator set entry.
+  - `bid-pct`: Percentage of the nominal reward bid for validator set entry.
   - `expiry`: Set the expiry epoch that your bid expires on.
 - **Example**:
   ```
-  libra txs validator pof --bid_pct 123.4 -expiry 1000
+  libra txs validator pof --bid-pct 123.4 --expiry 1000
   ```
 
 ### Register Validator
 > Make sure you have your config at `~/.libra/libra.yaml` with `libra config init`
 
 - **Function**: Registers a new validator on the network.
-- **Syntax**: `libra txs validator register [--operator-file <path/to/file>]`
+- **Syntax**: `libra txs validator register [--operator-file <OPERATOR_FILE_PATH>]`
 - **Parameters**:
   - `operator-file`: the file with a validators operator information. Usually found in ~/.libra/operator.yaml.
 - **Example**:
@@ -64,7 +64,7 @@ full_node_host: ~
 ```
 
 - **Function**: Updates network addresses for a validator and associated full nodes.
-- **Syntax**: `libra txs validator update --operator-file <path/to/file>`
+- **Syntax**: `libra txs validator update --operator-file <OPERATOR_FILE_PATH>`
 - **Parameters**:
   - `operator-file`: the file with a validators operator information. Usually found in ~/.libra/operator.yaml.
 - **Example**:

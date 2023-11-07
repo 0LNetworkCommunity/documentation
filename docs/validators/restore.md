@@ -68,3 +68,23 @@ genesis_file_location: /path/to/your/genesis/blob
 ### Start
 
 `libra node --config-path ~/.libra/fullnode.yaml`
+
+### Verify
+
+You can check that you are syncing by checking that your `ledger_version` and `block_height` are increasing via the API endpoint `curl localhost:8080/v1/ | jq`
+
+**Response**
+
+```
+{
+  "chain_id": 2,
+  "epoch": "700",
+  "ledger_version": "3322278",
+  "oldest_ledger_version": "3316234",
+  "ledger_timestamp": "1699327458805056",
+  "node_role": "full_node",
+  "oldest_block_height": "1581950",
+  "block_height": "1584970",
+  "git_hash": "bafac94d6edd39d972729db21156d47758eb8969"
+}
+```

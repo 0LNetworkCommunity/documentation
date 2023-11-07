@@ -30,7 +30,7 @@ A detailed explanation can be found [here](/validators/hot-upgrades)
 
 ### Vote on an Upgrade
 With txs anyone with governance authority (the epoch's validators as of V7), can submit a vote in favor (or against it with --should-fail)
-- **Syntax**: `txs upgrade vote --proposal-id <ID> [--should-fail]`
+- **Syntax**: `libra txs upgrade vote --proposal-id <ID> [--should-fail]`
 - **Function**: Casts a vote on an existing upgrade proposal.
 - **Parameters**:
   - `proposal-id`: On-chain ID of the proposal.
