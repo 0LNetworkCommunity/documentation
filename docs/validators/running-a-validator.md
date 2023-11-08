@@ -6,6 +6,31 @@ description: 'Specifications and setting up a validator on the 0L Network'
 
 # Running a Validator
 
+## Quick Start
+On an Ubuntu 22.04 host:
+
+```
+# run all this in a tmux session, a cheatsheet below
+tmux a
+
+# checkout the source
+git clone https://github.com/0LNetworkCommunity/libra-framework.git
+
+# Install dependencies and Rust lang
+sudo apt update
+sudo apt install -y git tmux jq build-essential cmake clang llvm libgmp-dev pkg-config libssl-dev lld libpq-dev
+curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
+. ~/.bashrc
+
+# build and install the binary
+cd libra-framework
+cargo build --release -p libra 
+cp target/release/libra ~/.cargo/bin
+
+# check you can run it
+libra -v
+```
+
 ## Specifications
 :::note
 A VFN is not currently used but will be used in production
@@ -43,14 +68,7 @@ The following ports must be open: `6182`, `6181`
 - `6181` is for the private validator fullnode network ("VFN"), it should only allow traffic from the Validator node IP address above.
 
 
-### TMUX basics
 
-1. New session: `tmux new -s <SESSION_NAME>`
-2. Detach from Session: press Ctrl-b and then d
-3. rejoin unnamed session, if only one session exists: `tmux a`
-4. rejoin unnamed session by id: `tmux ls` to get the ID and then `tmux a -t <SESSION_ID>`
-5. rejoin named session: `tmux attach -t <SESSION_NAME>`
-6. kill session: attach to the session --> press Ctrl-b, then type `:kill-session` and press ENTER
 
 ## Setting up a Validator
 
@@ -79,8 +97,6 @@ curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
 # restart your bash instance to pickup the cargo paths
 . ~/.bashrc
 
-# install some command-line tools
-cargo install toml-cli
 ```
 
 ### Create Binaries
@@ -98,7 +114,6 @@ tmux new -s installation
 ```
 git clone https://github.com/0LNetworkCommunity/libra-framework.git
 cd ~/libra-framework
-git fetch --all && git checkout release-6.9.0-rc.7
 ```
 1.8 Build the source and install binaries:
 This takes a while, ensure your are still inside the `tmux` session to avoid your session gets disconnected.
@@ -113,12 +128,14 @@ cargo build --release -p libra
 This assumes the `libra` binary is already built and located at `~/libra-framework/target/release/libra`.
 :::
 ```
-echo 'export PATH="$HOME/libra-framework/target/release:$PATH"' >> ~/.bashrc
-source ~/.bashrc
+# from the project source, copy the binary to a directory already in your $PATH, e.g. the Rust bin path.
+cp target/release/libra ~/.cargo/bin
 
-#Verification
+# check you have it
 libra --version 
 ```
+
+# Troubleshooting
 
 ### File Descriptor Limit:
 Increase file descriptors:
@@ -223,6 +240,13 @@ sudo systemctl start libra-node
 `sudo systemctl status libra-node.service`
 
 
+### TMUX basics
 
+1. New session: `tmux new -s <SESSION_NAME>`
+2. Detach from Session: press Ctrl-b and then d
+3. rejoin unnamed session, if only one session exists: `tmux a`
+4. rejoin unnamed session by id: `tmux ls` to get the ID and then `tmux a -t <SESSION_ID>`
+5. rejoin named session: `tmux attach -t <SESSION_NAME>`
+6. kill session: attach to the session --> press Ctrl-b, then type `:kill-session` and press ENTER
 
 ---
