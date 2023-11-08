@@ -4,6 +4,7 @@ sidebar_position: 1
 description: 'Learn whats involved running a validator on 0L Network'
 ---
 # Getting Started
+---
 
 ## Validators
 

@@ -1,8 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const {themes} = require('prism-react-renderer');
+const lightTheme = themes.github;
+const darkTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -61,7 +62,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/thumbnail.png',
       navbar: {
         title: '0L Network Documentation',
         logo: {
@@ -143,13 +144,14 @@ const config = {
         ],
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: lightTheme,
+        darkTheme: darkTheme,
+        additionalLanguages: ['bash', 'diff', 'json'],
       },
       algolia: {
-        appId: "7HK0QY1YGY",
-        apiKey: "377178811ec241a889999a8f6508e62c",
-        indexName: "0lnetworkcommunity",
+        appId: "V46LQRE2SP",
+        apiKey: "7d25038e11f40e219b68121a3c20b184",
+        indexName: "0lnetwork",
         contextualSearch: true,
         debug: false,
       },

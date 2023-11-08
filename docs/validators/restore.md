@@ -55,7 +55,7 @@ You will need to open port `6182` and also verify your seed peers in the yaml
 :::
 Currently you need to sync as a full node. To do that you need to add the contents of [fullnode.yaml](/validators/yaml-templates/fullnode-yaml) in `~/.libra/fullnode.yaml`
 
-You will need to change the file to point at the correct locations for your database and genesis blob. By default these will be `~/$USER/.libra/db` and `~/$USER/.libra/genesis/genesis.blog` respectfully.
+You will need to change the file to point at the correct locations for your database and genesis blob. By default these will be `~/.libra/db` and `~/.libra/genesis/genesis.blog` respectfully.
 
 ```
 data_dir: /change/to/your/db/dir
@@ -68,3 +68,23 @@ genesis_file_location: /path/to/your/genesis/blob
 ### Start
 
 `libra node --config-path ~/.libra/fullnode.yaml`
+
+### Verify
+
+You can check that you are syncing by checking that your `ledger_version` and `block_height` are increasing via the API endpoint `curl localhost:8080/v1/ | jq`
+
+**Response**
+
+```
+{
+  "chain_id": 2,
+  "epoch": "700",
+  "ledger_version": "3322278",
+  "oldest_ledger_version": "3316234",
+  "ledger_timestamp": "1699327458805056",
+  "node_role": "full_node",
+  "oldest_block_height": "1581950",
+  "block_height": "1584970",
+  "git_hash": "bafac94d6edd39d972729db21156d47758eb8969"
+}
+```

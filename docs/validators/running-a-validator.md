@@ -74,8 +74,6 @@ sudo apt install -y git tmux jq build-essential cmake clang llvm libgmp-dev pkg-
 1.5. Install Rust 
 
 ```bash
-
-# you are now in the node user
 curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
 
 # restart your bash instance to pickup the cargo paths
@@ -87,7 +85,7 @@ cargo install toml-cli
 
 ### Create Binaries
 
-It is recommended to perform the steps from 1.7 onwards inside tmux. Short tmux intruction:
+It is recommended to perform the steps from 1.7 onwards inside tmux. Short tmux instruction:
 
 1.6 Start a new [tmux](#tmux-basics) session
 
