@@ -25,7 +25,7 @@ curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
 # build and install the binary
 cd libra-framework
 cargo build --release -p libra 
-cp targe/release/libra ~/.cargo/bin
+cp target/release/libra ~/.cargo/bin
 
 # check you can run it
 libra -v
