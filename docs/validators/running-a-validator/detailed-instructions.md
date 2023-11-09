@@ -1,35 +1,9 @@
 ---
-sidebar_position: 2
-sidebar_label: "Running a Validator"
-description: 'Specifications and setting up a validator on the 0L Network'
+title: "Running a Validator"
+id: "running-a-validator"
 ---
 
 # Running a Validator
-
-## Quick Start
-On an Ubuntu 22.04 host:
-
-```
-# run all this in a tmux session, a cheatsheet below
-tmux a
-
-# checkout the source
-git clone https://github.com/0LNetworkCommunity/libra-framework.git
-
-# Install dependencies and Rust lang
-sudo apt update
-sudo apt install -y git tmux jq build-essential cmake clang llvm libgmp-dev pkg-config libssl-dev lld libpq-dev
-curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
-. ~/.bashrc
-
-# build and install the binary
-cd libra-framework
-cargo build --release -p libra 
-cp target/release/libra ~/.cargo/bin
-
-# check you can run it
-libra -v
-```
 
 ## Specifications
 :::note
@@ -135,46 +109,6 @@ cp target/release/libra ~/.cargo/bin
 libra --version 
 ```
 
-# Troubleshooting
-
-### File Descriptor Limit:
-Increase file descriptors:
-
-`ulimit -n 1048576`
-
-Make limits permanent:
-
-`sudo nano /etc/security/limits.conf`
-
-Append to the end of the limits.conf. replace vfnusername with the output from whoami:
-```
-vfnusername soft    nproc          1048576
-vfnusername soft    nproc          1048576
-vfnusername hard    nproc          1048576
-vfnusername soft    nofile         1048576
-```
-
-Also modify the user.conf:
-
-`sudo nano /etc/systemd/user.conf`
-
-Uncomment and change the line with DefaultLimitNOFILE to:
-
-`DefaultLimitNOFILE=1048576`
-
-Also modify the system.conf:
-
-`sudo nano /etc/systemd/system.conf`
-
-Uncomment and change the line with DefaultLimitNOFILE to:
-
-`DefaultLimitNOFILE=1048576`
-
-Verify your file handlers have been increased:
-
-`ulimit -n`
-
-The file descriptor limit change should now persist.
 
 
 ### You will now need [sync your validator to the latest block](/validators/restore) and [register your validator](/validators/register).

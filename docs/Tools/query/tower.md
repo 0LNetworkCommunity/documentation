@@ -58,5 +58,5 @@ Print out will be of the format:
 }
 ```
 
-For more information about the `Tower` tool, check out the documentation [HERE](Tools/tower/index.md)
+For more information about the `Tower` tool, check out the documentation [HERE](/tools/tower)
 
