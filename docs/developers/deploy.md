@@ -5,7 +5,7 @@ description: 'Deploy Move smart contracts on 0L Network'
 ---
 
 
-# Deploy a Hello OL Contract
+# Deploy a Hello 0L Contract
 
 
 #### High Level Steps
@@ -20,7 +20,7 @@ description: 'Deploy Move smart contracts on 0L Network'
 
 ### 1. Write the Contract and Tests
 
-Create the Hello OL smart contract
+Create the Hello 0L smart contract
 
 ##### Directory Structure
 

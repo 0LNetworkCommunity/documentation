@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: "Restore"
-description: 'Restore and sync the OL Network database to the current state'
+description: 'Restore and sync the 0L Network database to the current state'
 ---
 
 # Restore
