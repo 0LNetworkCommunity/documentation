@@ -17,10 +17,8 @@ tmux a
 git clone https://github.com/0LNetworkCommunity/libra-framework.git
 
 # Install dependencies and Rust lang
-sudo apt update
-sudo apt install -y git tmux jq build-essential cmake clang llvm libgmp-dev pkg-config libssl-dev lld libpq-dev
-curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
-. ~/.bashrc
+cd libra-framework
+bash util/dev_setup.sh -t
 
 # build and install the binary
 cd libra-framework
