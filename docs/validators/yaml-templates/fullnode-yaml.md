@@ -9,9 +9,9 @@ id: "fullnode-yaml"
 ```
 base:
   role: 'full_node'
-  data_dir: '/home/test_0L/.libra/data'
+  data_dir: '/home/test_0L/.libra/data' # This needs to be your respective users home path
   waypoint:
-     from_config: 0:95023f4d6a7e24cac3e52cad29697184db260214210b57aef3f1031ad4d8c02c
+     from_config: 0:95023f4d6a7e24cac3e52cad29697184db260214210b57aef3f1031ad4d8c02c # This needs to be the correct waypoint for the network you are operating on
 
 state_sync:
      state_sync_driver:
@@ -21,7 +21,7 @@ state_sync:
         continuous_syncing_mode: ExecuteTransactionsOrApplyOutputs
 
 execution:
-  genesis_file_location: '/home/test_0L/.libra/genesis/genesis.blob'
+  genesis_file_location: '/home/test_0L/.libra/genesis/genesis.blob' # This needs to be your respective users home path
 
 full_node_networks:
 - network_id: 'public'
