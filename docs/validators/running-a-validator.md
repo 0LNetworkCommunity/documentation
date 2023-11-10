@@ -9,7 +9,7 @@ description: 'Specifications and setting up a validator on the 0L Network'
 ## Quick Start
 On an Ubuntu 22.04 host:
 
-```
+``` bash
 # run all this in a tmux session, a cheatsheet below
 tmux
 
