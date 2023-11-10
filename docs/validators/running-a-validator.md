@@ -17,8 +17,10 @@ tmux
 git clone https://github.com/0LNetworkCommunity/libra-framework.git
 
 # Install dependencies and Rust lang
+# -p profile, updates your ~/.profill
+# -b batch, asks no questions
 cd libra-framework
-bash util/dev_setup.sh -tp
+bash util/dev_setup.sh -tpb
 bash ~/.profile
 
 # build and install the binary
