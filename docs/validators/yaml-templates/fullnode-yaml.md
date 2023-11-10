@@ -3,7 +3,19 @@ title: "Fullnode yaml example"
 id: "fullnode-yaml"
 ---
 
-### node.yaml
+# NOTE:
+You no longer have to modify a fullnode.yaml by hand, as there is now a tool to initialize fullnode configuration.
+
+That is:
+`libra config fullnode-init`
+
+The following files should be maintained with the correct seed peers relative to the chain they serve:
+
+`mainnet`:
+https://github.com/0LNetworkCommunity/seed-peers/blob/main/seed_peers.yaml
+
+`testnet` one is TBD.
+
 
 ### Fullnode yaml
 ```
