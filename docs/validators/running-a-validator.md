@@ -13,21 +13,20 @@ On an Ubuntu 22.04 host:
 # run all this in a tmux session, a cheatsheet below
 tmux
 
-# checkout the source
+# 1. checkout the source
 git clone https://github.com/0LNetworkCommunity/libra-framework.git
 
-# Install dependencies and Rust lang
+# 2. Install dependencies and Rust lang
 sudo apt update
 sudo apt install -y git tmux jq build-essential cmake clang llvm libgmp-dev pkg-config libssl-dev lld libpq-dev
 curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain 1.70.0 -y
 . ~/.bashrc
 
-# build and install the binary
+# 3. build and install the binary
 cd libra-framework
-cargo build --release -p libra 
-cp target/release/libra ~/.cargo/bin
+cargo build --release -p libra  && cp target/release/libra ~/.cargo/bin
 
-# check you can run it
+# done. check you can run it
 libra -v
 ```
 
