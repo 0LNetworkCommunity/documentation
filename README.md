@@ -1,5 +1,18 @@
-# Website
+# 0L Network Documentation
+This is the source for the documentation hosted here:
 
+👇👇👇👇👇👇👇👇👇👇
+
+https://0lnetwork.dev/
+
+👆👆👆👆👆👆👆👆👆👆
+
+alternatively here:
+https://0lnetworkcommunity.github.io/documentation/
+
+
+
+# Maintainers
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
 ### Installation
