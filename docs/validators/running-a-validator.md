@@ -11,7 +11,7 @@ On an Ubuntu 22.04 host:
 
 ```
 # run all this in a tmux session, a cheatsheet below
-tmux a
+tmux
 
 # checkout the source
 git clone https://github.com/0LNetworkCommunity/libra-framework.git
