@@ -5,6 +5,34 @@ id: "running-a-validator"
 
 # Running a Validator
 
+## Quick Start
+On an Ubuntu 22.04 host:
+
+``` bash
+# run all this in a tmux session, a cheatsheet below
+tmux
+
+# 1. checkout the source
+
+git clone https://github.com/0LNetworkCommunity/libra-framework.git
+cd libra-framework
+
+# 2. Install dependencies and Rust lang
+
+sudo apt update
+sudo apt install -y git tmux jq build-essential cmake clang llvm libgmp-dev pkg-config libssl-dev lld libpq-dev
+curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain 1.70.0 -y
+. ~/.bashrc
+
+# 3. build and install the binary
+
+cargo build --release -p libra  && cp target/release/libra ~/.cargo/bin
+
+# DONE. check you can run it
+
+libra -v
+```
+
 ## Specifications
 :::note
 A VFN is not currently used but will be used in production
@@ -20,7 +48,7 @@ libra code targets Ubuntu 22.4
 
 ### Firewall
 :::note
-During testnet and devnet operation, you will likely open port `8080` on your Validator to allow outside access to the RPC endpoint, which is an API that runs as part of the libra service. 
+During testnet and devnet operation, you will likely open port `8080` on your Validator to allow outside access to the RPC endpoint, which is an API that runs as part of the libra service.
 VFNs and public fullnodes should by default serve port `8080` RPC for operability.
 :::
 
@@ -63,7 +91,7 @@ sudo apt install -y git tmux jq build-essential cmake clang llvm libgmp-dev pkg-
 ```
 
 
-1.5. Install Rust 
+1.5. Install Rust
 
 ```bash
 curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
@@ -93,7 +121,7 @@ cd ~/libra-framework
 This takes a while, ensure your are still inside the `tmux` session to avoid your session gets disconnected.
 
 ```bash
-cargo build --release -p libra 
+cargo build --release -p libra
 ```
 
 1.9 Making the `libra` binary globally executable and persistent
@@ -106,7 +134,7 @@ This assumes the `libra` binary is already built and located at `~/libra-framewo
 cp target/release/libra ~/.cargo/bin
 
 # check you have it
-libra --version 
+libra --version
 ```
 
 
