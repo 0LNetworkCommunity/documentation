@@ -8,7 +8,7 @@ description: 'Learn whats involved running a validator on 0L Network'
 
 ## Validators
 
-Participating as a validator on the OL Network is an open and permissionless process, accessible to all. The community is supportive and eager to assist those passionate about contributing to the network's security. However, it's important to note that this role comes with certain responsibilities, as outlined below, along with corresponding rewards for the efforts made.
+Participating as a validator on the 0L Network is an open and permissionless process, accessible to all. The community is supportive and eager to assist those passionate about contributing to the network's security. However, it's important to note that this role comes with certain responsibilities, as outlined below, along with corresponding rewards for the efforts made.
 
 ### Validator Operations
 
@@ -18,7 +18,7 @@ Participating as a validator on the OL Network is an open and permissionless pro
 3. **Network Maintenance**: Validators play a critical role in maintaining the network's integrity and are responsible for proposing blocks within the Libra network.. 
 
 ### Selection Process
-OL Network uses the [Libra Framework](https://github.com/0LNetworkCommunity/libra-framework) that uses an experimental algorithm called Proof of Fee(PoF) to determine the validator selection. Libra Framework's consensus mechanism stands apart from the more commonly known frameworks like Proof of Stake (PoS), Delegated Proof of Stake (DPoS), and Proof of Work (PoW), which are prevalent in many other blockchain networks. Instead of following these established paradigms, OL Network employs a unique auction-based system for validator selection.
+OL Network uses the [Libra Framework](https://github.com/0LNetworkCommunity/libra-framework) that uses an experimental algorithm called Proof of Fee(PoF) to determine the validator selection. Libra Framework's consensus mechanism stands apart from the more commonly known frameworks like Proof of Stake (PoS), Delegated Proof of Stake (DPoS), and Proof of Work (PoW), which are prevalent in many other blockchain networks. Instead of following these established paradigms, 0L Network employs a unique auction-based system for validator selection.
 
 In this system, validators are required to submit bids as part of a competitive auction process. The number of available seats for validators is dynamic, and these seats are allocated based on the bid amounts. The bids are evaluated in descending order, and the highest bidders are granted validator status until all the seats are filled. A critical aspect of this mechanism is that all participating validators, regardless of their individual bid amounts, will eventually pay the same fee — equal to the lowest accepted bid in the auction.
 
@@ -55,7 +55,7 @@ For an in-depth exploration of these guidelines and their underlying principles,
 ### Validator Rewards Structure
 
 #### Reward Distribution
-Validators demonstrating high performance are awarded at the conclusion of each epoch, approximately every 24 hours. The source of these rewards is the [Infrastructure Ecosystem Fund](https://0l.network/2022/10/11/proposal-2210-8-infrastructure-escrow-funding/), established following the network's upgrade from version 5 to version 6.9.0. This fund was primarily contributed to by both current and former validators, as well as the wider community.
+Validators demonstrating high performance are awarded at the conclusion of each epoch, approximately every 24 hours. The source of these rewards is the [Infrastructure Ecosystem Pledge](https://0l.network/2022/10/11/proposal-2210-8-infrastructure-escrow-funding/), established following the network's upgrade from version 5 to version 6.9.0. This fund was primarily contributed to by both current and former validators, as well as the wider community.
 
 #### Fund Origin and Decision Making
 Details on the formation of this fund and the associated decision-making process are outlined in the [Arctika Recommendation](https://0l.network/2023/05/23/team-arctika-recommendation/). The establishment of the reward amount per epoch and the basis of the fund itself were influenced by several key factors:
@@ -66,6 +66,6 @@ These measures aim to incentivize consistent and effective network performance b
 
 
 ### How to become a Validator
-1. [Configure and setup your machine](/validators/running-a-validator)
+1. [Configure and setup your machine](/validators/)
 2. [Sync Database to the current version](/validators/restore)
 3. [Register your Validator](/validators/register)

@@ -1,7 +1,6 @@
 ---
-sidebar_position: 2
-sidebar_label: "Running a Validator"
-description: 'Specifications and setting up a validator on the 0L Network'
+title: "Running a Validator"
+id: "running-a-validator"
 ---
 
 # Running a Validator
@@ -49,7 +48,7 @@ libra code targets Ubuntu 22.4
 
 ### Firewall
 :::note
-During testnet and devnet operation, you will likely open port `8080` on your Validator to allow outside access to the RPC endpoint, which is an API that runs as part of the libra service. 
+During testnet and devnet operation, you will likely open port `8080` on your Validator to allow outside access to the RPC endpoint, which is an API that runs as part of the libra service.
 VFNs and public fullnodes should by default serve port `8080` RPC for operability.
 :::
 
@@ -92,7 +91,7 @@ sudo apt install -y git tmux jq build-essential cmake clang llvm libgmp-dev pkg-
 ```
 
 
-1.5. Install Rust 
+1.5. Install Rust
 
 ```bash
 curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
@@ -122,7 +121,7 @@ cd ~/libra-framework
 This takes a while, ensure your are still inside the `tmux` session to avoid your session gets disconnected.
 
 ```bash
-cargo build --release -p libra 
+cargo build --release -p libra
 ```
 
 1.9 Making the `libra` binary globally executable and persistent
@@ -135,49 +134,9 @@ This assumes the `libra` binary is already built and located at `~/libra-framewo
 cp target/release/libra ~/.cargo/bin
 
 # check you have it
-libra --version 
+libra --version
 ```
 
-# Troubleshooting
-
-### File Descriptor Limit:
-Increase file descriptors:
-
-`ulimit -n 1048576`
-
-Make limits permanent:
-
-`sudo nano /etc/security/limits.conf`
-
-Append to the end of the limits.conf. replace vfnusername with the output from whoami:
-```
-vfnusername soft    nproc          1048576
-vfnusername soft    nproc          1048576
-vfnusername hard    nproc          1048576
-vfnusername soft    nofile         1048576
-```
-
-Also modify the user.conf:
-
-`sudo nano /etc/systemd/user.conf`
-
-Uncomment and change the line with DefaultLimitNOFILE to:
-
-`DefaultLimitNOFILE=1048576`
-
-Also modify the system.conf:
-
-`sudo nano /etc/systemd/system.conf`
-
-Uncomment and change the line with DefaultLimitNOFILE to:
-
-`DefaultLimitNOFILE=1048576`
-
-Verify your file handlers have been increased:
-
-`ulimit -n`
-
-The file descriptor limit change should now persist.
 
 
 ### You will now need [sync your validator to the latest block](/validators/restore) and [register your validator](/validators/register).

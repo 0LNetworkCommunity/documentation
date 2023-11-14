@@ -7,6 +7,26 @@ tags:
 ---
 
 # First steps - Common useful operations
+---
+
+### Setup Environment Quick Start
+
+- Validators can simply install build tools (-t)
+`bash util/dev_setup.sh -t`
+
+- Get all options with:
+`bash util/dev_setup.sh -h`
+
+- Core devs will need Postgres too (-P)
+`bash util/dev_setup.sh -tP`
+
+- Formal verification for Move Devs will require Move Prover tools (Boogie) (-y)
+`bash util/dev_setup.sh -ty`
+
+- CI can use -b to prevent user input
+`bash util/dev_setup.sh -tb`
+
+---
 
 ## Well done! you've got yourself a shiny new node running the 0L libra-framework. 
 

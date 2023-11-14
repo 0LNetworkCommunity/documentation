@@ -24,13 +24,6 @@ execution:
   genesis_file_location: '/home/vfnusername/.libra/genesis/genesis.blob'
 
 full_node_networks:
-- network_id: 'public'
-  discovery_method: 'onchain'
-  listen_address: "/ip4/0.0.0.0/tcp/6182"
-  identity:
-    type: "from_config"
-    key: "sdfwsdfdfsdfddddddddddddddddddddddddddddddddddddd"
-    peer_id: "fdgfgswddfddddddddddddddddddddddddddddddddddddddd"
 - network_id:
     private: 'vfn'
   listen_address: '/ip4/0.0.0.0/tcp/6181'
@@ -38,13 +31,21 @@ full_node_networks:
     type: 'from_file'
     path: /home/vfnusername/.libra/validator-identity.yaml
   seeds:
-    sdf34tdfgddfgsdfsssssssssssssssssdfddddddddddddddd:
+    valpeersdf34tdfgddfgsdfsssssssssssssssssdfddddddddddddddd:
       addresses:
-      - "/ip4/<validator_ip>/tcp/6181/noise-ik/0xsdf34tdfgddfgsdfsssssssssssssssssdfddddddddddddddd/handshake/0"
+      - "/ip4/<validator_ip>/tcp/6181/noise-ik/0xvalpeersdf34tdfgddfgsdfsssssssssssssssssdfddddddddddddddd/handshake/0"
       role: "Validator"
+- network_id: 'public'
+  discovery_method: 'onchain'
+  listen_address: "/ip4/0.0.0.0/tcp/6182"
+  identity:
+    type: "from_config"
+    key: "privatekeydfwsdfdfsdfddddddddddddddddddddddddddddddddddddd"
+    peer_id: "peeridfdgfgswddfddddddddddddddddddddddddddddddddddddddd"
 
 api:
   enabled: true
   address: '0.0.0.0:8080'
+```
 
 ```

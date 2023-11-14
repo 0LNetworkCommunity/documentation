@@ -1,12 +1,12 @@
 ---
 sidebar_position: 4
 sidebar_label: 'Register'
-description: 'Register a Validator on the OL Network'
+description: 'Register a Validator on the 0L Network'
 ---
 
 # Register
 
-Register a Validator on the OL Network
+Register a Validator on the 0L Network
 
 # Welcome Validators
 
