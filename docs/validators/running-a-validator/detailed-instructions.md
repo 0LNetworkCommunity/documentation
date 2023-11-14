@@ -139,9 +139,10 @@ Description=Libra Node Service
 User=nodeuser
 Group=nodeuser
 
-LimitNOFILE=500000
+LimitNPROC=1048576
+LimitNOFILE=1048576
 
-#Environment="RUST_LOG=error"
+#Environment="RUST_LOG=warn"
 WorkingDirectory=/home/nodeuser/.libra
 ExecStart=/home/nodeuser/libra-framework/target/release/libra --config-path /home/nodeuser/.libra/validator.yaml
 
