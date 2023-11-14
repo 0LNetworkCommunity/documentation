@@ -66,6 +66,6 @@ These measures aim to incentivize consistent and effective network performance b
 
 
 ### How to become a Validator
-1. [Configure and setup your machine](/validators/)
+1. [Configure and setup your machine](/validators/running-a-validator)
 2. [Sync Database to the current version](/validators/restore)
 3. [Register your Validator](/validators/register)
