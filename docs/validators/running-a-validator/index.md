@@ -28,4 +28,4 @@ cp target/release/libra ~/.cargo/bin
 libra -v
 ```
 
-For a more detailed rundown see [here](/validators/running-a-validator)
+For a more detailed rundown see [here](/validators/running-a-validator/running-a-validator)
