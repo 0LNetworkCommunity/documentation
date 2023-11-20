@@ -11,9 +11,9 @@ This guide outlines the essential steps for conducting a Genesis Ceremony in the
 ### High Level Ceremony Steps
 
 1. Cleanup
-2. Fetch Source & Verify Commit Hash
-3. Build `libra-framework` Packages
-4. Prepare `.libra` Directory and Add GitHub PAT
+2. Prepare `.libra` Directory and Add GitHub PAT
+3. Fetch Source & Verify Commit Hash
+4. Build `libra-framework` Packages
 5. Pre-Genesis Registration
    - **Stop**: Wait for coordinator to merge all PR's. Step 8 can be done while you wait
 6. PR Received
@@ -37,58 +37,88 @@ Each step requires careful attention to the coordinator's instructions, ensuring
 ## Genesis Ceremony Steps
 
 ### 1. Cleanup
-- Delete any previous forked `release-v6.9.0-rc.0-genesis-2` in your GitHub organization.
-- Previous clones and testnets leave data in the `.libra` directory, so you need to clean up:
+- Delete any previous forks of testnet genesis coordination repo (such as `release-v6.9.0-rc.0-genesis-2`) from your GitHub repositories.
+- Previous clones and testnets leave data in the `.libra` directory, clean those up:
   ```
   rm -Rf ~/libra-framework
   rm -Rf ~/.libra/data && rm -Rf ~/.libra/genesis && rm -Rf ~/.libra/secure-data.json
   ```
-- Retrieve Validator Address:
+- Retrieve Validator Address and paste it aside:
 
   ```
   grep 'account_address' ~/.libra/public-keys.yaml
   ```
-- Fetch Static IP
+- Fetch your external Static IP and set it aside
 
   ```
   curl -s ipinfo.io | jq .ip
   ```
 
-Enter your Validator Address, Operator Name, and Static IP in the Genesis Worksheet.
+Enter your Validator Address, Operator Name, and Static IP in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571).
 
-### 2. Fetch source & verify commit hash
+
+### 2. Prepare `.libra` directory and add GitHub PAT (use classic with repo privileges)
+
+Acquire [GitHub Personal Access Token (PAT)](https://github.com/settings/tokens) with repo privileges. Paste it aside.
+
+Setup the data and configs directory:
+```bash
+mkdir ~/.libra/
+```
+
+Paste your GitHub PAT in the `~/.libra/github_token.txt` file:
+```bash
+nano ~/.libra/github_token.txt
+# or
+echo <KEY> > ~/.libra/github_token.txt
+```
+
+### 3. Fetch source & verify commit hash
 
 ```
 cd ~
 git clone https://github.com/0LNetworkCommunity/libra-framework
 cd ~/libra-framework
-git fetch --all && git checkout main
+git fetch --all && git checkout main (or a specific branch as instructed by the coordinator)
+
+# Ensure the commit hash matches your peers and the coordinator
 git log -n 1 --pretty=format:"%H"
 ```
 
- > **Note**: Provide git hash in the Genesis Worksheet. Only proceed with the following async steps after the coordinator provides the git hash and your results match.
+ > **Note**: Provide git hash in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571). Only proceed with the following async steps after the coordinator provides the git hash and your results match your peers.
 
-### 3. Build `libra-framework` packages
-```
-cd ~/libra-framework
-cargo build --release -p libra -p libra-genesis-tools -p libra-txs -p diem-db-tool
-```
 - Confirm with "done" in the Genesis Worksheet.
 
-### 4. Prepare `.libra` directory and add GitHub PAT (use classic with repo privileges)
+### 4. Export coordination repo as environment variables and override defaults if needed
+
+If your setup from directory structure is different from the default, you can override the defaults by exporting the following environment variables:
+`SOURCE_PATH`, `BINS_PATH`, `DATA_PATH`. See the [Makefile](https://github.com/0LNetworkCommunity/libra-framework/blob/03d9f10bb539bda4c3f9de96e4a411971ec88d80/tools/genesis/Makefile#L7) for more details.
+
 ```bash
-mkdir ~/.libra/
-nano ~/.libra/github_token.txt
+export GIT_REPO=release-v6.9.0-genesis-registration
+# export SOURCE_PATH=... as needed
+```
+
+### 4. Change directory to the genesis tool
+```bash
+cd ~/libra-framework/tools/genesis
+```
+
+### 5. Install the source
+```bash
+make install
 ```
 - Confirm with "done" in the Genesis Worksheet.
 
-### 5. Pre-Genesis Registration
-- Ensure you delete any forked version of `release-v6.9.0-rc.0-genesis-2` in your home org before registering.
+### 6. Pre-Genesis Registration
 ```bash
-cd ~/libra-framework
-./target/release/libra-genesis-tools register  --org-github 0LNetworkCommunity --name-github release-v6.9.0-rc.0-genesis-6b
+make register
 ```
 - Confirm with "done" in the Genesis Worksheet.
+
+:::warning 
+Wait for coordinator
+:::
 
 ### 6. PR Received
 (coordinator)
@@ -96,20 +126,13 @@ cd ~/libra-framework
 ### 7. PR Merged
 (coordinator)
 
-### 8. Build JSON_Legacy
+### 8. Build JSON_Legacy from snapshot and ancestry
 ```bash
-### Fetch Ancestry Data and Snapshot
-rm -Rf ~/libra-recovery && mkdir -p ~/libra-recovery
-wget https://github.com/0LNetworkCommunity/epoch-archive/raw/main/670.tar.gz -O ~/libra-recovery/670.tar.gz
-cd ~/libra-recovery && tar -xvzf 670.tar.gz
-wget https://raw.githubusercontent.com/sirouk/ol-data-extraction/v-6.9.x-ready/assets/data.json -O ~/libra-framework/tools/genesis/tests/fixtures/v5_recovery.json
+# Export the epoch from which legacy is built
+export EPOCH=694
 
-### Use v5.2 codebase and snapshot to generate recovery.json for seeding v6.9.x state
-sudo rm -Rf ~/libra-legacy-v6
-cd ~ && git clone -b v6 https://github.com/0LNetworkCommunity/libra-legacy-v6
-cd ~/libra-legacy-v6/ol/genesis-tools
-cargo r -p ol-genesis-tools -- --export-json ~/libra-recovery/v5_recovery.json --snapshot-path ~/libra-recovery/670/state_ver* --ancestry-file ~/libra-recovery/v5_ancestry.json
-md5sum ~/libra-recovery/v5_recovery.json
+# Build the legacy json
+make legacy
 ```
 - Confirm `v5_recovery.json` md5 hash in the Genesis Worksheet.
 
@@ -117,17 +140,16 @@ md5sum ~/libra-recovery/v5_recovery.json
     (coordinator)  
 > ⚠️ **Note**: Pre-genesis set closes here. Wait for coordinator.
 
-### 10. Pull from genesis repo and build
+### 10. Make Genesis
 
-> Note: We will test with the CHAIN=testnet (this is not the same as testing, as testnet has the same settings as mainnet but with shorter epochs)
 ```bash
-# pull and build genesis
-cd ~/libra-framework/tools/genesis
-CHAIN=testnet GIT_ORG=0LNetworkCommunity GIT_REPO=release-v6.9.0-rc.0-genesis-6b RECOVERY_FILE=~/libra-recovery/v5_recovery.json make genesis
+make genesis
 ```
 - Confirm with "done" in the Genesis Worksheet.
 
-> ⚠️ **Note**: All set. Wait for the coordinator before the next step.
+:::warning 
+Wait for coordinator
+:::
 
 ### 11. Start nodes!
 Wait for the coordinator, say a prayer, then start!
