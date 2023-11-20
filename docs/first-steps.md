@@ -40,9 +40,9 @@ Next, you can choose to prepare you instance accordingly:
 - CI can use -b to prevent user input
 `bash ./util/dev_setup.sh -tb`
 
-Now you can proceed with building `libra`:
+Now you can proceed with building based on your selection:
 ```
-cargo build --release -p libra
+cargo build --release
 ```
 
 ---
