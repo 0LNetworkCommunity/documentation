@@ -34,4 +34,4 @@ source ~/.bashrc
 libra -v
 ```
 
-For a more detailed rundown see [here](/validators/running-a-validator)
+For a more detailed rundown see [here](/validators/detailed-instructions)

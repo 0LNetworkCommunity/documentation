@@ -9,7 +9,7 @@ sidebar_position: 3
 ## Quick Start
 On an Ubuntu 22.04 host:
 
-You can find our quick start [here](/validators/quick-start)
+You can find our quick start [here](/validators/validator-quickstart)
 
 For a more detailed rundown, proceed below!
 
