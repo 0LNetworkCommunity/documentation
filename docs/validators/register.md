@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 sidebar_label: 'Register'
 description: 'Register a Validator on the 0L Network'
 ---

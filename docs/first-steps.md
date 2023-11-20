@@ -11,29 +11,55 @@ tags:
 
 ### Setup Environment Quick Start
 
-- Validators can simply install build tools (-t)
-`bash util/dev_setup.sh -t`
+For starters, you can clone our libra-framework repo:
 
-- Get all options with:
-`bash util/dev_setup.sh -h`
+```
+# We suggest you run the following in a tmux session from your user home directory
+tmux a
+cd ~
+
+# Checkout the source
+git clone https://github.com/0LNetworkCommunity/libra-framework
+cd ~/libra-framework
+```
+
+Next, you can choose to prepare you instance accordingly:
+
+- You can view all dev setup options with:
+`bash ./util/dev_setup.sh -h`
+
+- Validators can simply install build tools (-t)
+`bash ./util/dev_setup.sh -t`
 
 - Core devs will need Postgres too (-P)
-`bash util/dev_setup.sh -tP`
+`bash ./util/dev_setup.sh -tP`
 
 - Formal verification for Move Devs will require Move Prover tools (Boogie) (-y)
-`bash util/dev_setup.sh -ty`
+`bash ./util/dev_setup.sh -ty`
 
 - CI can use -b to prevent user input
-`bash util/dev_setup.sh -tb`
+`bash ./util/dev_setup.sh -tb`
+
+Now you can proceed with building based on your selection:
+```
+cargo build --release
+```
 
 ---
 
-## Well done! you've got yourself a shiny new node running the 0L libra-framework. 
+## Well done! You've got yourself a shiny new node running the 0L libra-framework. 
 
-### Let's see what you can do with it....
+### Let's see what you can do with it...
 
-> All following queries are expecting you to invoke the `libra` command from the libra-framework/target/release directory. If it ain't in you path, consider adding it.
+> All following queries are expecting you to invoke the `libra` command from the libra-framework/target/release directory. If it ain't in your path, consider adding it.
 For the canonical setup, that would be `~/libra-framework/target/libra ...`
+```
+# Make the release path global and persistent
+echo 'export PATH="$HOME/libra-framework/target/release:$PATH"' >> ~/.bashrc
+
+# Initialize your expanded PATH
+source ~/.bashrc
+```
 
 > Much more documentation is available at https://0lnetworkcommunity.github.io/documentation/ Things are added by the day. Your contribution would be highly appreciated.
 
@@ -83,7 +109,8 @@ libra query view --function-id 0x1::vouch::true_friends --args ADDRESS
 ```
 libra txs validator pof --bid-pct <PERCENT YOU PAY> --expiry <EPOCH # WHEN BID EXPIRES>
 
-# libra txs validator pof --bid-pct 0.1 --expiry 999
+# For example
+libra txs validator pof --bid-pct 0.1 --expiry 999
 ```
 
 #### Unjail account (self-unjail doesn't exist)
