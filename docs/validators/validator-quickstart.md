@@ -1,7 +1,7 @@
 ---
 title: "Validator Quickstart"
-id: "index"
-hidden: false
+sidebar_label: 'Validator Quickstart'
+sidebar_position: 2
 ---
 
 
@@ -34,4 +34,4 @@ source ~/.bashrc
 libra -v
 ```
 
-For a more detailed rundown see [here](/validators/running-a-validator/running-a-validator)
+For a more detailed rundown see [here](/validators/running-a-validator)

@@ -1,12 +1,18 @@
 ---
 title: "Running a Validator"
-id: "running-a-validator"
+sidebar_label: 'Running a Validator'
+sidebar_position: 3
 ---
 
 # Running a Validator
 
 ## Quick Start
 On an Ubuntu 22.04 host:
+
+You can find our quick start [here](/validators/quick-start)
+
+For a more detailed rundown, proceed below!
+
 
 ``` bash
 # We suggest you run the following in a tmux session from your user home directory
