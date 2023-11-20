@@ -14,16 +14,16 @@ The following files should be maintained with the correct seed peers relative to
 `mainnet`:
 https://github.com/0LNetworkCommunity/seed-peers/blob/main/seed_peers.yaml
 
-`testnet` one is TBD.
+`testnet` is TBD.
 
 
-### Fullnode yaml
+### ~/.libra/fullnode.yaml
 ```
 base:
   role: 'full_node'
-  data_dir: '/home/test_0L/.libra/data' # This needs to be your respective users home path
+  data_dir: '/home/vnuser/.libra/data'
   waypoint:
-     from_config: 0:95023f4d6a7e24cac3e52cad29697184db260214210b57aef3f1031ad4d8c02c # This needs to be the correct waypoint for the network you are operating on
+    from_file: '/home/vnuser/.libra/genesis/waypoint.txt'
 
 state_sync:
      state_sync_driver:
@@ -33,11 +33,10 @@ state_sync:
         continuous_syncing_mode: ExecuteTransactionsOrApplyOutputs
 
 execution:
-  genesis_file_location: '/home/test_0L/.libra/genesis/genesis.blob' # This needs to be your respective users home path
+  genesis_file_location: '/home/vnuser/.libra/genesis/genesis.blob'
 
 full_node_networks:
 - network_id: 'public'
-  # discovery_method: 'onchain'
   listen_address: '/ip4/0.0.0.0/tcp/6182'
   seed_addrs:
     1017ce1abc30e356660b8b0542275f2fb4373b5f8a82b7800a5b3fdf718ae55f:
