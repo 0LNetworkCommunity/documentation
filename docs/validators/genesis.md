@@ -43,6 +43,8 @@ Each step requires careful attention to the coordinator's instructions, ensuring
   rm -Rf ~/libra-framework
   rm -Rf ~/.libra/data && rm -Rf ~/.libra/genesis && rm -Rf ~/.libra/secure-data.json
   ```
+
+(Optional) If you already know with which account you'll register, or registered in the past for a testnet with the same account, you can already update the coordination sheet with your information. Otherwise, you'll do it once you generated your new account keys in step (6) below. 
 - Retrieve Validator Address and paste it aside:
 
   ```
