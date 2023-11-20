@@ -9,22 +9,28 @@ hidden: false
 On an Ubuntu 22.04 host:
 
 ```
-# run all this in a tmux session, a cheatsheet below
+# We suggest you run the following in a tmux session from your user home directory
 tmux a
+cd ~
 
-# checkout the source
-git clone https://github.com/0LNetworkCommunity/libra-framework.git
+# Checkout the source
+git clone https://github.com/0LNetworkCommunity/libra-framework
 
 # Install dependencies and Rust lang
-cd libra-framework
-bash util/dev_setup.sh -t
+cd ~/libra-framework
+bash ./util/dev_setup.sh -t
 
 # build and install the binary
-cd libra-framework
+cd ~/libra-framework
 cargo build --release -p libra 
-cp target/release/libra ~/.cargo/bin
 
-# check you can run it
+# Make the release path global and persistent
+echo 'export PATH="$HOME/libra-framework/target/release:$PATH"' >> ~/.bashrc
+
+# Initialize your expanded PATH
+source ~/.bashrc
+
+# Check libra execution and version 
 libra -v
 ```
 
