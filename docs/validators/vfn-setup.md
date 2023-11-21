@@ -17,14 +17,18 @@ Clone libra-framework and build
 ```
 cd ~
 git clone https://github.com/0LNetworkCommunity/libra-framework
+
+cd ~/libra-framework
+bash ./util/dev_setup.sh -t
+
+# build and install the binary
 cd ~/libra-framework
 cargo build --release -p libra -p diem-db-tool -p diem
 ```
 
 Make sure your path to libra is global and persistant
 ```
-echo 'export PATH="$HOME/libra-framework/target/release:$PATH"' >> ~/.bashrc
-source ~/.bashrc
+sudo cp -f ~/libra-framework/target/release/libra* ~/.cargo/bin/
 ```
 
 
