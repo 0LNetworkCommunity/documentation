@@ -156,7 +156,7 @@ Wait for coordinator
 ### 11. Start nodes!
 Wait for the coordinator, say a prayer, then start!
 ```bash
-~/libra-framework/target/release/libra node --config-path ~/.libra/validator.yaml
+libra node
 ```
 
 ---
