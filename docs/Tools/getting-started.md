@@ -48,7 +48,7 @@ cd ~/libra-framework
 cargo build --release -p libra 
 
 # Make the release path global and persistent
-echo 'export PATH="$HOME/libra-framework/target/release:$PATH"' >> ~/.bashrc
+sudo cp -f ~/libra-framework/target/release/libra* ~/.cargo/bin/
 
 # Initialize your expanded PATH
 source ~/.bashrc

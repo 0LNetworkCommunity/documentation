@@ -51,14 +51,11 @@ cargo build --release
 
 ### Let's see what you can do with it...
 
-> All following queries are expecting you to invoke the `libra` command from the libra-framework/target/release directory. If it ain't in your path, consider adding it.
+> All following queries are expecting you to invoke the `libra` you just built. So we suggest you copy this over to your cargo bin path.
 For the canonical setup, that would be `~/libra-framework/target/libra ...`
 ```
 # Make the release path global and persistent
-echo 'export PATH="$HOME/libra-framework/target/release:$PATH"' >> ~/.bashrc
-
-# Initialize your expanded PATH
-source ~/.bashrc
+sudo cp -f ~/libra-framework/target/release/libra* ~/.cargo/bin/
 ```
 
 > Much more documentation is available at https://0lnetworkcommunity.github.io/documentation/ Things are added by the day. Your contribution would be highly appreciated.
