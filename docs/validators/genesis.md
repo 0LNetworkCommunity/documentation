@@ -80,6 +80,24 @@ git log -n 1 --pretty=format:
 - ** Confirm the git hash in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571). **
 
 
+### 3. Build and install the libra binaries
+
+To use many of our genesis CLI tooling, we have to switch to its directory:
+``` bash
+cd ~/libra-framework/tools/genesis
+```
+
+If your directory structure setup is different from the default, you can override the defaults by exporting the following environment variables: `SOURCE_PATH`, `BINS_PATH`, `DATA_PATH`. See the [Makefile](https://github.com/0LNetworkCommunity/libra-framework/blob/03d9f10bb539bda4c3f9de96e4a411971ec88d80/tools/genesis/Makefile#L7) for more details.
+
+Install the source
+``` bash
+cd 
+make install
+```
+
+- ** Confirm with "done" in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571). **
+
+
 ### 4. Account Preparation and Adding GitHub PAT (use classic with repo privileges)
 
 Acquire [GitHub Personal Access Token (PAT)](https://github.com/settings/tokens) with repo privileges. Paste it aside.
@@ -120,21 +138,6 @@ export GIT_REPO=release-v6.9.0-genesis-registration
 ```
 
 If your directory structure setup is different from the default, you can override the defaults by exporting the following environment variables: `SOURCE_PATH`, `BINS_PATH`, `DATA_PATH`. See the [Makefile](https://github.com/0LNetworkCommunity/libra-framework/blob/03d9f10bb539bda4c3f9de96e4a411971ec88d80/tools/genesis/Makefile#L7) for more details.
-
-
-- To use many of our genesis CLI tooling, we have to switch to its directory:
-``` bash
-cd ~/libra-framework/tools/genesis
-```
-
-
-### 5. Install the source
-
-``` bash
-make install
-```
-
-- ** Confirm with "done" in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571). **
 
 
 ### 6. Genesis Registration
