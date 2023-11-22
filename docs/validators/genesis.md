@@ -49,7 +49,7 @@ Only proceed with asynchronous steps after the coordinator confirms the previous
 
 ### 1. Operator name and cleanup of previous binaries or testnet data
 
-Provide your operator name (handle) in the ** [Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571). **
+Provide your operator name (handle) in the **[Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571).**
 
 If you have participated in testnets, delete any previous forks of testnet repos (such as `release-v6.9.0-rc.0-genesis-2`) from your GitHub repositories.
 
@@ -77,7 +77,7 @@ Ensure the commit hash matches your peers and the coordinator
 git log -n 1 --pretty=format:
 ```
 
-- ** Confirm the git hash in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571). **
+- **Confirm the git hash in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571).**
 
 
 ### 3. Build and install the libra binaries
@@ -95,7 +95,7 @@ cd
 make install
 ```
 
-- ** Confirm with "done" in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571). **
+- **Confirm with "done" in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571).**
 
 
 ### 4. Account Preparation and Adding GitHub PAT (use classic with repo privileges)
@@ -127,7 +127,7 @@ Fetch your external Static IP and set it aside:
 curl -s ipinfo.io | jq .ip
 ```
 
-- ** Enter your Validator Address Static IP in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571). **
+- **Enter your Validator Address Static IP in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571).**
 
 
 ### 5. Export genesis ceremony repository and register for genesis 
@@ -204,4 +204,4 @@ libra node
 
 
 ---
-** End Of The Genesis Ceremony Steps. **
+**End Of The Genesis Ceremony Steps.**
