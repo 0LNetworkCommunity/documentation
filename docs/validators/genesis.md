@@ -82,7 +82,7 @@ git log -n 1 --pretty=format:
 
 ### 3. Build and install the libra binaries
 
-To use many of our genesis CLI tooling, we have to switch to its directory:
+To use many of our genesis CLI tooling, we have to switch to its directory
 ``` bash
 cd ~/libra-framework/tools/genesis
 ```
@@ -102,27 +102,27 @@ make install
 
 Acquire [GitHub Personal Access Token (PAT)](https://github.com/settings/tokens) with repo privileges. Paste it aside.
 
-If you are new and do not have an account, create one, carefully record your seed phrase, and keep it aside for later:
+If you are new and do not have an account, create one, carefully record your seed phrase, and keep it aside for later
 ``` bash
 libra wallet keygen
 ```
 
-Setup the validator configs and data directory `~/.libra` (it is OK to refresh your configs):
+Setup the validator configs and data directory `~/.libra` (it is OK to refresh your configs)
 ``` bash
 libra config validator-init
 ```
 
-Retrieve Validator address and paste it aside:
+Retrieve Validator address and paste it aside
 ``` bash
 grep 'account_address' ~/.libra/public-keys.yaml
 ```
 
-Paste your GitHub PAT in the `~/.libra/github_token.txt` file:
+Paste your GitHub PAT in the `~/.libra/github_token.txt` file
 ``` bash
 nano ~/.libra/github_token.txt
 ```
 
-Fetch your external Static IP and set it aside:
+Fetch your external Static IP and set it aside
 ``` bash
 curl -s ipinfo.io | jq .ip
 ```
@@ -132,7 +132,7 @@ curl -s ipinfo.io | jq .ip
 
 ### 5. Export genesis ceremony repository and register for genesis 
 
-Export the genesis ceremony repository as an environment variable:
+Export the genesis ceremony repository as an environment variable
 ``` bash
 export GIT_REPO=release-v6.9.0-genesis-registration
 ```
@@ -161,12 +161,12 @@ Please wait for the coordinator at this step.
 
 ### 8. Build JSON_Legacy from snapshot and ancestry
 
-Export the epoch from which legacy is built:
+Export the epoch from which legacy is built
 ``` bash
 export EPOCH=694
 ```
 
-Build the legacy json:
+Build the legacy json
 ``` bash
 make legacy
 ```
