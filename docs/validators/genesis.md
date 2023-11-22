@@ -97,7 +97,7 @@ If your directory structure setup is different from the default, you can overrid
 
 Install the source
 ``` bash
-sudo apt install make
+sudo apt install make -y
 EPOCH=694 make install
 ```
 
