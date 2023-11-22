@@ -49,7 +49,7 @@ Only proceed with asynchronous steps after the coordinator confirms the previous
 
 ### 1. Operator name and cleanup of previous binaries or testnet data
 
-Provide your operator name (handle) in the **[Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571).**
+Provide your operator name (handle) in the **[Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
 
 If you have participated in testnets, delete any previous forks of testnet repos (such as `release-v6.9.0-rc.0-genesis-2`) from your GitHub repositories.
 
@@ -74,10 +74,10 @@ git fetch --all && git checkout release-6.9.0
 
 Ensure the commit hash matches your peers and the coordinator
 ``` bash
-git log -n 1 --pretty=format:
+git log -n 1 --pretty=format:"%H"
 ```
 
-- **Confirm the git hash in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571).**
+- **Confirm the git hash in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
 
 
 ### 3. Build and install the libra binaries
@@ -94,7 +94,7 @@ Install the source
 make install
 ```
 
-- **Confirm with "done" in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571).**
+- **Confirm with "done" in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
 
 
 ### 4. Account Preparation and Adding GitHub PAT (use classic with repo privileges)
@@ -126,7 +126,7 @@ Fetch your external Static IP and set it aside
 curl -s ipinfo.io | jq .ip
 ```
 
-- **Enter your Validator Address Static IP in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571).**
+- **Enter your Validator Address Static IP in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
 
 
 ### 5. Export genesis ceremony repository and register for genesis 
@@ -141,7 +141,7 @@ Register for genesis
 make register
 ```
 
-- **Confirm with "done" in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571).**
+- **Confirm with "done" in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
 
 :::warning
 Please wait for the coordinator at this step.
@@ -170,7 +170,7 @@ Build the legacy json
 make legacy
 ```
 
-- **Confirm `v5_recovery.json` md5 hash in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571).**
+- **Confirm `v5_recovery.json` md5 hash in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
 
 
 ### 9. All nodes added to `layout.yaml` users key
@@ -187,7 +187,7 @@ Pull from the genesis repo and build genesis
 make genesis
 ```
 
-- Confirm with "done" in the **[Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571).**
+- Confirm with "done" in the **[Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
 
 :::warning
 Please wait for the coordinator.
