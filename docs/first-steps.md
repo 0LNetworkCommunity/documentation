@@ -9,11 +9,11 @@ tags:
 # First steps - Common useful operations
 ---
 
-### Setup Environment Quick Start
+## Setup Environment Quick Start
 
 For starters, you can clone our libra-framework repo:
 
-```
+``` bash
 # We suggest you run the following in a tmux session from your user home directory
 tmux a
 cd ~
@@ -25,72 +25,65 @@ cd ~/libra-framework
 
 Next, you can choose to prepare you instance accordingly:
 
-- You can view all dev setup options with:
-`bash ./util/dev_setup.sh -h`
+``` bash 
+# You can view all dev setup options with:
+bash ./util/dev_setup.sh -h
 
-- Validators can simply install build tools (-t)
-`bash ./util/dev_setup.sh -t`
+# Validators can simply install build tools (-t)
+bash ./util/dev_setup.sh -t
 
-- Core devs will need Postgres too (-P)
-`bash ./util/dev_setup.sh -tP`
+# Core devs will need Postgres too (-P)
+bash ./util/dev_setup.sh -tP
 
-- Formal verification for Move Devs will require Move Prover tools (Boogie) (-y)
-`bash ./util/dev_setup.sh -ty`
+# Formal verification for Move Devs will require Move Prover tools (Boogie) (-y)
+bash ./util/dev_setup.sh -ty
 
-- CI can use -b to prevent user input
-`bash ./util/dev_setup.sh -tb`
+# CI can use -b to prevent user input
+bash ./util/dev_setup.sh -tb
 
-Now you can proceed with building based on your selection:
-```
+# Now you can proceed with building based on your selection:
 cargo build --release
 ```
 
 ---
 
-## Well done! You've got yourself a shiny new node running the 0L libra-framework. 
+## Well done! 
+You've got yourself a shiny new node running the 0L libra-framework. 
 
-### Let's see what you can do with it...
-
-> All following queries are expecting you to invoke the `libra` you just built. So we suggest you copy this over to your cargo bin path.
-For the canonical setup, that would be `~/libra-framework/target/libra ...`
-```
+``` bash
 # Make the release path global and persistent
 sudo cp -f ~/libra-framework/target/release/libra* ~/.cargo/bin/
 ```
 
-> Much more documentation is available at https://0lnetworkcommunity.github.io/documentation/ Things are added by the day. Your contribution would be highly appreciated.
-
-
-Query operations
-----------------
+## Query operations
 
 #### Check account balance
 
-```
+``` bash
 libra query balance --account ADDRESS
 ```
 
 #### Check for your vouches
-```bash
+``` bash
 libra query resources --resource-path-string 0x1::vouch::MyVouches --account ADDRESS
 ```
 
 #### Get total supply
 
-```bash
+``` bash
 libra query view --function-id "0x1::gas_coin::supply"
 ```
 
-Node operations
-----------------
+## Node operations
 
 #### Send coins
-```bash
-libra txs transfer --to-account ADDRESS --amount AMOUNT
+
+``` bash
+libra txs transfer --to-account DESTINATION_ADDRESS --amount AMOUNT
 ```
 
-Validator operations (available only for validators)
-----------------
+## Validator operations 
+- Available only for validators:
 
 #### Vouch 
 ```
@@ -98,30 +91,29 @@ libra txs validator vouch --vouch-for ADDRESS
 ```
 
 #### Query for vouches
-```
+``` bash
 libra query view --function-id 0x1::vouch::true_friends --args ADDRESS
 ```
 
 #### Bid
-```
+``` bash
 libra txs validator pof --bid-pct <PERCENT YOU PAY> --expiry <EPOCH # WHEN BID EXPIRES>
 
 # For example
 libra txs validator pof --bid-pct 0.1 --expiry 999
 ```
 
-#### Unjail account (self-unjail doesn't exist)
-```
+#### Un-jail account (self-unjail doesn't exist)
+``` bash
 libra txs validator jail --unjail-acct ADDRESS
 ```
 
 
-## Extra: Node monitoring
-----------------
+## Node monitoring
 
 ### Status page
 
-```
+``` bash
 git clone https://github.com/0LNetworkCommunity/status.git
 cd status
 yarn

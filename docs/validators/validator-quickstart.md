@@ -4,11 +4,11 @@ sidebar_label: 'Validator Quickstart'
 sidebar_position: 2
 ---
 
-
 ## Quick Start
+
 On an Ubuntu 22.04 host:
 
-```
+``` bash
 # We suggest you run the following in a tmux session from your user home directory
 tmux a
 cd ~

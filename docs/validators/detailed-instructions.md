@@ -6,42 +6,6 @@ sidebar_position: 3
 
 # Running a Validator
 
-## Quick Start
-On an Ubuntu 22.04 host:
-
-You can find our quick start [here](/validators/validator-quickstart)
-
-For a more detailed rundown, proceed below!
-
-
-``` bash
-# We suggest you run the following in a tmux session from your user home directory
-tmux a
-cd ~
-
-# Checkout the source
-git clone https://github.com/0LNetworkCommunity/libra-framework
-
-# Install dependencies and Rust lang
-cd ~/libra-framework
-bash ./util/dev_setup.sh -t
-
-# build and install the binary
-cd ~/libra-framework
-cargo build --release -p libra 
-
-# Make the release path global and persistent
-sudo cp -f ~/libra-framework/target/release/libra* ~/.cargo/bin/
-
-# Check libra execution and version 
-libra -v
-```
-
-## Specifications
-:::note
-A VFN is not currently used but will be used in production
-:::
-
 ### Requirements
 - TWO unix hosts, one for Validator Node, and one for the Private Fullnode ("VFN").
 libra code targets Ubuntu 22.4
