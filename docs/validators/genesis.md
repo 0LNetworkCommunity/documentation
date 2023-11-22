@@ -130,18 +130,14 @@ curl -s ipinfo.io | jq .ip
 - ** Enter your Validator Address Static IP in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571). **
 
 
-### 4. Export genesis ceremony repository as environment variable
+### 5. Export genesis ceremony repository and register for genesis 
 
 Export the genesis ceremony repository as an environment variable:
 ``` bash
 export GIT_REPO=release-v6.9.0-genesis-registration
 ```
 
-If your directory structure setup is different from the default, you can override the defaults by exporting the following environment variables: `SOURCE_PATH`, `BINS_PATH`, `DATA_PATH`. See the [Makefile](https://github.com/0LNetworkCommunity/libra-framework/blob/03d9f10bb539bda4c3f9de96e4a411971ec88d80/tools/genesis/Makefile#L7) for more details.
-
-
-### 6. Genesis Registration
-
+Register for genesis
 ``` bash
 make register
 ```
@@ -153,17 +149,17 @@ Please wait for the coordinator at this step.
 :::
 
 
-### 7. PR Received
+### 6. PR Received
 
 (coordinator confirms)
 
 
-### 8. PR Merged
+### 7. PR Merged
 
 (coordinator merges your PR)
 
 
-### 9. Build JSON_Legacy from snapshot and ancestry
+### 8. Build JSON_Legacy from snapshot and ancestry
 
 Export the epoch from which legacy is built:
 ``` bash
@@ -178,15 +174,16 @@ make legacy
 - **Confirm `v5_recovery.json` md5 hash in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571).**
 
 
-### 10. All nodes added to `layout.yaml` users key
+### 9. All nodes added to `layout.yaml` users key
 
 :::warning
 Please wait for the coordinator. Pre-genesis set closes here.
 :::
 
 
-### 11. Make Genesis
+### 10. Make Genesis
 
+Pull from the genesis repo and build genesis
 ``` bash
 make genesis
 ```
@@ -198,13 +195,13 @@ Please wait for the coordinator.
 :::
 
 
-### 12. Start nodes!
+### 11. Start nodes!
 
 Wait for the coordinator, say a prayer, then start!
-
 ``` bash
 libra node
 ```
+
 
 ---
 ** End Of The Genesis Ceremony Steps. **
