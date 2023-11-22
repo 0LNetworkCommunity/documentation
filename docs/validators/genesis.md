@@ -91,7 +91,6 @@ If your directory structure setup is different from the default, you can overrid
 
 Install the source
 ``` bash
-cd 
 make install
 ```
 
