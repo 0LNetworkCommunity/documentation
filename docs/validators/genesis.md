@@ -22,9 +22,9 @@ Network.
 
 ## High Level Ceremony Steps
 
-1. Cleanup
-3. Fetch Source & Verify Commit Hash
-4. Build `libra-framework` Packages
+1. Operator Name & Cleanup
+2. Fetch Source & Verify Commit Hash
+3. Build `libra-framework` Packages
 4. Account Preparation and Adding GitHub PAT
 5. Pre-Genesis Registration
     - **Stop**: Wait for the coordinator to merge all PR's. Step 8 can be done while you wait
@@ -47,19 +47,19 @@ Only proceed with asynchronous steps after the coordinator confirms the previous
 
 ## Genesis Ceremony Steps
 
-### 1. Cleanup & Operator Name
-
-If you have participated in testnets, delete any previous forks of testnet repos (such
-as `release-v6.9.0-rc.0-genesis-2`) from your GitHub repositories.
-
-Previous clones and testnets leave data in the `.libra` directory, clean those up by removing these directories:
-
-``` bash
-rm -Rf ~/libra-framework
-rm -Rf ~/.libra/data && rm -Rf ~/.libra/genesis && rm -Rf ~/.libra/secure-data.json
-```
+### 1. Operator name and cleanup of previous binaries or testnet data
 
 Provide your operator name (handle) in the ** [Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571). **
+
+If you have participated in testnets, delete any previous forks of testnet repos (such as `release-v6.9.0-rc.0-genesis-2`) from your GitHub repositories.
+
+Previous clones and testnets leave data in the `.libra` directory, clean those up by removing these directories
+
+``` bash
+rm -rf ~/libra-framework
+rm -rf ~/.libra/data && rm -rf ~/.libra/genesis && rm -rf ~/.libra/secure-data.json
+rm -f /usr/bin/libra && rm -rf /usr/local/bin/lira && rm -f ~/.cargo/bin/libra
+```
 
 
 ### 2. Fetch source & verify commit hash
@@ -80,7 +80,7 @@ git log -n 1 --pretty=format:
 - ** Confirm the git hash in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/17mF8Trg4xkUEkpJH9yTjVWRWx6ugYBRTMcuXscafhlI/edit?pli=1#gid=2041290571). **
 
 
-### 3. Account Preparation and Adding GitHub PAT (use classic with repo privileges)
+### 4. Account Preparation and Adding GitHub PAT (use classic with repo privileges)
 
 Acquire [GitHub Personal Access Token (PAT)](https://github.com/settings/tokens) with repo privileges. Paste it aside.
 
