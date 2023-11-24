@@ -105,7 +105,7 @@ echo 'export PATH="$HOME/libra-framework/target/release:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 
 # Check libra execution and version 
-libra -v
+libra -V
 ```
 
 
