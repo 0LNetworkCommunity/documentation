@@ -98,7 +98,7 @@ If your directory structure setup is different from the default, you can overrid
 Install the source
 ``` bash
 sudo apt install make -y
-EPOCH=694 make install
+EPOCH=692 make install
 ```
 
 - **Confirm with "done" in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
