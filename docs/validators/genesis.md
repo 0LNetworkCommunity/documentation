@@ -75,7 +75,7 @@ Clone the `libra-framework` repository and make sure you are on the correct bran
 cd ~
 git clone https://github.com/0LNetworkCommunity/libra-framework
 cd ~/libra-framework
-git fetch --all && git checkout release-6.9.0
+git fetch --all && git checkout release-6.9.0-rc.10
 ```
 
 Ensure the commit hash matches your peers and the coordinator
