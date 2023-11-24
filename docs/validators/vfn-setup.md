@@ -28,6 +28,7 @@ git clone https://github.com/0LNetworkCommunity/libra-framework
 
 cd ~/libra-framework
 bash ./util/dev_setup.sh -bt
+. ~/.bashrc
 
 cd ~/libra-framework
 git fetch --all && git checkout release-6.9.0-rc.10
