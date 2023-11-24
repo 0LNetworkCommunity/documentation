@@ -56,13 +56,19 @@ If you have participated in testnets, delete any previous forks of testnet repos
 Previous clones and testnets leave data in the `.libra` directory, clean those up by removing these directories
 
 ``` bash
-rm -rf ~/libra-framework
+rm -rf ~/libra-framework && rm -rf ~/.libra/libra-legacy-v6
 rm -rf ~/.libra/data && rm -rf ~/.libra/genesis && rm -rf ~/.libra/secure-data.json
 rm -f /usr/bin/libra && rm -rf /usr/local/bin/lira && rm -f ~/.cargo/bin/libra
 ```
 
 
 ### 2. Fetch source & verify commit hash
+
+We suggest you start a new tmux session
+``` bash
+sudo apt install tmux -y
+tmux new -t libra-node
+```
 
 Clone the `libra-framework` repository and make sure you are on the correct branch
 ``` bash
@@ -91,7 +97,8 @@ If your directory structure setup is different from the default, you can overrid
 
 Install the source
 ``` bash
-make install
+sudo apt install make -y
+EPOCH=694 make install
 ```
 
 - **Confirm with "done" in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
@@ -160,11 +167,6 @@ Please wait for the coordinator at this step.
 
 ### 8. Build JSON_Legacy from snapshot and ancestry
 
-Export the epoch from which legacy is built
-``` bash
-export EPOCH=694
-```
-
 Build the legacy json
 ``` bash
 make legacy
@@ -200,6 +202,10 @@ Wait for the coordinator, say a prayer, then start!
 ``` bash
 libra node
 ```
+
+To disconnect from your tmux session `CTRL + b` and then `d` to disconnect. To reconnect you can use `tmux a -t libra-node`.
+
+You could also consider running `libra node` as a service [which is detailed here](validators/detailed-instructions#setup-as-a-serviceoptional).
 
 
 ---
