@@ -58,7 +58,7 @@ Previous clones and testnets leave data in the `.libra` directory, clean those u
 ``` bash
 rm -rf ~/libra-framework && rm -rf ~/.libra/libra-legacy-v6
 rm -rf ~/.libra/data && rm -rf ~/.libra/genesis && rm -rf ~/.libra/secure-data.json
-rm -f /usr/bin/libra && rm -rf /usr/local/bin/lira && rm -f ~/.cargo/bin/libra
+rm -f /usr/bin/libra && rm -rf /usr/local/bin/libra && rm -f ~/.cargo/bin/libra
 ```
 
 
@@ -98,7 +98,7 @@ If your directory structure setup is different from the default, you can overrid
 Install the source
 ``` bash
 sudo apt install make -y
-EPOCH=694 make install
+EPOCH=692 make install
 ```
 
 - **Confirm with "done" in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
