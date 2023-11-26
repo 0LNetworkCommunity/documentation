@@ -109,10 +109,10 @@ cd ~/libra-framework/tools/genesis
 
 If your directory structure setup is different from the default, you can override the defaults by exporting the following environment variables: `SOURCE_PATH`, `BINS_PATH`, `DATA_PATH`. See the [Makefile](https://github.com/0LNetworkCommunity/libra-framework/blob/03d9f10bb539bda4c3f9de96e4a411971ec88d80/tools/genesis/Makefile#L7) for more details.
 
-Install the source
+Install the source and reload bash
 ``` bash
 sudo apt install make -y
-EPOCH=692 make install
+EPOCH=692 make install && source ~/.bashrc
 ```
 
 - **Confirm with "done" in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
