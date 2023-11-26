@@ -23,19 +23,20 @@ Network.
 ## High Level Ceremony Steps
 
 1. Operator Name & Cleanup
-2. Fetch Source & Verify Commit Hash
-3. Build `libra-framework` Packages
-4. Account Preparation and Adding GitHub PAT
-5. Pre-Genesis Registration
+2. Static IP & Open Ports
+3. Fetch Source & Verify Commit Hash
+4. Build `libra-framework` Packages
+5. Account Preparation and Adding GitHub PAT
+6. Pre-Genesis Registration
     - **Stop**: Wait for the coordinator to merge all PR's. Step 8 can be done while you wait
-6. PR Received
-7. PR Merged
-8. Build JSON_Legacy
-9. All Nodes Added to `layout.yaml` Users Key
+7. PR Received
+8. PR Merged
+9. Build JSON_Legacy
+10. All Nodes Added to `layout.yaml` Users Key
     - **Wait for the Coordinator**: Wait for the coordinator post-pre-genesis set closure and to add all genesis participants.
-10. Pull from Genesis Repo and Build
+11. Pull from Genesis Repo and Build
     - **Wait for the Coordinator**: Wait for the coordinator's signal to start.
-11. Start Nodes!
+12. Start Nodes!
 
 Coordination happens via the 0L Discord server voice channels, and a Google Sheet will track participants at each. Each
 step requires careful attention to the coordinator's instructions.
@@ -62,7 +63,20 @@ rm -f /usr/bin/libra && rm -rf /usr/local/bin/libra && rm -f ~/.cargo/bin/libra
 ```
 
 
-### 2. Fetch source & verify commit hash
+### 2. Get your Static IP and open necessary ports
+
+Fetch your external Static IP and set it aside
+``` bash
+curl -s ipinfo.io | jq .ip
+```
+
+The validator should have following ports open: `6180`, `6181`
+
+- `6180` should be open on all interfacess `0.0.0.0/0`, it's for consensus and uses noise encryption.
+- `6181` is for the private validator fullnode network ("VFN"), the firewall should only allow the IP of the fullnode to access this port.
+
+
+### 3. Fetch source & verify commit hash
 
 We suggest you start a new tmux session
 ``` bash
@@ -86,7 +100,7 @@ git log -n 1 --pretty=format:"%H"
 - **Confirm the git hash in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
 
 
-### 3. Build and install the libra binaries
+### 4. Build and install the libra binaries
 
 To use many of our genesis CLI tooling, we have to switch to its directory
 ``` bash
@@ -104,7 +118,7 @@ EPOCH=692 make install
 - **Confirm with "done" in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
 
 
-### 4. Account Preparation and Adding GitHub PAT (use classic with repo privileges)
+### 5. Account Preparation and Adding GitHub PAT (use classic with repo privileges)
 
 Acquire [GitHub Personal Access Token (PAT)](https://github.com/settings/tokens) with repo privileges. Paste it aside.
 
@@ -128,15 +142,10 @@ Paste your GitHub PAT in the `~/.libra/github_token.txt` file
 nano ~/.libra/github_token.txt
 ```
 
-Fetch your external Static IP and set it aside
-``` bash
-curl -s ipinfo.io | jq .ip
-```
-
 - **Enter your Validator Address Static IP in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
 
 
-### 5. Export genesis ceremony repository and register for genesis 
+### 6. Export genesis ceremony repository and register for genesis 
 
 Export the genesis ceremony repository as an environment variable
 ``` bash
@@ -155,17 +164,17 @@ Please wait for the coordinator at this step.
 :::
 
 
-### 6. PR Received
+### 7. PR Received
 
 (coordinator confirms)
 
 
-### 7. PR Merged
+### 8. PR Merged
 
 (coordinator merges your PR)
 
 
-### 8. Build JSON_Legacy from snapshot and ancestry
+### 9. Build JSON_Legacy from snapshot and ancestry
 
 Build the legacy json
 ``` bash
@@ -175,14 +184,14 @@ make legacy
 - **Confirm `v5_recovery.json` md5 hash in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
 
 
-### 9. All nodes added to `layout.yaml` users key
+### 10. All nodes added to `layout.yaml` users key
 
 :::warning
 Please wait for the coordinator. Pre-genesis set closes here.
 :::
 
 
-### 10. Make Genesis
+### 11. Make Genesis
 
 Pull from the genesis repo and build genesis
 ``` bash
@@ -196,7 +205,7 @@ Please wait for the coordinator.
 :::
 
 
-### 11. Start nodes!
+### 12. Start nodes!
 
 Wait for the coordinator, say a prayer, then start!
 ``` bash
