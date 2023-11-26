@@ -100,7 +100,7 @@ libra query view --function-id 0x1::vouch::true_friends --args ADDRESS
 libra txs validator pof --bid-pct <PERCENT YOU PAY> --expiry <EPOCH # WHEN BID EXPIRES>
 
 # For example
-libra txs validator pof --bid-pct 0.1 --expiry 999
+libra txs validator pof --bid-pct 0.9 --expiry 999
 ```
 
 #### Un-jail account (self-unjail doesn't exist)
