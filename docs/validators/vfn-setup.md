@@ -49,7 +49,7 @@ libra config init
 
 Grab the **genesis blob** and **waypoint** (creates `fullnode.yaml` not used here)
 ``` bash
-libra config full node-init
+libra config fullnode-init
 ```
 
 Set your client `libra.yaml` with the rpc-load-balancer upstream node
