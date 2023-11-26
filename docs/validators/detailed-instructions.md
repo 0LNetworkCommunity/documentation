@@ -22,7 +22,7 @@ VFNs and public fullnodes should by default serve port `8080` RPC for operabilit
 
 #### Validator
 
-The following ports must be open: 6181, 6180
+The following ports must be open: `6180``, `6181`
 
 - `6180` should be open on all interfacess `0.0.0.0/0`, it's for consensus and uses noise encryption.
 - `6181` is for the private validator fullnode network ("VFN"), the firewall should only allow the IP of the fullnode to access this port.
@@ -32,11 +32,11 @@ The following ports must be open: 6181, 6180
 This node does not serve transactions and does not participate in consensus, it relays data out of the validator node, and transactions into the validator.
 :::
 
-The following ports must be open: `6181`, `6182`
+The following ports must be open: `6181`, `6182`, `8080`
 
 - `6181` is for the private validator fullnode network ("VFN"), it should only allow traffic from the Validator node IP address above.
 - `6182` is for the the PUBLIC fullnode network. This is how the public nodes that will be serving JSON-RPC on the network will receive data and submit transactions to the network.
-
+- `8080` is the RPC port and we suggest VFNs and public fullnodes to serve this port by default for operability.
 
 
 ## Setting up a Validator
