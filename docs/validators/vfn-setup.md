@@ -11,7 +11,7 @@ Note:
 We strongly suggest that all validators also run a VFN, which is a node that serves as crucial counterpart to completing the design of our network. The VFN is how the public network is able to reach the validator, which should not be done directly.
 
 
-### 0L Network testnet-6: VFN Setup & Public Static Peer ID
+### Cleanup
 
 Previous clones and testnets leave data in the `.libra` directory, clean those up by removing these directories
 
@@ -35,19 +35,19 @@ git fetch --all && git checkout release-6.9.0-rc.10
 cargo build --release -p libra -p diem-db-tool -p diem
 ```
 
-Make sure your path to libra is global and persistant
+Make sure your path to libra is global and persistent
 ``` bash
 sudo cp -f ~/libra-framework/target/release/libra* ~/.cargo/bin/
 ```
 
 
-#### VFN initialization
+### VFN initialization
 Initialize `~/.libra` config directory 
 ``` bash
 libra config init
 ```
 
-Grab the genesis blob and waypoint (creates fullnode.yaml not used here)
+Grab the **genesis blob** and **waypoint** (creates `fullnode.yaml` not used here)
 ``` bash
 libra config full node-init
 ```
@@ -68,7 +68,7 @@ nano ~/.libra/vfn.yaml
 ```
 
 
-This is what your VFN full_node_networks section should look like (you 6181 and 6182)
+This is what your VFN `full_node_networks` section should look like (you `6181` and `6182`)
 ``` yaml
 full_node_networks:
 - network_id:
@@ -89,34 +89,33 @@ full_node_networks:
 ```
 
 Note:
-Your VFN will use your validator as an upstream without an identity, while the public network will use the identity file
+Your VFN will use your validator as an upstream without an identity, while the public network will use the identity file.
 
-
-#### Issue the On-Chain Configuration
+### Issue the On-Chain Configuration
 
 From your VFN, take note of the public IPv4 address
 ``` bash
 curl ipinfo.io
 ```
 
-Take note of your full_node_network_public_key
+Take note of your `full_node_network_public_key`
 ``` bash
 grep full_node_network_public_key ~/.libra/public-keys.yaml
 
 # example: full_node_network_public_key: "0xabcdyourvfnpublickey"
 ```
 
-On both Validator and VFN machines, make sure the operator.yaml is configured with VN and VFN's IP address and separate public keys
+On both Validator and VFN machines, make sure the `operator.yaml` is configured with VN and VFN's IP address and separate public keys
 ``` bash
 nano ~/.libra/operator.yaml
 ```
 
-On both Validator and VFN machines, make sure the operator.yaml is configured with VFN's public key and ip address
+On both Validator and VFN machines, make sure the `operator.yaml` is configured with VFN's public key and ip address
 ``` bash
 nano ~/.libra/operator.yaml
 ```
 
-On both machines, the config in operator.yaml should be complete with separate Validator and VFN keys and IPs
+On both machines, the config in `operator.yaml` should be complete with separate Validator and VFN keys and IPs
 ``` yaml
 validator_network_public_key: "0xthiswasalreadysetpublickey"
 validator_host:
