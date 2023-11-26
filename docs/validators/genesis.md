@@ -63,7 +63,7 @@ rm -f /usr/bin/libra && rm -rf /usr/local/bin/libra && rm -f ~/.cargo/bin/libra
 ```
 
 
-### 2. Get your Static IP and open necessary ports
+### 2. Get your static IP and open necessary ports
 
 Fetch your external Static IP and set it aside
 ``` bash
