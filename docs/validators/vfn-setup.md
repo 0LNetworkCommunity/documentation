@@ -7,14 +7,14 @@ sidebar_position: 7
 
 ## VFN Setup
 
-Note:
-We strongly suggest that all validators also run a VFN, which is a node that serves as crucial counterpart to completing the design of our network. The VFN is how the public network is able to reach the validator, which should not be done directly.
+:::warning
+We strongly suggest that all validators also run a VFN, which is a node that serves as a crucial counterpart to completing the design of our network. The VFN is how the public network is able to reach the validator, which should not be done directly.
+:::
 
+### 0L Network VFN Setup & Public Static Peer ID
 
-### 0L Network testnet-6: VFN Setup & Public Static Peer ID
-
-Clone libra-framework and build   
-```
+Clone the libra-framework and build:   
+``` bash
 cd ~
 git clone https://github.com/0LNetworkCommunity/libra-framework
 
@@ -26,46 +26,46 @@ cd ~/libra-framework
 cargo build --release -p libra -p diem-db-tool -p diem
 ```
 
-Make sure your path to libra is global and persistant
-```
+Make sure your path to libra is global and is persistent:
+``` bash
 sudo cp -f ~/libra-framework/target/release/libra* ~/.cargo/bin/
 ```
 
 
 #### VFN initialization
-Grab the genesis blob and waypoint (creates fullnode.yaml not used here)
-```
-libra config full node-init
+Grab the genesis blob and waypoint (creates `fullnode.yaml`, not used here)
+``` bash
+libra config fullnode-init
 ```
 
 Set your client `libra.yaml` with the rpc-load-balancer upstream node
-```
+``` bash
 libra config fix --force-url https://testnet-rpc.openlibra.space:8080
 ```
 
 Configure your VFN using the validator's configs
-```
+``` bash
 libra config validator-init
 ```
 
 Prepare a new VFN config by starting with the validator's config (until we build a CLI tool for this)
-```
+``` bash
 cp ~/.libra/validator.yaml ~/.libra/vfn.yaml
 ```
 
-Remove the consensus and validator_network sections from the VFN yaml
-```
+Remove the `consensus` and `validator_network` sections from the VFN yaml
+``` bash
 nano ~/.libra/vfn.yaml
 ```
 
 #### Validator Configuration (on your Validator machine)
 Add the VFN network to your validator's config if not done so already
-```
+``` bash
 nano ~/.libra/validator.yaml
 ```
 
-This is what your full_node_networks section should look like
-```
+This is what your `full_node_networks` section should look like
+``` yaml
 full_node_networks:
 - network_id:
     private: 'vfn'
@@ -77,22 +77,22 @@ full_node_networks:
 
 #### VFN Configuration (on your VFN machine)
 Grab your validator's connection string (ip with replaced port and public key)
-```
+``` bash
 libra query val-config -a 0xabc4321yourvalidatoraccount | jq .validator_network_addresses | sed 's#/6180/#/6181/#g'
 ```
 
 Make sure the public key matches your validator's public key on file
-```
+``` bash
 grep validator_network_public_key ~/.libra/operator.yaml
 ```
 
-Update the the VFN networks
-```
+Update the VFN networks
+``` bash
 nano ~/.libra/vfn.yaml
 ```
 
-This is what your full_node_networks section should look like (you 6181 and 6182)
-```
+This is what your `full_node_networks` section should look like (you `6181` and `6182`)
+``` yaml
 full_node_networks:
 - network_id:
     private: 'vfn'
@@ -112,24 +112,24 @@ full_node_networks:
 ```
 
 Note:
-Your VFN will use your validator as an upstream without an identity, while the public network will use the identity file
+Your VFN will use your validator as an upstream without an identity, while the public network will use the identity file.
 
 
 #### On-Chain Configuration
-Take note of your full_node_network_public_key
-```
+Take note of your `full_node_network_public_key`
+``` bash
 grep full_node_network_public_key ~/.libra/public-keys.yaml
 
 # example: full_node_network_public_key: "0xabcdyourvfnpublickey"
 ```
 
-Now you should update your operator.yaml with the VFN's public key and ip address
-```
+Now you should update your `operator.yaml` with the VFN's public key and ip address
+``` bash
 nano ~/.libra/operator.yaml
 ```
 
-This is what the full_node_* section of operator.yaml should look like
-```
+This is what the `full_node_*` section of `operator.yaml` should look like
+``` yaml
 full_node_network_public_key: "0xabcdyourvfnpublickey"
 full_node_host:
   host: <vfn_ip>
@@ -137,7 +137,7 @@ full_node_host:
 ```
 
 Update the on-chain config for the VN/VFN (only needed to be done once)
-```
+``` bash
 libra txs validator update
 
 Enter your 0L mnemonic:
@@ -146,6 +146,6 @@ transaction success  ·····························�
 ```
 
 Wait an epoch and then check the on-chain values to confirm
-```
+``` bash
 libra query val-config -a 0xabc4321yourvalidatoraccount | jq
 ```
