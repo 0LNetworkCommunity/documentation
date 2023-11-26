@@ -11,6 +11,14 @@ Note:
 We strongly suggest that all validators also run a VFN, which is a node that serves as crucial counterpart to completing the design of our network. The VFN is how the public network is able to reach the validator, which should not be done directly.
 
 
+## Ports
+The following ports must be open: `6181`, `6182`, `8080`
+
+- `6181` is for the private validator fullnode network ("VFN"), it should only allow traffic from the Validator node IP address above.
+- `6182` is for the the PUBLIC fullnode network. This is how the public nodes that will be serving JSON-RPC on the network will receive data and submit transactions to the network.
+- `8080` is the RPC port and we suggest VFNs and public fullnodes to serve this port by default for operability.
+
+
 ### Cleanup
 
 Previous clones and testnets leave data in the `.libra` directory, clean those up by removing these directories
@@ -57,9 +65,9 @@ Set your client `libra.yaml` with the rpc-load-balancer upstream node
 libra config fix --force-url https://rpc.openlibra.space:8080
 ```
 
-Configure your VFN using the validator's configs
+Configure your VFN using the validator config tool
 ``` bash
-libra config validator-init
+libra config validator-init --vfn
 ```
 
 The VFN config will then be automatically created here
