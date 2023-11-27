@@ -214,7 +214,7 @@ libra node
 
 To disconnect from your tmux session `CTRL + b` and then `d` to disconnect. To reconnect you can use `tmux a -t libra-node`.
 
-You could also consider running `libra node` as a service [which is detailed here](validators/detailed-instructions#setup-as-a-serviceoptional).
+You could also consider running `libra node` as a service [which is detailed here](detailed-instructions#setup-as-a-serviceoptional).
 
 
 ---
