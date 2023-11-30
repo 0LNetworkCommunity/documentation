@@ -25,7 +25,7 @@ cargo build --release -p libra
 sudo cp -f ~/libra-framework/target/release/libra* ~/.cargo/bin/
 
 # Check libra execution and version 
-libra -v
+libra -version
 
 # -----------------------
 # Using libra CLI to generate a new account and register
