@@ -65,7 +65,7 @@ libra query balance --account ADDRESS
 
 #### Check for your vouches
 ``` bash
-libra query resources --resource-path-string 0x1::vouch::MyVouches --account ADDRESS
+libra query resource --resource-path-string 0x1::vouch::MyVouches --account ADDRESS
 ```
 
 #### Get total supply
