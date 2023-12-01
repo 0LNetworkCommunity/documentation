@@ -5,6 +5,7 @@ description: '0L does consensus differently'
 ---
 # Innovative Consensus
 ---
+_PoF and musical chairs attempt to minimize (not eliminate) the surface area for governance: of negotiating setting inflation rate, rewards rate, validator set size, and voting in/out members of validator set._
 
 In the context of the Libra framework, the integration of Proof of Fee (PoF) and Musical Chairs methods addresses the common issue of networks overpaying for security. PoF optimizes validator selection based on bids, balancing experienced and new participants, which helps in cost-effective security management. Musical Chairs, with its dynamic adjustment of validator set size based on actual network performance, prevents unnecessary expansion of the set, further contributing to cost efficiency. This approach, in line with the Libra framework, seeks to achieve robust security without the excessive costs often seen in other networks, ensuring a more efficient and economically sustainable blockchain ecosystem. Both methods operate under a principle of equal voting power per validator, aligning with Diem BFT's approach to consensus, and together, they offer a balanced, performance-oriented framework for blockchain networks.
 
@@ -71,6 +72,18 @@ In Musical Chairs, the size of the validator set is not static but fluctuates ba
 Further insights into this novel mechanism can be explored in PoF publications
 
 
+## Vouching 
+---
+
+There is also a distinctive "vouching" system that is intricately woven into its consensus mechanism. This system plays a pivotal role in establishing and maintaining the network's integrity and security, complementing the Proof of Fee (PoF) and Musical Chairs models. Vouching in the 0L Network is designed to effectively navigate and utilize the trust graph, making it a cornerstone of the network's overall governance and functionality.
+
+Vouching is primarily applied in the context of validators however it could be utilized in other places within the network in the future. In this system, each validator is required to secure vouches from two existing validators who must come from distinct ancestry trees. This means that the endorsing validators cannot be part of the same lineage or hierarchical chain of account creation, ensuring a broad and diverse base of trust. 
+
+The vouching process is governed by specific rules to ensure its effectiveness and integrity:
+
+- **Expiration of Vouches:** Each vouch is designed with a finite lifespan, expiring after 90 epochs. This temporal limitation necessitates active and ongoing participation in the network's trust-building processes.
+  
+- **Economic Aspect:** Obtaining a vouch incurs a cost of 1000 microlibra. Rather than functioning as a mere fee, this amount is burned. This signifies a substantial commitment on the part of the voucher and adds a layer of economic deterrence against insincere or inauthentic vouching.
 
 ## Examples
 ---
