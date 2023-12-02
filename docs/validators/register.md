@@ -17,6 +17,9 @@ git clone https://github.com/0LNetworkCommunity/libra-framework
 cd ~/libra-framework
 bash ./util/dev_setup.sh -t
 
+# restart your bash instance to pickup the cargo paths
+source ~/.bashrc
+
 # build and install the binary
 cd ~/libra-framework
 cargo build --release -p libra 
