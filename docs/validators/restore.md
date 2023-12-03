@@ -6,7 +6,7 @@ description: 'Restore and sync the 0L Network database to the current state'
 
 # Restore
 
-Restore the Database to get up-to-date with the current state of the Network. Repository is located [here](https://github.com/0LNetworkCommunity/epoch-archive-mainnet) and contains other useful commands out this scope.
+Restore the 0L Network database to get up-to-date with the current state of the network. The `epoch-archive-mainnet` [repository](https://github.com/0LNetworkCommunity/epoch-archive-mainnet) contains other useful commands that are out of the scope of this tutorial but are easily accessible in the readme file of the repository and its `Makefile`.
 
 ### Prerequisites
 :::note
@@ -43,6 +43,11 @@ make bins
 You will need to open port `6182`
 :::
 
+#### Get the latest state of the chain
+``` bash
+make restore-all
+```
+
 #### Start as a fullnode (or vfn or validator node depending on your need)
 The following example starts the node as a fullnode by providing the `fullnode.yaml` as its config option:
 ``` bash
@@ -72,7 +77,7 @@ watch 'curl localhost:8080/v1/ | jq'
 
 ### How to clean the database and sync to the latest state again?
 
-The following instructions will remove your existing `~/.libra/data/db/` directory and also update the `epoch-archive.yaml` file with the latest waypoint. You can study the `Makefile` in this repository to fine-tune and understand its instructions better.
+The following instructions will remove your existing `~/.libra/data/db/` directory and also update the `epoch-archive.yaml` file with the latest waypoint. You can study the `Makefile` in the `epoch-archive-mainnet` [repository](https://github.com/0LNetworkCommunity/epoch-archive-mainnet) to fine-tune and understand its instructions better.
 ``` bash
 cd ~/epoch-archive-mainnet
 make wipe-db && make restore-all
