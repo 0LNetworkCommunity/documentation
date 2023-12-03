@@ -26,33 +26,33 @@ The wallet CLI tool offers a user-friendly command-line interface for interactin
 
 
 ### Key Generation
-- **Syntax**: `libra keygen [--mnemonic <MNEMONIC>] [--output_dir <DIRECTORY>]`
+- **Syntax**: `libra wallet keygen [--mnemonic <MNEMONIC>] [--output_dir <DIRECTORY>]`
 - **Function**: Generates new keys and account addresses. Can recover accounts from mnemonics.
 - **Example**:
   - To generate a new key and account address:
     ```
-    libra keygen --output_dir /path/to/directory
+    libra wallet keygen --output_dir /path/to/directory
     ```
   - To recover an account using a mnemonic:
     ```
-    libra keygen --mnemonic "your mnemonic phrase here"
+    libra wallet keygen --mnemonic "your mnemonic phrase here"
     ```
 
 ### Legacy Operations
-- **Syntax**: `legacy [--display] [--output_path <PATH>] [--keygen]`
+- **Syntax**: `libra wallet legacy [--display] [--output_path <PATH>] [--keygen]`
 - **Function**: Manages operations related to legacy wallets, including displaying private keys, saving keys to a specified path, and generating new keys in the legacy format.
 - **Example**:
   - To display private keys in the legacy format:
     ```
-    libra legacy --display
+    libra wallet legacy --display
     ```
   - To save legacy keys to a file:
     ```
-    libra legacy --output_path /path/to/keys
+    libra wallet legacy --output_path /path/to/keys
     ```
   - To generate new keys in the legacy format:
     ```
-    libra legacy --keygen
+    libra wallet legacy --keygen
     ```
 
 ---

@@ -1,14 +1,10 @@
 ---
 title: "Running a Validator"
-id: "running-a-validator"
+sidebar_label: 'Running a Validator'
+sidebar_position: 3
 ---
 
 # Running a Validator
-
-## Specifications
-:::note
-A VFN is not currently used but will be used in production
-:::
 
 ### Requirements
 - TWO unix hosts, one for Validator Node, and one for the Private Fullnode ("VFN").
@@ -20,28 +16,27 @@ libra code targets Ubuntu 22.4
 
 ### Firewall
 :::note
-During testnet and devnet operation, you will likely open port `8080` on your Validator to allow outside access to the RPC endpoint, which is an API that runs as part of the libra service. 
+During testnet and devnet operation, you will likely open port `8080` on your Validator to allow outside access to the RPC endpoint, which is an API that runs as part of the libra service.
 VFNs and public fullnodes should by default serve port `8080` RPC for operability.
 :::
 
 #### Validator
 
-The following ports must be open: 6181, 6180
+The following ports must be open: `6180``, `6181`
 
 - `6180` should be open on all interfacess `0.0.0.0/0`, it's for consensus and uses noise encryption.
 - `6181` is for the private validator fullnode network ("VFN"), the firewall should only allow the IP of the fullnode to access this port.
 
 #### VFN
 :::note
-this node does not serve transactions, and does not participate in consensus, it relays data out of the validator node, and transactions into the validator.
+This node does not serve transactions and does not participate in consensus, it relays data out of the validator node, and transactions into the validator.
 :::
 
-The following ports must be open: `6182`, `6181`
+The following ports must be open: `6181`, `6182`, `8080`
 
-- `6182` is for the the PUBLIC fullnode network. This is how the public nodes that will be serving JSON-RPC on the network will receive data and submit transactions to the network.
 - `6181` is for the private validator fullnode network ("VFN"), it should only allow traffic from the Validator node IP address above.
-
-
+- `6182` is for the the PUBLIC fullnode network. This is how the public nodes that will be serving JSON-RPC on the network will receive data and submit transactions to the network.
+- `8080` is the RPC port and we suggest VFNs and public fullnodes to serve this port by default for operability.
 
 
 ## Setting up a Validator
@@ -54,7 +49,6 @@ These instructions target Ubuntu.
 
 1.3. Libra binaries should be run in a linux user that has very narrow permissions. Before you can create binaries you'll need some tools installed probably by `sudo` and likely in root.
 
-
 1.4. Use `tmux` to persist the terminal session for build, as well as for running the nodes and tower app. Also this setup requires `git` and `make`, which might be installed already on your host. If not, perform the following steps now:
 
 ```bash
@@ -63,15 +57,15 @@ sudo apt install -y git tmux jq build-essential cmake clang llvm libgmp-dev pkg-
 ```
 
 
-1.5. Install Rust 
+1.5. Install Rust
 
 ```bash
 curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
 
 # restart your bash instance to pickup the cargo paths
-. ~/.bashrc
-
+source ~/.bashrc
 ```
+
 
 ### Create Binaries
 
@@ -81,20 +75,22 @@ It is recommended to perform the steps from 1.7 onwards inside tmux. Short tmux 
 
 ```bash
 # start a new tmux session
-tmux new -s installation
+tmux new -t libra-setup
 ```
+
 
 1.7 Clone this repo:
 ```
-git clone https://github.com/0LNetworkCommunity/libra-framework.git
+git clone https://github.com/0LNetworkCommunity/libra-framework
 cd ~/libra-framework
 ```
 1.8 Build the source and install binaries:
 This takes a while, ensure your are still inside the `tmux` session to avoid your session gets disconnected.
 
 ```bash
-cargo build --release -p libra 
+cargo build --release -p libra
 ```
+
 
 1.9 Making the `libra` binary globally executable and persistent
 
@@ -102,11 +98,14 @@ cargo build --release -p libra
 This assumes the `libra` binary is already built and located at `~/libra-framework/target/release/libra`.
 :::
 ```
-# from the project source, copy the binary to a directory already in your $PATH, e.g. the Rust bin path.
-cp target/release/libra ~/.cargo/bin
+# Make the release path global and persistent
+echo 'export PATH="$HOME/libra-framework/target/release:$PATH"' >> ~/.bashrc
 
-# check you have it
-libra --version 
+# Initialize your expanded PATH
+source ~/.bashrc
+
+# Check libra execution and version 
+libra -V
 ```
 
 
@@ -119,14 +118,12 @@ libra --version
 
 ### Setup as a service(optional)
 
+
 **Install Service**
 :::note
 use can this service template instead of running in tmux
 :::
 `sudo nano /lib/systemd/system/libra-node.service`
-
-
-
 
 
 #### Systemd template
@@ -139,11 +136,12 @@ Description=Libra Node Service
 User=nodeuser
 Group=nodeuser
 
-LimitNOFILE=500000
+LimitNPROC=1048576
+LimitNOFILE=1048576
 
-#Environment="RUST_LOG=error"
+#Environment="RUST_LOG=warn"
 WorkingDirectory=/home/nodeuser/.libra
-ExecStart=/home/nodeuser/libra-framework/target/release/libra --config-path /home/nodeuser/.libra/validator.yaml
+ExecStart=/home/nodeuser/libra-framework/target/release/libra node --config-path /home/nodeuser/.libra/validator.yaml
 
 Restart=on-failure
 RestartSec=3s
@@ -165,22 +163,23 @@ sudo systemctl start libra-node
 
 `sudo systemctl daemon-reload`
 
-`sudo systemctl enable libra-node.service`
+`sudo systemctl enable libra-node`
 
-`sudo systemctl start libra-node.service`
+`sudo systemctl start libra-node`
 
 **Check the service is operating correctly**
 
-`sudo systemctl status libra-node.service`
+`sudo systemctl status libra-node`
+
 
 
 ### TMUX basics
 
-1. New session: `tmux new -s <SESSION_NAME>`
+1. New session: `tmux new -t <SESSION_NAME>`
 2. Detach from Session: press Ctrl-b and then d
 3. rejoin unnamed session, if only one session exists: `tmux a`
 4. rejoin unnamed session by id: `tmux ls` to get the ID and then `tmux a -t <SESSION_ID>`
-5. rejoin named session: `tmux attach -t <SESSION_NAME>`
+5. rejoin named session: `tmux a -t <SESSION_NAME>`
 6. kill session: attach to the session --> press Ctrl-b, then type `:kill-session` and press ENTER
 
 ---

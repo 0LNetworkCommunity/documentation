@@ -32,29 +32,27 @@ This targets an ubuntu 22.04 build. You may need to create an account. Do it [he
 :::
 
 ```
-#build dependencies
-sudo apt update
-sudo apt install -y git tmux jq build-essential cmake clang llvm libgmp-dev pkg-config libssl-dev lld libpq-dev
+# We suggest you run the following in a tmux session from your user home directory
+tmux a
+cd ~
 
-#install rust
-curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
+# Checkout the source
+git clone https://github.com/0LNetworkCommunity/libra-framework
 
-#restart your bash instance to pickup the cargo paths
-. ~/.bashrc
-
-#clone the repo
-git clone https://github.com/0LNetworkCommunity/libra-framework.git
+# Install dependencies and Rust lang
 cd ~/libra-framework
-git fetch --all && git checkout main
+bash ./util/dev_setup.sh -t
 
-#build
+# build and install the binary
+cd ~/libra-framework
 cargo build --release -p libra 
 
+# Make the release path global and persistent
+sudo cp -f ~/libra-framework/target/release/libra* ~/.cargo/bin/
 
-#make global and persistant. this assumes the `libra` binary is already built and located at `~/libra-framework/target/release/libra`.
-echo 'export PATH="$HOME/libra-framework/target/release:$PATH"' >> ~/.bashrc
+# Initialize your expanded PATH
 source ~/.bashrc
 
-#verification
-libra --version 
+# Check libra execution and version 
+libra -v
 ```

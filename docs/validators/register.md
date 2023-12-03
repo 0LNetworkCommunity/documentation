@@ -1,19 +1,38 @@
 ---
-sidebar_position: 4
-sidebar_label: 'Register'
+sidebar_position: 6
+sidebar_label: 'Post-Genesis Ceremony Registration'
 description: 'Register a Validator on the 0L Network'
 ---
 
-# Register
+# Register a Validator on the 0L Network
 
-Register a Validator on the 0L Network
+Welcome!
 
-# Welcome Validators
+## Quick outline of all the steps
+``` bash
+# Checkout the source
+git clone https://github.com/0LNetworkCommunity/libra-framework
 
-This assumes you have the `libra` cli installed in your local $PATH.
+# Install dependencies and Rust lang
+cd ~/libra-framework
+bash ./util/dev_setup.sh -t
 
-## Quick start
-```
+# restart your bash instance to pickup the cargo paths
+source ~/.bashrc
+
+# build and install the binary
+cd ~/libra-framework
+cargo build --release -p libra 
+
+# Make the release path global and persistent
+sudo cp -f ~/libra-framework/target/release/libra* ~/.cargo/bin/
+
+# Check libra execution and version 
+libra --version
+
+# -----------------------
+# Using libra CLI to generate a new account and register
+
 # create account keys
 libra wallet keygen
 
@@ -21,6 +40,9 @@ libra wallet keygen
 # you will need to update vfn values to match validator values. see script below
 # you will also need to set the libra.yaml to point to testnet
 libra config validator-init
+
+# Set your client `libra.yaml` with the rpc-load-balancer upstream node
+libra config fix --force-url https://rpc.openlibra.space:8080
 
 # a friend will onboard the account if it doesn't yet exist on chain. It is done by sending coins to an account
 libra txs transfer --to-account <YOUR ADDRESS> --amount 1
@@ -34,26 +56,29 @@ libra txs validator vouch --vouch-for <YOUR ADDRESS>
 # submit a bid to be in the validator set
 libra txs validator pof --bid-pct <PERCENT YOU PAY> --expiry <WHEN EXPIRES>
 
+# run as a fullnode and switch to the validator mode once entered the set, check the detailed instructions below the page. 
 ```
 
-# Get Keys
-If you don't already have an account, you'll need a mnemonic (seed), to generate all keys.
+## Detailed instructions
 
-```
+### Generate a new account - Get Keys
+If you don't already have an account, you will need a mnemonic (seed), to generate all keys.
+
+``` bash
 libra wallet keygen
 ```
 
-# Initialize validator files
+### Initialize validator files
 
 Follow the prompts here. Your node needs to have keys generated using a mnemonic from step #1.
 
-```
+``` bash
 libra config validator-init
 ```
-:::note
-you will need to use this script to make vfn match validator values. 
 
-```
+
+- You will need to use this script to make the VFN match your validator node values.
+``` bash
 cat << 'EOF' > fix_vfn_values.sh
 #!/bin/bash
 
@@ -77,60 +102,54 @@ EOF
 
 chmod +x fix_vfn_values.sh
 ./fix_vfn_values.sh
-
 ```
-:::
 
-:::note
-Point the libra.yaml to testnet
-```
-# sed the default_chain_id to testing
-sed -i 's/default_chain_id: mainnet/default_chain_id: testnet/g' ~/.libra/libra.yaml
-sed -i 's/chain_id: mainnet/chain_id: testnet/g' ~/.libra/libra.yaml
-sed -i 's/chain_name: mainnet/chain_name: testnet/g' ~/.libra/libra.yaml
-
-# use localhost as the upstream node
-sed -i 's/- url: \"http:\/\/.*\"/- url: \"http:\/\/127.0.0.1:8080\/\"/g' ~/.libra/libra.yaml
-```
-:::
-
-# Get the account on chain
+### Get the account on chain
 Someone needs to create that account onchain first.
-Ask someone to deposit a coin to your accout from step #1
+Ask someone to deposit a coin to your account from step #1
 
-```
+``` bash
 # friend sends one coin to your account which creates it
 libra txs transfer -t <YOUR ACCOUNT> -a 1
-
 ```
 
-# Submit configs to chain
-
-
+### Update upstream node
+Set your client `libra.yaml` with the rpc-load-balancer upstream node
+``` bash
+libra config fix --force-url https://rpc.openlibra.space:8080
 ```
+
+### Submit configs to chain
+
+``` bash
+# Submit your account on chain, which takes the default location to your ~/.libra/operator.yaml
 libra txs validator register
 
-# optionally pass -f to the file where operator.yaml from step #2 above is located
-libra txs validator register -f /path/to/foo/operator.yaml
-
+# Or you can use the -f option to provide the exact path to your operator.yaml file
+libra txs validator register -f ~/.libra/operator.yaml
 ```
 
 
-# Get Vouches
-0L uses very light reputation games to keep the validator set trusted.
-Just ask an existing validator for a vouch. It doesn't cost you anything and it needs no stake.
+### Get Vouches
+0L Network uses very light reputation games to keep the validator set trusted.
+Just ask an existing validator for a vouch. It helps a lot if you share your node specs and a little bit of your experience with them. 
 
 Your friend will:
-`libra txs validator vouch --vouch-for <YOUR ADDRESS>`
-
-# Bid to be in the validator set
-0L uses Proof-of-Fee for sybil resistance, instead of Proof-of-Stake. You don't need any stake to join, but you just need to be able to bid on how much you are willing to pay to be in the validator set. The cheapest bid proposed by validators will be actually what all validators pay (uniform price auction).
-
+``` bash 
+libra txs validator vouch --vouch-for <YOUR ADDRESS>
 ```
+
+### Bid to be in the validator set
+0L Network uses Proof-of-Fee for sybil resistance, instead of Proof-of-Stake. You don't need any stake to join, but you just need to be able to bid on how much you are willing to pay to be in the validator set. The cheapest bid proposed by validators will be actually what all validators pay (uniform price auction).
+``` bash
 libra txs validator pof --bid-pct <PERCENT YOU PAY> --expiry <WHEN EXPIRES>
 ```
-:::note
-Once your validator enters the set you will need to stop running as a fullnode and run as a validator. Change your node to point to the `validator.yaml`.
 
-`libra node --config-path ~/.libra/validator.yaml`
-:::
+### Run the node as fullnode and then validator mode
+- Once your validator enters the set you will need to stop running as a fullnode and run as a validator. Until then, you can:
+  - use the following instructions to: [sync database to the current state](/validators/restore) and run as a fullnode.
+- When your node is in the active set, it is time to change your node config path to point to the `validator.yaml`.
+- Stop your node and run in the validator mode:
+``` bash 
+libra node --config-path ~/.libra/validator.yaml
+```

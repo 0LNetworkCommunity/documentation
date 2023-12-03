@@ -1,139 +1,221 @@
 ---
 sidebar_position: 5
-sidebar_label: "Genesis"
+sidebar_label: "Genesis Ceremony"
 description: 'Launch the 0L Network'
 ---
 
-# 0L Genesis Ceremony Guide
+# Genesis Ceremony
 
-This guide outlines the essential steps for conducting a Genesis Ceremony in the 0L Network. The Genesis Ceremony is a pivotal event marking the creation of the network's genesis blob — the foundational block that underpins the entire blockchain. It's a crucial process that not only initiates the network but also involves transitioning or migrating the network's state from an earlier version (in this case, from v5 to v6.9.0). This ensures continuity and preserves the integrity of the network through upgrades or hard forks. Follow this document to navigate the process effectively, ensuring a smooth and successful launch or upgrade of the 0L Network.
+This guide outlines the essential steps for conducting a Genesis Ceremony in the 0L Network.
 
-### High Level Ceremony Steps
+## The Purpose of the Genesis Ceremony
 
-1. Cleanup
-2. Fetch Source & Verify Commit Hash
-3. Build `libra-framework` Packages
-4. Prepare `.libra` Directory and Add GitHub PAT
-5. Pre-Genesis Registration
-   - **Stop**: Wait for coordinator to merge all PR's. Step 8 can be done while you wait
-6. PR Received
-7. PR Merged
-8. Build JSON_Legacy
-9. All Nodes Added to `layout.yaml` Users Key
-   - **Wait for Coordinator**: Wait for coordinator post-pre-genesis set closure and to add all genesis participants.
-10. Pull from Genesis Repo and Build
-    - **Wait for Coordinator**: Wait for coordinator's signal to start.
-11. Start Nodes!
-    
----
-Each step requires careful attention to the coordinator's instructions, ensuring a smooth and successful Genesis Ceremony for the 0L Network. Coordination happens via 0L Discord and a sheet will track participants.
+A Genesis Ceremony is a pivotal event marking the creation of the network's genesis block — the foundational block that
+underpins the entire blockchain.
+The genesis of a network can begin with a blank state (0 balances) or with preserving the state of an earlier chain and
+migrate to the new chain during the genesis ceremony. The latter approach is also known as a fork.
+It is a crucial process that not only initiates the network but also involves migrating the network's state from an
+earlier version to the next version.
 
+Follow this document to navigate the process effectively, ensuring a smooth and successful launch or upgrade of the 0L
+Network.
 
+## High Level Ceremony Steps
 
-**Coordinator**: `sirouk`
+1. Operator Name & Cleanup
+2. Static IP & Open Ports
+3. Fetch Source & Verify Commit Hash
+4. Build `libra-framework` Packages
+5. Account Preparation and Adding GitHub PAT
+6. Pre-Genesis Registration
+    - **Stop**: Wait for the coordinator to merge all PR's. Step 8 can be done while you wait
+7. PR Received
+8. PR Merged
+9. Build JSON_Legacy
+10. All Nodes Added to `layout.yaml` Users Key
+    - **Wait for the Coordinator**: Wait for the coordinator post-pre-genesis set closure and to add all genesis participants.
+11. Pull from Genesis Repo and Build
+    - **Wait for the Coordinator**: Wait for the coordinator's signal to start.
+12. Start Nodes!
 
-> ⚠️ **Important**: Only proceed with asynchronous steps after the coordinator confirms the previous sequential blocking steps as completed.
+Coordination happens via the 0L Discord server voice channels, and a Google Sheet will track participants at each. Each
+step requires careful attention to the coordinator's instructions.
+
+:::note
+Only proceed with asynchronous steps after the coordinator confirms the previous sequential blocking steps as completed.
+:::
+
 
 ## Genesis Ceremony Steps
 
-### 1. Cleanup
-- Delete any previous forked `release-v6.9.0-rc.0-genesis-2` in your GitHub organization.
-- Previous clones and testnets leave data in the `.libra` directory, so you need to clean up:
-  ```
-  rm -Rf ~/libra-framework
-  rm -Rf ~/.libra/data && rm -Rf ~/.libra/genesis && rm -Rf ~/.libra/secure-data.json
-  ```
-- Retrieve Validator Address:
+### 1. Operator name and cleanup of previous binaries or testnet data
 
-  ```
-  grep 'account_address' ~/.libra/public-keys.yaml
-  ```
-- Fetch Static IP
+Provide your operator name (handle) in the **[Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
 
-  ```
-  curl -s ipinfo.io | jq .ip
-  ```
+If you have participated in testnets, delete any previous forks of testnet repos (such as `release-v6.9.0-rc.0-genesis-2`) from your GitHub repositories.
 
-Enter your Validator Address, Operator Name, and Static IP in the Genesis Worksheet.
+Previous clones and testnets leave data in the `.libra` directory, clean those up by removing these directories
 
-### 2. Fetch source & verify commit hash
-
+``` bash
+rm -rf ~/libra-framework && rm -rf ~/.libra/libra-legacy-v6
+rm -rf ~/.libra/data && rm -rf ~/.libra/genesis && rm -rf ~/.libra/secure-data.json
+rm -f /usr/bin/libra && rm -rf /usr/local/bin/libra && rm -f ~/.cargo/bin/libra
 ```
+
+
+### 2. Get your static IP and open necessary ports
+
+Fetch your external Static IP and set it aside
+``` bash
+curl -s ipinfo.io | jq .ip
+```
+
+The validator should have the following ports open: `6180`, `6181`
+
+- `6180` should be open on all interfacess `0.0.0.0/0`, it's for consensus and uses noise encryption.
+- `6181` is for the private validator fullnode network ("VFN"), the firewall should only allow the IP of the fullnode to access this port.
+
+
+### 3. Fetch source & verify commit hash
+
+We suggest you start a new tmux session
+``` bash
+sudo apt install tmux -y
+tmux new -t libra-node
+```
+
+Clone the `libra-framework` repository and make sure you are on the correct branch
+``` bash
 cd ~
 git clone https://github.com/0LNetworkCommunity/libra-framework
 cd ~/libra-framework
-git fetch --all && git checkout main
+git fetch --all && git checkout release-6.9.0-rc.10
+```
+
+Ensure the commit hash matches your peers and the coordinator
+``` bash
 git log -n 1 --pretty=format:"%H"
 ```
 
- > **Note**: Provide git hash in the Genesis Worksheet. Only proceed with the following async steps after the coordinator provides the git hash and your results match.
+- **Confirm the git hash in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
 
-### 3. Build `libra-framework` packages
-```
-cd ~/libra-framework
-cargo build --release -p libra -p libra-genesis-tools -p libra-txs -p diem-db-tool
-```
-- Confirm with "done" in the Genesis Worksheet.
 
-### 4. Prepare `.libra` directory and add GitHub PAT (use classic with repo privileges)
-```bash
-mkdir ~/.libra/
+### 4. Build and install the libra binaries
+
+To use many of our genesis CLI tooling, we have to switch to its directory
+``` bash
+cd ~/libra-framework/tools/genesis
+```
+
+If your directory structure setup is different from the default, you can override the defaults by exporting the following environment variables: `SOURCE_PATH`, `BINS_PATH`, `DATA_PATH`. See the [Makefile](https://github.com/0LNetworkCommunity/libra-framework/blob/03d9f10bb539bda4c3f9de96e4a411971ec88d80/tools/genesis/Makefile#L7) for more details.
+
+Install the source and reload bash
+``` bash
+sudo apt install make -y
+EPOCH=692 make install && source ~/.bashrc
+```
+
+- **Confirm with "done" in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
+
+
+### 5. Account Preparation and Adding GitHub PAT (use classic with repo privileges)
+
+Acquire [GitHub Personal Access Token (PAT)](https://github.com/settings/tokens) with repo privileges. Paste it aside.
+
+If you are new and do not have an account, create one, carefully record your seed phrase, and keep it aside for later
+``` bash
+libra wallet keygen
+```
+
+Setup the validator configs and data directory `~/.libra` (it is OK to refresh your configs)
+``` bash
+libra config validator-init
+```
+
+Retrieve Validator address and paste it aside
+``` bash
+grep 'account_address' ~/.libra/public-keys.yaml
+```
+
+Paste your GitHub PAT in the `~/.libra/github_token.txt` file
+``` bash
 nano ~/.libra/github_token.txt
 ```
-- Confirm with "done" in the Genesis Worksheet.
 
-### 5. Pre-Genesis Registration
-- Ensure you delete any forked version of `release-v6.9.0-rc.0-genesis-2` in your home org before registering.
-```bash
-cd ~/libra-framework
-./target/release/libra-genesis-tools register  --org-github 0LNetworkCommunity --name-github release-v6.9.0-rc.0-genesis-6b
+- **Enter your Validator Address Static IP in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
+
+
+### 6. Export genesis ceremony repository and register for genesis 
+
+Export the genesis ceremony repository as an environment variable
+``` bash
+export GIT_REPO=release-v6.9.0-genesis-registration
 ```
-- Confirm with "done" in the Genesis Worksheet.
 
-### 6. PR Received
-(coordinator)
-
-### 7. PR Merged
-(coordinator)
-
-### 8. Build JSON_Legacy
-```bash
-### Fetch Ancestry Data and Snapshot
-rm -Rf ~/libra-recovery && mkdir -p ~/libra-recovery
-wget https://github.com/0LNetworkCommunity/epoch-archive/raw/main/670.tar.gz -O ~/libra-recovery/670.tar.gz
-cd ~/libra-recovery && tar -xvzf 670.tar.gz
-wget https://raw.githubusercontent.com/sirouk/ol-data-extraction/v-6.9.x-ready/assets/data.json -O ~/libra-framework/tools/genesis/tests/fixtures/v5_recovery.json
-
-### Use v5.2 codebase and snapshot to generate recovery.json for seeding v6.9.x state
-sudo rm -Rf ~/libra-legacy-v6
-cd ~ && git clone -b v6 https://github.com/0LNetworkCommunity/libra-legacy-v6
-cd ~/libra-legacy-v6/ol/genesis-tools
-cargo r -p ol-genesis-tools -- --export-json ~/libra-recovery/v5_recovery.json --snapshot-path ~/libra-recovery/670/state_ver* --ancestry-file ~/libra-recovery/v5_ancestry.json
-md5sum ~/libra-recovery/v5_recovery.json
+Register for genesis
+``` bash
+make register
 ```
-- Confirm `v5_recovery.json` md5 hash in the Genesis Worksheet.
 
-### 9. All nodes added to `layout.yaml` users key
-    (coordinator)  
-> ⚠️ **Note**: Pre-genesis set closes here. Wait for coordinator.
+- **Confirm with "done" in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
 
-### 10. Pull from genesis repo and build
+:::warning
+Please wait for the coordinator at this step.
+:::
 
-> Note: We will test with the CHAIN=testnet (this is not the same as testing, as testnet has the same settings as mainnet but with shorter epochs)
-```bash
-# pull and build genesis
-cd ~/libra-framework/tools/genesis
-CHAIN=testnet GIT_ORG=0LNetworkCommunity GIT_REPO=release-v6.9.0-rc.0-genesis-6b RECOVERY_FILE=~/libra-recovery/v5_recovery.json make genesis
+
+### 7. PR Received
+
+(coordinator confirms)
+
+
+### 8. PR Merged
+
+(coordinator merges your PR)
+
+
+### 9. Build JSON_Legacy from snapshot and ancestry
+
+Build the legacy json
+``` bash
+make legacy
 ```
-- Confirm with "done" in the Genesis Worksheet.
 
-> ⚠️ **Note**: All set. Wait for the coordinator before the next step.
+- **Confirm `v5_recovery.json` md5 hash in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
 
-### 11. Start nodes!
+
+### 10. All nodes added to `layout.yaml` users key
+
+:::warning
+Please wait for the coordinator. Pre-genesis set closes here.
+:::
+
+
+### 11. Make Genesis
+
+Pull from the genesis repo and build genesis
+``` bash
+make genesis
+```
+
+- Confirm with "done" in the **[Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
+
+:::warning
+Please wait for the coordinator.
+:::
+
+
+### 12. Start nodes!
+
 Wait for the coordinator, say a prayer, then start!
-```bash
-~/libra-framework/target/release/libra node --config-path ~/.libra/validator.yaml
+``` bash
+libra node
 ```
+
+To disconnect from your tmux session `CTRL + b` and then `d` to disconnect. To reconnect you can use `tmux a -t libra-node`.
+
+You could also consider running `libra node` as a service [which is detailed here](detailed-instructions#setup-as-a-serviceoptional).
+
 
 ---
-**End of Ceremony Steps**
+**End Of The Genesis Ceremony Steps.**

@@ -3,15 +3,27 @@ title: "Fullnode yaml example"
 id: "fullnode-yaml"
 ---
 
-### node.yaml
+# NOTE:
+You no longer have to modify a fullnode.yaml by hand, as there is now a tool to initialize fullnode configuration.
 
-### Fullnode yaml
+That is:
+`libra config fullnode-init`
+
+The following files should be maintained with the correct seed peers relative to the chain they serve:
+
+`mainnet`:
+https://github.com/0LNetworkCommunity/seed-peers/blob/main/seed_peers.yaml
+
+`testnet` is TBD.
+
+
+### ~/.libra/fullnode.yaml
 ```
 base:
   role: 'full_node'
-  data_dir: '/home/test_0L/.libra/data' # This needs to be your respective users home path
+  data_dir: '/home/vnuser/.libra/data'
   waypoint:
-     from_config: 0:95023f4d6a7e24cac3e52cad29697184db260214210b57aef3f1031ad4d8c02c # This needs to be the correct waypoint for the network you are operating on
+    from_file: '/home/vnuser/.libra/genesis/waypoint.txt'
 
 state_sync:
      state_sync_driver:
@@ -21,20 +33,19 @@ state_sync:
         continuous_syncing_mode: ExecuteTransactionsOrApplyOutputs
 
 execution:
-  genesis_file_location: '/home/test_0L/.libra/genesis/genesis.blob' # This needs to be your respective users home path
+  genesis_file_location: '/home/vnuser/.libra/genesis/genesis.blob'
 
 full_node_networks:
 - network_id: 'public'
-  # discovery_method: 'onchain'
   listen_address: '/ip4/0.0.0.0/tcp/6182'
   seed_addrs:
-    3c37c7d6a5122a6b9ef07a11cc40e445874eb0841ae028d6326bf67768cce235:
-    - "/ip4/204.186.74.42/tcp/6182/noise-ik/0x3c37c7d6a5122a6b9ef07a11cc40e445874eb0841ae028d6326bf67768cce235/handshake/0"
+    1017ce1abc30e356660b8b0542275f2fb4373b5f8a82b7800a5b3fdf718ae55f:
+    - "/ip4/70.15.242.6/tcp/6182/noise-ik/0x1017ce1abc30e356660b8b0542275f2fb4373b5f8a82b7800a5b3fdf718ae55f/handshake/0"
     dcab287b256bb1e90cda2537553ee19cac195ce67c2fefc7ff25b8aaf2368e6d:
-    - "/ip4/136.244.71.63/tcp/6182/noise-ik/0xdcab287b256bb1e90cda2537553ee19cac195ce67c2fefc7ff25b8aaf2368e6d/handshake/0"
-    0a3cab5f2ecb29bdb4a9efe1dd4576feacefe4ec74ab7ef65d472bbb4461804d:
-    - "/ip4/35.86.200.84/tcp/6182/noise-ik/0x0a3cab5f2ecb29bdb4a9efe1dd4576feacefe4ec74ab7ef65d472bbb4461804d/handshake/0"
-
+    - "/ip4/222.101.31.242/tcp/6182/noise-ik/0xdcab287b256bb1e90cda2537553ee19cac195ce67c2fefc7ff25b8aaf2368e6d/handshake/0"
+    619898b2f99fba7b25fae35e3eab03164d7d9ce0d10abe8f6ceae9a43ffa1c34:
+    - "/ip4/65.109.80.179/tcp/6182/noise-ik/0x619898b2f99fba7b25fae35e3eab03164d7d9ce0d10abe8f6ceae9a43ffa1c34/handshake/0"
+    
 api:
   enabled: true
   address: '0.0.0.0:8080'
