@@ -90,7 +90,7 @@ nano ~/.libra/vfn.yaml
 ```
 
 
-This is what your VFN `full_node_networks` section should look like (you `6181` and `6182`)
+This is what your VFN `full_node_networks` section should look like:
 ``` yaml
 full_node_networks:
 - network_id:
@@ -136,7 +136,7 @@ validator_host:
 full_node_network_public_key: "0xabcdyourvfnpublickey"
 full_node_host:
   host: <vfn_ip>
-  port: 6181
+  port: 6182
 ```
 
 On your Validator, update the on-chain config for the VN/VFN (do this just once)
