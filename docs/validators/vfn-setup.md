@@ -12,7 +12,7 @@ We strongly suggest that all validators also run a VFN, which is a node that ser
 
 
 ## Ports
-The following ports must be open: `6181`, `6182`, `8080`
+The following ports must be open: `6181`, `6182`, `8080`.
 
 - `6181` is for the private validator fullnode network ("VFN"), it should only allow traffic from the Validator node IP address above.
 - `6182` is for the the PUBLIC fullnode network. This is how the public nodes that will be serving JSON-RPC on the network will receive data and submit transactions to the network.
@@ -39,7 +39,6 @@ bash ./util/dev_setup.sh -bt
 . ~/.bashrc
 
 cd ~/libra-framework
-git fetch --all && git checkout release-6.9.0-rc.10
 cargo build --release -p libra -p diem-db-tool -p diem
 ```
 
@@ -60,15 +59,30 @@ Grab the **genesis blob** and **waypoint** (creates `fullnode.yaml` not used her
 libra config fullnode-init
 ```
 
+:::warning
+Until a patch is published to pull correctly from the `epoch-archive-mainnet` repo, the `genesis.blob` and `waypoint.txt` will be wrong if you are using `libra config fullnode-init`.
+Please run:
+- `wget https://raw.githubusercontent.com/0LNetworkCommunity/epoch-archive-mainnet/main/upgrades/v6.9.0/genesis.blob -O ~/.libra/genesis/genesis.blob`
+- `wget https://raw.githubusercontent.com/0LNetworkCommunity/epoch-archive-mainnet/main/upgrades/v6.9.0/waypoint.txt -O ~/.libra/genesis/waypoint.txt`
+:::
+
 Set your client `libra.yaml` with the rpc-load-balancer upstream node
 ``` bash
 libra config fix --force-url https://rpc.openlibra.space:8080
 ```
 
+:::info
+If you notice problems getting transactions through, or when the RPC Load Balancer is down, you can adjust the url to `"http://localhost:8080/"` in `~/.libra/libra.yaml`
+:::
+
 Configure your VFN using the validator config tool
 ``` bash
 libra config validator-init --vfn
 ```
+
+:::warning
+Due to a bug currently in `libra config validator-init`, please run this command again without the `--vfn` parameter
+:::
 
 The VFN config will then be automatically created here
 ``` bash
@@ -76,7 +90,7 @@ nano ~/.libra/vfn.yaml
 ```
 
 
-This is what your VFN `full_node_networks` section should look like (you `6181` and `6182`)
+This is what your VFN `full_node_networks` section should look like:
 ``` yaml
 full_node_networks:
 - network_id:
@@ -84,16 +98,16 @@ full_node_networks:
   discovery_method: 'onchain'
   listen_address: '/ip4/0.0.0.0/tcp/6181'
   seeds:
-    1234yourvalidatorpublickey:
+    <0x_your_validator_publickey>:
       addresses:
-      - '/ip4/<validator_ip>/tcp/6181/noise-ik/0x1234yourvalidatorpublickey/handshake/0'
+      - '/ip4/<validator_ip>/tcp/6181/noise-ik/<0x_your_validator_publickey>/handshake/0'
       role: 'Validator'
 - network_id: 'public'
   discovery_method: 'onchain'
   listen_address: '/ip4/0.0.0.0/tcp/6182'
   identity:
     type: 'from_file'
-    path: '/home/vfnuser/.libra/validator-full-node-identity.yaml'
+    path: '/home/<your_user>/.libra/validator-full-node-identity.yaml'
 ```
 
 Note:
@@ -113,16 +127,6 @@ grep full_node_network_public_key ~/.libra/public-keys.yaml
 # example: full_node_network_public_key: "0xabcdyourvfnpublickey"
 ```
 
-On both Validator and VFN machines, make sure the `operator.yaml` is configured with VN and VFN's IP address and separate public keys
-``` bash
-nano ~/.libra/operator.yaml
-```
-
-On both Validator and VFN machines, make sure the `operator.yaml` is configured with VFN's public key and ip address
-``` bash
-nano ~/.libra/operator.yaml
-```
-
 On both machines, the config in `operator.yaml` should be complete with separate Validator and VFN keys and IPs
 ``` yaml
 validator_network_public_key: "0xthiswasalreadysetpublickey"
@@ -132,7 +136,7 @@ validator_host:
 full_node_network_public_key: "0xabcdyourvfnpublickey"
 full_node_host:
   host: <vfn_ip>
-  port: 6181
+  port: 6182
 ```
 
 On your Validator, update the on-chain config for the VN/VFN (do this just once)
