@@ -148,7 +148,11 @@ Enter your 0L mnemonic:
 transaction success  ··········································· ✓
 ```
 
-Wait an epoch and then check the on-chain values to confirm
+Wait (up until one epoch) and then check the on-chain values to confirm
 ``` bash
 libra query val-config -a 0xabc4321yourvalidatoraccount | jq
 ```
+
+### Run the VFN
+In a tmux, run the following command:
+`libra node --config-path ~/.libra/vfn.yaml`
