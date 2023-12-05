@@ -61,7 +61,7 @@ libra config fullnode-init
 
 :::warning
 Until a patch is published to pull correctly from the `epoch-archive-mainnet` repo, the `genesis.blob` and `waypoint.txt` will be wrong if you are using `libra config fullnode-init`.
-Please run:
+In order to fix this, after you have run the above command, please run:
 - `wget https://raw.githubusercontent.com/0LNetworkCommunity/epoch-archive-mainnet/main/upgrades/v6.9.0/genesis.blob -O ~/.libra/genesis/genesis.blob`
 - `wget https://raw.githubusercontent.com/0LNetworkCommunity/epoch-archive-mainnet/main/upgrades/v6.9.0/waypoint.txt -O ~/.libra/genesis/waypoint.txt`
 :::
@@ -86,7 +86,7 @@ Due to a bug currently in `libra config validator-init`, please run this command
 
 The VFN config will then be automatically created here
 ``` bash
-nano ~/.libra/vfn.yaml
+cat ~/.libra/vfn.yaml
 ```
 
 
@@ -98,7 +98,7 @@ full_node_networks:
   discovery_method: 'onchain'
   listen_address: '/ip4/0.0.0.0/tcp/6181'
   seeds:
-    <0x_your_validator_publickey>:
+    <your_validator_publickey>:
       addresses:
       - '/ip4/<validator_ip>/tcp/6181/noise-ik/<0x_your_validator_publickey>/handshake/0'
       role: 'Validator'
@@ -124,7 +124,7 @@ Take note of your `full_node_network_public_key`
 ``` bash
 grep full_node_network_public_key ~/.libra/public-keys.yaml
 
-# example: full_node_network_public_key: "0xabcdyourvfnpublickey"
+# example: full_node_network_public_key: "0x_full_node_network_public_key"
 ```
 
 On both machines, the config in `operator.yaml` should be complete with separate Validator and VFN keys and IPs
@@ -133,7 +133,7 @@ validator_network_public_key: "0xthiswasalreadysetpublickey"
 validator_host:
   host: <validator_ip>
   port: 6180
-full_node_network_public_key: "0xabcdyourvfnpublickey"
+full_node_network_public_key: "0x_full_node_network_public_key"
 full_node_host:
   host: <vfn_ip>
   port: 6182
