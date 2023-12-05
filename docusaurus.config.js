@@ -109,7 +109,7 @@ const config = {
                 html: `
                 <div class="footer-left">
                   <a class="footer-logo" href="https://0l.network/" target="_blank" rel="noopener noreferrer" title="0L Network">
-                  <img src="img/logo.png" alt="0L Network logo" />
+                  <img src="/img/logo.png" alt="0L Network logo" />
                   </a>
                   <div class="copyright">
                     <p class="copyright-text">© ${new Date().getFullYear()} 0L Network Community</p>
