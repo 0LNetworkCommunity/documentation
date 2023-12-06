@@ -36,7 +36,7 @@ In the context of the Libra framework, the integration of Proof of Fee (PoF), Mu
 6. **Reward Thermostat Adjustment:**
    - Dynamically adjust the rewards for validators based on the network's bidding behavior.
    - Decrease rewards if bids are consistently low, suggesting the reward is overly generous.
-   - Decrease rewards if bids are consistently high, indicating the reward is not enticing enough.
+   - Increase rewards if bids are consistently high, indicating the reward is not enticing enough.
 
 #### Musical Chairs
 
