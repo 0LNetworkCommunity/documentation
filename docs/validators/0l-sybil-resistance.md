@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: '0L Sybil Resistance'
-description: '0L's innovation is mechanism design'
+description: "0L's innovation is mechanism design"
 ---
 # 0L Sybil Resistance
 ---
