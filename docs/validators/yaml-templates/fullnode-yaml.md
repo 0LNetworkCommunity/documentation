@@ -39,6 +39,8 @@ full_node_networks:
 - network_id: 'public'
   listen_address: '/ip4/0.0.0.0/tcp/6182'
   seed_addrs:
+    cb7e573123b67b0bb957d23f0d11c65b0b5438815b3750461c3815d507fb5649:
+    - "/ip4/73.181.115.53/tcp/6182/noise-ik/0xcb7e573123b67b0bb957d23f0d11c65b0b5438815b3750461c3815d507fb5649/handshake/0"
     1017ce1abc30e356660b8b0542275f2fb4373b5f8a82b7800a5b3fdf718ae55f:
     - "/ip4/70.15.242.6/tcp/6182/noise-ik/0x1017ce1abc30e356660b8b0542275f2fb4373b5f8a82b7800a5b3fdf718ae55f/handshake/0"
     dcab287b256bb1e90cda2537553ee19cac195ce67c2fefc7ff25b8aaf2368e6d:
