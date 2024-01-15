@@ -99,10 +99,7 @@ This assumes the `libra` binary is already built and located at `~/libra-framewo
 :::
 ```
 # Make the release path global and persistent
-echo 'export PATH="$HOME/libra-framework/target/release:$PATH"' >> ~/.bashrc
-
-# Initialize your expanded PATH
-source ~/.bashrc
+sudo cp -f ~/libra-framework/target/release/libra* ~/.cargo/bin/
 
 # Check libra execution and version 
 libra -V
