@@ -1,4 +1,4 @@
-# 0L Network Documentation
+# OpenLibra Documentation
 This is the source for the documentation hosted here:
 
 👇👇👇👇👇👇👇👇👇👇

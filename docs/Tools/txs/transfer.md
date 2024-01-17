@@ -12,7 +12,7 @@ This is a simple tool to transfer coins from one account to another. It is also 
 
 
 ### Transfer 
-- **Function**: Transfers digital assets (e.g., tokens, coins) from one account to another on the 0L Network.
+- **Function**: Transfers digital assets (e.g., tokens, coins) from one account to another on the OpenLibra.
 - **Syntax**: `libra txs transfer --to-account <TO_ACCOUNT> --amount <AMOUNT>`
 - **Parameters**:
   - `--to-account <TO_ACCOUNT>`: The address of the recipient's account.

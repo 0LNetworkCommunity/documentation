@@ -1,12 +1,12 @@
 ---
 sidebar_position: 4
 sidebar_label: "Restore"
-description: 'Restore and sync the 0L Network database to the current state'
+description: 'Restore and sync the OpenLibra database to the current state'
 ---
 
 # Restore
 
-Restore the 0L Network database to get up-to-date with the current state of the network. The `epoch-archive-mainnet` [repository](https://github.com/0LNetworkCommunity/epoch-archive-mainnet) contains other useful commands that are out of the scope of this tutorial but are easily accessible in the readme file of the repository and its `Makefile`.
+Restore the OpenLibra database to get up-to-date with the current state of the network. The `epoch-archive-mainnet` [repository](https://github.com/0LNetworkCommunity/epoch-archive-mainnet) contains other useful commands that are out of the scope of this tutorial but are easily accessible in the readme file of the repository and its `Makefile`.
 
 ### Prerequisites
 :::note

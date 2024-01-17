@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Documentation tutorial
 
-- 0L Network Documentation repo is based on [Docusaurus](https://docusaurus.io/) tool.
+- OpenLibra Documentation repo is based on [Docusaurus](https://docusaurus.io/) tool.
 
 - You can **play around with Docusaurus online** at **[docusaurus.new](https://docusaurus.new)**.
 

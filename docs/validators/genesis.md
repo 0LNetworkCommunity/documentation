@@ -1,12 +1,12 @@
 ---
 sidebar_position: 5
 sidebar_label: "Genesis Ceremony"
-description: 'Launch the 0L Network'
+description: 'Launch the OpenLibra'
 ---
 
 # Genesis Ceremony
 
-This guide outlines the essential steps for conducting a Genesis Ceremony in the 0L Network.
+This guide outlines the essential steps for conducting a Genesis Ceremony in the OpenLibra.
 
 ## The Purpose of the Genesis Ceremony
 

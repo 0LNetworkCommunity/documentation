@@ -1,10 +1,10 @@
 ---
 sidebar_position: 6
 sidebar_label: 'Post-Genesis Ceremony Registration'
-description: 'Register a Validator on the 0L Network'
+description: 'Register a Validator on the OpenLibra'
 ---
 
-# Register a Validator on the 0L Network
+# Register a Validator on the OpenLibra
 
 Welcome!
 
@@ -131,7 +131,7 @@ libra txs validator register -f ~/.libra/operator.yaml
 
 
 ### Get Vouches
-0L Network uses very light reputation games to keep the validator set trusted.
+OpenLibra uses very light reputation games to keep the validator set trusted.
 Just ask an existing validator for a vouch. It helps a lot if you share your node specs and a little bit of your experience with them. 
 
 Your friend will:
@@ -140,7 +140,7 @@ libra txs validator vouch --vouch-for <YOUR ADDRESS>
 ```
 
 ### Bid to be in the validator set
-0L Network uses Proof-of-Fee for sybil resistance, instead of Proof-of-Stake. You don't need any stake to join, but you just need to be able to bid on how much you are willing to pay to be in the validator set. The cheapest bid proposed by validators will be actually what all validators pay (uniform price auction).
+OpenLibra uses Proof-of-Fee for sybil resistance, instead of Proof-of-Stake. You don't need any stake to join, but you just need to be able to bid on how much you are willing to pay to be in the validator set. The cheapest bid proposed by validators will be actually what all validators pay (uniform price auction).
 ``` bash
 libra txs validator pof --bid-pct <PERCENT YOU PAY> --expiry <WHEN EXPIRES>
 ```

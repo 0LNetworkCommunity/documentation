@@ -7,7 +7,7 @@ const darkTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: '0L Network Documentation',
+  title: 'OpenLibra Documentation',
   tagline: 'The most loved token!',
   favicon: 'img/favicon.ico',
 
@@ -64,9 +64,9 @@ const config = {
       // Replace with your project's social card
       image: 'img/thumbnail.png',
       navbar: {
-        title: '0L Network Documentation',
+        title: 'OpenLibra Documentation',
         logo: {
-          alt: '0L Network Logo',
+          alt: 'OpenLibra Logo',
           src: 'img/logo.png',
         },
         items: [
@@ -108,11 +108,11 @@ const config = {
               {
                 html: `
                 <div class="footer-left">
-                  <a class="footer-logo" href="https://0l.network/" target="_blank" rel="noopener noreferrer" title="0L Network">
-                  <img src="/img/logo.png" alt="0L Network logo" />
+                  <a class="footer-logo" href="https://0l.network/" target="_blank" rel="noopener noreferrer" title="OpenLibra">
+                  <img src="/img/logo.png" alt="OpenLibra logo" />
                   </a>
                   <div class="copyright">
-                    <p class="copyright-text">© ${new Date().getFullYear()} 0L Network Community</p>
+                    <p class="copyright-text">© ${new Date().getFullYear()} OpenLibra Community</p>
                   </div>
                 </div>
                 `,

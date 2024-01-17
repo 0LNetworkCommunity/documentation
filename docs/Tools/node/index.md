@@ -8,7 +8,7 @@ description: 'Operate a Node'
 # Libra Node
 
 ## Description
-The Libra Node application facilitates the operation of a validator or full node within the 0L Network. This application is pivotal for maintaining the network's integrity, processing transactions, and participating in consensus. 
+The Libra Node application facilitates the operation of a validator or full node within the OpenLibra. This application is pivotal for maintaining the network's integrity, processing transactions, and participating in consensus. 
 
 ### Node Configuration
 The 0L Node can function either as a validator node, participating in the consensus and validation of transactions, or as a full node, which replicates the blockchain data and provides query access to clients. Configuration of a node, specifying its role and behavior, is done via a YAML configuration file.
