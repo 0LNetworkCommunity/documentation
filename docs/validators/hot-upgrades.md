@@ -61,10 +61,10 @@ The proposer can add the link to this Github repo in the proposal phase.
 
 ```
 # note the actual script dir
-libra txs upgrade propose --proposal-script-dir <PROPOSAL_SCRIPT_DIR> --metadata-url <URL>
+libra txs governance propose --proposal-script-dir <PROPOSAL_SCRIPT_DIR> --metadata-url <URL>
 
 # Example
-libra txs upgrade propose --proposal-script-dir ~/framework_upgrade/3-libra-framework/ --metadata-url https://www.github.com/0LNetworkCommunity/UpdateProposalTemplate
+libra txs governance propose --proposal-script-dir ~/framework_upgrade/3-libra-framework/ --metadata-url https://www.github.com/0LNetworkCommunity/UpdateProposalTemplate
 
 ```
 If this transaction succeeds it will produce a proposal id, which is a number. Now the proposal is open to voting.
@@ -77,12 +77,12 @@ You can query the next proposal using this command: ` libra query view --functio
 
 We assume the default is to vote in favor. To vote "approve" simply:
 ```
-txs vote --proposal-id <PROPOSAL_ID>
+libra txs governance  vote --proposal-id <PROPOSAL_ID>
 ```
 
 If voter would like the proposal to be rejected:
 ```
-txs vote --proposal-id <PROPOSAL_ID> --should-fail
+libra txs governance vote --proposal-id <PROPOSAL_ID> --should-fail
 ```
 :::note
 You can query to see the for and against votes using this command: ` libra query view --function-id 0x1::diem_governance::get_votes --args <proposal_number>`
@@ -93,10 +93,10 @@ After everyone has voted (to reach the consensus threshold of 66% as of  `V7`), 
 ##### 6. Use `txs` to resolve a successfully approved proposal
 ```
 # Note the actual path
-libra txs upgrade resolve --proposal-script-dir <PROPOSAL_SCRIPT_DIR> --proposal-id <PROPOSAL_ID>
+libra txs governance resolve --proposal-script-dir <PROPOSAL_SCRIPT_DIR> --proposal-id <PROPOSAL_ID>
 
 # Example 
-libra txs upgrade resolve --proposal-script-dir ~/framework_upgrade/3-libra-framework/ --proposal-id 0
+libra txs governance resolve --proposal-script-dir ~/framework_upgrade/3-libra-framework/ --proposal-id 0
 ```
 
 If this transaction is successful the new bytecode will be written to the VM, and a new epoch will be triggered.
