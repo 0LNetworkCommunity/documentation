@@ -7,7 +7,7 @@ description: 'Initialize configs'
 # Config
 
 ## Description
-The `ConfigCli` tool is a command-line utility within the Libra Framework designed to facilitate the generation and management of configuration files for various components of the 0L Network. Its primary function is to create and modify the `libra.yaml` configuration file, which is essential for the operation of CLI tools like `txs`, `tower`, and others within the ecosystem.
+The `ConfigCli` tool is a command-line utility within the Libra Framework designed to facilitate the generation and management of configuration files for various components of the OpenLibra. Its primary function is to create and modify the `libra.yaml` configuration file, which is essential for the operation of CLI tools like `txs`, `tower`, and others within the ecosystem.
 
 The tool provides several subcommands to handle different aspects of configuration, from initializing new configurations to adjusting existing ones, as well as specialized options for validators and fullnodes.
 
