@@ -44,7 +44,7 @@ full_node_networks:
     dcab287b256bb1e90cda2537553ee19cac195ce67c2fefc7ff25b8aaf2368e6d:
     - "/ip4/222.101.31.242/tcp/6182/noise-ik/0xdcab287b256bb1e90cda2537553ee19cac195ce67c2fefc7ff25b8aaf2368e6d/handshake/0"
     6ead5e1c7fe9f7c09e965f230cf8cf3cbbcacc33a562737aebd7387a90b04a43:
-    - "/ip4/65.109.80.179/tcp/6181/noise-ik/0x6ead5e1c7fe9f7c09e965f230cf8cf3cbbcacc33a562737aebd7387a90b04a43/handshake/0"
+    - "/ip4/65.109.80.179/tcp/6182/noise-ik/0x6ead5e1c7fe9f7c09e965f230cf8cf3cbbcacc33a562737aebd7387a90b04a43/handshake/0"
     c04300abebc472cdea0e1f7160ece6c09e49145c2b5b72318bdc43c11aceb203:
     - "/ip4/172.104.211.8/tcp/6182/noise-ik/0xc04300abebc472cdea0e1f7160ece6c09e49145c2b5b72318bdc43c11aceb203/handshake/0"
     febaed185e04d0f158998b39501796d0b79235399796e96a1c9a3fac2f31ab57:
