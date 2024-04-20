@@ -98,7 +98,7 @@ cargo build --release -p libra
 This assumes the `libra` binary is already built and located at `~/libra-framework/target/release/libra`.
 :::
 ```
-# Make the release path global and persistent
+# Copy libra binaries to cargo bins path
 sudo cp -f ~/libra-framework/target/release/libra* ~/.cargo/bin/
 
 # Check libra execution and version 
