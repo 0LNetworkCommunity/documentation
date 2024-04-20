@@ -24,7 +24,7 @@ bash ./util/dev_setup.sh -t
 cd ~/libra-framework
 cargo build --release -p libra 
 
-# Make the release path global and persistent
+# Copy libra binaries to cargo bins path
 sudo cp -f ~/libra-framework/target/release/libra* ~/.cargo/bin/
 
 # Check libra execution and version 
