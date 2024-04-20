@@ -102,7 +102,7 @@ This assumes the `libra` binary is already built and located at `~/libra-framewo
 sudo cp -f ~/libra-framework/target/release/libra* ~/.cargo/bin/
 
 # Check libra execution and version 
-libra -V
+libra version
 ```
 
 
