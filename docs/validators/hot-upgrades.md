@@ -63,7 +63,8 @@ Due to some circumstances, a publisher may want to downgrade the policy to allow
 Example
 
 ```
-libra txs governance propose --proposal-script-dir ~/framework_upgrade/3-libra-framework/ --metadata-url https://www.github.com/0LNetworkCommunity/UpdateProposalTemplate --danger-force-upgrade
+rm -rf ~/framework_upgrade
+libra-framework upgrade --output-dir ~/framework_upgrade --framework-local-dir ~/libra-framework/framework/ --danger-force-upgrade
 ```
 
 ## Procedure
