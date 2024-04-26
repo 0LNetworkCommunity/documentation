@@ -140,7 +140,7 @@ You can query the next proposal using this command: ` libra query view --functio
 
 We assume the default is to vote in favor. To vote "approve" simply:
 ```
-libra txs governance  vote --proposal-id <PROPOSAL_ID>
+libra txs governance vote --proposal-id <PROPOSAL_ID>
 ```
 
 If voter would like the proposal to be rejected:
@@ -151,7 +151,7 @@ libra txs governance vote --proposal-id <PROPOSAL_ID> --should-fail
 You can query to see the for and against votes using this command: ` libra query view --function-id 0x1::diem_governance::get_votes --args <proposal_number>`
 :::
 
-After everyone has voted (to reach the consensus threshold of 66% as of  `V7`), the proposal will be in a "Resolvable" state. Anyone can resolve it by submitting the upgrade transaction. This means the sender must have the source transaction script for the upgrade (step #1 above).
+After everyone has voted (to reach the consensus threshold of 66% as of `V7`), the proposal will be in a "Resolvable" state. Anyone can resolve it by submitting the upgrade transaction. This means the sender must have the source transaction script for the upgrade (step #1 above).
 
 ##### 6. Use `txs` to resolve a successfully approved proposal
 ```
