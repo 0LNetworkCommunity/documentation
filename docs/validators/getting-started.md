@@ -1,14 +1,14 @@
 ---
 sidebar_label: 'Getting Started'
 sidebar_position: 1
-description: 'Learn whats involved running a validator on 0L Network'
+description: 'Learn whats involved running a validator on OpenLibra'
 ---
 # Getting Started
 ---
 
 ## Validators
 
-Participating as a validator on the 0L Network is an open and permissionless process, accessible to all. The community is supportive and eager to assist those passionate about contributing to the network's security. However, it's important to note that this role comes with certain responsibilities, as outlined below, along with corresponding rewards for the efforts made.
+Participating as a validator on the OpenLibra is an open and permission-less process, accessible to all. The community is supportive and eager to assist those passionate about contributing to the network's security. However, it's important to note that this role comes with certain responsibilities, as outlined below, along with corresponding rewards for the efforts made.
 
 ### Validator Operations
 
@@ -18,7 +18,7 @@ Participating as a validator on the 0L Network is an open and permissionless pro
 3. **Network Maintenance**: Validators play a critical role in maintaining the network's integrity and are responsible for proposing blocks within the Libra network.. 
 
 ### Selection Process
-OL Network uses the [Libra Framework](https://github.com/0LNetworkCommunity/libra-framework) that uses an experimental algorithm called Proof of Fee(PoF) to determine the validator selection. Libra Framework's consensus mechanism stands apart from the more commonly known frameworks like Proof of Stake (PoS), Delegated Proof of Stake (DPoS), and Proof of Work (PoW), which are prevalent in many other blockchain networks. Instead of following these established paradigms, 0L Network employs a unique auction-based system for validator selection.
+OL Network uses the [Libra Framework](https://github.com/0LNetworkCommunity/libra-framework) that uses an experimental algorithm called Proof of Fee(PoF) to determine the validator selection. Libra Framework's consensus mechanism stands apart from the more commonly known frameworks like Proof of Stake (PoS), Delegated Proof of Stake (DPoS), and Proof of Work (PoW), which are prevalent in many other blockchain networks. Instead of following these established paradigms, OpenLibra employs a unique auction-based system for validator selection.
 
 In this system, validators are required to submit bids as part of a competitive auction process. The number of available seats for validators is dynamic, and these seats are allocated based on the bid amounts. The bids are evaluated in descending order, and the highest bidders are granted validator status until all the seats are filled. A critical aspect of this mechanism is that all participating validators, regardless of their individual bid amounts, will eventually pay the same fee — equal to the lowest accepted bid in the auction.
 

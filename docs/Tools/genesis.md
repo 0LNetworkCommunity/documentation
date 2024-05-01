@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-description: 'Start the 0L Network'
+description: 'Start the OpenLibra'
 ---
 
 # Genesis
