@@ -40,11 +40,32 @@ bash ./util/dev_setup.sh -ty
 
 # Setup for CI with no user input required
 bash ./util/dev_setup.sh -tb
+```
+
+:::info
+
+Once you have installed the required set of tools, make sure your shell has the access to the cargo binary. 
+You can test this with:
+
+``
+cargo --version
+``
+
+If the cargo binary is not accessible from your shell, you may want to source your shell file. 
+
+For e.g., For a bash shell you can run:
+
+``
+source "$HOME/.cargo/env"
+``
+
+:::
 
 # Build the project
-
+```
 cargo build --release
-``` 
+```
+
 
 ### Finalizing Setup
 
