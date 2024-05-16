@@ -62,9 +62,10 @@ source "$HOME/.cargo/env"
 :::
 
 # Build the project
-
+```
 cargo build --release
- 
+```
+
 
 ### Finalizing Setup
 
