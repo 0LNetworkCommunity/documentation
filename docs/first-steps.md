@@ -52,7 +52,7 @@ After building the project, you'll have the Libra framework binaries ready. To m
 
 ```bash
 # Copy binaries to your Cargo bin directory
-sudo cp -f ~/libra-framework/target/release/libra* ~/.cargo/bin/
+sudo cp -f ./target/release/libra* ~/.cargo/bin/
 ```
 
 Well done! 👏 You now have a fully operational node running the 0L Libra framework. 
