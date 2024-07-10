@@ -1,4 +1,4 @@
-# 0L Network Documentation
+# Open Libra Documentation
 This is the source for the documentation hosted here:
 
 👇👇👇👇👇👇👇👇👇👇
@@ -16,7 +16,7 @@ https://0lnetworkcommunity.github.io/documentation/
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
 ### Installation
-Open Libra core prefers Bun over NPM and Yarn: https://bun.sh/
+Open Libra core prefers Bun over NPM and Yarn (https://bun.sh/), but you can use any.
 ```
 $ bun install
 ```
