@@ -18,6 +18,7 @@
     "@docusaurus/core": "3.4.0",
     "@docusaurus/preset-classic": "3.4.0",
     "@mdx-js/react": "^3.0.1",
+    "caniuse-lite": "^1.0.30001641",
     "clsx": "^2.1.1",
     "nvm": "^0.0.4",
     "prism-react-renderer": "^2.3.1",
