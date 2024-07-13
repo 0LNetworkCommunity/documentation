@@ -1,6 +1,6 @@
 {
-  "name": "0-l-documentation",
-  "version": "0.0.0",
+  "name": "open-libra-core-docs",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -14,20 +14,21 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@docsearch/js": "3",
-    "@docusaurus/core": "3.0.0",
-    "@docusaurus/preset-classic": "3.0.0",
-    "@mdx-js/react": "^3.0.0",
-    "clsx": "^2.0.0",
+    "@docsearch/js": "^3.6.0",
+    "@docusaurus/core": "3.4.0",
+    "@docusaurus/preset-classic": "3.4.0",
+    "@mdx-js/react": "^3.0.1",
+    "clsx": "^2.1.1",
     "nvm": "^0.0.4",
-    "prism-react-renderer": "^2.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "prism-react-renderer": "^2.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.0.0",
-    "@docusaurus/tsconfig": "3.0.0",
-    "typescript": "~5.2.2"
+    "@docusaurus/module-type-aliases": "3.4.0",
+    "@docusaurus/tsconfig": "3.4.0",
+    "typescript": "5.2.2",
+    "caniuse-lite": "^1.0.30001641"
   },
   "browserslist": {
     "production": [
