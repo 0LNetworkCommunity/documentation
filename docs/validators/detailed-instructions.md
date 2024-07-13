@@ -8,7 +8,7 @@ sidebar_position: 3
 
 ### Requirements
 - TWO unix hosts, one for Validator Node, and one for the Private Fullnode ("VFN").
-libra code targets Ubuntu 22.4
+libra code targets Ubuntu 22.04.
 - Recommended specs:
   - Validator: 300GB SSD harddrive, 8 core CPU, 16G RAM
   - VFN: 100G storage, 8 core CPU, 16G RAM
