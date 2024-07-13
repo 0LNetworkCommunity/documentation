@@ -72,7 +72,7 @@ curl -s ipinfo.io | jq .ip
 
 The validator should have the following ports open: `6180`, `6181`
 
-- `6180` should be open on all interfacess `0.0.0.0/0`, it's for consensus and uses noise encryption.
+- `6180` should be open on all interfaces `0.0.0.0/0`, it's for consensus and uses noise encryption.
 - `6181` is for the private validator fullnode network ("VFN"), the firewall should only allow the IP of the fullnode to access this port.
 
 
@@ -145,7 +145,7 @@ nano ~/.libra/github_token.txt
 - **Enter your Validator Address Static IP in the [Genesis Worksheet](https://docs.google.com/spreadsheets/d/19hZTqGeN1cVw0Jlj5vWtMSEB36EYftjdSfPHhgwCiy8/edit#gid=1604681690).**
 
 
-### 6. Export genesis ceremony repository and register for genesis 
+### 6. Export genesis ceremony repository and register for genesis
 
 Export the genesis ceremony repository as an environment variable
 ``` bash
@@ -219,3 +219,61 @@ You could also consider running `libra node` as a service [which is detailed her
 
 ---
 **End Of The Genesis Ceremony Steps.**
+
+
+### Migration Math
+
+#### `--target-supply <float>` Change in denomination (split)
+
+To adjust the count of coins, and how they get split, the genesis command offers
+one input: `--target-supply`.
+
+If for example the supply will scale (pro-rata) from 2,000,000 to 100,000,000,
+then the genesis supply calculator (`set_ratios_from_settings()`) will create a split of 50 re-denominated coins
+for 1 coin. Coins do not change name, no changes in ownership, and all policies
+remain the same.
+
+#### `--years-escrow <integer>` Provision an infrastructure escrow
+
+If the validators will set aside rewards for future validators this is done
+with: `--years-escrow`. If for example this argument is used, the supply
+calculator (`set_ratios_from_settings()`) will take the *remainder* of the
+`--target-future-uses` which isn't already in a community-wallet.
+
+#### `--target-future-uses <float>` Community wallet and infra escrow target percentage of network supply
+This parameter affects the expected funds available for infra-escrow pledges,
+and the daily epoch reward budget.
+
+Note: this could have been implemented as a number targeting the infra-escrow percentage
+(e.g. `target-infra-escrow`). However the user-experience of the validator at
+genesis is more difficult in this case since the community wallet numbers are
+not easily calculated in advance (it would require multiple steps with this tool).
+
+We calculate the infra-escrow budget by working backwards from one input the
+community would already have: a target for "future users" (versus end-user
+accounts).
+If for example the community expected that the combined infra-escrow and
+community wallets will represent 70% of the network as a target, we deduce that
+infra-escrow will be the remainder of `((0.70 * total supply) - (sum of community
+wallets))`.
+
+A lower amount of `--target-future-uses` means a lower amount available to
+infrastructure escrow pledges to use over the time `--years-escrow`. i.e. if
+target future uses is 55%  (`--target-future-uses 0.55`) and the community
+wallet balance is 45%, then there is
+10% of supply to be spread over 7 years (`--years-escrow 7`).
+
+Note also we derive the baseline
+daily validator rewards from those two parameters. In the example above the
+daily reward baseline equals `(10% * Total
+Supply) / 7 (years) * 100 validators (baseline) * 365 (days)`
+
+Troubleshooting. If the target percent % is below the proportion of the sum of community
+accounts the program will exit with error.
+
+
+#### `--map_dd_to_slow <list of space delimited addresses>`. Adjusting the future-uses calculator
+
+Usually in test-cases, there may be cases that the future-uses calculator gets
+skewed because certain accounts are not in the expected state (a community
+wallet wasn't expected to exist at that point).
