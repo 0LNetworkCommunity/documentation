@@ -206,7 +206,7 @@ When publishing Move modules, if multiple modules are in one package, then all t
 
 ### Running a Move function
 :::note
-The `move run` feature is currently not available but we have a work around for interacting with move functions. View a full description [here](/tools/txs/generate-transaction)
+The `move run` feature is currently not available but we have a work around for interacting with move functions. View a full description [here](../txs/generate-transaction.md)
 :::
 
 
@@ -217,7 +217,7 @@ $ libra txs generate-transaction --function-id 0xd1281de242839fc939745996882c5fc
 
 ### View functions
 :::note
-The `libra move view` feature is currently not available but we have a couple of work arounds for viewing move functions and values. View a full description [here](/tools/getting-started)
+The `libra move view` feature is currently not available but we have a couple of work arounds for viewing move functions and values. View a full description [here](../getting-started.md)
 :::
 ```bash
 $ libra query move-value --account 0xd1281de242839fc939745996882c5fc2 --module-name message --struct-name MessageHolder --key-name message
