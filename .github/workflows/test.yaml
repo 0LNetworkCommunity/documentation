@@ -9,6 +9,12 @@ jobs:
     name: Test deployment
     runs-on: ubuntu-latest
     steps:
+      # NOTE: for debugging CI this allow shell access to github runner. Will print out tmate.io terminal url
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        with:
+          detached: true
+        timeout-minutes: 15
       - uses: actions/checkout@v3
       - uses: oven-sh/setup-bun@v2
       - uses: actions/setup-node@v3

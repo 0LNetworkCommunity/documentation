@@ -37,7 +37,10 @@ In this system, validators are required to submit bids as part of a competitive 
 ### Compliance Requirements for Validators
 
 #### Overview
-To participate in the bidding process for the next epoch, validators must maintain compliance. Non-compliant validators at the time of an epoch change will be [jailed](tools/txs/validator.md) and must be un-jailed by one of the active validators to re-enter the process.
+To participate in the bidding process for the next epoch, validators must
+maintain compliance. Non-compliant validators at the time of an epoch change
+will be [jailed](../tools/txs/validator.md) and must be
+un-jailed by one of the active validators to re-enter the process.
 
 #### Detailed Compliance Criteria
 
