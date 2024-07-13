@@ -15,7 +15,7 @@ Participating as a validator on the 0L Network is an open and permissionless pro
 #### Key Responsibilities
 1. **Continuous Operation**: Validators must ensure their systems are operational 24/7.
 2. **Technical Expertise**: A background in System Administration and DevOps is essential for those looking to become Validators.
-3. **Network Maintenance**: Validators play a critical role in maintaining the network's integrity and are responsible for proposing blocks within the Libra network.. 
+3. **Network Maintenance**: Validators play a critical role in maintaining the network's integrity and are responsible for proposing blocks within the Libra network..
 
 ### Selection Process
 OL Network uses the [Libra Framework](https://github.com/0LNetworkCommunity/libra-framework) that uses an experimental algorithm called Proof of Fee(PoF) to determine the validator selection. Libra Framework's consensus mechanism stands apart from the more commonly known frameworks like Proof of Stake (PoS), Delegated Proof of Stake (DPoS), and Proof of Work (PoW), which are prevalent in many other blockchain networks. Instead of following these established paradigms, 0L Network employs a unique auction-based system for validator selection.
@@ -25,7 +25,7 @@ In this system, validators are required to submit bids as part of a competitive 
 #### High-Level Steps for Validator Selection
 
 1. **Bidding Process**: Prospective validators submit their bids during the Proof of Fee (PoF) auction for a specified number of epochs.
-2. **Epoch Transition and Seat Availability**: 
+2. **Epoch Transition and Seat Availability**:
     - At each epoch change, the number of available seats for validators is determined. This depends on factors such as network performance, interest level among validators, and the number of epochs the network has been operational.
 3. **Seat Allocation**:
     - Seats are allocated starting from the highest bid to the lowest, until either all the validators are included or all the seats are filled.
@@ -37,12 +37,15 @@ In this system, validators are required to submit bids as part of a competitive 
 ### Compliance Requirements for Validators
 
 #### Overview
-To participate in the bidding process for the next epoch, validators must maintain compliance. Non-compliant validators at the time of an epoch change will be [jailed](/tools/txs/validator#manage-jail-operations) and must be unjailed by one of the active validators to re-enter the process.
+To participate in the bidding process for the next epoch, validators must
+maintain compliance. Non-compliant validators at the time of an epoch change
+will be [jailed](../cli-tools/txs/validator.md) and must be
+un-jailed by one of the active validators to re-enter the process.
 
 #### Detailed Compliance Criteria
 
 1. **For New Entrants**:
-   - Obtain 2 [vouches](/tools/txs/validator#manage-vouching-operations) from existing validators, ensuring no shared ancestry.
+   - Obtain 2 [vouches](../cli-tools/txs/validator.md#manage-vouching-operations) from existing validators, ensuring no shared ancestry.
    - Submit a bid that ranks among the highest in comparison to others, relative to the number of available validator seats. Essentially, the bid should be sufficiently competitive to fall within the range of top bids for the given number of validator seats.
 
 2. **For Existing Epoch Validators**:
@@ -62,7 +65,7 @@ Details on the formation of this fund and the associated decision-making process
    - A projected reward sustainability (or "runway") of approximately 10 years.
    - Setting reward amounts comparable to prevailing industry standards, assuming the network achieves a valuation close to $100 million.
 
-These measures aim to incentivize consistent and effective network performance by validators, aligning with broader industry norms and long-term network health. 
+These measures aim to incentivize consistent and effective network performance by validators, aligning with broader industry norms and long-term network health.
 
 
 ### How to become a Validator

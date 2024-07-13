@@ -150,7 +150,7 @@ transaction success  ·····························�
 
 Wait (up until one epoch) and then check the on-chain values to confirm
 ``` bash
-libra query val-config -a 0xabc4321yourvalidatoraccount | jq
+libra query val-config 0xabc4321yourvalidatoraccount | jq
 ```
 
 ### Run the VFN

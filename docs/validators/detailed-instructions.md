@@ -22,7 +22,7 @@ VFNs and public fullnodes should by default serve port `8080` RPC for operabilit
 
 #### Validator
 
-The following ports must be open: `6180``, `6181`
+The following ports must be open: `6180`, `6181`
 
 - `6180` should be open on all interfacess `0.0.0.0/0`, it's for consensus and uses noise encryption.
 - `6181` is for the private validator fullnode network ("VFN"), the firewall should only allow the IP of the fullnode to access this port.
@@ -98,11 +98,11 @@ cargo build --release -p libra
 This assumes the `libra` binary is already built and located at `~/libra-framework/target/release/libra`.
 :::
 ```
-# Make the release path global and persistent
+# Copy libra binaries to cargo bins path
 sudo cp -f ~/libra-framework/target/release/libra* ~/.cargo/bin/
 
 # Check libra execution and version 
-libra -V
+libra version
 ```
 
 
