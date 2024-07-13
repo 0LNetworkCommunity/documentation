@@ -1,11 +1,3 @@
----
-title: "Getting Started"
-sidebar_position: 1
-description: 'Libra Framework Tool Design'
----
-
-# Getting Started
----
 
 ## About Libra Tool Design
 The tools are intended to be minimalist, yet modular. Upstream vendors have sophisticated and complex tooling. This is usually unwieldy for the profile of typical 0L users.
@@ -26,33 +18,3 @@ With a simple Rust project, that uses Clap as a CLI scaffold, you can import all
 
 Additionally the most relevant vendor SDK types are re-exported by `libra-types`. So you should be able to take advantage of much of the Move resource parsing (e.g converting account addresses from API calls to structs);
 
-### Build
-:::note
-This targets an ubuntu 22.04 build. You may need to create an account. Do it [here](/tools/wallet)
-:::
-
-```
-# We suggest you run the following in a tmux session from your user home directory
-tmux a
-cd ~
-
-# Checkout the source
-git clone https://github.com/0LNetworkCommunity/libra-framework
-
-# Install dependencies and Rust lang
-cd ~/libra-framework
-bash ./util/dev_setup.sh -t
-
-# build and install the binary
-cd ~/libra-framework
-cargo build --release -p libra 
-
-# Make the release path global and persistent
-sudo cp -f ~/libra-framework/target/release/libra* ~/.cargo/bin/
-
-# Initialize your expanded PATH
-source ~/.bashrc
-
-# Check libra execution and version 
-libra -v
-```

@@ -47,7 +47,7 @@ subdir = 'diem-move/framework/diem-framework'
 
 
 ```bash
-$ libra move compile --package-dir /libra-framework/tools/txs/tests/fixtures/test_publish 
+$ libra move compile --package-dir /libra-framework/tools/txs/tests/fixtures/test_publish
 ```
 
 The above command will generate the below terminal output:
@@ -206,7 +206,7 @@ When publishing Move modules, if multiple modules are in one package, then all t
 
 ### Running a Move function
 :::note
-The `move run` feature is currently not available but we have a work around for interacting with move functions. View a full description [here](/tools/txs/generate-transaction) 
+The `move run` feature is currently not available but we have a work around for interacting with move functions. View a full description [here](../txs/generate-transaction.md)
 :::
 
 
@@ -214,18 +214,10 @@ The `move run` feature is currently not available but we have a work around for 
 $ libra txs generate-transaction --function-id 0xd1281de242839fc939745996882c5fc2::message::set_message --args '42'
 ```
 
-### Deploying a package
-:::note
-The `libra move publish` feature is currently not available but we have a work around for interacting with move functions. View a full description [here](/Tools/txs/publish) 
-:::
-```bash
-$ libra txs publish --package-dir /libra-framework/tools/txs/tests/fixtures/test_publish
-```
-
 
 ### View functions
 :::note
-The `libra move view` feature is currently not available but we have a couple of work arounds for viewing move functions and values. View a full description [here](/tools/getting-started) 
+The `libra move view` feature is currently not available but we have a couple of work arounds for viewing move functions and values. View a full description [here](../getting-started.md)
 :::
 ```bash
 $ libra query move-value --account 0xd1281de242839fc939745996882c5fc2 --module-name message --struct-name MessageHolder --key-name message
@@ -233,5 +225,3 @@ $ libra query move-value --account 0xd1281de242839fc939745996882c5fc2 --module-n
 ```bash
 $ libra query view --function-id 0x1::reconfiguration::get_current_epoch
 ```
-
-
