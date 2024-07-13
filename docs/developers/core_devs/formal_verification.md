@@ -29,7 +29,7 @@ The `dev_setup.sh` can be run with these options:
 
 > -y install or update Move Prover tools: z3, cvc5, dotnet, boogie
 
-> -p update ${HOME}/.profile or ./bashrc
+> -p update $HOME/.profile or ./bashrc
 
 ```
 # run the installer
@@ -93,6 +93,6 @@ ones being:
 
 3. slow_wallet.move
   a. no transactions should bypass the slow wallet tracker. If there is a slow
-  wallet struct, a trasaction should always alter it.
+  wallet struct, a transaction should always alter it.
   b. no account, not even the VM can withdraw above the unlocked limit.
   c. the unlocked limit cannot be larger than the total.

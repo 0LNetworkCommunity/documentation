@@ -57,7 +57,9 @@ Matonee's Aptos Platform forked Diem that commit. Compare: [aptos#50925](https:/
 
 We split our `libra` repo (with linear history to Facebook's first commit) into `libra-framework` and `diem-platform`. . As far as we know this is the only maintained version of Libra aside from vendor forks.
 
-0L continues to maintain Diem under `diem-platform` pulling in the (excellent and ninja) maintenance upgrades from Matonee since commit `#509252`. V7 production release is freezed at [vendor's #4cb85b](`https://github.com/aptos-labs/aptos-core/commit/4cb85bc832b57acb26a627182163be6de2f9d83f`)
+0L continues to maintain Diem under `diem-platform` pulling in the (excellent
+and ninja) maintenance upgrades from Matonee since commit `#509252`. V7
+production release is freezed at [vendor's #4cb85b](https://github.com/aptos-labs/aptos-core/commit/4cb85bc832b57acb26a627182163be6de2f9d83f)
 
 ## Light Touch
 
