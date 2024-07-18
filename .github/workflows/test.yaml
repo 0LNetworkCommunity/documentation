@@ -3,6 +3,12 @@ name: Test deployment
 on:
   push:
     branches: ["*"]
+  pull_request:
+    types:
+      - opened
+      - synchronize
+    branches:
+      - "main**"
 
 jobs:
   test-deploy:
