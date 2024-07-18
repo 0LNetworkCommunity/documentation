@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkopen_libra_core_docs=self.webpackChunkopen_libra_core_docs||[]).push([[5818],{5715:e=>{e.exports=JSON.parse('{"tags":[{"label":"Getting started","permalink":"/tags/getting-started","count":1}]}')}}]);
