@@ -143,9 +143,9 @@ const config = {
         additionalLanguages: ['bash', 'diff', 'json'],
       },
       algolia: {
-        appId: "V46LQRE2SP",
-        apiKey: "7d25038e11f40e219b68121a3c20b184",
-        indexName: "0lnetwork",
+        appId: "E8UE0IN6GG",
+        apiKey: "6372b13879569a530272b0bb39cfd108",
+        indexName: "openlibra",
         contextualSearch: true,
         debug: false,
       },
