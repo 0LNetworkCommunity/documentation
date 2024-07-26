@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkopen_libra_core_docs=self.webpackChunkopen_libra_core_docs||[]).push([[869],{2072:e=>{e.exports=JSON.parse('{"tag":{"label":"About","permalink":"/pr-preview/pr-89/tags/about","allTagsPath":"/pr-preview/pr-89/tags","count":1,"items":[{"id":"about","title":"ABOUT","description":"","permalink":"/pr-preview/pr-89/"}],"unlisted":false}}')}}]);
