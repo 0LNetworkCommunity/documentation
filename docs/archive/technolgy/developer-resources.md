@@ -1,5 +1,5 @@
 
-A succint collection of documentation, tools, and tutorials on 0L, the Move Smart Contracts Language, and the original Diem codeset. Note that the links will open in a new window. Please contact us if you'd like to add/correct anything on this list.
+A succinct collection of documentation, tools, and tutorials on 0L, the Move Smart Contracts Language, and the original Diem codebase. Note that the links will open in a new window. Please contact us if you'd like to add/correct anything on this list.
 
 
 
@@ -48,11 +48,3 @@ A succint collection of documentation, tools, and tutorials on 0L, the Move Smar
 
 
 * **[Official Diem on GitHub](https://github.com/diem/diem)** : The official Diem repository on GitHub.
-
-
-
-
-
-
-
-

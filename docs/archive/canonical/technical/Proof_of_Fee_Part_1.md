@@ -209,7 +209,7 @@ From 2021 to 2022, the tools for engaging in MEV attacks have become commoditize
 
 
 
-Source: <https://explore.flashbots.net/>
+Source: https://explore.flashbots.net/
 
 
 
@@ -395,4 +395,3 @@ If blockchains underpay, trust from the users goes down as fewer nodes participa
 ```
 This is the end of Part 1. [In Part 2](http://openlibra.blog/2022/10/20/proof-of-fee-part-2-a-proposal/), we will explore the mechanics and implementations of an alternative approach, Proof of Fee.
 ```
-

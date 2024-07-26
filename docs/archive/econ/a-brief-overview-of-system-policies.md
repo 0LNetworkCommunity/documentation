@@ -152,4 +152,3 @@ The exception is transferring credits to Community Wallets. Those transfers are 
 
 
 There are accounts that have elected to have restricted transferability. Those are designated Slow Wallets. To join a Validator Set a prospective user must have a Slow Wallet.
-
