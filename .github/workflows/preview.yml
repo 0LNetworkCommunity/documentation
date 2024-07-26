@@ -2,16 +2,12 @@
 name: Deploy PR previews
 
 on:
-  pull_request:
+  pull_request_target:
     types:
       - opened
       - reopened
       - synchronize
       - closed
-
-permissions:
-  issues: write
-  pull-requests: write
 
 concurrency: preview-${{ github.ref }}
 
