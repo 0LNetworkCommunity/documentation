@@ -3,7 +3,7 @@ This is the source for the documentation hosted here:
 
 👇👇👇👇👇👇👇👇👇👇
 
-https://0lnetwork.dev/
+https://docs.openlibra.io
 
 👆👆👆👆👆👆👆👆👆👆
 
