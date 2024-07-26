@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkopen_libra_core_docs=self.webpackChunkopen_libra_core_docs||[]).push([[985],{1836:e=>{e.exports=JSON.parse('{"tag":{"label":"About","permalink":"/undefined/tags/about","allTagsPath":"/undefined/tags","count":1,"items":[{"id":"about","title":"ABOUT","description":"","permalink":"/undefined/"}],"unlisted":false}}')}}]);
