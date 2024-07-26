@@ -1,9 +1,5 @@
 ---
-title: ABOUT
 sidebar_position: 1
-slug: /
-tags:
-  - About
 ---
 
 ```
