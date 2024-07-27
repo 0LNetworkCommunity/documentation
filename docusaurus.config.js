@@ -7,15 +7,15 @@ const darkTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: '0L Network Documentation',
+  title: 'Open Libra Documentation',
   tagline: '...',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://0lnetwork.dev',
+  url: 'https://docs.openlibra.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: process.env.GITHUB_ACTIONS && process.env.GH_ACTION_DOCUSAURUS_BASE_URL ? `${process.env.GH_ACTION_DOCUSAURUS_BASE_URL}/` : "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -143,9 +143,9 @@ const config = {
         additionalLanguages: ['bash', 'diff', 'json'],
       },
       algolia: {
-        appId: "V46LQRE2SP",
-        apiKey: "7d25038e11f40e219b68121a3c20b184",
-        indexName: "0lnetwork",
+        appId: "E8UE0IN6GG",
+        apiKey: "6372b13879569a530272b0bb39cfd108",
+        indexName: "openlibra",
         contextualSearch: true,
         debug: false,
       },
