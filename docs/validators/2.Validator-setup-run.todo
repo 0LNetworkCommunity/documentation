@@ -1,0 +1,296 @@
+---
+title: "Validator-setup-run"
+sidebar_label: 'Validator-setup-run'
+sidebar_position: 3
+---
+
+# **Running a Validator Node.** 
+
+Running a VFN-Validator Fullnode Network Node/Private Fullnode has a separate guide [here](/validators/3.VFN-setup-run).
+
+## **Requirements**
+
+- TWO unix hosts: one for Validator Node and one for the VFN Node. **It is recommended to run a VFN Node along with Validator Node.**
+- Recommended specs:
+  - Validator Node: 300GB SSD harddrive, 8 core CPU, 16G RAM
+  - VFN: 100G storage, 8 core CPU, 16G RAM
+- Separate static IP addresses for the machines, or appropriate DNS mapping.
+
+### **Libra code targets Ubuntu 22.04.**
+
+## Firewall
+:::note
+During testnet and devnet operation, you will likely open port `8080` on your Validator Node to allow outside access to the RPC endpoint, which is an API that runs as part of the libra service.
+VFN Nodes and public fullnodes should by default serve port `8080` RPC for operability.
+:::
+
+### **Validator Node**
+
+The following ports must be open: `6180`, `6181`, meaning:
+
+`6180` should be open on all interfacess `0.0.0.0/0`, it's for consensus and uses noise encryption.
+
+
+### **VFN Node**
+
+`6181` is for the VFN node, the firewall should only allow the **IP of the Validator node** to access this port.
+
+:::note
+This node does not serve transactions and does not participate in consensus, it relays data out of the validator node, and transactions into the validator.
+:::
+
+To sum up, the following ports must be open: `6181`, `6182`, `8080`, meaning:
+
+- `6181` is for the VFN Node, it should only allow traffic from the Validator Node IP address above.
+- `6182` is for the the public fullnode network. This is how the public nodes that will be serving JSON-RPC on the network will receive data and submit transactions to the network.
+- `8080` is the RPC port and we suggest VFN Nodes and public fullnodes to serve this port by default for operability.
+
+## **Setting up a Validator Node**
+
+These instructions target **Ubuntu 22.04**.
+
+### 1. Set up an Ubuntu host with `ssh` access, e.g. in a cloud service provider.
+
+### 2. Associate a static IP with your host, this will be tied to you account. This address will be shared on the chain, so that other nodes will be able to find you through the peer discovery mechanism. Libra binaries should be run in a linux user that has **very narrow permissions**. Before you can create binaries you'll need some tools installed probably by `sudo` and likely in root - see point 4 and onwards.
+
+### 3. Use `tmux` to persist the terminal session for build, as well as for running the nodes and tower app. Also this setup requires `git` and `make`, which might be installed already on your host. If not, perform the following steps now:
+
+```bash
+sudo apt update
+sudo apt install -y git tmux jq build-essential cmake clang llvm libgmp-dev pkg-config libssl-dev lld libpq-dev
+```
+
+### 4. Install Rust:
+
+```bash
+curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
+
+Restart your bash instance to pickup the cargo paths.
+
+source ~/.bashrc
+```
+
+### 5. Create Binaries:
+
+It is recommended to perform the steps from this point onwards inside tmux. Short tmux instruction:
+
+#### 5.1. Start a new [tmux](#tmux-basics) session:
+
+```bash
+# start a new tmux session
+tmux new -t libra-setup
+```
+
+TMUX basics:
+1. New session: `tmux new -t <SESSION_NAME>`
+2. Detach from Session: press Ctrl-b and then d
+3. rejoin unnamed session, if only one session exists: `tmux a`
+4. rejoin unnamed session by id: `tmux ls` to get the ID and then `tmux a -t <SESSION_ID>`
+5. rejoin named session: `tmux a -t <SESSION_NAME>`
+6. kill session: attach to the session --> press Ctrl-b, then type `:kill-session` and press ENTER
+
+You can read more about tmux commands [here]: (https://github.com/tmux/tmux/wiki/Getting-Started).
+
+#### 5.2. Cleanup:
+
+Previous clones and testnets leave data in the `.libra` directory, clean those up by removing these directories
+
+``` bash
+rm -rf ~/libra-framework
+rm -rf ~/.libra/data && rm -rf ~/.libra/genesis && rm -rf ~/.libra/secure-data.json
+rm -f /usr/bin/libra && rm -rf /usr/local/bin/libra && rm -f ~/.cargo/bin/libra
+```
+#### 5.3. Clone this repo:
+
+```
+cd ~
+git clone https://github.com/0LNetworkCommunity/libra-framework
+
+# go to libra-framework directory
+
+cd ~/libra-framework
+```
+
+#### 5.4. Build the source and install binaries:
+
+```bash
+cargo build --release -p libra
+```
+
+This takes a while, ensure your are still inside the `tmux` session to avoid your session gets disconnected.
+
+### 6. Make the `libra` binary globally executable and persistent by copying libra binaries to cargo bins path:
+
+:::note
+This assumes the `libra` binary is already built and located at `~/libra-framework/target/release/libra`.
+:::
+```
+sudo cp -f ~/libra-framework/target/release/libra* ~/.cargo/bin/
+
+# Check libra execution and version 
+
+libra version
+```
+
+### You will now need [sync your validator to the latest block] (/validators/5.Restore) and register your validator - see guide below.
+
+## **Start Node**
+
+`libra node --config-path ~/.libra/validator.yaml`
+
+## **Setup as a service** (optional)
+
+**Install Service**
+:::note
+use this service template instead of running in tmux
+:::
+
+`sudo nano /lib/systemd/system/libra-node.service`
+
+### Systemd template
+
+```
+[Unit]
+Description=Libra Node Service
+
+[Service]
+User=`nodeuser`
+Group=`nodeuser`
+
+LimitNPROC=1048576
+LimitNOFILE=1048576
+
+#Environment="RUST_LOG=warn"
+WorkingDirectory=/home/`nodeuser`/.libra
+ExecStart=/`home/nodeuser`/libra-framework/target/release/libra node --config-path /`home/nodeuser`/.libra/validator.yaml
+
+# Your `/libra-framework/target/release/libra node` and `/.libra/validator.yaml` may be different depending on Your setup location.
+
+Restart=on-failure
+RestartSec=3s
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=libra-node
+
+[Install]
+WantedBy=multi-user.target
+Alias=libra-node.service
+
+# config the service and start
+
+sudo systemctl enable libra-node
+sudo systemctl start libra-node
+```
+
+**Reload system service**
+
+`sudo systemctl daemon-reload`
+
+**Enable system service**
+
+`sudo systemctl enable libra-node`
+
+**Start system service**
+
+`sudo systemctl start libra-node`
+
+**Check the service is operating correctly**
+
+`sudo systemctl status libra-node`
+
+
+## **Register a Validator Node on the 0L Network**
+
+### Generate a new account - Get Keys
+If you don't already have an account, you will need a mnemonic (seed), to generate all keys.
+
+``` bash
+libra wallet keygen
+```
+
+### Initialize validator files
+
+Follow the prompts here. Your node needs to have keys generated using a mnemonic from above step.
+
+``` bash
+libra config validator-init
+```
+
+You will need to use this script to make the VFN Node match your Validator Node values.
+``` bash
+cat << 'EOF' > fix_vfn_values.sh
+#!/bin/bash
+
+# Extract the value from validator_network_public_key
+validator_key=$(sed -n 's/^validator_network_public_key: "\(.*\)"/\1/p' ~/.libra/operator.yaml)
+
+# Use the extracted value to replace full_node_network_public_key
+sed -i "s/^full_node_network_public_key: .*/full_node_network_public_key: \"$validator_key\"/" ~/.libra/operator.yaml
+
+# File path
+file="$HOME/.libra/operator.yaml"
+
+# Extract the host and port from validator_host
+host=$(awk '/^  host:/{print $0}' "$file")
+port=$(awk '/^  port:/{print $0}' "$file")
+
+# Replace full_node_host: ~ with full_node_host: and add host and port
+sed -i "/^full_node_host: ~/c\\
+full_node_host:\\n$host\\n$port" "$file"
+EOF
+
+chmod +x fix_vfn_values.sh
+./fix_vfn_values.sh
+```
+
+### Get the account on chain
+
+Someone needs to create that account onchain first.
+Ask someone to deposit a coin to your account from first step.
+
+``` bash
+# friend sends one coin to your account which creates it
+libra txs transfer -t <YOUR ACCOUNT> -a 1
+```
+
+### Update upstream node
+Set your client `libra.yaml` with the rpc-load-balancer upstream node
+``` bash
+libra config fix --force-url https://rpc.openlibra.space:8080
+```
+
+### Submit configs to chain
+
+``` bash
+# Submit your account on chain, which takes the default location to your ~/.libra/operator.yaml
+libra txs validator register
+
+# Or you can use the -f option to provide the exact path to your operator.yaml file
+libra txs validator register -f ~/.libra/operator.yaml
+```
+### Get Vouches
+0L Network uses very light reputation games to keep the validator set trusted.
+Just ask an existing validator for a vouch. It helps a lot if you share your node specs and a little bit of your experience with them. 
+
+Your friend will:
+``` bash 
+libra txs validator vouch --vouch-for <YOUR ADDRESS>
+```
+
+### Bid to be in the validator set
+
+0L Network uses Proof-of-Fee for sybil resistance, instead of Proof-of-Stake. You don't need any stake to join, but you just need to be able to bid on how much you are willing to pay to be in the validator set. The cheapest bid proposed by validators will be actually what all validators pay (uniform price auction).
+``` bash
+libra txs validator pof --bid-pct <PERCENT YOU PAY> --expiry <WHEN EXPIRES>
+```
+
+### Run the node as fullnode and then validator mode
+- Once your validator enters the set you will need to stop running as a fullnode and run as a validator. Until then, you can:
+  - use the following instructions to: [sync database to the current state](/validators/restore) and run as a fullnode.
+- When your node is in the active set, it is time to change your node config path to point to the `validator.yaml`.
+- Stop your node and run in the validator mode:
+
+``` bash 
+libra node --config-path ~/.libra/validator.yaml
+```
