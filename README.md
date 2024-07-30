@@ -15,6 +15,11 @@ https://0lnetworkcommunity.github.io/documentation/
 # Maintainers
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
+## Previewing pull requests
+
+There's an automated build which happens on Pull Requests. For every current (not "closed") PR a preview link will be created with the following pattern:
+`https://0lnetworkcommunity.github.io/documentation/pr-preview/pr-[YOUR PR ID]/`
+
 ### Installation
 Open Libra core prefers Bun over NPM and Yarn (https://bun.sh/), but you can use any.
 ```
