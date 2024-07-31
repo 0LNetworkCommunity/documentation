@@ -29,7 +29,9 @@ In January of 2022, the community adopted a proposal to implement MVP community 
 
 
 
+
 ![](../../images/WG-Org-Chart.png)
+
 
 
 
