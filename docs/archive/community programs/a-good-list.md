@@ -50,7 +50,7 @@ claimed. Let's say April 2022 is the window for claiming it.
 
 For expediency this project was started without any automation (no smart contract) at and this list and distribution is
 manually administered by Water & Stone LLC (a company involved in blockchain software development, including for 0L network). We
-do not intend to operate this program indefinitely. Until the smart contracts are devolped formally donations are
+do not intend to operate this program indefinitely. Until the smart contracts are developed formally donations are
 currently given to Water & Stone, and we submit 0L "autopay" transactions on a monthly basis to the wallets on the list. Water & Stone is
 taking no fee on these.
 
@@ -80,291 +80,177 @@ Address: BCA50D10041FA111D1B44181A264A599
 
 <table>
   <tr>
-    <td>Name
-    </td>
-    <td>Address
-    </td>
-    <td>Weight
-    </td>
+    <td>Name</td>
+    <td>Address</td>
+    <td>Weight</td>
   </tr>
 
   <tr>
-    <td>Action against hunger
-    </td>
-    <td>06697386CDDABB634CEB0572D4423E34
-    </td>
-    <td>
-      <p>1</p>
-    </td>
+    <td>Action against hunger</td>
+    <td>06697386CDDABB634CEB0572D4423E34</td>
+    <td><p>1</p></td>
   </tr>
 
   <tr>
-    <td>Acumen
-    </td>
-    <td>4858B43E3A68893B51AF12C6D6BB5FB0
-    </td>
-    <td>
-      <p>1</p>
-    </td>
+    <td>Acumen</td>
+    <td>4858B43E3A68893B51AF12C6D6BB5FB0</td>
+    <td><p>1</p></td>
   </tr>
 
   <tr>
-    <td>Amnesty International
-    </td>
-    <td>66BE7F0A8B34ADC4E00CCC11F531B2C0
-    </td>
-    <td>
-      <p>1</p>
-    </td>
+    <td>Amnesty International</td>
+    <td>66BE7F0A8B34ADC4E00CCC11F531B2C0</td>
+    <td><p>1</p></td>
   </tr>
 
   <tr>
-    <td>BRAC
-    </td>
-    <td>C50E5252CDDD65785F038FF15FEC5D0A
-    </td>
-    <td>
-      <p>1</p>
-    </td>
+    <td>BRAC</td>
+    <td>C50E5252CDDD65785F038FF15FEC5D0A</td>
+    <td><p>1</p></td>
   </tr>
   <tr>
-    <td>Care International
-    </td>
-    <td>D17AAA79DDD10CC3D96A16A135851638
-    </td>
-    <td>
-      <p>1</p>
-    </td>
+    <td>Care International</td>
+    <td>D17AAA79DDD10CC3D96A16A135851638</td>
+    <td><p>1</p></td>
   </tr>
 
   <tr>
-    <td>Danish Church Aid
-    </td>
-    <td>4D09392F4FBE6094FE8D281C58887B16
-    </td>
-    <td>
-      <p>1</p>
-    </td>
+    <td>Danish Church Aid</td>
+    <td>4D09392F4FBE6094FE8D281C58887B16</td>
+    <td><p>1</p></td>
   </tr>
 
   <tr>
-    <td>Danish Refugee Council
-    </td>
-    <td>3D5EF9D9848D82C1FFD1F0C7183B1DA9
-    </td>
-    <td>
-      <p>1</p>
-    </td>
+    <td>Danish Refugee Council</td>
+    <td>3D5EF9D9848D82C1FFD1F0C7183B1DA9</td>
+    <td><p>1</p></td>
   </tr>
 
   <tr>
-    <td>Girls Who Code
-    </td>
-    <td>7407E489953A0F64E5D70A80CB1B5CAE
-    </td>
-    <td>
-      <p>1</p>
-    </td>
+    <td>Girls Who Code</td>
+    <td>7407E489953A0F64E5D70A80CB1B5CAE</td>
+    <td><p>1</p></td>
   </tr>
 
   <tr>
-    <td>Give Directly
-    </td>
-    <td>20DDE7374220DCBB89145704833A6FF3
-    </td>
-    <td>
-      <p>1</p>
-    </td>
+    <td>Give Directly</td>
+    <td>20DDE7374220DCBB89145704833A6FF3</td>
+    <td><p>1</p></td>
   </tr>
 
   <tr>
-    <td>Give Well
-    </td>
-    <td>4CB31C687FD20DA3C2591B6DFC1F19F5
-    </td>
-    <td>
-      <p>1</p>
-    </td>
+    <td>Give Well</td>
+    <td>4CB31C687FD20DA3C2591B6DFC1F19F5</td>
+    <td><p>1</p></td>
   </tr>
 
   <tr>
-    <td>Habitat for Humanity
-    </td>
-    <td>98DA3CB6553C8DE6DFC840F4FD3EE5AF
-    </td>
+    <td>Habitat for Humanity</td>
+    <td>98DA3CB6553C8DE6DFC840F4FD3EE5AF</td>
+    <td><p>1</p></td>
+  </tr>
+
+  <tr>
+    <td>Innovation Norway Humanitarian</td>
+    <td>F9AE13D90338B5CA9B391B1626F0503D</td>
+    <td><p>1</p></td>
+  </tr>
+
+  <tr>
+    <td>International Committee of the Red Cross (ICRC)</td>
+    <td>424428DB94430AA85EA9723E6C503B95</td>
+    <td><p>1</p></td>
+  </tr>
+
+  <tr>
+    <td>International Rescue Committee</td>
+    <td>CD68A370A556F784256F9D35597328E8</td>
+    <td><p>1</p></td>
+  </tr>
+
+  <tr>
+    <td>The Life You Can Save - 90/10 Fund</td>
+    <td>22DFEA36CE3456D80483BFF28E86910C</td>
+    <td><p>1</p></td>
+  </tr>
+
+  <tr>
+    <td>Médecins Sans Frontières</td>
+    <td>D3926848A6AFC26ACB3E08C5818BCEAF</td>
+    <td><p>1</p></td>
+  </tr>
+
+  <tr>
+    <td>Mercy Corps</td>
+    <td>68C88FA01E8F61353FF350991B3CEAB6</td>
     <td>
       <p>1</p>
     </td>
   </tr>
 
   <tr>
-    <td>Innovation Norway Humanitarian
-    </td>
-    <td>F9AE13D90338B5CA9B391B1626F0503D
-    </td>
-    <td>
-      <p>1</p>
-    </td>
+    <td>Open Society Foundations</td>
+    <td>783590B8559522C7B105664FE5563AD0</td>
+    <td><p>1</p></td>
   </tr>
 
   <tr>
-    <td>International Committee of the Red Cross (ICRC)
-    </td>
-    <td>424428DB94430AA85EA9723E6C503B95
-    </td>
-    <td>
-      <p>1</p>
-    </td>
+    <td>Oxfam</td>
+    <td>63499CAA93631567891DB9AF279F2C5F</td>
+    <td><p>1</p></td>
   </tr>
 
   <tr>
-    <td>International Rescue Committee
-    </td>
-    <td>CD68A370A556F784256F9D35597328E8
-    </td>
-    <td>
-      <p>1</p>
-    </td>
+    <td>Plan International</td>
+    <td>572C43CD421F0E6DDFCFB0934EC4D5D1</td>
+    <td><p>1</p></td>
   </tr>
 
   <tr>
-    <td>The Life You Can Save - 90/10 Fund
-    </td>
-    <td>22DFEA36CE3456D80483BFF28E86910C
-    </td>
-    <td>
-      <p>1</p>
-    </td>
+    <td>Save the Children</td>
+    <td>A711D4E5E0B4FC661111FDC13488E740</td>
+    <td><p>1</p></td>
   </tr>
 
   <tr>
-    <td>Médecins Sans Frontières
-    </td>
-    <td>D3926848A6AFC26ACB3E08C5818BCEAF
-    </td>
-    <td>
-      <p>1</p>
-    </td>
-  </tr>
-
-  <tr>
-    <td>Mercy Corps
-    </td>
-    <td>68C88FA01E8F61353FF350991B3CEAB6
-    </td>
-    <td>
-      <p>1</p>
-    </td>
-  </tr>
-
-  <tr>
-    <td>Open Society Foundations
-    </td>
-    <td>783590B8559522C7B105664FE5563AD0
-    </td>
-    <td>
-      <p>1</p>
-    </td>
-  </tr>
-
-  <tr>
-    <td>Oxfam
-    </td>
-    <td>63499CAA93631567891DB9AF279F2C5F
-    </td>
-    <td>
-      <p>1</p>
-    </td>
-  </tr>
-
-  <tr>
-    <td>Plan International
-    </td>
-    <td>572C43CD421F0E6DDFCFB0934EC4D5D1
-    </td>
-    <td>
-      <p>1</p>
-    </td>
-  </tr>
-
-  <tr>
-    <td>Save the Children
-    </td>
-    <td>A711D4E5E0B4FC661111FDC13488E740
-    </td>
-    <td>
-      <p>1</p>
-    </td>
-  </tr>
-
-  <tr>
-    <td>Team Humanity
-    </td>
-    <td>B989372FF8986BC7373C51688ED7C735
-    </td>
-    <td>
-      <p>1</p>
-    </td>
+    <td>Team Humanity</td>
+    <td>B989372FF8986BC7373C51688ED7C735</td>
+    <td><p>1</p></td>
   </tr>
 
    <tr>
-    <td>Trust Alliance
-    </td>
-    <td>19CB71BD9864FB0CBC782CA293637D92
-    </td>
-    <td>
-      <p>1</p>
-    </td>
+    <td>Trust Alliance</td>
+    <td>19CB71BD9864FB0CBC782CA293637D92</td>
+    <td><p>1</p></td>
   </tr>
 
   <tr>
-    <td>Unicef
-    </td>
-    <td>672178939A5C97E7AFC23BFE3D8407BC
-    </td>
-    <td>
-      <p>1</p>
-    </td>
+    <td>Unicef</td>
+    <td>672178939A5C97E7AFC23BFE3D8407BC</td>
+    <td><p>1</p></td>
   </tr>
 
   <tr>
-    <td>Water.Org
-    </td>
-    <td>58AFC42F3CEF6CB79D669A0F0E75DC34
-    </td>
-    <td>
-      <p>1</p>
-    </td>
+    <td>Water.Org</td>
+    <td>58AFC42F3CEF6CB79D669A0F0E75DC34</td>
+    <td><p>1</p></td>
   </tr>
 
   <tr>
-    <td>Women's World Banking
-    </td>
-    <td>8AFA0A41F7FCF9147C57991729B8FF20
-    </td>
-    <td>
-      <p>1</p>
-    </td>
+    <td>Women's World Banking</td>
+    <td>8AFA0A41F7FCF9147C57991729B8FF20</td>
+    <td><p>1</p></td>
   </tr>
 
   <tr>
-    <td>World Food Program
-    </td>
-    <td>4B1F1544A42FDD2F15F82A19704F3FC2
-    </td>
-    <td>
-      <p>
-        1</p>
-    </td>
+    <td>World Food Program</td>
+    <td>4B1F1544A42FDD2F15F82A19704F3FC2</td>
+    <td><p>1</p></td>
   </tr>
 
   <tr>
-    <td>World Wildlife Fund
-    </td>
-    <td>A72834D73B4A456CFFE4F5CE059F03E2
-    </td>
-    <td>
-      <p>1</p>
-    </td>
+    <td>World Wildlife Fund</td>
+    <td>A72834D73B4A456CFFE4F5CE059F03E2</td>
+    <td><p>1</p></td>
   </tr>
 </table>
