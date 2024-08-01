@@ -21,10 +21,10 @@
 ## Conventions
 
 ### Filenames
-filenames are in "snakecase", lowercase, with underscore for spaces. The file extension should always be `.md`.
+filenames are in "kebab case", lowercase, with dash for spaces. The file extension should always be `.md`.
 
 Like this:
- `this_is_a_file.md`
+ `this-is-a-file.md`
 
 ### Metadata
 At the top of an `.md` file you may include some metadata which Docusaurus will be able to read and use for parts of the UX (e.g. titles, is it hidden, menu position).
@@ -46,7 +46,7 @@ You should always have a document that begins with a section title.
 You should not include a `title` field in metadata, instead you should carefully consider the actual header in the document.
 
 ### Menu Labels
-The fallback behavior for menu link names will be the filename, e.g.: `this_is_a_file`.
+The fallback behavior for menu link names will be the filename, e.g.: `this-is-a-file`.
 However if your Doc begins with a header title, e.g.: `# My Article`, then the menu label will be exactly that.
 To override both cases you can include this item to the metadata: `sidebar_label: Actual Label`.
 
