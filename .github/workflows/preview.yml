@@ -20,14 +20,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Echo
-        run: echo preview-${{ github.ref }}
       - name: Checkout
         uses: actions/checkout@v3
       - uses: oven-sh/setup-bun@v2
       # this has to match docusaurus's baseURL in docusaurus.config.js
       - run: echo "GH_ACTION_DOCUSAURUS_BASE_URL=pr-preview/pr-${{ github.event.number }}" >> "$GITHUB_ENV"
 
+      - name: Echo
+        run: echo preview-${{ github.ref }}
       - name: Install and Build
         if: github.event.action != 'closed' # You might want to skip the build if the PR has been closed
         run: |
