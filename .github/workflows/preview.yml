@@ -1,13 +1,13 @@
 # .github/workflows/preview.yml
-name: Deploy PR previews
+name: Deploy PR previews Two
 
 on:
   pull_request:
     types:
-      - opened
-      - reopened
+      # - opened
+      # - reopened
       - synchronize
-      - closed
+      # - closed
 
 # concurrency: preview-${{ github.ref }}
 
