@@ -1,4 +1,4 @@
-
+# Blockscience Social Infrastructure Project
 Social infrastructures complement technical infrastructures provided by blockchain networks. This program is designed to provide capital to fund a wide range of benefits to 0L members in alignment with the mission, vision and values of the community.
 
 

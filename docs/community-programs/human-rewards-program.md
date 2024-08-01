@@ -1,4 +1,4 @@
-
+# TTTS Human Rewards Program
 ## What
 
 
@@ -35,5 +35,3 @@ This account is operated via smart contract. And all outbound transactions will 
 
 
 Donations can be sent here: **F605FE7F787551EEA808EE9ACDB98897**
-
-

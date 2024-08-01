@@ -1,5 +1,5 @@
-
-RadicalxChange Foundation, a 501©3 nonprofit, seeks to build a coherent and sustainable new political economy.
+# RxC Social Research and Experimentation
+RadicalxChange Foundation, a 501c3 nonprofit, seeks to build a coherent and sustainable new political economy.
 
 
 

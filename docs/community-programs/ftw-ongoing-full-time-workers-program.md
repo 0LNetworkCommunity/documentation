@@ -1,5 +1,5 @@
-
-The iqlusion FTW Program aims to collect ongoing donations, and redistribute those donations to any engineers working full-time on the 0L platform on a monthly basis (collectively the FTW).
+# For The Win (FTW) Impact Program
+The Infinite Game FTW Program aims to collect ongoing donations, and redistribute those donations to any engineers working full-time on the 0L platform on a monthly basis (collectively the FTW).
 
 
 
@@ -112,7 +112,7 @@ Program viability presumes there is strong social consensus that FTW workers are
 
 
 
-Provisionally, the FTEP program is administered by iqlusion inc. Funds sent to this wallet are pass-through; destined to iqlusion for onward distribution in the same month. Futurely, a different entity may administer this program. Iqlusion has no claim nor fee on the funds sent to this address. The community will be notified in customary channels if ownership of the address changes.
+Provisionally, the FTEP program was administered by iqlusion inc. until Q3 2023. Funds sent to this were intended to be pass-through; destined to iqlusion for onward distribution in the same month. Iqlusion has no claim nor fee on the funds sent to this address. Subsequently administration was transferred to Infinite Game LLC.
 
 
 

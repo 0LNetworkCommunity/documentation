@@ -1,4 +1,4 @@
-# TIP JAR
+# Tip Jar
 Source: https://github.com/infinite-game-llc/tip-jar/blob/main/README.md
 
 Core engineering on 0L has been an unfunded volunteer effort. For example, since about June 2019 the lead 0L developer -- github user `0o-de-lally` -- has contributed an estimated 5,060 man-hours exclusively to core protocol (last updated Sept 24th 2021). This effort was not compensated in any form.
