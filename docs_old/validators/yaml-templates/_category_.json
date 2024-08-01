@@ -1,0 +1,9 @@
+{
+    "label": "YAML Templates",
+    "position": 9,
+
+    "link": {
+      "type": "generated-index",
+      "description": "Node YAML Templates"
+    }
+  }
