@@ -66,7 +66,7 @@ There are five parts to this proposal to enhance Community Wallets. 
 
 
 
-Typically within our community, the Community Wallets have been idealized and spoken about as being "donor directed". However we had no proper tracking on\-chain of the donations to actually realize this vision. As an intermediary step, we said the validators would be the authorities over veto and freezing of these wallets. This was fine when there was a large overlap of donors and active validators, but today this has already diverged significantly.
+Typically within our community, the Community Wallets have been idealized and spoken about as being "donor directed". However we had no proper tracking on-chain of the donations to actually realize this vision. As an intermediary step, we said the validators would be the authorities over veto and freezing of these wallets. This was fine when there was a large overlap of donors and active validators, but today this has already diverged significantly.
 
 
 
@@ -113,7 +113,7 @@ Since participation is low in community wallets and the monitoring tools are lac
 
 
 
-* The new Policy would be: For a community wallet to be included in the Burn Index, and for unrestricted transactions from Transfer and Autopay functionality, the wallet will have to have a minimum of 3 of 4 multisig. The multisig will be implemented in the Donor Directed contract (as opposed to by off\-chain signing wallets).
+* The new Policy would be: For a community wallet to be included in the Burn Index, and for unrestricted transactions from Transfer and Autopay functionality, the wallet will have to have a minimum of 3 of 4 multisig. The multisig will be implemented in the Donor Directed contract (as opposed to by off-chain signing wallets).
 * Multisig signers for Community Wallets must have a threshold number of addresses that are unrelated (from different Ancestry in the permission trees).
 
 
@@ -169,9 +169,7 @@ Since participation is low in community wallets and the monitoring tools are lac
 
 
 * This document is a Draft / Work in Progress. It will change until marked as FINAL. **The closing date for revisions is 15 October.**
-* Publication here is an invitation for community collaboration and co\-creation.
-* To engage on this content, visit the **\#governance\-proposals** channel on the 0L Discord (link at bottom right)
-* Once this Proposal is finalized, it will be the subject of Voting on the Radical X Change platform. If you do not yet have credentials, visit the **\#rxc\-voice\-discussion** channel on the 0L Discord and make a request to join.
+* Publication here is an invitation for community collaboration and co-creation.
+* To engage on this content, visit the **\#governance-proposals** channel on the 0L Discord (link at bottom right)
+* Once this Proposal is finalized, it will be the subject of Voting on the Radical X Change platform. If you do not yet have credentials, visit the **\#rxc-voice-discussion** channel on the 0L Discord and make a request to join.
 * **Voting opens 17 Oct and closes 22 Oct**
-
-

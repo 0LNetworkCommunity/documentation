@@ -24,7 +24,7 @@
 
 
 
-The proposals Proof of Fee (2210\-2\) and Final Supply (2210\-1\) are targeted at adjusting rewards from validators, with the goal of incentivizing the best performing validators. In line with the vision of creating an entrepreneurial cooperative, the 0L Network should also have a low\-friction way for workers to organize themselves and receive streams of payments, in the absence of algorithmic rewards. This proposal takes a first step in that direction.
+The proposals Proof of Fee (2210-2\) and Final Supply (2210-1\) are targeted at adjusting rewards from validators, with the goal of incentivizing the best performing validators. In line with the vision of creating an entrepreneurial cooperative, the 0L Network should also have a low-friction way for workers to organize themselves and receive streams of payments, in the absence of algorithmic rewards. This proposal takes a first step in that direction.
 
 
 
@@ -42,12 +42,12 @@ This proposal advocates for the Engineering team to prioritize the development o
 1. Anyone can start a Faucet
 2. Faucets can have one or more administrators
 3. The faucet can receive donations (from Community Wallets or users).
-4. A user can claim a self\-service payment from a faucet
+4. A user can claim a self-service payment from a faucet
 
 
 
 
-The self\-service aspects of the faucets will be gated, as follows:
+The self-service aspects of the faucets will be gated, as follows:
 
 
 
@@ -59,7 +59,7 @@ The self\-service aspects of the faucets will be gated, as follows:
 
 
 
-A leading use case for this would be the Hustle Karma DAO, which can reduce overhead and speed payments by allowing users to self\-paying for their work.
+A leading use case for this would be the Hustle Karma DAO, which can reduce overhead and speed payments by allowing users to self-paying for their work.
 
 
 
@@ -101,9 +101,7 @@ A leading use case for this would be the Hustle Karma DAO, which can reduce over
 
 
 * This document is a Draft / Work in Progress. It will change until marked as FINAL. The closing date for revisions is 15 October.
-* Publication here is an invitation for community collaboration and co\-creation.
-* To engage on this content, visit the **\#governance\-proposals** channel on the 0L Discord (link at bottom right)
-* Once this Proposal is finalized, it will be the subject of Voting on the Radical X Change platform. If you do not yet have credentials, visit the **\#rxc\-voice\-discussion** channel on the 0L Discord and make a request to join.
+* Publication here is an invitation for community collaboration and co-creation.
+* To engage on this content, visit the **\#governance-proposals** channel on the 0L Discord (link at bottom right)
+* Once this Proposal is finalized, it will be the subject of Voting on the Radical X Change platform. If you do not yet have credentials, visit the **\#rxc-voice-discussion** channel on the 0L Discord and make a request to join.
 * **Voting opens 17 Oct and closes 22 Oct**
-
-

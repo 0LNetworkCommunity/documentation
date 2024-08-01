@@ -39,7 +39,7 @@ Together with this network upgrade, we will shortly be releasing a new version o
 
 
 
-With this upgrade, we have set up a methodology for Carpe miners to claim coins that were under\-paid to them in several past epochs due to a network bug. The Make Whole proposal has already been approved by the community, and we have set up a process that can be executed easily from inside Carpe to do so (you can learn more about this, and the new version of Carpe, once the release date is formalized).
+With this upgrade, we have set up a methodology for Carpe miners to claim coins that were under-paid to them in several past epochs due to a network bug. The Make Whole proposal has already been approved by the community, and we have set up a process that can be executed easily from inside Carpe to do so (you can learn more about this, and the new version of Carpe, once the release date is formalized).
 
 
 
@@ -59,7 +59,7 @@ Slow wallet holders, particularly the members of our Hustle Karma workforce, wil
 
 
 
-A new set of recovery tools and workflows to make the network better able to recover from shocks in the future. There were a number of refactors to the writeset\-tool, which enables a halted network to apply transactions at rest to upgrade the state machine code, update validator set, trigger new epochs, and enter recovery mode. Future halts could have very minimal downtime if the root cause is found quickly.
+A new set of recovery tools and workflows to make the network better able to recover from shocks in the future. There were a number of refactors to the writeset-tool, which enables a halted network to apply transactions at rest to upgrade the state machine code, update validator set, trigger new epochs, and enter recovery mode. Future halts could have very minimal downtime if the root cause is found quickly.
 
 
 
@@ -79,9 +79,9 @@ The recent outage shows the need to take action to better align validator incent
 
 
 
-To tackle the first issue, we are implementing a new approach to validator set selection. At the launch of the network, validators were entitled to invite whomever they chose to join the validator set. The system had no checks in place, other than a rate limit on how frequently invitations could be issued. We initially counted on social pressure and common sense to guide our validators to select individuals or organizations who were able to manage their nodes to a professional level, and who would respect system requirements.  
-  
-Unfortunately, we now have experience showing that a more rigorous approach is needed. Indeed, the initial failures that began the cascade that led to the most recent network halt occurred first with the nodes that were under\-provisioned and not in line with our published system requirements. Those failures were then complicated by many of those validators failing to be responsive to their machines and take remedial steps to recover from the failure.
+To tackle the first issue, we are implementing a new approach to validator set selection. At the launch of the network, validators were entitled to invite whomever they chose to join the validator set. The system had no checks in place, other than a rate limit on how frequently invitations could be issued. We initially counted on social pressure and common sense to guide our validators to select individuals or organizations who were able to manage their nodes to a professional level, and who would respect system requirements.
+
+Unfortunately, we now have experience showing that a more rigorous approach is needed. Indeed, the initial failures that began the cascade that led to the most recent network halt occurred first with the nodes that were under-provisioned and not in line with our published system requirements. Those failures were then complicated by many of those validators failing to be responsive to their machines and take remedial steps to recover from the failure.
 
 
 
@@ -106,7 +106,7 @@ First, we are putting in place a more expensive Proof of Burn mechanism. At laun
 
 
 
-By increasing the Proof of Burn we can also automate community wallet funding by making it simpler and more seamless for those who opt\-in. We’re increasing the burn from 1 coin to 50% of validator rewards. Those funds will be distributed each epoch among the community wallets based on donations to those wallets. Validators also have the option to give more than 50% if they wish, and if they do not want to divert the funds to the community wallets, they can elect to have the coins burned. Note that this change simply streamlines the autopay functionality that has been tested since the Genesis of the network.
+By increasing the Proof of Burn we can also automate community wallet funding by making it simpler and more seamless for those who opt-in. We’re increasing the burn from 1 coin to 50% of validator rewards. Those funds will be distributed each epoch among the community wallets based on donations to those wallets. Validators also have the option to give more than 50% if they wish, and if they do not want to divert the funds to the community wallets, they can elect to have the coins burned. Note that this change simply streamlines the autopay functionality that has been tested since the Genesis of the network.
 
 
 
@@ -126,7 +126,7 @@ The changes to the validator onboarding and economics may not be guaranteed to r
 
 
 
-At present, the network is in Recovery Mode and Carpe miners are able to start the app and check balances and have minimal interactions, but not mine their Tower. Recovery Mode suspends all economic activity to allow for testing and network stabilization. (This also disincentivized actors from front\-running or otherwise taking advantage of skewed economics from network halts.) To be clear, while the network is in Recovery Mode no rewards are being paid to anyone – not even validators. One Saturday, 30 April, the network will open again for Carpe miners and we invite everyone to come back in.
+At present, the network is in Recovery Mode and Carpe miners are able to start the app and check balances and have minimal interactions, but not mine their Tower. Recovery Mode suspends all economic activity to allow for testing and network stabilization. (This also disincentivized actors from front-running or otherwise taking advantage of skewed economics from network halts.) To be clear, while the network is in Recovery Mode no rewards are being paid to anyone – not even validators. One Saturday, 30 April, the network will open again for Carpe miners and we invite everyone to come back in.
 
 
 
@@ -146,12 +146,10 @@ Blockchain are infinite games. The game itself evolves and adapts. Passivity and
 
 
 
-**The 0L network is live and running, as is our global community working towards the mission of a transparent, participatory, liberating, open blockchain network for all. We have dealt with the challenges of the moment to create a stronger foundation for the future, and we will continue to evolve the technology, social contracts, and norms of the project to best accomplish such a mission. Your voice is heard. There are more rewards for Carpe miners, as well as a hard commitment for 50% of the funds to flow to community\-building wallets that reward participants that build along with us.**  
+**The 0L network is live and running, as is our global community working towards the mission of a transparent, participatory, liberating, open blockchain network for all. We have dealt with the challenges of the moment to create a stronger foundation for the future, and we will continue to evolve the technology, social contracts, and norms of the project to best accomplish such a mission. Your voice is heard. There are more rewards for Carpe miners, as well as a hard commitment for 50% of the funds to flow to community-building wallets that reward participants that build along with us.**
 
 
 
 
 
 **Carpe diem. ✊☀️**
-
-

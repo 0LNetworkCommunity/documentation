@@ -14,7 +14,7 @@ This is because fragmenting the technology products on offer will lead to confus
 
 
 
-So the forking strategy is simple in concept: take the unmodified Diem code, and import it into the 0L project and add layers of features. Though it's not that simple in execution because of the nature of the code base. We have to insert many changes in strategic places of the diem\-core code, in order for the 0L layers and side\-cars to work. In short, it's not a simple code merge, it takes about two weeks from start to finish to incorporate a new upstream Diem release into 0L.
+So the forking strategy is simple in concept: take the unmodified Diem code, and import it into the 0L project and add layers of features. Though it's not that simple in execution because of the nature of the code base. We have to insert many changes in strategic places of the diem-core code, in order for the 0L layers and side-cars to work. In short, it's not a simple code merge, it takes about two weeks from start to finish to incorporate a new upstream Diem release into 0L.
 
 
 
@@ -29,7 +29,7 @@ The Libra/Diem platform is a spaceship on all accounts. There are engineering br
 
 
 
-This is a non\-exhaustive summary of the key features of the Diem architecture that are worth paying attention to. We'll take it from the top of the stack to the bottom.
+This is a non-exhaustive summary of the key features of the Diem architecture that are worth paying attention to. We'll take it from the top of the stack to the bottom.
 
 
 
@@ -39,7 +39,7 @@ This is a non\-exhaustive summary of the key features of the Diem architecture t
 
 
 
-The smart\-contract language of the platform is called Move. It is the most unique breakthrough of the team. This is a language that is designed to be extremely safe in adversarial environments, and for hurried, less experienced developers. It's a very ergonomic language, it's easy to approach it if you have even entry\-level coding experience. In terms of safety it incorporates much from the Rust language concepts of "borrowing" memory. The compiler is pretty obnoxious, which is something you want when designing autonomous financial systems. One standout feature of the Move language is built\-in Formal Verification. Adjacent to the code you can write specs for invariants which your code must preserve (i.e. this function should never be called by this type of account), and it can be checked during the development and build process. This is unique and powerful.
+The smart-contract language of the platform is called Move. It is the most unique breakthrough of the team. This is a language that is designed to be extremely safe in adversarial environments, and for hurried, less experienced developers. It's a very ergonomic language, it's easy to approach it if you have even entry-level coding experience. In terms of safety it incorporates much from the Rust language concepts of "borrowing" memory. The compiler is pretty obnoxious, which is something you want when designing autonomous financial systems. One standout feature of the Move language is built-in Formal Verification. Adjacent to the code you can write specs for invariants which your code must preserve (i.e. this function should never be called by this type of account), and it can be checked during the development and build process. This is unique and powerful.
 
 
 
@@ -49,12 +49,12 @@ The smart\-contract language of the platform is called Move. It is the most uniq
 
 
 
-The execution of the smart contract and scripts has some subtle but important safety features. By design what are referred to in other platforms as smart\-contracts are in fact "modules" here. Users can publish modules, which any other module or transaction can import. This is important. The transactions are scripts. So compared to Ethereum, much of what happens in a smart contract, can actually be split into long lived code in a module, and transaction\-scripts which can import from the module (and other modules). This decoupling allows for powerful composability and reliability. The developer can evolve the application without necessarily needing to upgrade modules every time a new transaction use\-case emerges.
+The execution of the smart contract and scripts has some subtle but important safety features. By design what are referred to in other platforms as smart-contracts are in fact "modules" here. Users can publish modules, which any other module or transaction can import. This is important. The transactions are scripts. So compared to Ethereum, much of what happens in a smart contract, can actually be split into long lived code in a module, and transaction-scripts which can import from the module (and other modules). This decoupling allows for powerful composability and reliability. The developer can evolve the application without necessarily needing to upgrade modules every time a new transaction use-case emerges.
 
 
 
 
-Modules can have "resources" bound to them. A resource can be thought of as an object in memory, but with restrictions: they can only be modified by the module that instantiated them, and are restricted in how they get created and transferred. Writing a non\-fungible token is basically just instantiating one such structure, and something like a fungible token, can be done in a handful of lines of code.
+Modules can have "resources" bound to them. A resource can be thought of as an object in memory, but with restrictions: they can only be modified by the module that instantiated them, and are restricted in how they get created and transferred. Writing a non-fungible token is basically just instantiating one such structure, and something like a fungible token, can be done in a handful of lines of code.
 
 
 
@@ -64,7 +64,7 @@ Modules can have "resources" bound to them. A resource can be thought of as an o
 
 
 
-This is a minor and easily overlooked architectural decision that is quite powerful. There are many modules that are provided standard by the chain, published to the 0x1 address. This standard library can be imported into user\-defined modules and transaction scripts.
+This is a minor and easily overlooked architectural decision that is quite powerful. There are many modules that are provided standard by the chain, published to the 0x1 address. This standard library can be imported into user-defined modules and transaction scripts.
 
 
 
@@ -79,7 +79,7 @@ Importantly, much of the logic tangential to consensus (e.g. validator inclusion
 
 
 
-This is a purpose\-built bytecode execution environment which isolates the Move Language from the state transition core. The unique feature of the Move VM is that it is easily extensible. It's very easy to include a new instruction to the virtual machine, a "native function". The native functions are written in Rust (which is the language of the entire code\-base). Below we reference some of the changes we had to make for real\-world use cases.
+This is a purpose-built bytecode execution environment which isolates the Move Language from the state transition core. The unique feature of the Move VM is that it is easily extensible. It's very easy to include a new instruction to the virtual machine, a "native function". The native functions are written in Rust (which is the language of the entire code-base). Below we reference some of the changes we had to make for real-world use cases.
 
 
 
@@ -124,7 +124,7 @@ There's a lot to be said about how consensus happens on blockchains, and we won'
 
 
 
-The database which stores the transactions is based on a Sparse Merkle Tree design called Jellyfish. This is an architecture shared by a number of blockchains. It has the benefit of being fast to search, and occupies less storage space (hashes) than a traditional merkle tree. The storage is backed by a RocksDB key\-value store. This is a sensible design. There isn't much to remark here, except that there are still opportunities that can be leveraged from this storage architecture to allow for faster syncing of the blockchain.
+The database which stores the transactions is based on a Sparse Merkle Tree design called Jellyfish. This is an architecture shared by a number of blockchains. It has the benefit of being fast to search, and occupies less storage space (hashes) than a traditional merkle tree. The storage is backed by a RocksDB key-value store. This is a sensible design. There isn't much to remark here, except that there are still opportunities that can be leveraged from this storage architecture to allow for faster syncing of the blockchain.
 
 
 
@@ -134,22 +134,22 @@ The database which stores the transactions is based on a Sparse Merkle Tree desi
 
 
 
-The technology we are inheriting is a spaceship. It is also purely infrastructural. There's very little in the way of tooling or smart contracts that are usable in the real world. We assume much of the remainder of the software stack is closed\-sourced at Facebook.
+The technology we are inheriting is a spaceship. It is also purely infrastructural. There's very little in the way of tooling or smart contracts that are usable in the real world. We assume much of the remainder of the software stack is closed-sourced at Facebook.
 
 
 
 
-But most importantly, the architecture is designed as a private, consortium chain. For system administration, there is on omnipresent Diem Association account. Yes, a private key that controls many functions including: Freezing accounts (!), selecting validators for inclusion, paying transaction fees to validators, upgrading the system code. This is obviously a non\-starter. So a lot of work had to go into making system policies execute in a permissionless environment.
+But most importantly, the architecture is designed as a private, consortium chain. For system administration, there is on omnipresent Diem Association account. Yes, a private key that controls many functions including: Freezing accounts (!), selecting validators for inclusion, paying transaction fees to validators, upgrading the system code. This is obviously a non-starter. So a lot of work had to go into making system policies execute in a permissionless environment.
 
 
 
 
-We also had to add Sybil resistance mechanisms. Typically communities have been choosing Proof\-of\-Stake as the Sybil resistance method for BFT networks. This is not the route we chose given community growth considerations (as well as regulatory). Elsewhere we've talked in detail about our Delay Towers complement to consensus. Also there were a number of instructions we wanted to add to the MoveVM so that people could write the types of contract they wanted.
+We also had to add Sybil resistance mechanisms. Typically communities have been choosing Proof-of-Stake as the Sybil resistance method for BFT networks. This is not the route we chose given community growth considerations (as well as regulatory). Elsewhere we've talked in detail about our Delay Towers complement to consensus. Also there were a number of instructions we wanted to add to the MoveVM so that people could write the types of contract they wanted.
 
 
 
 
-Lastly, there was nothing in Libra/Diem about economics. Meaning, there's nothing in the way of game theory, about how the network is supposed to perform in a permissionless environment. For example: the transactions are metered in USD stablecoins in LIbra/Diem architecture, and paid out by the administrator, and there's no word anywhere about subsidies that may be needed in the absence of meaningful transaction fees. As such there's no consideration to the performance of the validator nodes, all nodes are assumed to be monitored external to the protocol. So we had to rethink a number of things given some of the technical features of the network. The network has novel features, so economic mechanisms we see in other chains would not be drop\-in replacements. This was a significant amount of research.
+Lastly, there was nothing in Libra/Diem about economics. Meaning, there's nothing in the way of game theory, about how the network is supposed to perform in a permissionless environment. For example: the transactions are metered in USD stablecoins in LIbra/Diem architecture, and paid out by the administrator, and there's no word anywhere about subsidies that may be needed in the absence of meaningful transaction fees. As such there's no consideration to the performance of the validator nodes, all nodes are assumed to be monitored external to the protocol. So we had to rethink a number of things given some of the technical features of the network. The network has novel features, so economic mechanisms we see in other chains would not be drop-in replacements. This was a significant amount of research.
 
 
 
@@ -159,7 +159,7 @@ Lastly, there was nothing in Libra/Diem about economics. Meaning, there's nothin
 
 
 
-This is not an exhaustive summary of the changes. 0L contributed about 40k new lines of code to the code\-base, not including changes and code removal. It's a summary of what we think makes 0L a compelling network.
+This is not an exhaustive summary of the changes. 0L contributed about 40k new lines of code to the code-base, not including changes and code removal. It's a summary of what we think makes 0L a compelling network.
 
 
 
@@ -204,7 +204,7 @@ While there's a long discussion possible on how network upgrades should be selec
 
 
 
-Since all system rules are encoded in the application layer in Diem, the code is quite compact, and a proposed new binary could also be stored in the applications layer. Since that's possible it also opens up the binary to be voted on chain, and the code of the upgrade itself, stored on\-chain, such that the upgrade can happen without operator intervention. New binaries for the system can be proposed and voted upon by the validators, and if there are ⅔ of validators choosing the binary (effectively what would be needed for a hard fork), the changes would be synchronously written by all validator nodes at a coordinated time in the blockchain.
+Since all system rules are encoded in the application layer in Diem, the code is quite compact, and a proposed new binary could also be stored in the applications layer. Since that's possible it also opens up the binary to be voted on chain, and the code of the upgrade itself, stored on-chain, such that the upgrade can happen without operator intervention. New binaries for the system can be proposed and voted upon by the validators, and if there are ⅔ of validators choosing the binary (effectively what would be needed for a hard fork), the changes would be synchronously written by all validator nodes at a coordinated time in the blockchain.
 
 
 
@@ -214,7 +214,7 @@ Since all system rules are encoded in the application layer in Diem, the code is
 
 
 
-We had to have on\-chain information on the performance of validators. This is critical to designing any economic games around transaction fees and other rewards.
+We had to have on-chain information on the performance of validators. This is critical to designing any economic games around transaction fees and other rewards.
 
 
 
@@ -234,17 +234,17 @@ There is a performance penalty for this, and optimizations are possible. Since M
 
 
 
-In the upstream LibraDiem code, accounts are not created permissionlessly. It starts with a Diem Association Account, which later add Virtual Asset Service Providers (such an exchange), which later create user accounts. So all of this had to be replaced (the code remains in our code base for reference, but is inactivated). Instead, there are only two types of accounts on 0L: end\-user accounts (the typical account), and Validator Accounts (who own and operate nodes).
+In the upstream LibraDiem code, accounts are not created permissionlessly. It starts with a Diem Association Account, which later add Virtual Asset Service Providers (such an exchange), which later create user accounts. So all of this had to be replaced (the code remains in our code base for reference, but is inactivated). Instead, there are only two types of accounts on 0L: end-user accounts (the typical account), and Validator Accounts (who own and operate nodes).
 
 
 
 
-End user accounts can be created by anyone that already has an account, as is typical with any account\-based blockchain. Like in Ethereum, you can create keys for an account offline, but the account does not exist until someone already on\-chain sends you at least one coin.
+End user accounts can be created by anyone that already has an account, as is typical with any account-based blockchain. Like in Ethereum, you can create keys for an account offline, but the account does not exist until someone already on-chain sends you at least one coin.
 
 
 
 
-Similarly for Validator accounts, an account needs to be created by another pre\-existing Validator account. There are some game theoretical considerations here which are discussed in the Rulebook. In short, unlike industry practice where the group of validators have to vote on admission of a new member, in 0L any validator can onboard another, but they are rate\-limited from onboarded too many. One validator can onboard another every 14 epochs (days).
+Similarly for Validator accounts, an account needs to be created by another pre-existing Validator account. There are some game theoretical considerations here which are discussed in the Rulebook. In short, unlike industry practice where the group of validators have to vote on admission of a new member, in 0L any validator can onboard another, but they are rate-limited from onboarded too many. One validator can onboard another every 14 epochs (days).
 
 
 
@@ -264,8 +264,8 @@ We've made some additions to the MoveVM that were necessary for us to implement 
 
 
 
-* **Decimal** \- we needed a number type that could be used for financial math that could lead into polynomial curves etc. So we added the Rust Decimal library and some initial APIs and their corresponding native instructions.
-* **VDF verification** \- to verify the Delay Towers proofs we added the ChiaVDF verifier to the VM. The prover is not needed in the VM. The VDF prover can accept a number of parameters (not hardcoded for 0L's use\-case). So application builders could leverage it in their own games.
+* **Decimal** - we needed a number type that could be used for financial math that could lead into polynomial curves etc. So we added the Rust Decimal library and some initial APIs and their corresponding native instructions.
+* **VDF verification** - to verify the Delay Towers proofs we added the ChiaVDF verifier to the VM. The prover is not needed in the VM. The VDF prover can accept a number of parameters (not hardcoded for 0L's use-case). So application builders could leverage it in their own games.
 
 
 
@@ -275,7 +275,7 @@ We've made some additions to the MoveVM that were necessary for us to implement 
 
 
 
-The ability to create payments in the future, and regular payments as a percent of account balance or of new income. This was a feature requested early by the community. It powers a number of use\-cases important at the start of a network. Namely it is useful for anyone that wants to run a community program. In this case an entity or a person is seeking to accomplish a goal or a project, and is asking for donations. Autopay allows for set\-it\-and\-forget\-it donations to programs. Most people in 0L use this to send a portion of their mining rewards to programs automatically.
+The ability to create payments in the future, and regular payments as a percent of account balance or of new income. This was a feature requested early by the community. It powers a number of use-cases important at the start of a network. Namely it is useful for anyone that wants to run a community program. In this case an entity or a person is seeking to accomplish a goal or a project, and is asking for donations. Autopay allows for set-it-and-forget-it donations to programs. Most people in 0L use this to send a portion of their mining rewards to programs automatically.
 
 
 
@@ -303,7 +303,7 @@ Future types of autopay are possible. Autopay has a simple First In First Out Qu
 
 
 
-a web interface for a Nodes Operator to see reports on the node. Basic chain info: Epoch number, waypoint. Includes Node Health, and account info Performance reports on all validators in set. JSON endpoints to query data, like the node's account profile, epoch. Not to be confused with a fullnode json\-rpc
+a web interface for a Nodes Operator to see reports on the node. Basic chain info: Epoch number, waypoint. Includes Node Health, and account info Performance reports on all validators in set. JSON endpoints to query data, like the node's account profile, epoch. Not to be confused with a fullnode json-rpc
 
 
 
@@ -313,7 +313,7 @@ a web interface for a Nodes Operator to see reports on the node. Basic chain inf
 
 
 
-Explorer \- a terminal block explorer. This one is mostly for fun. This is a terminal interface for a block explorer to check some vitals of your fullnode or validator node.
+Explorer - a terminal block explorer. This one is mostly for fun. This is a terminal interface for a block explorer to check some vitals of your fullnode or validator node.
 
 
 
@@ -354,5 +354,3 @@ Diem has one significant limitation which is a slower sync time. A fullnode join
 
 
 Last but not least. We wanted all users to be able to participate meaningfully, and on equal footing with a protocol. Since there is a subsidy for creating heavy identities on the chain (Delay Tower), we needed to make this accessible to a diverse audience. The Carpe app, combines a Wallet with a Light Miner, which allows anyone with a desktop whether Windows, Ubuntu, or Mac, to "mine" coins for themselves. [Learn more here](http://openlibra.blog/technology/carpe-desktop-app/).
-
-
