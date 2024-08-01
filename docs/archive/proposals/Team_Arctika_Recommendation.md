@@ -11,14 +11,17 @@ The crypto headwinds are significant: Regulatory pressure, fraud, scammers and a
 ## How much is necessary for the Infrastructure Escrow Fund (IEF)?
 
 
-We can estimate that, in order to attract validators, the network will have to pay each validator US$4-5k per month (this is consistent with what validators are paid in mature networks with smoothly operating software). In our interviews with professional validators, we arrived at $4,200 as our baseline. See the data in the table, below
-![](http://openlibra.blog/wp-content/uploads/2023/10/Screenshot-2023-10-24-at-15.41.46-1024x558.png)
+We can estimate that, in order to attract validators, the network will have to pay each validator US$4-5k per month (this is consistent with what validators are paid in mature networks with smoothly operating software). In our interviews with professional validators, we arrived at $4,200 as our baseline. See the data in the table, below:
+
+
+![](../../assets/validator-opportunity-cost.png)
 The Team agrees that we need to provision for another 7 years of network operations. We’re roughly three years into the network’s life cycle at this point in time (1 year in testnet, followed by almost 2 years since Genesis). Altogether, we should make it through at least the first 10 years of the network.
 
 
 Of course, translating a token with no market value into monthly USD amounts requires some assumptions about value. We must take a conservative approach on market cap, for "all weather conditions". Despite what we’ve seen with some of our peer networks, we can't reasonably say that the base case for networks is a valuation of $1B\+ over the next 7 years. Likewise a network worth less than $50M for many years likely leads to extinction. So, the calculations we made assumed a $100M market cap, from which a token value could be extrapolated; this seemed like a reasonable base-case (which could be substantiated further).
 At that intersection: 100 validators earning $4,200 per month over 7 years, with a network on average worth $100m, the result is approx 35% of network capital needs to be pre-diluted for sufficient safety.
-![](http://openlibra.blog/wp-content/uploads/2023/10/Screenshot-2023-10-24-at-15.35.30-1024x623.png)
+
+![](../../assets/infrastructure-escrow-pledge-sensitivity.png)
 ### Over-allocation
 
 
@@ -75,7 +78,8 @@ We looked at many models of dilutions and fees. Asking validators to invest 80% 
 * Reduce the gap between worker and validators to 1\.3X from 16X.
 
 
-![](http://openlibra.blog/wp-content/uploads/2023/10/Screenshot-2023-10-24-at-15.39.46-1024x750.png)
+![](../../assets/summary-dilution-impacts.png)
+
 We think this allocation, with abundant amounts for future capital, which honors prior workers such that we can continue recruiting for future talent, and sets up all current participants for future success is **unique and exemplary in the industry, and fulfills our mission of creating "good capital" and gives us the best shot at surviving and thriving.**
 
  
