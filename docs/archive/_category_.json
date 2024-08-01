@@ -1,0 +1,8 @@
+{
+    "label": "Archive",
+    "position": 10,
+    "link": {
+      "type": "generated-index",
+      "description": "Historical, canonical, and/or deprecated for reference"
+    }
+}
