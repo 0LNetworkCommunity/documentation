@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - run: echo preview-${{ github.ref }}
       - name: Checkout
         uses: actions/checkout@v3
       - uses: oven-sh/setup-bun@v2

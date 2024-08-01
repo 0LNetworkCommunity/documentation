@@ -15,7 +15,6 @@ on:
 jobs:
   test-deploy:
     name: Test deployment
-    if: ${{github.event_name != 'pull_request'}}
     runs-on: ubuntu-latest
     steps:
       # NOTE: for debugging CI this allow shell access to github runner. Will print out tmate.io terminal url
