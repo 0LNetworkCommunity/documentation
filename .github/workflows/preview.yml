@@ -25,6 +25,7 @@ jobs:
       # this has to match docusaurus's baseURL in docusaurus.config.js
       - run: echo "GH_ACTION_DOCUSAURUS_BASE_URL=pr-preview/pr-${{ github.event.number }}" >> "$GITHUB_ENV"
 
+      # clean this just in case
       - run: rm -rf ./build
 
       - name: Install and Build
