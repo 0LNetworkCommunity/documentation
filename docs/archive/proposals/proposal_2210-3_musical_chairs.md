@@ -29,12 +29,12 @@
 
 
 
-The current design of 0L makes it such that validators compete less among themselves as the count of nodes expands. For example, at 60 seats, the next epoch will have 10 slots open (the network always makes ⅙ the number of seats available). This means the competition is lower as the network progressively increases, which may be counter to the needs of the network. Meaning: when the validator set is large, the performance in TPS goes down, and better higher\-quality validators are needed (not more seats with validators of unknown quality). Also when the set is large, it may also intersect with be that demand for the network services being are high. In those cases we want more, or at least the same, amount of competition.
+The current design of 0L makes it such that validators compete less among themselves as the count of nodes expands. For example, at 60 seats, the next epoch will have 10 slots open (the network always makes ⅙ the number of seats available). This means the competition is lower as the network progressively increases, which may be counter to the needs of the network. Meaning: when the validator set is large, the performance in TPS goes down, and better higher-quality validators are needed (not more seats with validators of unknown quality). Also when the set is large, it may also intersect with be that demand for the network services being are high. In those cases we want more, or at least the same, amount of competition.
 
 
 
 
-The validator set needs to be optimized for both performance and reliablility. The current selection process utilized by 0L optimizes for neither of those attributes, being based instead, on purely numerical conditions. A revised approach could advance both performance and reliability. 
+The validator set needs to be optimized for both performance and reliablility. The current selection process utilized by 0L optimizes for neither of those attributes, being based instead, on purely numerical conditions. A revised approach could advance both performance and reliability.
 
 
 
@@ -77,7 +77,7 @@ With musical chairs, the validator set has no maximum limit. Whatever it's size 
 
 
 
-Whenever the validator set has perfect performance by all nodes, the set can increase by 1 seat (M \+ 1\). No validators are guaranteed a seat when the seat count is stable or growing. They compete on the lowest cost of service provided (cost of consensus). In the event of a validator set where one node did not perform (M \- 1\), then the next epoch will include all the performant validators LESS the one non\-performing (the new size is M \- 1\).
+Whenever the validator set has perfect performance by all nodes, the set can increase by 1 seat (M \+ 1\). No validators are guaranteed a seat when the seat count is stable or growing. They compete on the lowest cost of service provided (cost of consensus). In the event of a validator set where one node did not perform (M - 1\), then the next epoch will include all the performant validators LESS the one non-performing (the new size is M - 1\).
 
 
 
@@ -88,8 +88,8 @@ There key attributes of Musical Chairs are:
 
 
 1. The validator set has no fixed upper bound of validator seats (i.e., no longer fixed at 100\).
-2. The validator set only expands if every member of the validator set performed above threshold \- and then it only increases by 1 seat.
-3. If any validator(s) did not perform, the validator set is reduced by the size of the non\-performing validator(s) \- and the expansion begins again.
+2. The validator set only expands if every member of the validator set performed above threshold - and then it only increases by 1 seat.
+3. If any validator(s) did not perform, the validator set is reduced by the size of the non-performing validator(s) - and the expansion begins again.
 4. In a shrunk validator set, all of the performant validators are allowed to remain, though if the validator set resumes increasing, they must compete on cost.
 
 
@@ -148,7 +148,7 @@ A vote of NO on this proposal will reject all parts of this proposal and retain 
 
 
 
-* See also, Proposal 2210\-2, Final Supply, for an explanation of Proof of Fee, which is closely related to this proposal
+* See also, Proposal 2210-2, Final Supply, for an explanation of Proof of Fee, which is closely related to this proposal
 
 
 
@@ -159,9 +159,7 @@ A vote of NO on this proposal will reject all parts of this proposal and retain 
 
 
 * This document is a Draft / Work in Progress. It will change until marked as FINAL. The closing date for revisions is 15 October.
-* Publication here is an invitation for community collaboration and co\-creation.
-* To engage on this content, visit the **\#governance\-proposals** channel on the 0L Discord (link at bottom right)
-* Once this Proposal is finalized, it will be the subject of Voting on the Radical X Change platform. If you do not yet have credentials, visit the **\#rxc\-voice\-discussion** channel on the 0L Discord and make a request to join.
+* Publication here is an invitation for community collaboration and co-creation.
+* To engage on this content, visit the **\#governance-proposals** channel on the 0L Discord (link at bottom right)
+* Once this Proposal is finalized, it will be the subject of Voting on the Radical X Change platform. If you do not yet have credentials, visit the **\#rxc-voice-discussion** channel on the 0L Discord and make a request to join.
 * **Voting opens 17 Oct and closes 22 Oct**
-
-

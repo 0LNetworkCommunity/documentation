@@ -4,7 +4,7 @@
 
 
 
-###### Champion: 0o\-de\-lally
+###### Champion: 0o-de-lally
 
 
 
@@ -24,12 +24,12 @@
 
 
 
-As an alternative to the (near\-universally deployed) Delegated Proof of Stake we propose a sybil resistance technique designed natively for the benefits and tradeoffs of PBFT consensus, we call that system Proof\-of\-Fee (PoF). This proposal seeks to replace the Delay Towers mechanism currently in place with Proof\-of\-Fee. 
+As an alternative to the (near-universally deployed) Delegated Proof of Stake we propose a sybil resistance technique designed natively for the benefits and tradeoffs of PBFT consensus, we call that system Proof-of-Fee (PoF). This proposal seeks to replace the Delay Towers mechanism currently in place with Proof-of-Fee. 
 
 
 
 
-Profits to blockchains are slim to non\-existent. Low consensus costs are foundational for any chain that wishes to provide consumer surplus and profit to coin\-holders; where excess winnings of the chain can be distributed to *all* account holders, that is, without preference to an investor class of "stakers". In PoF, the cost of consensus is lowered maximally to the *operator opportunity cost*, and such that the social cost (of dilution through issuance) is minimized.
+Profits to blockchains are slim to non-existent. Low consensus costs are foundational for any chain that wishes to provide consumer surplus and profit to coin-holders; where excess winnings of the chain can be distributed to *all* account holders, that is, without preference to an investor class of "stakers". In PoF, the cost of consensus is lowered maximally to the *operator opportunity cost*, and such that the social cost (of dilution through issuance) is minimized.
 
 
 
@@ -74,7 +74,7 @@ Here’s how each part works:
 * Each successful validator will receive an equal amount as other validators in incentives each epoch.
 * The amount of the fee is a parameter subject to governance action (and hence is adjustable on vote by the community).
 * The amount should be minimal (e.g., single digit percentages of the total supply per year) yet designed to provide adequate incentives for validators to secure and maintain a reliable network.
-* Incentives will be paid from the Infrastructure Escrow community wallet (see, Proposal 2210\-1\)
+* Incentives will be paid from the Infrastructure Escrow community wallet (see, Proposal 2210-1\)
 
 
 
@@ -94,8 +94,8 @@ Proof of Fee creates a competitive auction mechanism to pick who gets to partici
 * Validator consensus power is determined by the entry fee.
 * Each validator bids their highest entry fee, with the expectation of receiving a flat fee at the end of a successful epoch.
 * The initial proposed auction type is a Generalized Second Price Auction (a variation of the Nth Price Auction), which means the validator doesn't pay their maximum bid, but the bid of the next person immediately below them. (note: Future variations on this auction are possible and should be explored)
-* Bids in excess of the pre\-defined validator incentive for that epoch (i.e., a negative bid) will be permitted, within limits (e.g. 110% of the reward). The limit is a parameter subject to governance action (and hence is adjustable on vote by the community)
-* At completion of the epoch, the pre\-defined incentive amount will be paid to all validators that successfully completed the epoch. (The entry fee was already be paid thus, the net reward to a validator will be: Gross Incentive \- Entry Fee \= Net Amount Received by Each Validator)
+* Bids in excess of the pre-defined validator incentive for that epoch (i.e., a negative bid) will be permitted, within limits (e.g. 110% of the reward). The limit is a parameter subject to governance action (and hence is adjustable on vote by the community)
+* At completion of the epoch, the pre-defined incentive amount will be paid to all validators that successfully completed the epoch. (The entry fee was already be paid thus, the net reward to a validator will be: Gross Incentive - Entry Fee \= Net Amount Received by Each Validator)
 
 
 
@@ -154,7 +154,7 @@ A vote of NO on this proposal will reject all parts of this proposal and retain 
 
 
 
-* See also, Proposal 2210\-1, Final Supply, for an explanation of the Infrastructure Escrow Community Wallet
+* See also, Proposal 2210-1, Final Supply, for an explanation of the Infrastructure Escrow Community Wallet
 
 
 
@@ -165,9 +165,7 @@ A vote of NO on this proposal will reject all parts of this proposal and retain 
 
 
 * This document is a Draft / Work in Progress. It will change until marked as FINAL. **The closing date for revisions is 15 October.**
-* Publication here is an invitation for community collaboration and co\-creation.
-* To engage on this content, visit the **\#governance\-proposals** channel on the 0L Discord (link at bottom right)
-* Once this Proposal is finalized, it will be the subject of Voting on the Radical X Change platform. If you do not yet have credentials, visit the **\#rxc\-voice\-discussion** channel on the 0L Discord and make a request to join.
+* Publication here is an invitation for community collaboration and co-creation.
+* To engage on this content, visit the **\#governance-proposals** channel on the 0L Discord (link at bottom right)
+* Once this Proposal is finalized, it will be the subject of Voting on the Radical X Change platform. If you do not yet have credentials, visit the **\#rxc-voice-discussion** channel on the 0L Discord and make a request to join.
 * **Voting opens 17 Oct and closes 22 Oct**
-
-

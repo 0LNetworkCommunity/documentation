@@ -5,3 +5,4 @@ In addition to being a member of the 0L community and early miner, Newlab is sta
 If you would like to support this program, your contributions are welcome at: **bc25f79fef8a981be4636ac1a2d6f587**.
 
 Donations will be used to fund awards of the program, as determined by Newlab’s team in partnership with the 0L community. Newlab intends to be proactively involved in helping studio partners realize applications that have utility, impact and scale. In order to cover administrative costs, Newlab will collect 10% of the funds received.
+

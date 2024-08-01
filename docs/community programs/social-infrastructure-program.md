@@ -16,13 +16,13 @@ Social infrastructure is also called *“soft infrastructure”*
 
 
 > Soft infrastructure refers to all the institutions that maintain the economic, health, social, environmental, and cultural standards of a country.
-> 
+>
 > \~Wikipedia Entry on [Infrastructure](https://en.wikipedia.org/wiki/Infrastructure)
 
 
 
 
-Unlike a country, peer\-to\-peer networks are fundamentally opt\-in. They form a new kind of constituency distinct from nation\-states. Peer\-to\-peer networks bear a closer resemblance to other opt in systems providing membership benefits such as [credit unions](https://en.wikipedia.org/wiki/Credit_union) and [professional associations](https://en.wikipedia.org/wiki/Professional_association). Like benefits offered by professional associations and credit unions; members may help define and opt into benefits programs.
+Unlike a country, peer-to-peer networks are fundamentally opt-in. They form a new kind of constituency distinct from nation-states. Peer-to-peer networks bear a closer resemblance to other opt in systems providing membership benefits such as [credit unions](https://en.wikipedia.org/wiki/Credit_union) and [professional associations](https://en.wikipedia.org/wiki/Professional_association). Like benefits offered by professional associations and credit unions; members may help define and opt into benefits programs.
 
 
 
@@ -37,7 +37,7 @@ It is increasingly common for community and industry organizations to offer bene
 
 
 
-While the decentralized nature of peer\-to\-peer networks decouple them from any particular industry or geographic region, they do not eliminate their members’ physical needs. Any membership benefits programs that aims to address social and economic welfare will need capital.
+While the decentralized nature of peer-to-peer networks decouple them from any particular industry or geographic region, they do not eliminate their members’ physical needs. Any membership benefits programs that aims to address social and economic welfare will need capital.
 
 
 
@@ -113,5 +113,3 @@ We aim to disburse program funds in accordance with community wishes. The progra
 
 
 To cover costs of managing this program, BlockScience may receive an administrative fee up to 4% of the funds awarded to teams; this disbursement is also subject to community approval. As a CommunityWallet if the validators see fit to Sunset this account, BlockScience will accommodate. We may transfer operation of this program to another entity (or entities) and in such an event the community will be consulted and notified.
-
-

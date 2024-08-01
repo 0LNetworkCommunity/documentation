@@ -26,7 +26,7 @@ Here's a quick reference to the policies implemented at genesis, with further di
 
 * Securing the network is done by a maximum of 100 delegations of "Validator Nodes". This is very valuable work to the network.
 * At the start of the network each Validator Node has typically 1 entity or person behind it (a delegation of 1\).
-* To become a candidate for a Validator Node, all that is required is to run the configuration tool, and to have any existing Validator in a current validator set send an onboarding transaction. (it's not a vote by the validator set to include a new validator.) While it doesn't take group permission to onboard a new validator, existing validators are rate\-limited from creating endless accounts. They can only onboard a new prospective validator every 14 days/epochs.
+* To become a candidate for a Validator Node, all that is required is to run the configuration tool, and to have any existing Validator in a current validator set send an onboarding transaction. (it's not a vote by the validator set to include a new validator.) While it doesn't take group permission to onboard a new validator, existing validators are rate-limited from creating endless accounts. They can only onboard a new prospective validator every 14 days/epochs.
 * The budget for Validator subsidies is "thermostatic", it goes up or down depending on the total number of Validator Nodes doing work successfully.
 
 
@@ -109,7 +109,7 @@ Note, these allocation rules make some assumptions about BFT, that there is a su
 # Identity Subsidy
 
 
-0L's identity subsidy sybil resistance mechanism relies on Validators creating Delay Towers which provide a persistent, and non\-forgeable identity.
+0L's identity subsidy sybil resistance mechanism relies on Validators creating Delay Towers which provide a persistent, and non-forgeable identity.
 
 
 It is important for the network to have as many users as possible creating durable identities, i.e producing Delay Towers. It has a number of benefits: allowing users not yet set up as validators to create identities, allows fullnodes to receive some compensation for providing replication services, and allows the VDF delay mechanism to be tested in a wide variety of hardware configurations so that the difficulty can be periodically adjusted.
@@ -127,7 +127,7 @@ To balance the needs of validators, and exploits possible, miners thus share the
 Transfers of credits are unlimited for End User accounts (plain accounts). If an End User is running a "miner" and creating a tower, those credits are freely transferable.
 
 
-There two categories of accounts that have opt\-in rules for transfers
+There two categories of accounts that have opt-in rules for transfers
 
 
 ## Community Wallets
@@ -145,7 +145,7 @@ Sending automatic payments is easy. It is also encouraged socially. On the curre
 ## Slow Wallets
 
 
-Since transferring credits by early users can cause undesirable effects (e.g. creating markets and dumping credits on lesser informed users), the earliest members, and the ones most likely to accumulate large amounts of credits are rate\-limited in transferring funds. Transferability also interferes with the ability of the auction for security.
+Since transferring credits by early users can cause undesirable effects (e.g. creating markets and dumping credits on lesser informed users), the earliest members, and the ones most likely to accumulate large amounts of credits are rate-limited in transferring funds. Transferability also interferes with the ability of the auction for security.
 
 
 The exception is transferring credits to Community Wallets. Those transfers are unlimited.

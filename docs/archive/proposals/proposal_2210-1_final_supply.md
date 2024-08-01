@@ -75,7 +75,7 @@ A vote of YES on this proposal will signal to the Engineering Team and the Valid
 2. Rebase the token using a formula to be determined in subsequent governance action
 3. Create a new community wallet named Infrastructure Escrow
 4. Transfer into that wallet a number of tokens to be determined by subsequent governance action
-5. Note the impact of the passage of this proposal on token holders in multi\-fold:
+5. Note the impact of the passage of this proposal on token holders in multi-fold:
 	1. There will be more tokens in the system.
 	2. All wallets will show higher balances.
 	3. A formula will be devised to allocate a portion of those tokens from all wallets to the new Infrastructure Escrow. That formula will need to be determined in subsequent governance actions.
@@ -88,12 +88,12 @@ A vote of YES on this proposal will signal to the Engineering Team and the Valid
 
 
 
-A vote of NO on this proposal will reject all parts of this proposal and issuance\-driven inflation will remain in effect as it is currently.
+A vote of NO on this proposal will reject all parts of this proposal and issuance-driven inflation will remain in effect as it is currently.
 
 
 
 
-* The author(s) believe that a clear path to a mission\-aligned revision of our tokenomics is essential for the community, so in the event that you choose to vote against this proposal, we welcome you to engage with the community to collaborate on the creation of a policy that is acceptable to the community at large.
+* The author(s) believe that a clear path to a mission-aligned revision of our tokenomics is essential for the community, so in the event that you choose to vote against this proposal, we welcome you to engage with the community to collaborate on the creation of a policy that is acceptable to the community at large.
 
 
 
@@ -114,7 +114,7 @@ A vote of NO on this proposal will reject all parts of this proposal and issuanc
 
 
 
-* See also, Proposal 2210\-8, Infrastructure Escrow Funding
+* See also, Proposal 2210-8, Infrastructure Escrow Funding
 
 
 
@@ -126,10 +126,7 @@ Notes on Process
 
 
 * This document is a Draft / Work in Progress. It will change until marked as FINAL. **The closing date for revisions is 15 October**.
-* Publication here is an invitation for community collaboration and co\-creation.
-* To engage on this content, visit the **\#governance\-proposals** channel on the 0L Discord (link at bottom right)
-* Once this Proposal is finalized, it will be the subject of Voting on the Radical X Change platform. If you do not yet have credentials, visit the **\#rxc\-voice\-discussion** channel on the 0L Discord and make a request to join.
+* Publication here is an invitation for community collaboration and co-creation.
+* To engage on this content, visit the **\#governance-proposals** channel on the 0L Discord (link at bottom right)
+* Once this Proposal is finalized, it will be the subject of Voting on the Radical X Change platform. If you do not yet have credentials, visit the **\#rxc-voice-discussion** channel on the 0L Discord and make a request to join.
 * **Voting opens 17 Oct and closes 22 Oct**
-
-
-

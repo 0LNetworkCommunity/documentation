@@ -24,7 +24,7 @@
 
 
 
-If Proposal 2210\-2 Proof of Fee passes, the need for Towers will be eliminated and Carpe users will have nothing to do. This proposal advocates for one approach (an oracle service) to creating utility for Carpe. Additionally, 0L is seeking to have more revenue opportunities for the chain and expanded functionality. Oracles are ways of getting off\-chain data onto the chain, e.g. getting the price of a coin from a website. The design does not foreclose other future uses for Carpe.
+If Proposal 2210-2 Proof of Fee passes, the need for Towers will be eliminated and Carpe users will have nothing to do. This proposal advocates for one approach (an oracle service) to creating utility for Carpe. Additionally, 0L is seeking to have more revenue opportunities for the chain and expanded functionality. Oracles are ways of getting off-chain data onto the chain, e.g. getting the price of a coin from a website. The design does not foreclose other future uses for Carpe.
 
 
 
@@ -53,7 +53,7 @@ This proposal advocates that we take advantage of the Carpe installed base and r
 
 1. Tower mining, and the Identity Subsidy, by Carpe will NOT stop when towers are discontinued with Proof of Fee. It will continue until an Oracle subsidy or Oracle product can be introduced.
 2. The Engineering team will design and build an oracle function for Carpe Miners
-3. The oracle upgrade will be distributed for on\-chain policy upgrades (AKA Stdlib), and upgrades to Carpe.
+3. The oracle upgrade will be distributed for on-chain policy upgrades (AKA Stdlib), and upgrades to Carpe.
 
 
 
@@ -68,7 +68,7 @@ This proposal advocates that we take advantage of the Carpe installed base and r
 
 
 
-* If Delay Towers are abandoned (as per Proposal 2210\-2 Proof of Fee, or other governance action), then Carpe will cease to function.
+* If Delay Towers are abandoned (as per Proposal 2210-2 Proof of Fee, or other governance action), then Carpe will cease to function.
 * Note that if this proposal is defeated, there will remain a need to explore future expansion of Carpe functionality, or the sunsetting of the Carpe app. The author encourages those who vote No on this proposal to work with the community to find a means to address these challenges.
 
 
@@ -79,7 +79,7 @@ This proposal advocates that we take advantage of the Carpe installed base and r
 
 
 
-* See Proposal 2210\-2, Proof of Fee, for an explanation of Proof of Fee and how that would replace Delay Towers.
+* See Proposal 2210-2, Proof of Fee, for an explanation of Proof of Fee and how that would replace Delay Towers.
 
 
 
@@ -90,9 +90,7 @@ This proposal advocates that we take advantage of the Carpe installed base and r
 
 
 * This document is a Draft / Work in Progress. It will change until marked as FINAL. The closing date for revisions is 15 October.
-* Publication here is an invitation for community collaboration and co\-creation.
-* To engage on this content, visit the **\#governance\-proposals** channel on the 0L Discord (link at bottom right)
-* Once this Proposal is finalized, it will be the subject of Voting on the Radical X Change platform. If you do not yet have credentials, visit the **\#rxc\-voice\-discussion** channel on the 0L Discord and make a request to join.
+* Publication here is an invitation for community collaboration and co-creation.
+* To engage on this content, visit the **\#governance-proposals** channel on the 0L Discord (link at bottom right)
+* Once this Proposal is finalized, it will be the subject of Voting on the Radical X Change platform. If you do not yet have credentials, visit the **\#rxc-voice-discussion** channel on the 0L Discord and make a request to join.
 * **Voting opens 17 Oct and closes 22 Oct**
-
-
