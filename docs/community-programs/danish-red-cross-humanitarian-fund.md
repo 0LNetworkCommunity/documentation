@@ -1,8 +1,5 @@
-
+# Danish Red Cross Humanitarian
 ## Introduction
-
-
-
 
 The Danish Red Cross (DRC) has existed under the Red Cross Mandate since 1876\. In Denmark, 34,000 volunteers are engaged in supporting the Red Cross vision. Currently, DRC has long-term partnerships in 30 countries and deploys US$200M on international activities, annually. It acts before, during and after disasters and health emergencies to meet the needs and improve the lives of vulnerable people. It does so with impartiality as to nationality, race, gender, religious beliefs, class, and political opinions. Under the auspices of Red Cross humanitarian principles, the DRC will administer the Humanitarian Digital Transformation and Systems Change Fund (the Fund) which aims to improve outcomes for communities affected by humanitarian crises by identifying, testing, and cultivating more effective and scalable technology and data enabled solutions.
 
