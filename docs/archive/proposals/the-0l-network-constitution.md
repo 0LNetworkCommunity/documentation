@@ -9,7 +9,7 @@ Adopted by Community Polling on 3 May 2022
 
 
 
-This document is intended as an exposition of shared values at the heart of the 0L Network Community. The principles espoused herein are provided as a framework for decisions at a macro level and have been drafted to inform the decision process and provide a foundation to facilitate consistent and rational decision\-making. This Constitution should be treated as a living document that is extensible – within the framework of our core values – as the community grows.
+This document is intended as an exposition of shared values at the heart of the 0L Network Community. The principles espoused herein are provided as a framework for decisions at a macro level and have been drafted to inform the decision process and provide a foundation to facilitate consistent and rational decision-making. This Constitution should be treated as a living document that is extensible – within the framework of our core values – as the community grows.
 
 
 
@@ -24,7 +24,7 @@ From our genesis, we have avoided the creation of an insider class (like a found
 
 
 
-**1\. Merit**: We are a community of do\-ers who believe that those who serve our community and its vision should be rewarded \& given a voice in shaping our community’s future. 
+**1\. Merit**: We are a community of do-ers who believe that those who serve our community and its vision should be rewarded \& given a voice in shaping our community’s future. 
 
 
 
@@ -68,8 +68,3 @@ From our genesis, we have avoided the creation of an insider class (like a found
 
 
 * [Libra Liberated](http://openlibra.blog/2021/11/15/libra-liberated/), (15 Nov 2021\)
-
-
-
-
-

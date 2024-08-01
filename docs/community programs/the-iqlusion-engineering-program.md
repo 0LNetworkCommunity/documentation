@@ -14,7 +14,7 @@ Funds donated to the iqlusion Engineering program will be used to establish and 
 
 
 
-The Address of the iqlusion on\-chain program wallet is **C906F67F626683B77145D1F20C1A753B**.
+The Address of the iqlusion on-chain program wallet is **C906F67F626683B77145D1F20C1A753B**.
 
 
 
@@ -25,5 +25,3 @@ The Address of the iqlusion on\-chain program wallet is **C906F67F626683B77145D1
 
 
 Iqlusion is a blockchain infrastructure company that has been building and operating infrastructure. We were one of the first Proof of Stake validator companies. We are currently primarily focused on protocol development.
-
-

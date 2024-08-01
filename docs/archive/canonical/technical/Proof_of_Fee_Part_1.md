@@ -19,12 +19,12 @@
 
 
 
-As an alternative to the (near\-universally deployed) Delegated Proof of Stake (DPoS), we propose Proof of Fee (PoF), a sybil resistance technique designed natively and with consideration of the benefits and tradeoffs of PBFT consensus from empirical experience.
+As an alternative to the (near-universally deployed) Delegated Proof of Stake (DPoS), we propose Proof of Fee (PoF), a sybil resistance technique designed natively and with consideration of the benefits and tradeoffs of PBFT consensus from empirical experience.
 
 
 
 
-* Profits to blockchains are slim to non\-existent. Low consensus costs are foundational for any chain that wishes to provide consumer surplus and profit to coin\-holders; where excess winnings of the chain can be distributed to *all* account holders without preference to an investor class of "stakers".
+* Profits to blockchains are slim to non-existent. Low consensus costs are foundational for any chain that wishes to provide consumer surplus and profit to coin-holders; where excess winnings of the chain can be distributed to *all* account holders without preference to an investor class of "stakers".
 * In PoF the cost of consensus is lowered maximally to the *operator opportunity cost*; with such an approach, the social cost of dilution through issuance is minimized.
 * Validator seats are auctioned at each epoch, such that the validators private valuation of rewards, MEV, breakage, and governance is revealed.
 * PoF coins have superior ergonomics. Every actor has a very simple instruction; no staking, no delegation, no yield games, no slashing.
@@ -74,7 +74,7 @@ There is also some debate around the "delegation" component of DPOS and whether 
 
 
 
-Lastly, the staking requirements may be excessive, inefficient uses of capital. One should ask the question: Does the bond really need to be 1,000 to 1,000,000 times the reward of an epoch? Given that L1s have not empirically seen slashing of large stakes from malicious attacks, the level of bonding is disproportionate to the need (more below on nothing\-at\-stake issues).
+Lastly, the staking requirements may be excessive, inefficient uses of capital. One should ask the question: Does the bond really need to be 1,000 to 1,000,000 times the reward of an epoch? Given that L1s have not empirically seen slashing of large stakes from malicious attacks, the level of bonding is disproportionate to the need (more below on nothing-at-stake issues).
 
 
 
@@ -144,7 +144,7 @@ Most blockchains describe transaction fees as a title (property right) of node o
 
 
 
-Most blockchains provide subsidies in addition to transaction fees. This is supposed to supplement the validator's earnings while bootstrapping the network and the transactions are insufficient. Even in 2022 the most established blockchain, Bitcoin, generated only a fraction of earnings from transaction fees: Roughly 1% (i.e., roughly 99% comes from subsidies \- see the chart, below).
+Most blockchains provide subsidies in addition to transaction fees. This is supposed to supplement the validator's earnings while bootstrapping the network and the transactions are insufficient. Even in 2022 the most established blockchain, Bitcoin, generated only a fraction of earnings from transaction fees: Roughly 1% (i.e., roughly 99% comes from subsidies - see the chart, below).
 
 
 
@@ -159,22 +159,22 @@ Source: [TheBlock.co](https://www.theblock.co/)
 
 
 
-As a matter of practice, subsidies are almost exclusively newly issued network equity, and as such are dilutive. Meaning, subsidies are a cost to depositors on a blockchain due to the reduction in their percent equity. Assuming a network with a constant market\-cap valuation (which we must do from a unit\-economics analysis), new issuance to the miner which produced security, is a reduction in value to anyone who didn't receive a new coin. Additionally, this new equity is financing the current security needs by time shifting future earnings from transaction fees (presumably, unless new revenue models are discovered).
+As a matter of practice, subsidies are almost exclusively newly issued network equity, and as such are dilutive. Meaning, subsidies are a cost to depositors on a blockchain due to the reduction in their percent equity. Assuming a network with a constant market-cap valuation (which we must do from a unit-economics analysis), new issuance to the miner which produced security, is a reduction in value to anyone who didn't receive a new coin. Additionally, this new equity is financing the current security needs by time shifting future earnings from transaction fees (presumably, unless new revenue models are discovered).
 
 
 
 
-All known blockchains are loss\-making in this regard. While Ethereum makes some claims about becoming profitable, it remains to be seen whether this can be sustained over more than a brief period (, and there are at least a few pundits out there who are questioning that claim). 
+All known blockchains are loss-making in this regard. While Ethereum makes some claims about becoming profitable, it remains to be seen whether this can be sustained over more than a brief period (, and there are at least a few pundits out there who are questioning that claim). 
 
 
 
 
-#### *No\-Show Rewards*
+#### *No-Show Rewards*
 
 
 
 
-Another aspect of validator utility to consider is no\-shows from other validators, that is, drop\-outs from competitors. When a validator is successful in the validator set, and one or more of its peers fails in consensus, there is a surplus of transaction fees (or subsidies) that are available to it. Meaning, the pool of rewards within an epoch is greater than what was nominally attributable to the validator at the start of the epoch. We separate this from the topic above because chance is involved and part of the utility is a wager on the success of the peers.
+Another aspect of validator utility to consider is no-shows from other validators, that is, drop-outs from competitors. When a validator is successful in the validator set, and one or more of its peers fails in consensus, there is a surplus of transaction fees (or subsidies) that are available to it. Meaning, the pool of rewards within an epoch is greater than what was nominally attributable to the validator at the start of the epoch. We separate this from the topic above because chance is involved and part of the utility is a wager on the success of the peers.
 
 
 
@@ -194,7 +194,7 @@ MEV is a category of earnings that a validator can create by engaging in differe
 
 
 
-Though MEV seems to be becoming acceptable in some circles, when viewed through another lens, it can be argued that engaging in MEV violates the spirit of the agreement between validators and users. Validators are employing their access to insider information to game the system. From that perspective, MEV is an attack on the integrity of the system. (You can view a compilation of MEV attacks documented at [https://www.mev.wiki/attack\-examples](https://www.mev.wiki/attack-examples).)
+Though MEV seems to be becoming acceptable in some circles, when viewed through another lens, it can be argued that engaging in MEV violates the spirit of the agreement between validators and users. Validators are employing their access to insider information to game the system. From that perspective, MEV is an attack on the integrity of the system. (You can view a compilation of MEV attacks documented at [https://www.mev.wiki/attack-examples](https://www.mev.wiki/attack-examples).)
 
 
 
@@ -214,12 +214,12 @@ Source: https://explore.flashbots.net/
 
 
 
-MEV can be significant. In the early days of the Ethereum Post\-Merge, as the cost of consensus went down, the share of MEV became higher. In September 2022, post merge, the MEV would average $100K, per day, while earnings from subsidies was $2M and transaction fees roughly $700k. Though on certain days, there are worrisome outliers, on September 27th 2022, the total subsidies paid to operators was $2\.14M, while Tx Fees was $0\.67M and the MEV was $1\.5 M, that is 50% extra earnings over expected in\-protocol earnings. (see, [https://www.theblock.co/data/on\-chain\-metrics/ethereum](https://www.theblock.co/data/on-chain-metrics/ethereum)). 
+MEV can be significant. In the early days of the Ethereum Post-Merge, as the cost of consensus went down, the share of MEV became higher. In September 2022, post merge, the MEV would average $100K, per day, while earnings from subsidies was $2M and transaction fees roughly $700k. Though on certain days, there are worrisome outliers, on September 27th 2022, the total subsidies paid to operators was $2\.14M, while Tx Fees was $0\.67M and the MEV was $1\.5 M, that is 50% extra earnings over expected in-protocol earnings. (see, [https://www.theblock.co/data/on-chain-metrics/ethereum](https://www.theblock.co/data/on-chain-metrics/ethereum)). 
 
 
 
 
-In the long term there may be technical solutions to MEV attacks, such as the block producer and proposer separation seen in Ethereum (Flashbots MEV\-Boost Relay). There may also be solutions on the application layer for "tricking the bots" (see: [https://www.mev.wiki/attempts\-to\-trick\-the\-bots](https://www.mev.wiki/attempts-to-trick-the-bots)), and for fun see some applications' mousetraps: ([https://www.coindesk.com/tech/2021/03/22/bad\-sandwich\-defi\-trader\-poisons\-front\-running\-miners\-for\-250k\-profit/](https://www.coindesk.com/tech/2021/03/22/bad-sandwich-defi-trader-poisons-front-running-miners-for-250k-profit/))
+In the long term there may be technical solutions to MEV attacks, such as the block producer and proposer separation seen in Ethereum (Flashbots MEV-Boost Relay). There may also be solutions on the application layer for "tricking the bots" (see: [https://www.mev.wiki/attempts-to-trick-the-bots](https://www.mev.wiki/attempts-to-trick-the-bots)), and for fun see some applications' mousetraps: ([https://www.coindesk.com/tech/2021/03/22/bad-sandwich-defi-trader-poisons-front-running-miners-for-250k-profit/](https://www.coindesk.com/tech/2021/03/22/bad-sandwich-defi-trader-poisons-front-running-miners-for-250k-profit/))
 
 
 
@@ -229,7 +229,7 @@ In the long term there may be technical solutions to MEV attacks, such as the bl
 
 
 
-Validator utility also includes the exercise of governance rights. Validators have outsized roles in governance (parameter changes, state machine upgrades). In fact, it may be said that validators hold the only "hard power" governance. Validators can always coordinate to apply a write to the database and that control over the protocol gives them de facto power to set policy. Most chains try to apply lower friction ways of other stakeholders changing policy, however ultimately the validator has the last say (or veto) on policies. Even if there are other governance mechanisms on\-chain, validators may in collusion reject such transactions which trigger an upgrade (more below on types of malicious behavior). Resolving this balance of power is not the topic of this paper; suffice to say that the validator can reasonably have a private valuation for this governance role.
+Validator utility also includes the exercise of governance rights. Validators have outsized roles in governance (parameter changes, state machine upgrades). In fact, it may be said that validators hold the only "hard power" governance. Validators can always coordinate to apply a write to the database and that control over the protocol gives them de facto power to set policy. Most chains try to apply lower friction ways of other stakeholders changing policy, however ultimately the validator has the last say (or veto) on policies. Even if there are other governance mechanisms on-chain, validators may in collusion reject such transactions which trigger an upgrade (more below on types of malicious behavior). Resolving this balance of power is not the topic of this paper; suffice to say that the validator can reasonably have a private valuation for this governance role.
 
 
 
@@ -259,7 +259,7 @@ Over time, the demands for computing power kept rising from CPUs to GPUs to ASIC
 
 
 
-### What PoS solves and the Nothing\-at\-stake problem
+### What PoS solves and the Nothing-at-stake problem
 
 
 
@@ -269,7 +269,7 @@ Proof of Stake (PoS) addresses Sybil attacks using native tokens as a stake in t
 
 
 
-However, this reduced cost could lead to nothing at stake problem wherein validators could behave arbitrarily (see, [Vitalik's original](https://blog.ethereum.org/2014/07/05/stake) description of the nothing at stake problem). In short: It's cheap for validators to create forks of the network, for example in a long range attack creating many plausible forks that in the future may be presented at the canonical fork. And for this reason, the earliest DPoS chains implemented high deposits and "slashing" when double\-signing was occurring. As we will see later, there has been debate as to whether the threat of the penalty has any effect, or if the value of the bond is actually the cost\-of\-capital of the parked coins, thus negating that there is really a nothing\-at\-stake issue.
+However, this reduced cost could lead to nothing at stake problem wherein validators could behave arbitrarily (see, [Vitalik's original](https://blog.ethereum.org/2014/07/05/stake) description of the nothing at stake problem). In short: It's cheap for validators to create forks of the network, for example in a long range attack creating many plausible forks that in the future may be presented at the canonical fork. And for this reason, the earliest DPoS chains implemented high deposits and "slashing" when double-signing was occurring. As we will see later, there has been debate as to whether the threat of the penalty has any effect, or if the value of the bond is actually the cost-of-capital of the parked coins, thus negating that there is really a nothing-at-stake issue.
 
 
 
@@ -289,7 +289,7 @@ Our concern is narrower: How economic guarantees interacts specifically with PBF
 
 
 
-If a network is profitable it will return value to coin holders. For this to happen, the revenue of the blockchain's products must be greater than the costs. That is, there can be no issuance of coins to fill the gap between what end\-users paid for services, and the different costs of goods sold (the validators). As of 2022, there has never been a reliably profitable blockchain.
+If a network is profitable it will return value to coin holders. For this to happen, the revenue of the blockchain's products must be greater than the costs. That is, there can be no issuance of coins to fill the gap between what end-users paid for services, and the different costs of goods sold (the validators). As of 2022, there has never been a reliably profitable blockchain.
 
 
 
@@ -304,7 +304,7 @@ During bootstrapping of a network the relation between opportunity cost and issu
 
 
 
-Chains can only provide security if the opportunity cost of a sufficiently non\-colluding validator set is being met. Chains can only cover those costs if they are solvent (they have revenue). The chains can finance the deficit with issuance, but this is also a tangle since it can only have value if it is long\-term solvent (by eventually having revenues greater or equal to security costs). Another way to think about it: Issuance is financing; it is only shifting the future revenues to the present validators.
+Chains can only provide security if the opportunity cost of a sufficiently non-colluding validator set is being met. Chains can only cover those costs if they are solvent (they have revenue). The chains can finance the deficit with issuance, but this is also a tangle since it can only have value if it is long-term solvent (by eventually having revenues greater or equal to security costs). Another way to think about it: Issuance is financing; it is only shifting the future revenues to the present validators.
 
 
 
@@ -324,12 +324,12 @@ Proof of Stake is the dominant method of sybil resistance for PBFT chains. Proof
 
 
 
-The Byzantine Generals problem was posed four decades ago in 1982\. The problem it addressed was how to reach a consensus among participants who might not necessarily trust each other and could have Byzantine failures. Reaching consensus facilitates state machine replication among distributed systems, where Byzantine failure is any arbitrary behavior, including intentional and unintentional behavior such as crash failures, collusion among participants, and software bugs. A solution to this problem is Byzantine fault\-tolerant (BFT) consensus algorithms, a family of consensus protocols for distributed systems that provide both safety (“bad things don’t happen”) and liveness (“good things do happen”) guarantees. 
+The Byzantine Generals problem was posed four decades ago in 1982\. The problem it addressed was how to reach a consensus among participants who might not necessarily trust each other and could have Byzantine failures. Reaching consensus facilitates state machine replication among distributed systems, where Byzantine failure is any arbitrary behavior, including intentional and unintentional behavior such as crash failures, collusion among participants, and software bugs. A solution to this problem is Byzantine fault-tolerant (BFT) consensus algorithms, a family of consensus protocols for distributed systems that provide both safety (“bad things don’t happen”) and liveness (“good things do happen”) guarantees. 
 
 
 
 
-The early BFT protocols assumed synchrony (i.e., synchronized clocks); that expectation can be challenging to obtain practically on the internet. PBFT is the first prominent practical solution to the Byzantine Generals problem. PBFT found its application in safety\-critical systems, such as aircraft and submarines, where hardware is complex and may become unreliable in unpredictable ways, sometimes in hostile environments. Over the past two decades, we observed numerous advances to PBFT protocols with advances in networking and cryptography. These advances have significantly improved performance, measured throughput (tx/sec), and latencies. 
+The early BFT protocols assumed synchrony (i.e., synchronized clocks); that expectation can be challenging to obtain practically on the internet. PBFT is the first prominent practical solution to the Byzantine Generals problem. PBFT found its application in safety-critical systems, such as aircraft and submarines, where hardware is complex and may become unreliable in unpredictable ways, sometimes in hostile environments. Over the past two decades, we observed numerous advances to PBFT protocols with advances in networking and cryptography. These advances have significantly improved performance, measured throughput (tx/sec), and latencies. 
 
 
 
