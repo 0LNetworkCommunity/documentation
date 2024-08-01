@@ -30,6 +30,12 @@ jobs:
           bun install --frozen-lockfile
           bun run build
 
+      - name: Always clean
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./build
+          action: remove
+
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
         with:
