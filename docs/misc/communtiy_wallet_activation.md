@@ -1,7 +1,6 @@
 # Community Wallet Activation
 
-Community Wallet is a qualification an account can receive if it is composed
-of certain properties. Those properties are:
+Community Wallet is a qualification an account can receive if it is composed of certain properties. Those properties are:
 
 - Donor Voice, makes payments with a policy where the donors have observability over the transactions.
 - Multisig, accounts can only be manipulated with a multisig policy.
@@ -12,7 +11,7 @@ of certain properties. Those properties are:
 
 There are three steps in creating a community wallet account:
 
-1. **Make it a Donor Voice account, and propose the offer to the authorities.**
+1. **Make it a Donor Voice account and propose the offer to the authorities.**
 
    This step is atomic. If the proposed authorities do not qualify, the account will not be initialized with Donor Voice features, and the authority offer will not be made. This ensures the community wallet has the expected authorities before proceeding. _Note: The authority offer expires in 7 epochs after this step is executed._
 
@@ -50,7 +49,7 @@ libra txs community gov-claim -a 0x1000d
 
 ### Step #3:
 
-After enough addresses claim the offer, Dave can finalizes and cages the account by providing the threshold number.
+After enough addresses claim the offer, Dave can finalize and cages the account by providing the threshold number.
 
 ```
 libra txs community gov-cage -n 2
@@ -76,4 +75,4 @@ In this example, Dave is opting to extend the offer to include Eve (0x1000e) as 
 
 If any authority already claimed the offer and remains on the updated list, they do not need to claim again. However, if any authority is removed from the list, even if they had previously claimed, they will not be part of the community wallet authorities when the account is caged by the donor.
 
-Additionally, this command can be used by the account owner to renew the offer's deadline if it has expired and the authorities have not yet made their claims.
+Additionally, this command can be used by the account owner to renew the offer's deadline if it has expired, and the authorities have not yet made their claims.
