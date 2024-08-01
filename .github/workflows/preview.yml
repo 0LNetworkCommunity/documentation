@@ -24,6 +24,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
       # this has to match docusaurus's baseURL in docusaurus.config.js
       - run: echo "GH_ACTION_DOCUSAURUS_BASE_URL=pr-preview/pr-${{ github.event.number }}" >> "$GITHUB_ENV"
+
       - run: rm -rf ./build
 
       - name: Install and Build
