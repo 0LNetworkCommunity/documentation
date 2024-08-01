@@ -9,7 +9,7 @@ on:
       - synchronize
       - closed
 
-concurrency: preview-${{ github.ref }}
+# concurrency: preview-${{ github.ref }}
 
 jobs:
   deploy-preview:
