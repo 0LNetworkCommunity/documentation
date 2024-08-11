@@ -1,3 +1,5 @@
+# Team Arctika Recommendation
+### April 2023
 **To survive, the 0L Network needs to solve two problems. We need**:
 1. Abundant capital for security, and
 2. Abundant capital for recruiting talent.

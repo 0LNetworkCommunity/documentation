@@ -1,3 +1,6 @@
+# Part 3: Future Proofing the Economics of Blockchains
+### November 2021
+
 ## TL;DR
 
 

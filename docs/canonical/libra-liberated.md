@@ -1,3 +1,6 @@
+# Libra Liberated
+### November 2021
+
 There once was a community that wanted a blockchain.
 
 
