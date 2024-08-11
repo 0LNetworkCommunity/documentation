@@ -1,6 +1,7 @@
+# Parts 1 & 2: Future Proofing the Economics of Blockchains
+### November 2021
+
 ## TL;DR
-
-
 A transformation in society is taking place and layer-1 computational blockchains are the substrate. While the economic fortunes of layer-1 computational blockchains may wax and wane, the goal of the collective behind them should be to transition their economic stake from the infrastructure layer into the application layer. This leap will take time, and most blockchains will not make the leap. Coordinating the labor and care that goes into the work of producing a blockchain that can make the leap is not trivial. We propose some principles so that blockchains can successfully cross over to that shore when the day comes.
 
 
