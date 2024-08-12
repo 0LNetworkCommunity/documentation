@@ -1,8 +1,8 @@
 {
-    "label": "Misc",
-    "position": 10,
+    "label": "Transactions",
+    "position": 2,
     "link": {
       "type": "generated-index",
-      "description": "Unsorted docs"
+      "description": "Helpful instructions for submitting transactions"
     }
 }
