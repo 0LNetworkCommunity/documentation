@@ -217,7 +217,7 @@ $ libra txs generate-transaction --function-id 0xd1281de242839fc939745996882c5fc
 
 ### View functions
 :::note
-The `libra move view` feature is currently not available but we have a couple of workarounds for viewing move functions and values. View a full description [here](../getting-started.md)
+The `libra move view` feature is currently not available but we have a couple of workarounds for viewing move functions and values.
 :::
 ```bash
 $ libra query move-value --account 0xd1281de242839fc939745996882c5fc2 --module-name message --struct-name MessageHolder --key-name message
