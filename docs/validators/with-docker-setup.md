@@ -6,7 +6,7 @@ description: 'Running a fullnode/vfn/validator node with docker'
 ---
 
 :::danger WIP
-This page is a work in progress.  
+This page is a work in progress.
 Tread carefully.
 :::
 
@@ -121,7 +121,7 @@ docker images | grep openlibra
 openlibra      main                     b64dbca39f51   9 minutes ago   153MB
 ```
 
-## Single IP setup 
+## Single IP setup
 
 ### Create the docker-compose file
 
@@ -134,7 +134,7 @@ Place the following docker-compose.yaml file in the same folder as the Dockerfil
 x-defaults: &defaults
   image: "openlibra:main"
   restart: "on-failure"
-  pid: host 
+  pid: host
   ulimits:
     nproc: 500000
     nofile: 500000
@@ -203,7 +203,7 @@ services:
       - "6182:6182"
       - "8080:8080"
       - "9101:9101"
-      
+
   tower: # needs mnemonic injection
    <<: *defaults
    container_name: "0l-tower"
@@ -256,7 +256,7 @@ Here is an example of modified `fullnode.yaml` relevant entries:
 ```bash
 ...
 
-base:                   
+base:
   data_dir: '/root/.libra/data'
 
 execution:
@@ -290,7 +290,7 @@ docker compose logs -f --tail 50 fullnode
 ```
 
 :::warning If the version is 0 or you're having connectvitiy issues
-Do the manual DB restore as described in the [Restore section](/validators/restore#clone-and-build-the-epoch-archive-mainnet-repository) and then [clean and sync](/validators/restore#how-to-clean-the-database-and-sync-to-the-latest-state-again)
+Do the manual DB restore as described in the Restore section (TODO: link) and then clean and sync (TODO: link)
 :::
 
 
@@ -298,7 +298,7 @@ Do the manual DB restore as described in the [Restore section](/validators/resto
 
 ```bash
 docker compose run tower
-```  
+```
 
 
 
@@ -319,7 +319,7 @@ __Dual NIC setup__
 
 Part 1: Configure second IP
 
-Using Netplan (default ubuntu network manager), edit your `/etc/netplan/01-netcfg.yaml` 
+Using Netplan (default ubuntu network manager), edit your `/etc/netplan/01-netcfg.yaml`
 
 Identify your ethernet id (enp5s0 in this example), add the second IP to its addresses list
 
@@ -358,7 +358,7 @@ Under the modified interface, you should see the second IP address
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
        valid_lft forever preferred_lft forever
-    inet6 ::1/128 scope host 
+    inet6 ::1/128 scope host
        valid_lft forever preferred_lft forever
 2: enp5s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
     link/ether c8:7f:tag:tag:tag brd ff:ff:ff:ff:ff:ff
@@ -368,6 +368,6 @@ Under the modified interface, you should see the second IP address
     inet your.secondary.ip.here/32 scope global enp5s0 # <--- make sure second IP appears here
        valid_lft forever preferred_lft forever
     ############
-    inet6 primary:ip:v:6/64 scope global 
+    inet6 primary:ip:v:6/64 scope global
        valid_lft forever preferred_lft forever
 ```

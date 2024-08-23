@@ -22,12 +22,12 @@ source ~/.bashrc
 
 # build and install the binary
 cd ~/libra-framework
-cargo build --release -p libra 
+cargo build --release -p libra
 
 # Make the release path global and persistent
 sudo cp -f ~/libra-framework/target/release/libra* ~/.cargo/bin/
 
-# Check libra execution and version 
+# Check libra execution and version
 libra --version
 
 # -----------------------
@@ -56,7 +56,7 @@ libra txs validator vouch --vouch-for <YOUR ADDRESS>
 # submit a bid to be in the validator set
 libra txs validator pof --bid-pct <PERCENT YOU PAY> --expiry <WHEN EXPIRES>
 
-# run as a fullnode and switch to the validator mode once entered the set, check the detailed instructions below the page. 
+# run as a fullnode and switch to the validator mode once entered the set, check the detailed instructions below the page.
 ```
 
 ## Detailed instructions
@@ -132,10 +132,10 @@ libra txs validator register -f ~/.libra/operator.yaml
 
 ### Get Vouches
 0L Network uses very light reputation games to keep the validator set trusted.
-Just ask an existing validator for a vouch. It helps a lot if you share your node specs and a little bit of your experience with them. 
+Just ask an existing validator for a vouch. It helps a lot if you share your node specs and a little bit of your experience with them.
 
 Your friend will:
-``` bash 
+``` bash
 libra txs validator vouch --vouch-for <YOUR ADDRESS>
 ```
 
@@ -147,9 +147,9 @@ libra txs validator pof --bid-pct <PERCENT YOU PAY> --expiry <WHEN EXPIRES>
 
 ### Run the node as fullnode and then validator mode
 - Once your validator enters the set you will need to stop running as a fullnode and run as a validator. Until then, you can:
-  - use the following instructions to: [sync database to the current state](/validators/restore) and run as a fullnode.
+  - use the following instructions to: sync database to the current state (TODO: link) and run as a fullnode.
 - When your node is in the active set, it is time to change your node config path to point to the `validator.yaml`.
 - Stop your node and run in the validator mode:
-``` bash 
+``` bash
 libra node --config-path ~/.libra/validator.yaml
 ```

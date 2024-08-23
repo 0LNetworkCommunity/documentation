@@ -101,13 +101,13 @@ This assumes the `libra` binary is already built and located at `~/libra-framewo
 # Copy libra binaries to cargo bins path
 sudo cp -f ~/libra-framework/target/release/libra* ~/.cargo/bin/
 
-# Check libra execution and version 
+# Check libra execution and version
 libra version
 ```
 
 
 
-### You will now need [sync your validator to the latest block](/validators/restore) and [register your validator](/validators/register).
+### You will now need sync your validator to the latest block and register your validator.
 
 #### Start Node
 
