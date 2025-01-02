@@ -150,6 +150,19 @@ const config = {
         debug: false,
       },
     }),
+    plugins: [
+      [
+        '@docusaurus/plugin-client-redirects',
+        {
+          redirects: [
+            {
+              to: '/category/archive',
+              from: '/archive',
+            },
+          ],
+        },
+      ],
+    ],
 };
 
 module.exports = config;
