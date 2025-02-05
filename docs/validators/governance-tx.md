@@ -70,6 +70,29 @@ script {
 }
 ```
 
+### Example: Governance Mode
+Here's an example script of how the validators can enter "Governance Mode" where coin transfers are disabled during governance upgrades and events.
+
+```
+
+script {
+  // Enter Governance Mode, and disable coin transactions
+  use diem_framework::diem_governance;
+  use ol_framework::ol_features_constants;
+  use std::features;
+  use std::vector;
+
+
+  fun main(proposal_id: u64){
+      let next_hash = vector::empty();
+      let _framework_signer = diem_governance::resolve_multi_step_proposal(proposal_id, @0000000000000000000000000000000000000000000000000000000000000001, next_hash);
+      // set governance mode
+      let gov_mode_id = ol_features_constants::get_governance_mode();
+      features::change_feature_flags(&framework_sig, vector::singleton(gov_mode_id), vector::empty());
+  }
+}
+```
+
 ## Compile
 
 To compile we simply use the same command we originally generated the template with, and point to the `Script Dir` where your modified template is found.
