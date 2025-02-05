@@ -16,9 +16,7 @@ Note: this requires you have the `libra` cli tool built locally.
 
 ## Prepare Script
 
-You will want to name the folders appropriately. We will use [UP-0002](../proposals/up-0002) as an example.
-
-In this example we want to change the nominal consensus reward due to a migration error at v7.0.0.
+You will want to name the folders appropriately. We will use `UP-0002` as an example. In actual historical example we wanted to change the nominal consensus reward due to a migration error at v7.0.0.
 
 ### Folder Structure
 
@@ -38,7 +36,7 @@ Note: you may notice the requirement of script hash is different from framework 
 script {
   // THIS IS A TEMPLATE GOVERNANCE SCRIPT
   // you can generate this file with commandline tools:
-  // `libra move framework governance --output-dir --framework-local-dir`
+  // `libra move framework governance --script-dir --framework-local-dir`
   use diem_framework::diem_governance;
   use std::vector;
 
@@ -89,6 +87,9 @@ script {
       // set governance mode
       let gov_mode_id = ol_features_constants::get_governance_mode();
       features::change_feature_flags(&framework_sig, vector::singleton(gov_mode_id), vector::empty());
+
+      // TO EXIT GOVERNANCE MODE REVERSE THE VECTORS:
+      // features::change_feature_flags(&framework_sig, vector::empty(), vector::singleton(gov_mode_id));
   }
 }
 ```
@@ -104,4 +105,4 @@ libra move framework governance --script-dir <Script Dir>  --framework-local-dir
 
 ## Submit Proposal
 Sending, getting consensus, and resolving a Governance Tx proposal follows the same steps as a framework Hot Upgrade.
-Follow instructions [here](hot_upgrades.md#upgrade-ceremony)
+Follow instructions [here](./hot-upgrades.md)
