@@ -5,12 +5,12 @@ on:
     branches: ["*"]
   # note: not testing on PR, since we are already previews for PRs
   # which have the same effect
-  # pull_request:
-  #   types:
-  #     - opened
-  #     - synchronize
-  #   branches:
-  #     - "main**"
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
 
 jobs:
   test-deploy:
