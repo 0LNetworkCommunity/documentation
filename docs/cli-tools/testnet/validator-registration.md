@@ -1,4 +1,4 @@
-# Welcome Validators
+# Add Validators To Testnet
 
 This assumes you have the `libra` cli installed in your local $PATH.
 
