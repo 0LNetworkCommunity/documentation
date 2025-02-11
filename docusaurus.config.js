@@ -50,7 +50,9 @@ const config = {
             // Direct Edit (faster)
             'https://github.com/0LNetworkCommunity/documentation/edit/main/',
         },
-        blog: false,
+        blog: {
+          showReadingTime: true,
+          editUrl: 'https://github.com/0LNetworkCommunity/documentation/edit/main/blog/'},
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
@@ -76,7 +78,7 @@ const config = {
           //   position: 'left',
           //   label: '',
           // },
-          // {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/blog', label: 'Blog', position: 'right'},
           // {
           //   href: 'https://warpcast.com/0lnetwork',
           //   label: 'Farcaster',
