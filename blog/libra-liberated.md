@@ -1,3 +1,10 @@
+---
+title: "Libra Liberated"
+date: 2021-11-15
+tags: [canonical]
+---
+<!-- truncate -->
+
 There once was a community that wanted a blockchain.
 
 
