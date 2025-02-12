@@ -1,3 +1,10 @@
+---
+title: "Future-Proofing the Economics of Blockchains - Part III"
+date: 2021-11-17
+tags: [canonical]
+---
+<!-- truncate -->
+
 ## TL;DR
 
 
