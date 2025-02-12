@@ -1,5 +1,5 @@
 ---
-title: "Move"
+title: "Move Smart Contracts"
 id: "index"
 hidden: true
 description: 'Develop with the Move Tool'
