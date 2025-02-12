@@ -1,4 +1,8 @@
-
+---
+title: "Integrators"
+hidden: false
+description: 'Integrating systems with Open Libra'
+---
 # Integrating systems with Open Libra
 
 Open Libra provides containers with signed pre-built `libra` binary which starts nodes and sends transactions.
