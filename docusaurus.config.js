@@ -51,6 +51,7 @@ const config = {
             'https://github.com/0LNetworkCommunity/documentation/edit/main/',
         },
         blog: {
+          onInlineAuthors: 'ignore',
           showReadingTime: true,
           editUrl: 'https://github.com/0LNetworkCommunity/documentation/edit/main/blog/'},
         theme: {
