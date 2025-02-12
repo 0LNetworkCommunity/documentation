@@ -3,7 +3,7 @@ title: "Carpe Beta Launched"
 date: 2022-02-10
 tags: [carpe, wallet, software]
 ---
-
+<!-- truncate -->
 With the launch of the beta version of the Carpe Desktop App, the 0L Network has taken the next step towards making it possible for anyone to run a miner and earn crypto rewards.
 
 Carpe is a desktop wallet and miner that runs on the new 0L Network blockchain. The app is lightweight and designed to help you establish your digital identity in the 0L Network, while paying you coins to do so. Carpe is a standalone desktop application that will run on any contemporary Windows or Mac machine. The app is gentle on your resources, meaning that you can continue to use your computer normally while the app runs in the background. Simply install it, turn it on, and start earning tokens.
