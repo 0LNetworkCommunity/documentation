@@ -4,9 +4,8 @@ date: 2025-02-12
 tags: [blog, news, canonical]
 ---
 
-
-
 **A force of the public which has the capital necessary to make meaningful interventions, at the scale of the largest organizations in society. This requires independence, durability, and sense.**
+<!--truncate-->
 
 ### Independent, Perpetual, Sensible
 
