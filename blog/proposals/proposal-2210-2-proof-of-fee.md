@@ -1,3 +1,9 @@
+---
+title: "Proposal 2210-2 - Proof of Fee"
+date: 2022-10-13
+tags: [governance, proposal]
+---
+<!-- truncate -->
 
 ###### Proposal Type: Signalling
 

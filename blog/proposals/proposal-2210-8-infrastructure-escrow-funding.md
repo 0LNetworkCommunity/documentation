@@ -1,3 +1,9 @@
+---
+title: "Proposal 2210-8 - Infrastructure Escrow Funding"
+date: 2022-10-12
+tags: [governance, proposal]
+---
+<!-- truncate -->
 
 ###### Proposal Type: Signalling
 

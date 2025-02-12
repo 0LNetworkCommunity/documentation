@@ -1,3 +1,9 @@
+---
+title: "Proposal 2210-4 - Repurpose Carpe"
+date: 2022-10-11
+tags: [governance, proposal]
+---
+<!-- truncate -->
 
 ###### Proposal Type: Signalling
 

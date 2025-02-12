@@ -1,3 +1,9 @@
+---
+title: "Proposal 2210-3 - Musical Chairs"
+date: 2022-10-10
+tags: [governance, proposal]
+---
+<!-- truncate -->
 
 ###### Proposal Type: Signalling
 

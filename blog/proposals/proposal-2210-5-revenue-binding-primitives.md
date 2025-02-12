@@ -1,3 +1,9 @@
+---
+title: "Proposal 2210-5 - Revenue Binding Primitives"
+date: 2022-10-11
+tags: [governance, proposal]
+---
+<!-- truncate -->
 
 ###### Proposal Type: Signalling
 

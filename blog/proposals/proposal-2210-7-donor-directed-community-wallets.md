@@ -1,3 +1,9 @@
+---
+title: "Proposal 2210-7 - Donor Directed Community Wallets"
+date: 2022-10-12
+tags: [governance, proposal]
+---
+<!-- truncate -->
 
 ###### Proposal Type: Signalling
 
