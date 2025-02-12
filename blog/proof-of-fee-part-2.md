@@ -1,7 +1,7 @@
 ---
 title: "Proof of Fee - Part 2"
 date: 2024-10-20
-tags: [POF, Proof of Fee, Validator Selection, canonical]
+tags: [PoF, Proof of Fee, canonical]
 ---
 <!-- truncate -->
 
