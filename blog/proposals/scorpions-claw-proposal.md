@@ -1,4 +1,9 @@
-# Scorpion's Claw Recommendation
+---
+title: "Scorpion's Claw Recommendation"
+date: 2024-04-09
+tags: [fork, proposal]
+---
+<!-- truncate -->
 
 ## Community Wallet Analytics and V7 Hard Fork Parameters [DRAFT]
 
@@ -18,9 +23,9 @@ The result is a list of 436 accounts. If validators decide, they can now run a v
 
 There was a handful of abuse cases. However, the vast majority of the exploit was conducted by a long-term community member who has publicly declared ownership of the accounts originating the exploit.
 
-- 6DA2B828F3018637379203940C639A95
-- 27E9577869ADFD677DBA9C940DEECE0A
-- 988B8C3B7E55B6E5126884E02C8F166E
+- `6DA2B828F3018637379203940C639A95`
+- `27E9577869ADFD677DBA9C940DEECE0A`
+- `988B8C3B7E55B6E5126884E02C8F166E`
 
 A hard fork is recommended, and should happen with a validator ceremony open to the public and using a clean database using the version 7.0.0 software release.
 
@@ -176,9 +181,9 @@ If the relationships of these few nodes are expanded, the flow of funds goes thr
 
 The community wallets involved in this case are:
 
-- 7B61439A88060096213AC4F5853B598E
-- 5E68026887147DE0EA9CA90962C25A41
-- 97DCBC6BFAA7EDF00F9002DAAED49C46
+- `7B61439A88060096213AC4F5853B598E`
+- `5E68026887147DE0EA9CA90962C25A41`
+- `97DCBC6BFAA7EDF00F9002DAAED49C46`
 
 There is no information publicly available about these "community" programs. Different from other credible and well regarded programs in the community. Their principal source of funding was from "validators" nodes which the individual publicly associated themselves with. Due to the nature of Match Index (described above), many other validators became unwitting contributors to these accounts (the "harvesting" exploit).
 
@@ -188,15 +193,15 @@ Community wallets could not reasonably accumulate much capital unless they solic
 
 In this case, the exploiter had ownership of the following validator addresses:
 
-- 6DA2B828F3018637379203940C639A95
-- 15B291FFCA97895D726E8AA9A5BE6A2A
-- 5DC8C3878E99E9FD12EBDEFA1803D332
-- C5162C65FDE8C9D9CA9B564E41A54003
-- 988B8C3B7E55B6E5126884E02C8F166E
-- 7D299BF3D624E937C23302D8B5E3A1B2
-- 99E4EE712E2A57F694344D288A0FC27A
-- 9F1D8C66883768F167A097FF4C58DE88
-- C0FFEE1A3393516D27B72B28464EAA5F
+- `6DA2B828F3018637379203940C639A95`
+- `15B291FFCA97895D726E8AA9A5BE6A2A`
+- `5DC8C3878E99E9FD12EBDEFA1803D332`
+- `C5162C65FDE8C9D9CA9B564E41A54003`
+- `988B8C3B7E55B6E5126884E02C8F166E`
+- `7D299BF3D624E937C23302D8B5E3A1B2`
+- `99E4EE712E2A57F694344D288A0FC27A`
+- `9F1D8C66883768F167A097FF4C58DE88`
+- `C0FFEE1A3393516D27B72B28464EAA5F`
 
 # The Hard Fork Goals
 
