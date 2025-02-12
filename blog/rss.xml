@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Open Libra Documentation Blog</title>
+        <link>https://docs.openlibra.io/blog</link>
+        <description>Open Libra Documentation Blog</description>
+        <lastBuildDate>Thu, 06 Feb 2025 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[The Open Libra NodeJS Library Has Been Published on npm 🔥]]></title>
+            <link>https://docs.openlibra.io/blog/openlibra-nodejs-release</link>
+            <guid>https://docs.openlibra.io/blog/openlibra-nodejs-release</guid>
+            <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Congratulations to the Open Libra contributors!]]></description>
+            <content:encoded><![CDATA[<p>Congratulations to the Open Libra contributors!</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="open-libra-nodejs-library-open-libra-sdk-has-been-published-on-the-npm-repository"><strong>Open Libra NodeJS library</strong> <code>open-libra-sdk</code> has been published on the npm repository!<a href="https://docs.openlibra.io/blog/openlibra-nodejs-release#open-libra-nodejs-library-open-libra-sdk-has-been-published-on-the-npm-repository" class="hash-link" aria-label="Direct link to open-libra-nodejs-library-open-libra-sdk-has-been-published-on-the-npm-repository" title="Direct link to open-libra-nodejs-library-open-libra-sdk-has-been-published-on-the-npm-repository">​</a></h3>
+<p>This SDK brings you an easy way to integrate Open Libra blockchain functionality into your NodeJS applications. Whether you’re building new decentralized apps or exploring blockchain integrations, this library provides the essential tools to get started.</p>
+<p>For complete installation details, usage instructions, and further information, please visit the npm repository page:</p>
+<p>👉 <a href="https://www.npmjs.com/package/open-libra-sdk" target="_blank" rel="noopener noreferrer">npm package page for open-libra-sdk</a>.</p>
+<p>Carpe Diem!</p>]]></content:encoded>
+            <category>open-libra-sdk</category>
+            <category>npm</category>
+        </item>
+    </channel>
+</rss>

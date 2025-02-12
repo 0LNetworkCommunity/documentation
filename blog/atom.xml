@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://docs.openlibra.io/blog</id>
+    <title>Open Libra Documentation Blog</title>
+    <updated>2025-02-06T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://docs.openlibra.io/blog"/>
+    <subtitle>Open Libra Documentation Blog</subtitle>
+    <icon>https://docs.openlibra.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[The Open Libra NodeJS Library Has Been Published on npm 🔥]]></title>
+        <id>https://docs.openlibra.io/blog/openlibra-nodejs-release</id>
+        <link href="https://docs.openlibra.io/blog/openlibra-nodejs-release"/>
+        <updated>2025-02-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Congratulations to the Open Libra contributors!]]></summary>
+        <content type="html"><![CDATA[<p>Congratulations to the Open Libra contributors!</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="open-libra-nodejs-library-open-libra-sdk-has-been-published-on-the-npm-repository"><strong>Open Libra NodeJS library</strong> <code>open-libra-sdk</code> has been published on the npm repository!<a href="https://docs.openlibra.io/blog/openlibra-nodejs-release#open-libra-nodejs-library-open-libra-sdk-has-been-published-on-the-npm-repository" class="hash-link" aria-label="Direct link to open-libra-nodejs-library-open-libra-sdk-has-been-published-on-the-npm-repository" title="Direct link to open-libra-nodejs-library-open-libra-sdk-has-been-published-on-the-npm-repository">​</a></h3>
+<p>This SDK brings you an easy way to integrate Open Libra blockchain functionality into your NodeJS applications. Whether you’re building new decentralized apps or exploring blockchain integrations, this library provides the essential tools to get started.</p>
+<p>For complete installation details, usage instructions, and further information, please visit the npm repository page:</p>
+<p>👉 <a href="https://www.npmjs.com/package/open-libra-sdk" target="_blank" rel="noopener noreferrer">npm package page for open-libra-sdk</a>.</p>
+<p>Carpe Diem!</p>]]></content>
+        <author>
+            <name>Codilion</name>
+        </author>
+        <category label="open-libra-sdk" term="open-libra-sdk"/>
+        <category label="npm" term="npm"/>
+    </entry>
+</feed>

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkopen_libra_core_docs=self.webpackChunkopen_libra_core_docs||[]).push([[7472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"The Open Libra NodeJS Library Has Been Published on npm \ud83d\udd25","permalink":"/blog/openlibra-nodejs-release","unlisted":false,"date":"2025-02-06T00:00:00.000Z"}]}')}}]);
