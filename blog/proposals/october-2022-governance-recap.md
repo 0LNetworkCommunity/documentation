@@ -1,3 +1,10 @@
+---
+title: "2022 Governance Recap"
+date: 2022-11-08
+tags: [governance, proposal]
+---
+<!-- truncate -->
+
 # October 2022 Governance Recap
 
 The 0L Community recently concluded its first round of collaborative, decentralized strategic planning. Starting first with rounds of guided discussion on the [RadicalxChange Voice](https://voice.radicalxchange.org/) platform, the process culminated with a set of eight proposals for community vote. In this blog post, we’re going to take a brief look at the contents of those proposals and reflect on the outcomes of the vote. 
