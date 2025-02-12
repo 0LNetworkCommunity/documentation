@@ -1,3 +1,9 @@
+---
+title: "0L Network Constitution"
+date: 2022-05-03
+tags: [governance]
+---
+<!-- truncate -->
 
 Adopted by Community Polling on 3 May 2022
 
