@@ -1,3 +1,10 @@
+---
+title: "Part 0 - A high-throughput chain with a fair launch"
+date: 2021-11-01
+tags: [Delay Towers, canonical]
+---
+<!-- truncate -->
+
 ## A high\-throughput chain with a fair launch
 
 

@@ -1,3 +1,10 @@
+---
+title: "Part 1 - Puzzle Towers for BFT"
+date: 2021-11-05
+tags: [Delay Towers, canonical]
+---
+<!-- truncate -->
+
 ## Puzzle Towers for BFT
 
 

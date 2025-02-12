@@ -1,3 +1,10 @@
+---
+title: "Part 3 - A Delay Towers Implementation on BFT"
+date: 2021-11-12
+tags: [Delay Towers, canonical]
+---
+<!-- truncate -->
+
 ## TL;DR
 
 

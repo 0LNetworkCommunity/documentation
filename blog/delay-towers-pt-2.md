@@ -1,3 +1,10 @@
+---
+title: "Part 2 - From Puzzle Towers and VDFs to Delay Towers"
+date: 2021-11-08
+tags: [Delay Towers, canonical]
+---
+<!-- truncate -->
+
 ## From Puzzle Towers and VDFs to Delay Towers
 
 
