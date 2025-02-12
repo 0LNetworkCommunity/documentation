@@ -1,7 +1,5 @@
 ---
 title: "The Open Libra NodeJS Library Has Been Published on npm 🔥"
-author: "Codilion"
-author_title: "Contributor"
 date: 2025-02-06
 tags: [open-libra-sdk, npm]
 ---
