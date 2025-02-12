@@ -21,5 +21,6 @@ yarn-error.log*
 
 .idea
 
-# bun.lockb
+bun.lock
+bun.lockb
 yarn.lock
