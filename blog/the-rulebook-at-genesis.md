@@ -1,3 +1,10 @@
+---
+title: "Future-Proofing the Economics of Blockchains - Appendix: The Rulebook at Genesis"
+date: 2021-11-18
+tags: [canonical]
+---
+<!-- truncate -->
+
 As you can see in our write ups mentioned above, we do things a little differently around here: We had no venture investors, there is no premine, no foundation with tokens, and anyone with a laptop can participate and earn coins. Here's a quick reference to the policies implemented at genesis:
 
 
