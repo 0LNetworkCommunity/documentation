@@ -1,4 +1,9 @@
-
+---
+title: "Proof of Fee - Part 2"
+date: 2024-10-20
+tags: [POF, Proof of Fee, Validator Selection, canonical]
+---
+<!-- truncate -->
 
 ```
 In [Part 1 of this paper](http://openlibra.blog/2022/10/15/proof-of-fee-part-1/) we laid the foundations for Proof of Fee. Some of the ideas expressed there may be different from what you have seen elsewhere, and we do urge you to read that before you begin here. In Part 2 of this paper, below, we get into the mechanics and implementation details of Proof-of-Fee (PoF).

@@ -1,16 +1,11 @@
+---
+title: "Proof of Fee - Part 1"
+date: 2024-10-15
+tags: [POF, Proof of Fee, Validator Selection, canonical]
+---
+<!-- truncate -->
 
 ## The Cost of Consensus
-
-
-
-
- 
-
-
-
-
- 
-
 
 
 
