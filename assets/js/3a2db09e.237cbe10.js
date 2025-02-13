@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkopen_libra_core_docs=self.webpackChunkopen_libra_core_docs||[]).push([[8121],{8070:e=>{e.exports=JSON.parse('{"tags":[{"label":"open-libra-sdk","permalink":"/blog/tags/open-libra-sdk","count":1},{"label":"npm","permalink":"/blog/tags/npm","count":1}]}')}}]);
