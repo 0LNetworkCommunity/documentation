@@ -51,6 +51,9 @@ const config = {
             'https://github.com/0LNetworkCommunity/documentation/edit/main/',
         },
         blog: {
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
+          onInlineAuthors: 'ignore',
           showReadingTime: true,
           editUrl: 'https://github.com/0LNetworkCommunity/documentation/edit/main/blog/'},
         theme: {
