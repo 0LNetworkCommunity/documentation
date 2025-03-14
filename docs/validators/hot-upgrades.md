@@ -14,12 +14,15 @@ The "framework" which contains all the consensus, account, econ policies, etc. f
 
 - To do this we require the `libra` cli tool. The command `libra move framework` is used for building the artifacts, and `libra txs` for proposing, voting, and ultimately deploying the artifacts.
 
+- Metadata with the upgrade artifacts and proposal documentation can be found at: https://github.com/0LNetworkCommunity/upgrades
+
 
 ## Historical Upgrade Information and Proposing Upgrades
 Historical upgrade information since release 7.0.0 is canonically stored in the [upgrade repository](https://github.com/0LNetworkCommunity/upgrades). To submit an upgrade proposal, you should draft a PR with the relevant information detailing the upgrade using the provided [template](https://github.com/0LNetworkCommunity/upgrades/tree/main/proposals/template) and include the upgrade script packages.
 
 
 ## TL;DR
+
 - **Fetch the latest release**:
 ```
 cd libra-framework
@@ -33,7 +36,9 @@ libra move framework upgrade --output-dir <path/to>/framework_upgrade --framewor
 
 - **Propose**:
 ```
-libra txs governance propose --proposal-script-dir <path/to>/framework_upgrade/1-move-stdlib/ --metadata-url https://github.com/0LNetworkCommunity/upgrades/tree/main/proposals/<PROPOSAL_ID>
+libra txs governance propose --proposal-script-dir <path/to>/framework_upgrade/1-move-stdlib/ --metadata-url https://github.com/0LNetworkCommunity/upgrades/tree/main/proposals/up-000<PROPOSAL_ID>.md
+
+# NOTE: Do not repeat this step. Multistep (multiple modules) only need one proposal, and it should reference the first module, usually 1-move-stdlib
 ```
 
 - **Each Validator votes**:
@@ -67,9 +72,12 @@ A single framework upgrade involves updating a singular set of modules within th
 Multiple framework upgrades require a more nuanced approach, especially regarding resolution stages, to ensure a coherent and secure update across several modules.
 
 - **Build Framework**: Similar to a single upgrade, start by generating Move transaction scripts for all relevant modules.
+
 - **Proposal for Initial Module**: Propose the upgrade by using the first module (`1-move-stdlib`). This initial proposal is critical as it kickstarts the governance process for the entire upgrade.
 
-  Importantly, the transaction script for upgrading this first module includes a significant addition: **the transaction hash for the subsequent modules** that needs upgrading. These hashes, produced during the artifact building phase, serve as secure identifiers for each module's upgrade script.
+*WARN: Do not repeat proposals for subsequent modules, the three modules can be upgraded with a single instance.*
+
+Importantly, the transaction script for upgrading this first module includes a significant addition: **the transaction hash for the subsequent modules** that needs upgrading. These hashes, produced during the artifact building phase, serve as secure identifiers for each module's upgrade script. Do not run this step twice.
 
 - **Validator Voting**: As with single upgrades, validators vote for or against the proposed upgrade.
 - **Achieving Consensus and Sequential Resolution**: Once at least 66% of active validators support the proposal, the initial upgrade can be resolved.
@@ -87,7 +95,7 @@ Due to some circumstances, a publisher may want to downgrade the policy to allow
 #### Example
 
 ```
-libra txs governance propose --proposal-script-dir <path/to>/framework_upgrade/3-libra-framework/ --metadata-url https://www.github.com/0LNetworkCommunity/proposals/<PROPOSAL_ID>--danger-force-upgrade
+libra txs governance propose --proposal-script-dir <path/to>/framework_upgrade/3-libra-framework/ --metadata-url https://github.com/0LNetworkCommunity/upgrades/tree/main/proposals/up-000<PROPOSAL_ID> --danger-force-upgrade
 ```
 
 ## Procedure
@@ -111,29 +119,53 @@ You need to provide:
 
 Optionally you could provide the flag `--danger-force-upgrade
 
+### Default: Produce all three module upgrades
+Includes: stdlib, vendor-stdlib, libra-framework.
+
 ```
 # Note the paths
-libra-framework upgrade --output-dir <OUTPUT_DIR> --framework-local-dir <FRAMEWORK_PATH>
+libra-framework upgrade \
+--output-dir <OUTPUT_DIR> \
+--framework-local-dir <FRAMEWORK_PATH>
 
 # Example
-libra-framework upgrade --output-dir <path/to>/framework_upgrade --framework-local-dir <path/to>/libra-framework/framework/
+libra-framework upgrade \
+--output-dir <path/to>/framework_upgrade \
+--framework-local-dir <path/to>/libra-framework/framework/
 ```
-:::note
-This creates 3 seperate library upgrade script directories
+
+
+#### NOTE: This creates 3 separate library upgrade script directories
 - 1-move-stdlib
 - 2-vendor-stdlib
 - 3-libra-framework
 
 You will choose depending on which library you want updated
-:::
 
 All the artifacts are now created, the proposal transaction can be submitted. But it's a good idea to document this on github first.
 
+# Light: Only update one of the modules
+If the code is backwards compatible you can update a single module. This can be true for `libra-framework`, when there are no changes to `stdlib` or `vendor-stdlib`.
+
+In that case you can include the argument `--core-modules libra-framework`
+```
+# example:
+libra-framework upgrade --core-modules libra-framework \
+--output-dir <path/to>/framework_upgrade \
+--framework-local-dir <path/to>/libra-framework/framework/
+
+```
 ##### 2. Share the output artifacts on Github.
 
-Create a new repository with the outputted directory. Add a README.md file.
+A dedicated repository for upgrade proposals exists at:
 
-The proposer can add the link to this Github repo in the proposal phase.
+https://github.com/0LNetworkCommunity/upgrades/
+
+The proposer can add the files folder and documentation  link to this Github repo, for example:
+https://github.com/0LNetworkCommunity/upgrades/tree/main/proposals/up-0005
+
+#### PRO-TIP:
+If you already have this upgrades repo locally, you should run the command in the previous step (build artifacts) with `--output-dir` pointed to `./upgrades/proposals/up-000x`
 
 
 ### Upgrade Ceremony
@@ -141,11 +173,13 @@ The proposer can add the link to this Github repo in the proposal phase.
 ##### 3. With `txs` anyone (no authority needed) can submit the proposal and metadata. You'll need to provide the actual script compiled path, and an optional URL which contains documentation of the proposal (e.g github).
 
 ```
-# note the actual script dir
+
+# NOTE: multi-step upgades (all modules) only need ONE proposal, and it should reference the first module, usually 1-move-stdlib
+
 libra txs governance propose --proposal-script-dir <PROPOSAL_SCRIPT_DIR> --metadata-url <URL>
 
 # Example
-libra txs governance propose --proposal-script-dir <path/to>/framework_upgrade/1-move-stdlib/ --metadata-url https://www.github.com/0LNetworkCommunity/proposals/<PROPOSAL_ID>
+libra txs governance propose --proposal-script-dir <path/to>/framework_upgrade/1-move-stdlib/ --metadata-url https://github.com/0LNetworkCommunity/upgrades/tree/main/proposals/up-000<PROPOSAL_ID>
 
 ```
 If this transaction succeeds it will produce a proposal id, which is a number. Now the proposal is open to voting.
