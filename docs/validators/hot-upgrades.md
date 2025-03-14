@@ -119,6 +119,14 @@ You need to provide:
 
 Optionally you could provide the flag `--danger-force-upgrade
 
+#### Multi or Single Upgrade
+Know the difference between a single step, and multi-step upgrades.
+An upgrade that changes, all three (stdlib, vendor-stdlib, libra-framework) looks like this:
+https://github.com/0LNetworkCommunity/upgrades/blob/main/proposals/up-0004/
+
+AN upgrade that changes only one module `libra-framework` can be seen here:
+https://github.com/0LNetworkCommunity/upgrades/tree/main/proposals/up-0009
+
 ### Default: Produce all three module upgrades
 Includes: stdlib, vendor-stdlib, libra-framework.
 
@@ -139,8 +147,6 @@ libra-framework upgrade \
 - 1-move-stdlib
 - 2-vendor-stdlib
 - 3-libra-framework
-
-You will choose depending on which library you want updated
 
 All the artifacts are now created, the proposal transaction can be submitted. But it's a good idea to document this on github first.
 
