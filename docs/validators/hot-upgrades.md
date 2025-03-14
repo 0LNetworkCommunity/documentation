@@ -12,25 +12,43 @@ description: 'Upgrading Framework Libraries'
 
 The "framework" which contains all the consensus, account, econ policies, etc. for the network is written in Move. This code is stored in the network database, and effectively executed on demand. This means that framework upgrades can occur without redeploying the Move VM itself, or the supporting system code (network node software). It also means the state machine can upgrade without a coordinated halt.
 
-- To do this we require the `libra` and `libra-framework` cli tools. The command `libra-framework` is used for building the artifacts, and `libra txs` for proposing, voting, and ultimately deploying the artifacts.
+- To do this we require the `libra` cli tool. The command `libra move framework` is used for building the artifacts, and `libra txs` for proposing, voting, and ultimately deploying the artifacts.
 
 
 ## Historical Upgrade Information and Proposing Upgrades
 Historical upgrade information since release 7.0.0 is canonically stored in the [upgrade repository](https://github.com/0LNetworkCommunity/upgrades). To submit an upgrade proposal, you should draft a PR with the relevant information detailing the upgrade using the provided [template](https://github.com/0LNetworkCommunity/upgrades/tree/main/proposals/template) and include the upgrade script packages.
 
 
-## TLDR
-- **Fetch the latest release**: `cd libra-framework; git fetch --all; git checkout release-x.x.x`
-- **Build framework**: `libra-framework  upgrade --output-dir ~/framework_upgrade --framework-local-dir ~/libra-framework/framework/`
-- **Propose**: `libra txs governance propose --proposal-script-dir ~/framework_upgrade/1-move-stdlib/ --metadata-url https://github.com/0LNetworkCommunity/upgrades/tree/main/proposals/template`
-- **Validators vote**: `libra txs governance  vote --proposal-id <ID>`
-- **Resolve**:
+## TL;DR
+- **Fetch the latest release**:
+```
+cd libra-framework
+git fetch --all
+git checkout release-x.x.x
+```
+- **Build framework**:
+```
+libra move framework upgrade --output-dir <path/to>/framework_upgrade --framework-local-dir <path/to>/libra-framework/framework/
+```
 
-    1. `libra txs governance resolve --proposal-script-dir ~/framework_upgrade/1-move-stdlib/ --proposal-id 0`
+- **Propose**:
+```
+libra txs governance propose --proposal-script-dir <path/to>/framework_upgrade/1-move-stdlib/ --metadata-url https://github.com/0LNetworkCommunity/upgrades/tree/main/proposals/<PROPOSAL_ID>
+```
 
-    2. `libra txs governance resolve --proposal-script-dir ~/framework_upgrade/2-vendor-stdlib/ --proposal-id 0`
+- **Each Validator votes**:
+```
+libra txs governance  vote --proposal-id <ID>
+```
 
-    3. `libra txs governance resolve --proposal-script-dir ~/framework_upgrade/3-libra-framework/ --proposal-id 0`
+- **After vote, one person can resolve each module in order**:
+```
+libra txs governance resolve --proposal-script-dir <path/to>/framework_upgrade/1-move-stdlib/ --proposal-id <ID>
+
+libra txs governance resolve --proposal-script-dir <path/to>/framework_upgrade/2-vendor-stdlib/ --proposal-id <ID>
+
+libra txs governance resolve --proposal-script-dir <path/to>/framework_upgrade/3-libra-framework/ --proposal-id <ID>
+```
 
 ## Upgrade Types: Single and Multiple
 
@@ -43,7 +61,7 @@ A single framework upgrade involves updating a singular set of modules within th
 - **Proposal Submission**: Propose the upgrade for the specific framework module.
 - **Validator Voting**: Validators within the network vote for or against the proposed upgrade.
 - **Achieving Consensus**: The proposal moves forward once it receives support from at least 66% of active validators.
-- **Resolution and Deployment**: Resolve the proposal using the exact framework directory that matches the build of the proposed upgrade. This can be done by any validator using the same release branch from the `libra-framework` repository
+- **Resolution and Deployment**: Resolve the proposal using the exact framework directory that matches the build of the proposed upgrade. This can be done by any validator using the same release branch from the `libra-framework` repository.
 
 ### Multiple Framework Upgrades
 Multiple framework upgrades require a more nuanced approach, especially regarding resolution stages, to ensure a coherent and secure update across several modules.
@@ -64,12 +82,12 @@ The diem framework has information in the metadata that controls the policy that
 - Compatible(1): Requires compatibility checks to ensure no breaking changes in public functions or resource layouts.
 - Immutable(2): Prevents any upgrades, ensuring the permanence of critical code.
 
-Due to some circumstances, a publisher may want to downgrade the policy to allow changes to go through that a restrictive policy would not allow. We can do this by building the framework with a flag(`--danger-force-upgrade`) that sets the upgrade policy as Aribitrary
+Due to some circumstances, a publisher may want to downgrade the policy to allow changes to go through that a restrictive policy would not allow. We can do this by building the framework with a flag(`--danger-force-upgrade`) that sets the upgrade policy as Arbitrary
 
-Example
+#### Example
 
 ```
-libra txs governance propose --proposal-script-dir ~/framework_upgrade/3-libra-framework/ --metadata-url https://www.github.com/0LNetworkCommunity/UpdateProposalTemplate --danger-force-upgrade
+libra txs governance propose --proposal-script-dir <path/to>/framework_upgrade/3-libra-framework/ --metadata-url https://www.github.com/0LNetworkCommunity/proposals/<PROPOSAL_ID>--danger-force-upgrade
 ```
 
 ## Procedure
@@ -98,7 +116,7 @@ Optionally you could provide the flag `--danger-force-upgrade
 libra-framework upgrade --output-dir <OUTPUT_DIR> --framework-local-dir <FRAMEWORK_PATH>
 
 # Example
-libra-framework upgrade --output-dir ~/framework_upgrade --framework-local-dir ~/libra-framework/framework/
+libra-framework upgrade --output-dir <path/to>/framework_upgrade --framework-local-dir <path/to>/libra-framework/framework/
 ```
 :::note
 This creates 3 seperate library upgrade script directories
@@ -127,13 +145,16 @@ The proposer can add the link to this Github repo in the proposal phase.
 libra txs governance propose --proposal-script-dir <PROPOSAL_SCRIPT_DIR> --metadata-url <URL>
 
 # Example
-libra txs governance propose --proposal-script-dir ~/framework_upgrade/1-move-stdlib/ --metadata-url https://www.github.com/0LNetworkCommunity/UpdateProposalTemplate
+libra txs governance propose --proposal-script-dir <path/to>/framework_upgrade/1-move-stdlib/ --metadata-url https://www.github.com/0LNetworkCommunity/proposals/<PROPOSAL_ID>
 
 ```
 If this transaction succeeds it will produce a proposal id, which is a number. Now the proposal is open to voting.
 
 :::note
-You can query the next proposal using this command: ` libra query view --function-id 0x1::diem_governance::get_next_governance_proposal_id`
+You can query the next proposal using this command:
+```
+libra query view --function-id 0x1::diem_governance::get_next_governance_proposal_id
+```
 :::
 
 ##### 4. With `libra txs` anyone with governance authority (the epoch's validators as of `V7`), can submit a vote in favor (or against it with `--should-fail`).
@@ -148,7 +169,10 @@ If voter would like the proposal to be rejected:
 libra txs governance vote --proposal-id <PROPOSAL_ID> --should-fail
 ```
 :::note
-You can query to see the for and against votes using this command: ` libra query view --function-id 0x1::diem_governance::get_votes --args <proposal_number>`
+You can query to see the for and against votes using this command:
+```
+libra query view --function-id 0x1::diem_governance::get_votes --args <proposal_number>
+```
 :::
 
 After everyone has voted (to reach the consensus threshold of 66% as of `V7`), the proposal will be in a "Resolvable" state. Anyone can resolve it by submitting the upgrade transaction. This means the sender must have the source transaction script for the upgrade (step #1 above).
