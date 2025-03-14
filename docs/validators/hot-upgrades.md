@@ -154,6 +154,7 @@ libra-framework upgrade --core-modules libra-framework \
 --output-dir <path/to>/framework_upgrade \
 --framework-local-dir <path/to>/libra-framework/framework/
 
+# Note: --danger-force-upgrade can also be used here
 ```
 ##### 2. Share the output artifacts on Github.
 
@@ -170,22 +171,25 @@ If you already have this upgrades repo locally, you should run the command in th
 
 ### Upgrade Ceremony
 
-##### 3. With `txs` anyone (no authority needed) can submit the proposal and metadata. You'll need to provide the actual script compiled path, and an optional URL which contains documentation of the proposal (e.g github).
+##### 3. With `txs` anyone (no authority needed) can submit the proposal and metadata.
+
+You'll need to provide the actual script compiled path, and an optional URL which contains documentation of the proposal (e.g github).
 
 ```
 
-# NOTE: multi-step upgades (all modules) only need ONE proposal, and it should reference the first module, usually 1-move-stdlib
+# NOTE: multi-step upgrades (all modules) only need ONE proposal, and it should reference the first module, usually 1-move-stdlib
 
 libra txs governance propose --proposal-script-dir <PROPOSAL_SCRIPT_DIR> --metadata-url <URL>
 
 # Example
-libra txs governance propose --proposal-script-dir <path/to>/framework_upgrade/1-move-stdlib/ --metadata-url https://github.com/0LNetworkCommunity/upgrades/tree/main/proposals/up-000<PROPOSAL_ID>
+libra txs governance propose \
+--proposal-script-dir <path/to>/framework_upgrade/1-move-stdlib/ \
+--metadata-url https://github.com/0LNetworkCommunity/upgrades/tree/main/proposals/up-000<PROPOSAL_ID>.md
 
 ```
 If this transaction succeeds it will produce a proposal id, which is a number. Now the proposal is open to voting.
 
-:::note
-You can query the next proposal using this command:
+#### NOTE: You can query the next proposal using this command:
 ```
 libra query view --function-id 0x1::diem_governance::get_next_governance_proposal_id
 ```
