@@ -54,7 +54,7 @@ libra txs validator register
 libra txs validator vouch --vouch-for <YOUR ADDRESS>
 
 # submit a bid to be in the validator set
-libra txs validator pof --bid-pct <PERCENT YOU PAY> --expiry <WHEN EXPIRES>
+libra txs validator pof --net-reward <NET REWARD> --bid-pct <PERCENT YOU PAY> --expiry <WHEN EXPIRES>
 
 # run as a fullnode and switch to the validator mode once entered the set, check the detailed instructions below the page.
 ```
@@ -142,7 +142,7 @@ libra txs validator vouch --vouch-for <YOUR ADDRESS>
 ### Bid to be in the validator set
 0L Network uses Proof-of-Fee for sybil resistance, instead of Proof-of-Stake. You don't need any stake to join, but you just need to be able to bid on how much you are willing to pay to be in the validator set. The cheapest bid proposed by validators will be actually what all validators pay (uniform price auction).
 ``` bash
-libra txs validator pof --bid-pct <PERCENT YOU PAY> --expiry <WHEN EXPIRES>
+libra txs validator pof --net-reward <NET REWARD> --bid-pct <PERCENT YOU PAY> --expiry <WHEN EXPIRES>
 ```
 
 ### Run the node as fullnode and then validator mode
