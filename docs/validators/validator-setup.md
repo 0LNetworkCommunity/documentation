@@ -1,6 +1,6 @@
 ---
-title: "Running a Validator"
-sidebar_label: 'Running a Validator'
+title: "Validator setup"
+sidebar_label: 'Setting up a new validator'
 sidebar_position: 3
 ---
 
@@ -107,11 +107,62 @@ libra version
 
 
 
-### You will now need sync your validator to the latest block and register your validator.
+### Run as fullnode first to sync your validator to the latest block
 
-#### Start Node
+#### Fullnode initialization
+Initialize `~/.libra` config directory 
+``` bash
+libra config init
+```
+
+Grab the **genesis blob** and **waypoint** (creates `fullnode.yaml`)
+``` bash
+libra config fullnode-init
+```
+:::note
+Make sure the peers listed in `~/.libra/fullnode.yaml` are active to avoid connection issues.
+:::
+
+Set your client `libra.yaml` with the rpc-load-balancer upstream node
+``` bash
+libra config fix --force-url https://rpc.openlibra.space:8080/v1
+```
+
+#### Start your node as fullnode
+`libra node --config-path ~/.libra/fullnode.yaml`
+:::note
+Check sync status using `watch 'curl localhost:8080/v1/ | jq'`.
+:::
+
+
+### Switch to validator mode
+
+#### Validator initialization
+Set up validator using the validator config tool
+``` bash
+libra config validator-init
+```
+:::note
+Make sure the peers listed in `~/.libra/validator.yaml` are active to avoid connection issues.
+:::
+
+Following this you can see and edit your validator config file `~/.libra/operator.yaml`.
+On both machines, the config in `operator.yaml` should be complete with separate Validator and VFN keys and IPs
+``` yaml
+validator_network_public_key: "0x_thiswasalreadyset_public_key"
+validator_host:
+  host: <validator_ip>
+  port: 6180
+full_node_network_public_key: "0x_full_node_network_public_key"
+full_node_host:
+  host: <vfn_ip>
+  port: 6182
+```
+
+#### Run your node in validator mode
 
 `libra node --config-path ~/.libra/validator.yaml`
+
 
 ### Setup as a service(optional)
 
