@@ -1,6 +1,6 @@
 ---
 title: "Validator setup"
-sidebar_label: 'Setting up a new validator'
+sidebar_label: 'Setting up a validator'
 sidebar_position: 3
 ---
 
