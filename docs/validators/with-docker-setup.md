@@ -39,7 +39,7 @@ Place this Dockerfile somewhere in your system (~/workspace/SOME_NAME/Dockerfile
 ```bash
 # Dockerfile
 
-# Use Debian 11 image as the base for the build stage
+# Use Debian 11 image AS the base for the build stage
 FROM debian:11 as build
 
 # Set the PATH environment variable to include the Rust Cargo bin directory
@@ -59,7 +59,7 @@ RUN apt-get update -y -q && apt-get install -y -q \
   lld \
   pkg-config \
   ca-certificates \
-  update-ca-certificates \
+  && update-ca-certificates \
   && rm -rf /var/lib/apt/lists/*
 
 
