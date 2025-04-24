@@ -39,13 +39,13 @@ In this system, validators are required to submit bids as part of a competitive 
 #### Overview
 To participate in the bidding process for the next epoch, validators must
 maintain compliance. Non-compliant validators at the time of an epoch change
-will be [jailed](../cli-tools/txs/validator.md) and must be
+will be [jailed](../tools/cli-tools/txs/validator.md) and must be
 un-jailed by one of the active validators to re-enter the process.
 
 #### Detailed Compliance Criteria
 
 1. **For New Entrants**:
-   - Obtain 2 [vouches](../cli-tools/txs/validator.md#manage-vouching-operations) from existing validators, ensuring no shared ancestry.
+   - Obtain 2 [vouches](../tools/cli-tools/txs/validator.md#manage-vouching-operations) from existing validators, ensuring no shared ancestry.
    - Submit a bid that ranks among the highest in comparison to others, relative to the number of available validator seats. Essentially, the bid should be sufficiently competitive to fall within the range of top bids for the given number of validator seats.
 
 2. **For Existing Epoch Validators**:

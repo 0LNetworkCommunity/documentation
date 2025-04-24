@@ -206,7 +206,7 @@ When publishing Move modules, if multiple modules are in one package, then all t
 
 ### Running a Move function
 :::note
-The `move run` feature is currently not available but we have a work around for interacting with move functions. View a full description [here](../txs/generate-transaction.md)
+The `move run` feature is currently not available but we have a work around for interacting with move functions. View a full description [here](../cli-tools/txs/generate-transaction.md)
 :::
 
 
