@@ -3,7 +3,7 @@ sidebar_position: 3
 description: 'Interact with Move Code'
 ---
 
-# Txs - Generate Transaction
+# generate-transaction
 
 
 
