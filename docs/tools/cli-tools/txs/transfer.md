@@ -3,7 +3,7 @@ sidebar_position: 3
 description: 'Transfer Coins'
 ---
 
-# Txs - Transfer
+# transfer
 
 
 

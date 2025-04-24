@@ -1,4 +1,4 @@
-# Key Rotation
+# rotatate-key
 > CAUTION: Please read carefully and ensure you understand these instructions. Rotating the wrong key could lock you out of your account and make funds permanently inaccessible.
 
 There are two cases:

@@ -1,4 +1,4 @@
-# Community Wallet Activation
+# community
 
 Community Wallet is a qualification an account can receive if it is composed of certain properties. Those properties are:
 
