@@ -3,7 +3,7 @@ sidebar_position: 3
 description: 'Control a Validator'
 ---
 
-# Txs - Validator
+# validator
 
 
 

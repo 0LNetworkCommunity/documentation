@@ -17,7 +17,7 @@ Instructions for running a fullnode with docker etc. can be found at: https://gi
 
 # Execute transactions with `libra` binary
 The `libra` cli binary for running the node, also includes subcommands for executing transactions.
-[More info:](docs/cli-tools/txs/transfer.md)
+[More info:](docs/tools/cli-tools/txs/transfer.md)
 
 ## Optionally use NodeJS sdk
 The NodeJS typescript SDK is available for integrators. This library is NOT included in the container environment.

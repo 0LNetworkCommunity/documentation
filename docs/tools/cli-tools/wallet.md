@@ -3,7 +3,7 @@ sidebar_position: 3
 description: 'Create an Account'
 ---
 
-# Wallet 
+# wallet 
 
 ## Description
 The Libra wallet tool provides essential functionalities for managing digital wallets within the 0L Network ecosystem. It is designed to handle digital currencies and assets through secure key management, account maintenance, and transaction processes.
