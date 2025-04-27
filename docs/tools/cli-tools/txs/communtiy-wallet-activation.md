@@ -76,3 +76,30 @@ In this example, Dave is opting to extend the offer to include Eve (0x1000e) as 
 If any authority already claimed the offer and remains on the updated list, they do not need to claim again. However, if any authority is removed from the list, even if they had previously claimed, they will not be part of the community wallet authorities when the account is caged by the donor.
 
 Additionally, this command can be used by the account owner to renew the offer's deadline if it has expired, and the authorities have not yet made their claims.
+
+## V8 Community Wallet Reauthorization
+
+V8 introduces CW reauthorization via donor authorization vote transactions that can be generated as follows:
+
+```
+export CW_ADDR=<CW ADDRESS>
+export CW_ADDR=0x2B0E8325DEA5BE93D856CFDE2D0CBA12 # Example wallet address
+libra txs community reauthorize --community-wallet $CW_ADDR # Submit a vote for reauthorization
+```
+
+Current reauthorization status for a community wallet can be viewed like this:
+
+```
+libra query view -f 0x1::donor_voice_governance::get_reauth_tally -a $CW_ADDR
+{
+  "body": [
+    "10000",
+    "588",
+    "10000",
+    "410",
+    "1250",
+    false,
+    true  # <--- this means the CW has been reauthorized
+  ]
+}
+```
