@@ -35,7 +35,7 @@ The tool provides several subcommands to handle different aspects of configurati
 - **Options**:
   - `--address`: Reset the address from mnemonic and look up the chain for the actual address.
   - `--remove-profile <NAME>`: Remove the profile with the specified name.
-  - `--force-url <URL>`: Force overwrite all URLs in the current network profile to this URL.
+  - `--fullnode-url <URL>`: Force overwrite all URLs in the current network profile to this URL.
 - **Example**:
   ```
   libra config fix --address --remove-profile "test_profile"
