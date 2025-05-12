@@ -7,10 +7,10 @@ description: "User transactions"
 
 Generate transactions for V8 user vouches.
 
-## Assert that an address is a human founder
+## Assert that an address has re-joined the chain
 
 ```
-libra txs user human-founder
+libra txs user re-join
 ```
 
 ## Vouch for another address
