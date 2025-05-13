@@ -175,7 +175,10 @@ If you already have this upgrades repo locally, you should run the command in th
 
 ### Upgrade Ceremony
 
-#### 3. With `txs` anyone (no authority needed) can submit the proposal and metadata.
+#### 3. With `txs` a currently seated validator account can submit the proposal and metadata.
+
+Note that the goveranance proposal transaction type can only be submitted by an account corresponding to a currently seated validator.
+Attempts to submit the transaction from any other type of account will fail.
 
 You'll need to provide the actual script compiled path, and an optional URL which contains documentation of the proposal (e.g., GitHub).
 
