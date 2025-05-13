@@ -201,7 +201,11 @@ If this transaction succeeds, it will produce a proposal id, which is a number. 
 libra query view --function-id 0x1::diem_governance::get_next_governance_proposal_id
 ```
 
-#### 4. With `libra txs` anyone with governance authority (the epoch's validators as of `V7`), can submit a vote in favor (or against it with `--should-fail`).
+#### 4. Voting
+
+With `libra txs` anyone with governance authority (the epoch's validators as of `V7`), can submit a vote in favor (or against it with `--should-fail`).
+
+Note that the proposer (account that submitted the proposal as set forth above) can and should vote too.
 
 We assume the default is to vote in favor. To vote "approve" simply:
 
