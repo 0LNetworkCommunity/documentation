@@ -4,10 +4,93 @@
         <title>Open Libra Documentation Blog</title>
         <link>https://docs.openlibra.io/blog</link>
         <description>Open Libra Documentation Blog</description>
-        <lastBuildDate>Wed, 12 Feb 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 14 Apr 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Back to FILO: The Future of Open Libra]]></title>
+            <link>https://docs.openlibra.io/blog/proposals/back-to-filo-the-future-of-open-libra</link>
+            <guid>https://docs.openlibra.io/blog/proposals/back-to-filo-the-future-of-open-libra</guid>
+            <pubDate>Mon, 14 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Summary of Current Events]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary-of-current-events">Summary of Current Events<a href="https://docs.openlibra.io/blog/proposals/back-to-filo-the-future-of-open-libra#summary-of-current-events" class="hash-link" aria-label="Direct link to Summary of Current Events" title="Direct link to Summary of Current Events">​</a></h2>
+<p>Since our inception in 2019 this community has been building a decentralized network grounded in unique tokenomics and thoughtful mechanism design. In 2024, a series of deceitful actions strained our community and threatened our ability to thrive. Yet our collective commitment never wavered and our consensus mechanisms worked to allow the community to respond quickly. Together, we doubled down on integrity and held to account those individuals who sought to reap unearned rewards at the expense of the whole.</p>
+<p>Since then, the community has been exploring additional enhancements to further secure the future’s project and recently proposed 3 go forward options:</p>
+<p><strong>Option 1 - Restart:</strong> Launch a new chain, more like a typical commercial blockchain. Everything is on the table, perhaps a pre-mine, investors, or an ICO.</p>
+<p><strong>Option 2 - Lock Large Sybils:</strong> Selectively re-lock large accounts, including probable sybil miners, validators, sprayed accounts. Keeps all balances and unlocks the same for small accounts.</p>
+<p><strong>Option 3 - Commit to First-in-Last-out:</strong></p>
+<ul>
+<li>Maintain all balances, but convert every account into a slow wallet with zero unlocked coins.</li>
+<li>Unlocks remain at 35,000 coins per epoch.</li>
+<li>Introduce sybil resistance mechanism through vouching for end-user accounts.</li>
+<li>Allow community wallets limited liquidity for administrative use.</li>
+</ul>
+<p>In a recent sentiment poll (see below screenshot): <strong>70% of active participants, 66 out of 94 votes, chose Option 3, a return to our foundational First-in-Last-out (FILO) principle.</strong> This isn’t just a preference, it’s a mandate. This proposal is our answer and a bold step towards realigning with the values that define us.  We refer to each giant step forward in our collective progress as a “Level”.  This document will refer to prior Levels 6 &amp; 7 and describe our future in Level 8.</p>
+<p><img decoding="async" loading="lazy" src="https://docs.openlibra.io/assets/images/filo-preliminary-community-vote-1e637db124b9f1c9b44f7bf177eaf18a.png" width="888" height="570" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary-of-level-7-issues">Summary of Level 7 Issues<a href="https://docs.openlibra.io/blog/proposals/back-to-filo-the-future-of-open-libra#summary-of-level-7-issues" class="hash-link" aria-label="Direct link to Summary of Level 7 Issues" title="Direct link to Summary of Level 7 Issues">​</a></h2>
+<p>Level 7 exposed some opportunities for improvement.
+It began with manipulations in Level 6, where bad actors abused community wallets, our decentralized endowments, for personal gain.
+These bad actors, cloaked as analysts, siphoned tokens and created sham markets to dump them, profiting while the network bled.
+The result? <a href="https://docs.openlibra.io/blog/proposals/scorpions-claw-proposal" target="_blank" rel="noopener noreferrer">A hard fork in Level 7</a> to exclude the worst offenders, but the damage lingered.
+Markets flooded with tokens, Open Libra’s value crashed, and early believers were left stranded – a textbook First-in-First-out (FIFO) betrayal, the antithesis of FILO.
+The community fought back, proving its resilience, but the chaos revealed a truth: without stronger safeguards, trust and motivation erode.
+This proposal exists to fix that. You can read the <a href="https://www.google.com/url?q=https://docs.google.com/document/d/e/2PACX-1vQKWRMSIzc1yLn32TYqKMA_Ukkt8bkIjqU9F55gGpcBR1mEqU5FmNEIJ4DZ1o3caQHFutjifDgsXa5_/pub&amp;sa=D&amp;source=editors&amp;ust=1747153318585623&amp;usg=AOvVaw2fZPZvNUMX6R95AEwyaFVz" target="_blank" rel="noopener noreferrer">Open Libra Level 7 Post-mortem here</a>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-recommendation">The Recommendation<a href="https://docs.openlibra.io/blog/proposals/back-to-filo-the-future-of-open-libra#the-recommendation" class="hash-link" aria-label="Direct link to The Recommendation" title="Direct link to The Recommendation">​</a></h2>
+<p>Here’s the plan to restore FILO and secure our future:</p>
+<ul>
+<li><strong>Founder Accounts:</strong> All pre-Level 8 accounts become Founder Accounts.</li>
+<li><strong>Slow Wallets Expansion:</strong> Proven mechanisms from Validator accounts, Slow Wallets and Vouching, will be extended to all Founder Accounts. Coins start fully locked, unlocking 35K daily at each epoch.</li>
+<li><strong>Vouching Requirement:</strong> Founder Accounts need vouches from peers to unlock, a community-driven filter against sybils and bad actors.</li>
+<li><strong>Community Wallets Overhaul:</strong> These wallets face the same sybil resistance. Donors must reauthorize them via vote, ensuring accountability. Up to 1% of locked funds can unlock for action, repayable within a year, or the wallet deactivates.</li>
+</ul>
+<p>This isn’t a reinvention, it’s a return to what works, scaled to protect everyone committed to Open Libra’s long-term mission. This isn’t damage control; it’s a leap forward.</p>
+<p>By reducing entropy and increasing coordination, the network becomes leaner and stronger. One that is poised to grow, not just survive.</p>
+<p>Recommitting to FILO, we prevent exit-driven panics like Level 7’s “run on the bank,” It protects those who’ve been building all along with us. Reactivating dormant accounts with Slow Wallets and administrative budgets to reinvigorate the community. Reauthorizing Community Wallets ensures they serve their donors, not exploiters, fostering transparency and purpose.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="values-the-guardrails-for-the-recommendation">Values, the Guardrails for the Recommendation<a href="https://docs.openlibra.io/blog/proposals/back-to-filo-the-future-of-open-libra#values-the-guardrails-for-the-recommendation" class="hash-link" aria-label="Direct link to Values, the Guardrails for the Recommendation" title="Direct link to Values, the Guardrails for the Recommendation">​</a></h2>
+<ul>
+<li><strong>Reward Commitment, Not Exit Speed:</strong> choices rest on unshakable principles; FILO uplifts the builders, not the opportunists.</li>
+<li><strong>Plans Measured in Centuries:</strong> We’re crafting a legacy, not chasing trends.</li>
+<li><strong>No Favorites, No Shortcuts:</strong> Equal rules, no exceptions, That’s how trust stays intact.</li>
+<li><strong>Act in the Light, or Lose the Right:</strong> Transparency is our shield against deceit.</li>
+<li><strong>Strength in Restraint:</strong> We refine what works, avoiding reckless overhauls.</li>
+<li><strong>Do No Harm, Protect the Honest:</strong> Honest contributors flourish; leeches falter.</li>
+<li><strong>Collective Vigilance:</strong> Every member guards our ethos, closing gaps for abuse.</li>
+</ul>
+<p>These aren’t slogans, they embody the moral compass steering us back to stability.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary-of-evaluated-solutions">Summary of Evaluated Solutions<a href="https://docs.openlibra.io/blog/proposals/back-to-filo-the-future-of-open-libra#summary-of-evaluated-solutions" class="hash-link" aria-label="Direct link to Summary of Evaluated Solutions" title="Direct link to Summary of Evaluated Solutions">​</a></h2>
+<p>We explored every angle before landing here:</p>
+<ol>
+<li><strong>Maintain Status Quo:</strong> Ignoring the problem risked collapse — unacceptable.</li>
+<li><strong>Chain Reset:</strong> A hard fork to adopt crypto industry practices (inventors, foundation, pre-mint) was simple but erased years of effort.</li>
+<li><strong>Selective Migration:</strong> Hard forking bad actors is reserved for the most dramatic cases, in this case we're not interested in punishment or survival, but in long term viability. .</li>
+<li><strong>Whale Locking:</strong> Locking big accounts with vesting tempted us, but it was too clumsy, error prone, and had a number of subjective parameters.</li>
+</ol>
+<p>Expanding existing policies won out because it is proven, aligns with our core values, and practical.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="expected-objections-and-rebuttals">Expected Objections and Rebuttals<a href="https://docs.openlibra.io/blog/proposals/back-to-filo-the-future-of-open-libra#expected-objections-and-rebuttals" class="hash-link" aria-label="Direct link to Expected Objections and Rebuttals" title="Direct link to Expected Objections and Rebuttals">​</a></h3>
+<p>Critics will emerge. We’re ready:</p>
+<p>“This punishes long-term holders!” No, it shields them, ensuring only the committed unlock funds.</p>
+<p>“It’s too complicated!” We’ve streamlined it to address only the essentials while addressing the core issues. We expand existing policies.</p>
+<p>“Bad actors will still slip through!” It’s true perfection is a myth, but vouching for sybil resistance greatly curtails their room to maneuver.</p>
+<p>“Exchanges like Comswap suffer!” We expect all users from pre-market venues to be on equal footing with the native coin holders. All third party venues were notified or invited to participate months in advance.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="a-vision-for-level-8">A Vision for Level 8<a href="https://docs.openlibra.io/blog/proposals/back-to-filo-the-future-of-open-libra#a-vision-for-level-8" class="hash-link" aria-label="Direct link to A Vision for Level 8" title="Direct link to A Vision for Level 8">​</a></h2>
+<p>Open Libra doesn’t want to be just another crypto footnote; our community wants to pioneer the next level of the game. If Level 8 is successful it will launch the decentralized endowment model. At this stage Community Wallets find their purpose, funding century-spanning projects. Open Libra becomes patient capital, a tool for building, not speculating. Dormant wallets awake, accountable and active. The network grows more resilient, more transparent, community powered, and able to recruit the wise minds and capable hands needed to scale.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="faq">FAQ<a href="https://docs.openlibra.io/blog/proposals/back-to-filo-the-future-of-open-libra#faq" class="hash-link" aria-label="Direct link to FAQ" title="Direct link to FAQ">​</a></h2>
+<p>Q: Will my coin balance change?<br>
+<!-- -->A: No, your total stays the same.</p>
+<p>Q: What happens to regular holders?<br>
+<!-- -->A: All wallets convert to Slow Wallets, needing Web-of-Trust (WoT) Vouching to unlock.</p>
+<p>Q: What’s a Slow Wallet?<br>
+<!-- -->A: A slow account, releasing 35K unlocked coins per epoch, once vouched.</p>
+<p>Q: How do I get vouched?<br>
+<!-- -->A: Get vouches from other founders, then it’s automatic.</p>
+<p>Q: What’s Web-of-Trust (WoT) Vouching?<br>
+<!-- -->A: Peer system where founders verify each other, blocking bad actors and re-engaging the community.</p>
+<p>Q: What about Community Wallets?<br>
+<!-- -->A: They need donor votes to stay active and can unlock 1% for operations, repayable yearly.</p>]]></content:encoded>
+            <category>filo</category>
+            <category>proposal</category>
+        </item>
         <item>
             <title><![CDATA[Open Libra: The Road Less Traveled]]></title>
             <link>https://docs.openlibra.io/blog/the-road-less-traveled</link>
@@ -1270,20 +1353,6 @@ We think the proposal increases equity but frankly the main purpose of the propo
             <category>carpe</category>
             <category>wallet</category>
             <category>software</category>
-        </item>
-        <item>
-            <title><![CDATA[Research Report: Decentralizing Permissioned Blockchain with Delay Towers]]></title>
-            <link>https://docs.openlibra.io/blog/research-report-decentralizing-permissioned-blockchain-with-delay-towers</link>
-            <guid>https://docs.openlibra.io/blog/research-report-decentralizing-permissioned-blockchain-with-delay-towers</guid>
-            <pubDate>Tue, 22 Mar 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[This report, published 18 March 2022, looks at the Delay Towers mechanism that was pioneered and deployed in the 0L Network.]]></description>
-            <content:encoded><![CDATA[<p>This report, published 18 March 2022, looks at the Delay Towers mechanism that was pioneered and deployed in the 0L Network.</p>
-<p>The article was co-authored by Shashank Motepalli and Hans-Arno Jocobsen of the University of Toronto. We quote the original synopsis below:</p>
-<blockquote>
-<p>Growing excitement around permissionless blockchains is uncovering its latent scalability concerns. Permissioned blockchains offer high transactional throughput and low latencies while compromising decentralization. In the quest for a decentralized, scalable blockchain fabric, i.e., to offer the scalability of permissioned blockchain in a permissionless setting, we present L4L to encourage decentralization over the permissioned Libra network without compromising its sustainability. L4L employs delay towers, -- puzzle towers that leverage verifiable delay functions -- for establishing identity in a permissionless setting. Delay towers cannot be parallelized due to their sequential execution, making them an eco-friendly alternative. We also discuss methodologies to replace validators participating in consensus to promote compliant behavior. Our evaluations found that the cost of enabling decentralization over permissioned networks is almost negligible. Furthermore, delay towers offer an alternative to existing permissionless consensus mechanisms without requiring airdrops or pre-sale of tokens.</p>
-</blockquote>
-<p>&gt;&gt; <a href="https://arxiv.org/abs/2203.09714" target="_blank" rel="noopener noreferrer">View the original article, with download link to full report</a></p>]]></content:encoded>
-            <category>research report</category>
         </item>
     </channel>
 </rss>
