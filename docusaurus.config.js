@@ -66,7 +66,6 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: 'img/thumbnail.png',
       navbar: {
         title: 'Open Libra Documentation',
@@ -75,18 +74,7 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
-          // {
-          //   type: 'docSidebar',
-          //   sidebarId: 'tutorialSidebar',
-          //   position: 'left',
-          //   label: '',
-          // },
           {to: '/blog', label: 'Blog', position: 'right'},
-          // {
-          //   href: 'https://warpcast.com/0lnetwork',
-          //   label: 'Farcaster',
-          //   position: 'right',
-          // },
           {
             href: 'https://github.com/0LNetworkCommunity/',
             label: 'GitHub',
@@ -145,7 +133,7 @@ const config = {
       prism: {
         theme: lightTheme,
         darkTheme: darkTheme,
-        additionalLanguages: ['bash', 'diff', 'json'],
+        additionalLanguages: ['rust', 'typescript', 'bash', 'toml', 'json'],
       },
       algolia: {
         appId: "E8UE0IN6GG",
@@ -155,19 +143,19 @@ const config = {
         debug: false,
       },
     }),
-    plugins: [
-      [
-        '@docusaurus/plugin-client-redirects',
-        {
-          redirects: [
-            {
-              to: '/category/archive',
-              from: '/archive',
-            },
-          ],
-        },
-      ],
-    ],
+    // plugins: [
+    //   [
+    //     '@docusaurus/plugin-client-redirects',
+    //     {
+    //       redirects: [
+    //         {
+    //           from: '/archive',
+    //           to: '/blog/archive',
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // ],
 };
 
 module.exports = config;
