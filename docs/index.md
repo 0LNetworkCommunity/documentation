@@ -1,8 +1,4 @@
----
-sidebar_position: 1
----
-
-# Quick Start
+# Home
 
 Site:   https://openlibra.io
 

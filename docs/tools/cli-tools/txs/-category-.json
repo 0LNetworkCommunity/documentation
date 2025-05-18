@@ -1,8 +1,0 @@
-{
-    "label": "Txs",
-    "position": 2,
-    "link": {
-      "type": "generated-index",
-      "description": "Send Transactions on the 0L network"
-    }
-  }
