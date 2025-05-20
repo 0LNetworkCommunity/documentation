@@ -120,7 +120,7 @@ Make sure the peers listed in `~/.libra/fullnode.yaml` are active to avoid conne
 
 Set your client `libra.yaml` with the rpc-load-balancer upstream node
 ```bash
-libra config fix --force-url https://rpc.openlibra.space:8080/v1
+libra config fix --fullnode-url https://rpc.openlibra.space:8080/v1
 ```
 
 #### Start your node as fullnode
