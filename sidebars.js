@@ -37,6 +37,7 @@ const sidebars = {
                     items: [
                         'guides/node-operators/validators/validator-quickstart',
                         'guides/node-operators/validators/detailed-instructions',
+
                         'guides/node-operators/validators/governance-tx',
                         'guides/node-operators/validators/hot-upgrades',
                         'guides/node-operators/validators/network-health',
@@ -45,6 +46,7 @@ const sidebars = {
                         'guides/node-operators/validators/sybil-resistance',
                         'guides/node-operators/validators/vfn-setup',
                         'guides/node-operators/validators/with-docker-setup',
+                        'guides/node-operators/validators/network-architecture',
                         {
                             type: 'category',
                             label: 'YAML templates',
