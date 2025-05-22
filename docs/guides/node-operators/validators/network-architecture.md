@@ -19,4 +19,3 @@ by configuration and the arrangement of network connectivity.
 
 The diagram below illustrates the arrangement of node types showing their network configuration:
 ![Network Diagram](/img/node-network-details.png "Network Diagram")
-More text
