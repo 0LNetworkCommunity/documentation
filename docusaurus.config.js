@@ -133,7 +133,7 @@ const config = {
       prism: {
         theme: lightTheme,
         darkTheme: darkTheme,
-        additionalLanguages: ['rust', 'typescript', 'bash', 'toml', 'json'],
+        additionalLanguages: ['rust', 'typescript', 'bash', 'toml', 'json', 'powershell'],
       },
       algolia: {
         appId: "E8UE0IN6GG",
