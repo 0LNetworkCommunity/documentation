@@ -23,7 +23,14 @@ const sidebars = {
             type: 'category',
             label: 'Getting Started',
             items: [
-                'getting-started/install-open-libra-cli',
+                {
+                    type: 'category',
+                            label: 'Install Open Libra CLI',
+                            items: [
+                                'getting-started/install-open-libra-cli/install-open-libra-cli',
+                                'getting-started/install-open-libra-cli/install-open-libra-cli-binaries',
+                            ]
+                },
                 'getting-started/install-wallet',
             ],
         },
