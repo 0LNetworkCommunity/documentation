@@ -10,6 +10,9 @@ platforms: macos, Linux, Windows and the following CPU architectures: x64 (Intel
 Exercise caution when downlading executable binary files. If you are not
 familiar with computer security do not do this without seeking advice from someone who is.
 
+Note: due to limited test coverage on platforms other than Linux/x64 it is not recommended
+to use these binary files for Libra node deployments (usage other than for CLI purposes).
+
 ## Installation
 Visit the
 [releases page](https://github.com/0LNetworkCommunity/libra-framework/releases) and identify the
