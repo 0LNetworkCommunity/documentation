@@ -1,7 +1,11 @@
+---
+sidebar_label: From Source 
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Install Open Libra CLI from source
+# Install Open Libra CLI From Source
 
 This guide will walk you through installing the **Open Libra CLI** by building it from source. The CLI provides essential tools for interacting with the Open Libra network.
 
