@@ -39,18 +39,18 @@ If this returns **true**, continue with this guide.
 ## Quick Start ⚡
 
 1. **Re-join the network**
-   ```bash
-   libra txs user re-join
-   ```
+```bash
+libra txs user re-join
+```
 
 2. **Get vouched by a friend**
    Ask them to run:
-   ```bash
-   libra txs user vouch-for <your-address>
-   ```
+```bash
+libra txs user vouch --vouch-for <your-address>
+```
 
 3. **Wait for next epoch** (~24 hours)
-   Your coins will begin unlocking automatically
+Your coins will begin unlocking automatically
 
 ---
 
@@ -99,7 +99,7 @@ libra txs user re-join
 
 Share your address with any active 0L user and request:
 ```bash
-libra txs user vouch-for <your-address>
+libra txs user vouch --vouch-for <your-address>
 ```
 
 **Vouch rules:**
