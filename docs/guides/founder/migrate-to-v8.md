@@ -15,7 +15,7 @@ import TabItem from "@theme/TabItem";
 
 This guide implements the community-approved **FILO** (First-In-Last-Out) proposal ([read the rationale](https://docs.openlibra.io/blog/proposals/back-to-filo-the-future-of-open-libra)). Learn why you must run a "re-join" action and receive a "vouch" from a friend to reactivate your account.
 
----
+
 
 ## Prerequisites
 
@@ -34,8 +34,6 @@ libra query view 0x1::founder::is_founder <your-address>
 ```
 If this returns **true**, continue with this guide.
 
----
-
 ## Quick Start ⚡
 
 1. **Re-join the network**
@@ -52,7 +50,6 @@ libra txs user vouch --vouch-for <your-address>
 3. **Wait for next epoch** (~24 hours)
 Your coins will begin unlocking automatically
 
----
 
 ## Understanding the Process
 
@@ -71,8 +68,6 @@ FILO (First-In-Last-Out) is the v8 migration strategy that:
 |------|---------|-------------------|
 | **Re-join** | Signals your return and migrates account to v8 format | Calls `filo_migration::maybe_migrate` which initializes Activity, Founder status, SlowWallet reset, Vouch structures, and PageRank |
 | **Vouch** | Provides social proof you're a real person | Creates on-chain attestation via `vouch::vouch_for`, expires after 45 epochs |
-
----
 
 ## Step-by-Step Instructions
 
@@ -114,7 +109,6 @@ libra query view 0x1::reauthorization::is_v8_authorized <your-address>
 ```
 Returns **true** when fully authorized.
 
----
 
 ## Common Questions
 
@@ -135,7 +129,6 @@ FILO resets your unlocked balance to 0. The first unlock happens at the next epo
 ### Can I vouch for myself?
 **No.** Self-vouching is blocked with error `EU_SELF_VOUCH`.
 
----
 
 ## Troubleshooting
 
@@ -152,7 +145,6 @@ FILO resets your unlocked balance to 0. The first unlock happens at the next epo
 | Balance shows `0 / X` unlocked | FILO reset | Wait one epoch for first unlock |
 | Lost mnemonic | No recovery possible | Mnemonic required - treat like hardware wallet seed |
 
----
 
 ## Technical Deep Dive
 
