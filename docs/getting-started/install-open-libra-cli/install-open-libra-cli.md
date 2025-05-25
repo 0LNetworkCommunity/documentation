@@ -1,7 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Install Open Libra CLI
+# Install Open Libra CLI from source
 
 This guide will walk you through installing the **Open Libra CLI** by building it from source. The CLI provides essential tools for interacting with the Open Libra network.
 
@@ -317,4 +317,4 @@ After successful installation:
 
 ---
 
-**Need pre-built binaries?** Visit the [releases page](https://github.com/0LNetworkCommunity/libra-framework/releases) for downloadable binaries (when available).
+**Need pre-built binaries?** Visit the [binary releases page](./install-open-libra-cli-binaries.md) to learn about downloadable binaries (when available).
