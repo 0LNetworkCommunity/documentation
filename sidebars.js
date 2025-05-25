@@ -99,6 +99,13 @@ const sidebars = {
                 },
                 {
                     type: 'category',
+                    label: 'Founder',
+                    items: [
+                        'guides/founder/migrate-to-v8',
+                    ],
+                },
+                {
+                    type: 'category',
                     label: 'Integrations',
                     items: [
                         'guides/integrations/exchanges',
