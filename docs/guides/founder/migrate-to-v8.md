@@ -113,7 +113,7 @@ Returns **true** when fully authorized.
 ## Common Questions
 
 ### Do I need a vouch for coins to unlock?
-**No.** Unlocking begins automatically after re-join at the next epoch. Vouches are only required for *sending* transactions.
+**Yes.** After re-joining, your account needs to receive at least one vouch to begin unlocking.
 
 ### Why are my coins locked after re-join?
 FILO resets your unlocked balance to 0. The first unlock happens at the next epoch boundary (~24h), regardless of vouch status.
