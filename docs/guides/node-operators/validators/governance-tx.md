@@ -91,11 +91,25 @@ script {
 ```
 
 ## Compile
+Proposers of the admin transaction must compile. Voters should be encouraged to also compile the transaction to confirm the build artifacts.
 
-To compile we simply use the same command we originally generated the template with, and point to the `Script Dir` where your modified template is found.
+If for example your script is at `proposals/up-00016/1-exit-gov-mode`
+
+1. IMPORTANT: modify the Move.toml at `proposals/up-00016/1-exit-gov-mode/Move.toml`, to include the full path to the OL libra-framework source code.
 
 ```
-libra move framework governance --script-dir <Script Dir>  --framework-local-dir ~/libra-framework/framework/
+# in <script-dir>/Move.toml
+
+[dependencies.LibraFramework]
+# DEVS: this must be the fully qualified path to the Libra Framework
+local = '<PATH/TO/YOUR/libra-framework/framework/libra-framework'
+```
+
+2. Compile the script
+
+```
+# from this (the 'upgrades' project) root dir
+libra move framework governance --script-dir ./proposals/up-0016/1-exit-gov-mode  --framework-local-dir <PATH/TO/YOUR/SOURCE/libra-framework/framework
 ```
 
 
