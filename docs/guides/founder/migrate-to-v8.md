@@ -16,7 +16,7 @@ import TabItem from "@theme/TabItem";
 This guide implements the community-approved **FILO** (First-In-Last-Out) proposal ([read the rationale](https://docs.openlibra.io/blog/proposals/back-to-filo-the-future-of-open-libra)). Learn why you must run a "re-join" action and receive a "vouch" from a friend to reactivate your account.
 
 :::note
-**Founder accounts require vouches for coins to unlock.** Without at least one valid vouch that provides sufficient trust score, your coins remain locked indefinitely. This security measure prevents abandoned or sybil accounts from accessing funds.
+**Founder accounts require vouches for coins to begin unlock.** Without at least one valid vouch that provides sufficient trust score, your coins remain locked. This security measure prevents abandoned or sybil accounts from accessing funds.
 :::
 
 ## Prerequisites
@@ -362,14 +362,9 @@ Beyond the basic technical requirements, a valid vouch must:
 - **Within voucher's limits** - They haven't exceeded their quality-based quota
 - **From an active account** - Inactive accounts' vouches may have less value
 
-### What happens when my vouch expires?
-The 45-epoch expiration creates several effects:
-- Your trust score recalculates without the expired vouch
-- If score drops below 100,000, unlock stops at the next epoch
-- Previously unlocked coins remain fully accessible
-- You'll need new vouches to resume unlocking
-
-Monitor expiration dates and request renewal before they lapse.
+:::tip What happens when my vouch expires?
+- The actual unlocking of the account is a one-time state change. So even if all your vouches expire and you never get any more vouches, the account is still unlocking ("v8 authorized").
+:::
 
 ### Why can well-connected users give more vouches?
 The system rewards network builders by allowing those with higher trust scores to vouch for more accounts:
@@ -571,8 +566,6 @@ public fun calculate_score_limit(grantor_acc: address): u64 {
 
 ## Summary
 
-For Founder accounts, building trust connections is not optional – it's the key to unlocking your coins. The system ensures that only accounts with genuine, active connections to the community can access funds. This protects everyone from sybil accounts while rewarding active participation.
-
 Focus on quality over quantity when building vouch relationships. A single vouch from a root validator or two vouches from well-connected members will unlock your coins faster than many vouches from peripheral accounts. Remember that your vouching decisions reflect on you – choose wisely, revoke sparingly, and contribute to a strong trust network.
 
-Your coins remain secure and will begin their gradual unlock as soon as your trust score reaches 100,000. The closer your connections to the network's roots of trust, the stronger your position becomes.
+Your coins remain secure and will begin their gradual unlock as soon as your trust score reaches 100,000 (and it continues unlocking even if it drops below 100,000 in the future).
