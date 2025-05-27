@@ -314,18 +314,6 @@ Creating a meaningful Sybil network requires:
 
 The combination makes large-scale Sybil attacks economically irrational compared to legitimate participation.
 
-### Real-World Example
-
-Consider an attacker trying to create 10 fake Founder accounts:
-1. Each needs trust score ≥ 100,000 to unlock coins
-2. Without root access, each needs 2+ second-degree vouches
-3. That's 20+ vouches from legitimate users
-4. Users can only give 1 vouch per epoch
-5. Low-trust users can only maintain 1-3 total vouches
-6. Vouches expire after 45 epochs
-
-The attacker would need to convince 10-20 legitimate users to dedicate their scarce vouches for 45+ epochs. The social engineering required makes this far harder than simply participating legitimately.
-
 ## Common Questions
 
 ### Do I need a vouch for coins to unlock?
