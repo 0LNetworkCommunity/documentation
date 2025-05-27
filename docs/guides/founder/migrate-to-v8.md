@@ -16,7 +16,7 @@ import TabItem from "@theme/TabItem";
 This guide implements the community-approved **FILO** (First-In-Last-Out) proposal ([read the rationale](https://docs.openlibra.io/blog/proposals/back-to-filo-the-future-of-open-libra)). Learn why you must run a "re-join" action and receive a "vouch" from a friend to reactivate your account.
 
 :::note
-**Founder accounts require vouches for coins to unlock.** Without at least one valid vouch that provides sufficient trust score, your coins remain locked indefinitely. This security measure prevents abandoned or compromised accounts from accessing funds.
+**Founder accounts require vouches for coins to unlock.** Without at least one valid vouch that provides sufficient trust score, your coins remain locked indefinitely. This security measure prevents abandoned or sybil accounts from accessing funds.
 :::
 
 ## Prerequisites
