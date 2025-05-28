@@ -49,6 +49,7 @@ const config = {
             // 'https://github.com/0LNetworkCommunity/documentation/blob/main/docs/',
             // Direct Edit (faster)
             'https://github.com/0LNetworkCommunity/documentation/edit/main/',
+          showLastUpdateTime: true,
         },
         blog: {
           blogSidebarTitle: 'All posts',
