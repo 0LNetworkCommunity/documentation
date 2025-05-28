@@ -15,9 +15,9 @@
   },
   "dependencies": {
     "@docsearch/js": "^3.8.3",
-    "@docusaurus/core": "^3.7.0",
-    "@docusaurus/plugin-client-redirects": "^3.7.0",
-    "@docusaurus/preset-classic": "^3.7.0",
+    "@docusaurus/core": "^3.8.0",
+    "@docusaurus/plugin-client-redirects": "^3.8.0",
+    "@docusaurus/preset-classic": "^3.8.0",
     "@mdx-js/react": "^3.1.0",
     "clsx": "^2.1.1",
     "nvm": "^0.0.4",
@@ -26,9 +26,9 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.7.0",
-    "@docusaurus/tsconfig": "^3.7.0",
-    "caniuse-lite": "latest",
+    "@docusaurus/module-type-aliases": "^3.8.0",
+    "@docusaurus/tsconfig": "^3.8.0",
+    "caniuse-lite": "^1.0.30001718",
     "typescript": "5.2.2"
   },
   "browserslist": {
