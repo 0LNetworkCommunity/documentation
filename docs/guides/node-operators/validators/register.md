@@ -23,7 +23,7 @@ libra txs transfer -t <YOUR ACCOUNT> -a 1
 ### Update upstream node
 Set your client `libra.yaml` with the rpc-load-balancer upstream node
 ``` bash
-libra config fix --force-url https://rpc.openlibra.space:8080
+libra config fix --fullnode-url https://rpc.openlibra.space:8080
 ```
 
 ### Submit configs to chain

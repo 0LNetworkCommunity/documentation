@@ -61,7 +61,7 @@ In order to fix this, after you have run the above command, please run:
 
 Set your client `libra.yaml` with the rpc-load-balancer upstream node
 ``` bash
-libra config fix --force-url https://rpc.openlibra.space:8080
+libra config fix --fullnode-url https://rpc.openlibra.space:8080
 ```
 
 :::info

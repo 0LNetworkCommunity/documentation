@@ -55,7 +55,7 @@ Update the `$HOME/.libra/cli` config
 ```bash
 # Interactive tool: configure tools, enter the mnemonic above
 libra config init
-libra config --profile my-testnet fix --force-url localhost:8280/v1
+libra config --profile my-testnet fix --fullnode-url localhost:8280/v1
 ```
 
 Optionally for automated testing these envvars for non-interactive mode:
