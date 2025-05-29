@@ -74,7 +74,7 @@ FILO (First-In-Last-Out) is the v8 migration strategy that:
 | Step | Purpose | Technical Details |
 |------|---------|-------------------|
 | **Re-join** | Signals your return and migrates account to v8 format | Calls `filo_migration::maybe_migrate` which initializes Activity, Founder status, SlowWallet reset, Vouch structures, and PageRank |
-| **Vouch** | Provides social proof you're a real person AND enables coin unlocking | Creates on-chain attestation via `vouch::vouch_for`, contributes to trust score calculation. Must achieve score ≥ 100,000 |
+| **Vouch** | Provides social proof you're a real person AND enables coin unlocking | Creates on-chain attestation via `vouch_txs::vouch_for`, contributes to trust score calculation. Must achieve score ≥ 100,000 |
 
 ## The Trust Score System
 
@@ -96,13 +96,11 @@ The algorithm traces all possible paths from root validators to your account. Ea
 Here are the exact calculations for common situations Founder accounts encounter:
 
 #### Scenario 1: Direct Root Vouch
-**You receive a vouch directly from a genesis validator**
+You receive a vouch **directly from a genesis validator**
 
-When a root validator vouches for you, the trust calculation works as follows:
-- The algorithm starts with power 200,000 at the root
-- After one hop to reach you, power becomes 100,000 (50% decay)
-- Your trust score: 100,000 ✓
-- Status: Meets threshold, coins will unlock next epoch
+- The algorithm starts with power **200,000** at the root
+- After one hop to reach you, power becomes **100,000** (50% decay)
+- Your trust score: **100,000 ✓** – meets threshold, coins unlock next epoch
 
 ```
 Root Validator → You
@@ -115,12 +113,10 @@ Result: AUTHORIZED ✓
 #### Scenario 2: Second-Degree Connection
 **You're vouched by someone who was vouched by a root**
 
-This creates a two-hop path from root to you:
 - Root starts with 200,000 power
-- Your voucher receives 100,000 (one hop from root)
-- You receive 50,000 (two hops from root)
-- Your trust score: 50,000 ✗
-- Status: Below threshold, coins remain locked
+- Your voucher receives 100,000 (one hop)
+- You receive 50,000 (two hops)
+- Your trust score: **50,000✗** – below threshold, coins remain locked
 
 ```
 Root → Friend → You
@@ -130,30 +126,17 @@ Threshold: 100,000
 Result: NOT AUTHORIZED ✗
 ```
 
-#### Scenario 3: Multiple Second-Degree Connections
-**You need multiple vouches from second-degree users**
-
-Trust scores from different paths add together:
-- Path 1: Root A → Friend A → You = 50,000
-- Path 2: Root B → Friend B → You = 50,000
-- Combined trust score: 100,000 ✓
-- Status: Meets threshold through multiple paths
+#### Scenario 3: Multiple Second‑Degree Connections
+You need multiple vouches from second‑degree users
 
 ```
-Root A → Friend A → You (50,000)
-    +
-Root B → Friend B → You (50,000)
-    =
-Total Score: 100,000 ✓
+Root A → Friend A → You  50,000
+Root B → Friend B → You  50,000
+Total Score            : 100,000 ✓
 ```
 
 #### Scenario 4: Distant Connections
-**You're three or more hops from roots**
-
-Trust decays exponentially with distance:
-- Three hops: 200,000 → 100,000 → 50,000 → 25,000
-- Four hops: 200,000 → 100,000 → 50,000 → 25,000 → 12,500
-- Five hops: Too weak to contribute meaningful trust
+You're three or more hops from roots – trust decays exponentially
 
 ```
 Root → A → B → You
@@ -164,19 +147,15 @@ Need 4 such paths to reach 100,000 threshold
 #### Scenario 5: Complex Real Networks
 **Most users have multiple paths of varying lengths**
 
-Real networks create intricate webs of trust:
 ```
-Path 1: Root A → You (direct): 100,000
-Path 2: Root B → Friend X → You: 50,000  
-Path 3: Root C → X → Y → You: 25,000
-Path 4: Root A → P → Q → You: 25,000
-Total Score: 200,000 ✓
-Status: Well-connected, exceeds threshold
+Path 1  Root A → You              100,000
+Path 2  Root B → X → You           50,000
+Path 3  Root C → X → Y → You       25,000
+Path 4  Root A → P → Q → You       25,000
+Total Score                        200,000 ✓
 ```
 
 ### Checking Your Trust Status
-
-Monitor your exact trust position with these commands:
 
 ```bash
 # Check if your trust score meets Founder threshold
@@ -269,10 +248,9 @@ Remember that revocation immediately impacts the other account's ability to unlo
 Here's what happens when you revoke:
 
 ```
-Epoch 100: You revoke a vouch
-Epoch 100-102: You cannot give new vouches (cooldown)
-Epoch 103: You can vouch again
-Note: You can still revoke others during cooldown
+Epoch 100 : revoke issued
+Epoch 100‑102 : cooldown (cannot vouch)
+Epoch 103 : you may vouch again
 ```
 
 ## Understanding Anti-Sybil Protections
@@ -317,55 +295,36 @@ The combination makes large-scale Sybil attacks economically irrational compared
 ## Common Questions
 
 ### Do I need a vouch for coins to unlock?
-**YES!** This requirement applies specifically to Founder accounts. Without vouches that provide a trust score of at least 100,000, your coins remain locked permanently. The system checks your authorization status before each epoch's unlock calculation.
+**Yes.** Founder coins stay locked until your trust score reaches 100k.
 
 ### Why are my coins still locked after getting vouched?
-Several factors could be preventing unlock:
+Likely reasons:
 
-**Insufficient trust score** - Your voucher might be too distant from roots. A vouch from someone three hops away only provides 25,000 trust, far below the 100,000 threshold.
-
-**Vouch not yet processed** - Transactions take a few minutes to finalize on chain. Check your trust score after waiting.
-
-**Epoch boundary pending** - Unlocks only occur at epoch transitions, approximately every 24 hours. Even with proper vouches, you must wait for the next boundary.
-
-**Expired vouch** - Vouches last 45 epochs. Check `vouch::get_received_vouches` to see expiration status.
+| Reason | Explanation |
+|--------|-------------|
+| **Score too low** | Voucher is too far (≥3 hops) from roots |
+| **Transaction not finalized** | Wait a few minutes and re‑check |
+| **Waiting for epoch** | Unlock happens once per epoch (~24h) |
+| **Vouch expired** | Vouches last 45 epochs |
 
 ### How many vouches do I need?
-The number depends entirely on your vouchers' positions in the trust network:
-- **1 root validator vouch** = 100,000 trust (meets threshold)
-- **2 second-degree vouches** = 50,000 each = 100,000 total
-- **4 third-degree vouches** = 25,000 each = 100,000 total
-- **Mixed distances** = Calculate each path's contribution
-
-Use `page_rank_lazy::calculate_score` to see your exact score breakdown.
+Depends on distance: 1 direct‑root, 2 second‑degree, or 4 third‑degree, etc.
 
 ### Can I re-join multiple times?
 **Yes.** The migration function includes safety checks that prevent any negative effects from repeated execution. However, re-joining won't help if you lack sufficient vouches - focus on building trust connections instead.
 
 ### What makes a vouch valid?
-Beyond the basic technical requirements, a valid vouch must:
-- **Not be expired** - Given within the last 45 epochs
-- **From an unrelated account** - No shared ancestry per the family tree
-- **From an initialized account** - Voucher completed v8 migration
-- **Within voucher's limits** - They haven't exceeded their quality-based quota
-- **From an active account** - Inactive accounts' vouches may have less value
+- Not expired (≤45 epochs)
+- Voucher and vouchee are unrelated
+- Voucher completed v8 migration
+- Voucher within their quota & epoch limits
 
 :::tip What happens when my vouch expires?
-- The actual unlocking of the account is a one-time state change. So even if all your vouches expire and you never get any more vouches, the account is still unlocking ("v8 authorized").
+Unlocking is a one‑time state change. Once your account is “v8 authorized”, subsequent expiry of vouches **does not relock** your coins.
 :::
 
-### Why can well-connected users give more vouches?
-The system rewards network builders by allowing those with higher trust scores to vouch for more accounts:
-
-Trust Score → Maximum Vouches:
-- 0-49,999 → 1 vouch
-- 50,000-99,999 → 3 vouches
-- 100,000-199,999 → 5 vouches
-- 200,000-399,999 → 10 vouches
-- 400,000-799,999 → 15 vouches
-- 800,000+ → 20 vouches
-
-This incentivizes users to build strong network positions while preventing spam from poorly connected accounts.
+### Why can well‑connected users give more vouches?
+Higher trust score → larger quota:
 
 ## Troubleshooting
 
@@ -401,7 +360,7 @@ walk_backwards_from_target_with_stats(
     current_depth: u64,
     processed_count: &mut u64,
     max_depth_reached: &mut u64,
-    max_depth: u64  // Default 5
+    max_depth: u64  // Default 4
 )
 ```
 
