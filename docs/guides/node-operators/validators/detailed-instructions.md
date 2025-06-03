@@ -47,7 +47,7 @@ These instructions target Ubuntu.
 
 ```bash
 sudo apt update
-sudo apt install -y git tmux jq build-essential cmake clang llvm libgmp-dev pkg-config libssl-dev lld libpq-dev
+sudo apt install -y git tmux jq build-essential cmake clang llvm pkg-config libssl-dev lld libpq-dev
 ```
 
 
