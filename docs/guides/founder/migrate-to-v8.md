@@ -30,6 +30,12 @@ libra --version   # Must show version ≥ 8.0
 
 If not installed, follow → Install the Open Libra CLI from [source code](https://docs.openlibra.io/getting-started/install-open-libra-cli) or [binaries](https://docs.openlibra.io/getting-started/install-open-libra-cli/install-open-libra-cli-binaries)
 
+### Verify if account is a Pre-v8 address 
+```bash
+libra query view -f 0x1::activity::is_pre_v8 --args <your-address>
+```
+If this returns **true**, continue with this guide.
+
 ## Quick Start ⚡
 
 1. **Re-join the network**
