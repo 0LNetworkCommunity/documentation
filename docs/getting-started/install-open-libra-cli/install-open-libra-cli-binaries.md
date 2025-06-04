@@ -158,52 +158,107 @@ The pre-built binaries require Ubuntu 24.04. For older versions:
   :::
 
 </TabItem>
+
+
+
 <TabItem value="windows" label="Windows">
 
-### Native Windows
+> **Assumption:** You have downloaded **`libra-windows-x64.exe`** into **`C:\Users\<you>\Downloads`**.
 
-1. **Create directory for binary**:
+### TL;DR — One‑liner
+
+You can set up `libra` in one step. Paste the following commands into the `PowerShell` application, press Enter, and wait for the version output to confirm success:
+
+```powershell
+mkdir "$HOME\bin" -ErrorAction SilentlyContinue; `
+Move-Item "$HOME\Downloads\libra-windows-x64.exe" "$HOME\bin\libra.exe" -Force; `
+setx PATH "$($Env:PATH);$HOME\bin"; `
+$Env:PATH += ";$HOME\bin"; `
+libra version
+```
+What it does:
+- **Create `$HOME\bin`** if it does not exist.
+- **Move and rename** the downloaded file to `$HOME\bin\libra.exe`.
+- **Update your `PATH`** permanently so Windows can find `libra` in any new session.
+- **Refresh `PATH`** for the current window so you can use `libra` immediately.
+- **Verify** by printing the installed version.
+
+You should see output like:
+
+```
+LIBRA VERSION 8.0.7
+build timestamp: 2025-06-04T...
+```
+
+<br/>
+
+### Step‑by‑Step guide
+
+1. **Create a personal `bin` folder**  
+   This folder will hold your local executables and allow you to run them from anywhere.
    ```powershell
-   mkdir %HOMEPATH%\bin
+   mkdir "$HOME\bin"
    ```
 
-2. **Copy and rename**:
+2. **Move and rename the binary**  
+   Place the downloaded file into your new folder and give it a simple name.
    ```powershell
-   copy "Downloads\libra-windows-x64.exe" %HOMEPATH%\bin\libra.exe
+   Move-Item "$HOME\Downloads\libra-windows-x64.exe" "$HOME\bin\libra.exe"
    ```
 
-3. **Add to PATH**:
-    - Open System Properties → Advanced → Environment Variables
-    - Add `%HOMEPATH%\bin` to your PATH variable
-    - Or via command line:
+3. **Add the folder to your `PATH` (permanent)**  
+   This makes `libra` available in any future PowerShell window.
    ```powershell
-   setx PATH "%PATH%;%HOMEPATH%\bin"
+   setx PATH "$($Env:PATH);$HOME\bin"
    ```
-
-4. **Verify installation**:
-   ```powershell
-   libra version
-   ```
-
-### Windows Subsystem for Linux (WSL2)
-
-:::tip WSL2 Users
-For WSL2, use the Linux binary:
-1. Download the Linux binary (not Windows)
-2. Follow the Linux installation steps above
+   :::caution
+   This updates the system registry but does not change the `PATH` in the current session.
    :::
 
+4. **Apply the new `PATH` to this session**  
+   So you don’t need to close and reopen PowerShell.
+   ```powershell
+   $Env:PATH += ";$HOME\bin"
+   ```
+
+5. **Verify the installation**  
+   Run the version command to confirm that `libra` is installed correctly.
+   ```powershell
+   libra version   # or: libra --help
+   ```
+
+If everything is configured, you’ll see `libra` print its version information.
+
+---
+
+---
+
+## Windows Subsystem for Linux (WSL2)
+
+:::tip WSL2 users
+In WSL2, install as if on Linux:
+
+1. Download the **Linux** version into your WSL distro.
+2. Follow the Linux installation steps provided in this guide.
+:::
+
 </TabItem>
+
+
 </Tabs>
 
 ## Troubleshooting
 
 ### Common Issues
 
-| Problem | Solution |
-|---------|----------|
-| "command not found" | Ensure the binary location is in your PATH |
-| "Permission denied" | Make the file executable: `chmod +x libra` |
-| "cannot execute binary file" | Wrong architecture - check your system architecture |
-| OpenSSL errors | Install OpenSSL for your platform |
-| "bad CPU type" (macOS) | Download the correct architecture (x64 vs arm64) |
+| Symptom                                     | Likely Cause                                                                 | Resolution                                                                                       |
+|---------------------------------------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| `"command not found"`                       | Binary location is not in your `PATH`                                         | Ensure the binary location is in your `PATH`                                                     |
+| `"Permission denied"`                       | File is not marked as executable                                              | Run `chmod +x libra` to make the file executable                                                 |
+| `"cannot execute binary file"`              | Downloaded binary does not match your system architecture                     | Check your system architecture and download the correct binary                                   |
+| `OpenSSL errors`                            | OpenSSL is missing or not properly installed                                   | Install or update OpenSSL for your platform                                                       |
+| `"bad CPU type"` (macOS)                    | Binary was built for the wrong CPU architecture                                | Download the correct architecture (x64 vs. arm64)                                                 |
+| `libra : The term 'libra' is not recognized…` | Current PowerShell session has not picked up the updated `PATH`                | Open a new PowerShell window, or run step 4 to refresh `PATH` in the current session             |
+| Path appears as `C:\Users\win\Downloads\%HOMEPATH%\bin` | `%HOMEPATH%` was used instead of `$HOME` or `%USERPROFILE%` (lacks drive letter) | Re-run steps 1–3 using `$HOME` (PowerShell) or `%USERPROFILE%` (cmd)                              |
+| Need to type `.\libra.exe` instead of `libra` | Windows does not execute files from the current directory by default           | Ensure `$HOME\bin` is in your `PATH`; then running `libra` will work without `.\`                |
+
