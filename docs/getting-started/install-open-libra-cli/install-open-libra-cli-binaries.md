@@ -239,7 +239,7 @@ If everything is configured, you’ll see `libra` print its version information.
 In WSL2, install as if on Linux:
 
 1. Download the **Linux** version into your WSL distro.
-2. Follow the [Linux installation steps](../linux) provided in this guide.
+2. Follow the Linux installation steps provided in this guide.
 :::
 
 </TabItem>
