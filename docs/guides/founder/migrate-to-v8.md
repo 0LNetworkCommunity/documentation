@@ -51,7 +51,7 @@ libra txs user vouch --vouch-for <your-address>
 
 3. **Verify your trust score meets threshold**
 ```bash
-libra query view -f 0x1::founder::is_voucher_score_valid --args <your-address>
+libra query view -f 0x1::reauthorization::is_v8_authorized --args <your-address>
 ```
 
 4. **Wait for next epoch** (~24 hours)
