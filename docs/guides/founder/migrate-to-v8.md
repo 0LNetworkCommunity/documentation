@@ -71,10 +71,10 @@ FILO (First-In-Last-Out) is the v8 migration strategy that:
 
 ### Why These Steps?
 
-| Step | Purpose | Technical Details |
-|------|---------|-------------------|
-| **Re-join** | Signals your return and migrates account to v8 format | Calls `filo_migration::maybe_migrate` which initializes Activity, Founder status, SlowWallet reset, Vouch structures, and PageRank |
-| **Vouch** | Provides social proof you're a real person AND enables coin unlocking | Creates on-chain attestation via `vouch_txs::vouch_for`, contributes to trust score calculation. Must achieve score ≥ 100,000 |
+| Step | Purpose | Technical Details                                                                                                                                      |
+|------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Re-join** | Signals your return and migrates account to v8 format | Calls `filo_migration::maybe_migrate` which initializes Activity, Founder status, SlowWallet reset, Vouch structures, and PageRank                     |
+| **Vouch** | Provides social proof you're a real person AND enables coin unlocking | Creates on-chain attestation via `vouch_txs::vouch_for`, contributes to trust score calculation. Must receive >= 2 vouches and achieve score ≥ 100,000 |
 
 ## The Trust Score System
 
