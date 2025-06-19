@@ -218,7 +218,7 @@ libra query view -f 0x1::vouch::get_given_this_epoch --args <your-address>
 Sometimes you need to remove a vouch. Perhaps the account became inactive, acted maliciously, or you need to reallocate your limited vouches. Here's how revocation works:
 
 ```bash
-libra txs user revoke --vouch-for <address-to-revoke>
+libra txs user vouch -r --vouch-for <address-to-revoke>
 ```
 
 ### Revocation Rules and Consequences
