@@ -11,12 +11,17 @@ import TabItem from "@theme/TabItem";
 
 # Re-join & Vouch – Getting Your 0L Account Moving Again (v8 Upgrade)
 
+## TL;DR
+> - Old accounts from V7 must send a re-join transaction to migrate to V8 (you can do this in Carpe 1.1.0)
+> - A re-joined accounts needs 2 vouches from unrelated users
+> - The vouches should add up to a trust score of 100K or more (combined)
+
 **For Founder accounts** – anyone who held 0L coins before the Level-8 upgrade
 
 This guide implements the community-approved **FILO** (First-In-Last-Out) proposal ([read the rationale](https://docs.openlibra.io/blog/proposals/back-to-filo-the-future-of-open-libra)). Learn why you must run a "re-join" action and receive a "vouch" from a friend to reactivate your account.
 
 :::note
-**Founder accounts require vouches for coins to begin unlock.** Without at least one valid vouch that provides sufficient trust score, your coins remain locked. This security measure prevents abandoned or sybil accounts from accessing funds.
+**Founder accounts require vouches for coins to begin unlock.** Without at least TWO valid vouches that provides sufficient trust score, your coins remain locked. This security measure prevents abandoned or sybil accounts from accessing funds.
 :::
 
 ## Prerequisites
@@ -44,10 +49,12 @@ libra txs user re-join
 ```
 
 2. **Get vouched by a friend** *(Required for unlocking!)*
+
    Ask them to run:
 ```bash
 libra txs user vouch --vouch-for <your-address>
 ```
+* You will need a MINIMUM OF 2 VOUCHES FROM UNRELATED ACCOUNTS *
 
 3. **Verify your trust score meets threshold**
 ```bash
